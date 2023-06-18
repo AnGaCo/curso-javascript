@@ -1,0 +1,108 @@
+<script>
+  console.log("Manuel Orozco");
+  console.log("curso de javaScript")
+  //Tema Uno, Comentarios:
+  /* para una linea → // comentarios
+  Para varias lineas → "/* comentarios varios /*" 
+  El encomillado es solo a titulo de destacar. 
+  */ 
+  //Variables: 
+  var miVariable = "De-freeCodeCamp"; // String
+  console.log(miVariable);
+  var miVariable = 16; // Numerical
+  console.log(miVariable);
+  /*La asignación de las variable dependerá del uso que se
+ le darán en el desarrollo del proyecto. Se usara la convencion (camellCase),
+ se inicia la variable con la primera letra en minuscula y la palabra sigiente sin
+ espasio con la primera letra en Mayuscula.
+ Cabe destaca que hay tres altenativas para  inicializar variables
+ var  
+ let 
+ const
+ OPERADOR DE ASIGNACIONES
+ var a; var b = 2 La variable (a) esta basia en console.log dara 
+ error undefind
+ la variable (b) mostrara la asignacion, La variable (a) ya esta declarada 
+ en el proyecto, para agregarle un valor usamos el signo de asignacion = 
+ También podemos asignar valores de una variable a otra variable. 
+ Ej. a = 5, b = a veremos que el valor de las variables son iguale.
+ Otra alternativa de cómo podemos asignar el valor de una variable a otra. Declaramos
+ nuevamente las variables a y le asignamos un valor en este ej. vamos a cambiar 
+ la segunda línea y declaramos la variable (b) bacía y la asignación la podemos hacer 
+ en otra línea distinta del proyecto, es decir cuando la necesitemos.  
+ Para incrementar una variable solamente en 1 la sintaxis más concisa  seria 
+ Variable→  a = 25; a = ++; lo mismo sucede cuando restamos 1, a --; pero si 
+ tenemos que realizar operaciones con valores mayores que uno, en ese caso sería,  
+ variable→ a = 23 y aplicamos la siguiente regla (variable operador asignación valor)  
+ a += 5; a pasa a valer 28. Esto se aplica a cualquier valor, entero o decimales EJ. 
+ var ventasDiarias = 13567.34; ventasDiarias += 345.67; ventasDiarias pasa 
+ se incremento y pasa a valer 13913.01. Asi como podemos incrementar el valor 
+ de una variable tambien podemos reducir ese valor, mutiplicar o dividir sigiendo 
+ la regla nombrada → (variable operador asignación valor) Ej. de * y /
+ Var salario = 45000 lo incrementamos salario *=5 y lo reducimos a la mitad 
+ salario /= 2;
+ Variables con cadenas de caracteres. Las cadenas de caracteres se definen 
+ rodeandolas con comillas var miNombre = "Manuel"; ¿Como podemos incluir parte de 
+ la cadena entre comillas? Eso se denomina secuencias de Escape: hay dos formas para 
+ lograr eso, 1) se antepone una barra invertida antes de cada comilla dentro 
+ de la cadena Ej1→ var = "Manuel \"Manu\""; Ej2→ Se inicia la cadena con comillas 
+ simles''y el texto a destacar con comillas dobles""Ej2→ var = ´Manuel "Manu"´; Otras
+ secuencias de escapes muy usadas son: Mostrar la barra invertida en la cadena→ \\
+ o lograr un salro de linea en la cadena→ \n. Concatenar cadenas de caracteres, 
+ para eso se usa el signo + Ej→ miNombre = "Manuel" + " Orozco" 
+ Concatenar variables con cadena de caracteres:Ej→ var verbo = "programar";
+ var mensaje = "Estoy aprendiendo a " + verbo;
+ */
+ var a; 
+ var b = 2;
+ console.log(a); // undefind
+ console.log(b); // tiene un valor
+ a = 10 //asignacion a la variable a
+ console.log(a)
+ a = 5
+ b = a
+ console.log(a); 
+ console.log(b);
+ a = 11
+ var b;
+
+ b = a;
+ console.log(a); 
+ console.log(b);
+ a = 25; 
+ a ++; //se incrementa en uno
+ console.log(a);
+ var ventasDiarias;
+ ventasDiarias = 13567.34;
+ ventasDiarias += 345.67; 
+ //se incrementa el valor
+ console.log(ventasDiarias) // total actualisado 13913.01
+ var altaAlumnos;
+ var vajaAlumnos;
+ altaAlumnos = 456;
+ vajaAlumnos = 456;/* se le asigna a vaja el valor de alta para mantener siempre 
+ el valor en alta a lo largo del proyecto */
+ vajaAlumnos -= 6;
+ console.log(vajaAlumnos);
+ console.log(altaAlumnos);
+ var salario = 45000; 
+ salario *=5; // Lo incrementamos en 5
+ console.log(salario);  
+ salario /= 2; //lo reducimos a la mitad salario /= 2;
+ console.log(salario);
+ var miNombre = "Manuel";
+ var ejemplo = "Estoy aprendiendo JavaScript";
+ console.log(miNombre);
+ miNombre =  "Manuel Ej1 \"Manu\"";
+ console.log(miNombre);
+ miNombre = 'Manuel Ej2 "Manu"';
+ console.log(miNombre);
+ console.log(ejemplo);
+ ejemplo = "Estoy aprendiendo JavaScript \ncurso desde 0 \\ freeCodeCamp";//Secuencias de escape
+ console.log(ejemplo);
+ miNombre = "Manuel" + " Orozco";
+ console.log(miNombre); //concatenado
+ var verbo = "programar";
+ var mensaje = "Estoy aprendiendo a " + verbo;
+ console.log(mensaje);
+</script>
