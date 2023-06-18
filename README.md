@@ -1,2 +1,2 @@
-# proyecto-javascript
-Para practicar con el comando issues
+#aprendiendo-javascript
+Curso FreeCodeCamp desde cero 
