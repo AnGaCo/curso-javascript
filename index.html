@@ -51,7 +51,13 @@
  o lograr un salro de linea en la cadena→ \n. Concatenar cadenas de caracteres, 
  para eso se usa el signo + Ej→ miNombre = "Manuel" + " Orozco" 
  Concatenar variables con cadena de caracteres:Ej→ var verbo = "programar";
- var mensaje = "Estoy aprendiendo a " + verbo;
+ var mensaje = "Estoy aprendiendo a " + verbo; Tambien se puede segir 
+ concatenando la cadena despues de la variable. Ej. sigiente linea,
+ mensaje = "Estoy aprendiendo a " + verbo + " con freeCodeCamp"; 
+ Tambien podemos concatenar dos variables de una forma mas concisa con +=
+ var mensajeFinal = "El invierno llego"; Var = " con un frío muy cruel";
+ esto podria ser en una situacion real que esa parte del mensaje se personalisada
+ o que el usuario tenga que ingresar algun valor para tener la cadena completa.
  */
  var a; 
  var b = 2;
@@ -105,4 +111,10 @@
  var verbo = "programar";
  var mensaje = "Estoy aprendiendo a " + verbo;
  console.log(mensaje);
+ mensaje = "Estoy aprendiendo a " + verbo + " con freeCodeCamp";
+ console.log(mensaje);
+ var mensajeComleto = "El invierno llego"; 
+ var mensajeFinal = " con un frío muy cruel";
+ mensajeComleto += mensajeFinal; //concatenando variables con =+
+ console.log(mensajeComleto);
 </script>
