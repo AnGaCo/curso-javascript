@@ -11,53 +11,93 @@
   console.log(miVariable);
   var miVariable = 16; // Numerical
   console.log(miVariable);
-  /*La asignación de las variable dependerá del uso que se
- le darán en el desarrollo del proyecto. Se usara la convencion (camellCase),
- se inicia la variable con la primera letra en minuscula y la palabra sigiente sin
- espasio con la primera letra en Mayuscula.
- Cabe destaca que hay tres altenativas para  inicializar variables
- var  
- let 
- const
- OPERADOR DE ASIGNACIONES
- var a; var b = 2 La variable (a) esta basia en console.log dara 
- error undefind
- la variable (b) mostrara la asignacion, La variable (a) ya esta declarada 
- en el proyecto, para agregarle un valor usamos el signo de asignacion = 
- También podemos asignar valores de una variable a otra variable. 
- Ej. a = 5, b = a veremos que el valor de las variables son iguale.
- Otra alternativa de cómo podemos asignar el valor de una variable a otra. Declaramos
- nuevamente las variables a y le asignamos un valor en este ej. vamos a cambiar 
- la segunda línea y declaramos la variable (b) bacía y la asignación la podemos hacer 
- en otra línea distinta del proyecto, es decir cuando la necesitemos.  
- Para incrementar una variable solamente en 1 la sintaxis más concisa  seria 
- Variable→  a = 25; a = ++; lo mismo sucede cuando restamos 1, a --; pero si 
- tenemos que realizar operaciones con valores mayores que uno, en ese caso sería,  
- variable→ a = 23 y aplicamos la siguiente regla (variable operador asignación valor)  
- a += 5; a pasa a valer 28. Esto se aplica a cualquier valor, entero o decimales EJ. 
- var ventasDiarias = 13567.34; ventasDiarias += 345.67; ventasDiarias pasa 
- se incremento y pasa a valer 13913.01. Asi como podemos incrementar el valor 
- de una variable tambien podemos reducir ese valor, mutiplicar o dividir sigiendo 
- la regla nombrada → (variable operador asignación valor) Ej. de * y /
- Var salario = 45000 lo incrementamos salario *=5 y lo reducimos a la mitad 
- salario /= 2;
- Variables con cadenas de caracteres. Las cadenas de caracteres se definen 
- rodeandolas con comillas var miNombre = "Manuel"; ¿Como podemos incluir parte de 
- la cadena entre comillas? Eso se denomina secuencias de Escape: hay dos formas para 
- lograr eso, 1) se antepone una barra invertida antes de cada comilla dentro 
- de la cadena Ej1→ var = "Manuel \"Manu\""; Ej2→ Se inicia la cadena con comillas 
- simles''y el texto a destacar con comillas dobles""Ej2→ var = ´Manuel "Manu"´; Otras
- secuencias de escapes muy usadas son: Mostrar la barra invertida en la cadena→ \\
- o lograr un salro de linea en la cadena→ \n. Concatenar cadenas de caracteres, 
- para eso se usa el signo + Ej→ miNombre = "Manuel" + " Orozco" 
- Concatenar variables con cadena de caracteres:Ej→ var verbo = "programar";
- var mensaje = "Estoy aprendiendo a " + verbo; Tambien se puede segir 
- concatenando la cadena despues de la variable. Ej. sigiente linea,
- mensaje = "Estoy aprendiendo a " + verbo + " con freeCodeCamp"; 
- Tambien podemos concatenar dos variables de una forma mas concisa con +=
- var mensajeFinal = "El invierno llego"; Var = " con un frío muy cruel";
- esto podria ser en una situacion real que esa parte del mensaje se personalisada
- o que el usuario tenga que ingresar algun valor para tener la cadena completa.
+ /*
+    La asignación de las variable dependerá del uso que se
+    le darán en el desarrollo del proyecto. Se usara la convencion (camellCase),
+    se inicia la variable con la primera letra en minuscula y la palabra sigiente sin
+    espasio con la primera letra en Mayuscula.
+    Cabe destaca que hay tres altenativas para  inicializar variables
+    var  
+    let 
+    const
+    OPERADOR DE ASIGNACIONES
+    var a; var b = 2 La variable (a) esta basia en console.log dara 
+    error undefind
+    la variable (b) mostrara la asignacion, La variable (a) ya esta declarada 
+    en el proyecto, para agregarle un valor usamos el signo de asignacion = 
+    También podemos asignar valores de una variable a otra variable. 
+    Ej. a = 5, b = a veremos que el valor de las variables son iguale.
+    Otra alternativa de cómo podemos asignar el valor de una variable a otra. Declaramos
+    nuevamente las variables a y le asignamos un valor en este ej. vamos a cambiar 
+    la segunda línea y declaramos la variable (b) bacía y la asignación la podemos hacer 
+    en otra línea distinta del proyecto, es decir cuando la necesitemos.  
+    Para incrementar una variable solamente en 1 la sintaxis más concisa  seria 
+    Variable→  a = 25; a = ++; lo mismo sucede cuando restamos 1, a --; pero si 
+    tenemos que realizar operaciones con valores mayores que uno, en ese caso sería,  
+    variable→ a = 23 y aplicamos la siguiente regla (variable operador asignación valor)  
+    a += 5; a pasa a valer 28. Esto se aplica a cualquier valor, entero o decimales EJ. 
+    var ventasDiarias = 13567.34; ventasDiarias += 345.67; ventasDiarias pasa 
+    se incremento y pasa a valer 13913.01. Asi como podemos incrementar el valor 
+    de una variable tambien podemos reducir ese valor, mutiplicar o dividir sigiendo 
+    la regla nombrada → (variable operador asignación valor) Ej. de * y /
+    Var salario = 45000 lo incrementamos salario *=5 y lo reducimos a la mitad 
+    salario /= 2;
+    Variables con cadenas de caracteres. Las cadenas de caracteres se definen 
+    rodeandolas con comillas var miNombre = "Manuel"; ¿Como podemos incluir parte de 
+    la cadena entre comillas? Eso se denomina secuencias de Escape: hay dos formas para 
+    lograr eso, 1) se antepone una barra invertida antes de cada comilla dentro 
+    de la cadena Ej1→ var = "Manuel \"Manu\""; Ej2→ Se inicia la cadena con comillas 
+    simles''y el texto a destacar con comillas dobles""Ej2→ var = ´Manuel "Manu"´; Otras
+    secuencias de escapes muy usadas son: Mostrar la barra invertida en la cadena→ \\
+    o lograr un salro de linea en la cadena→ \n. Concatenar cadenas de caracteres, 
+    para eso se usa el signo + Ej→ miNombre = "Manuel" + " Orozco" 
+    Concatenar variables con cadena de caracteres:Ej→ var verbo = "programar";
+    var mensaje = "Estoy aprendiendo a " + verbo; Tambien se puede segir 
+    concatenando la cadena despues de la variable. Ej. sigiente linea,
+    mensaje = "Estoy aprendiendo a " + verbo + " con freeCodeCamp"; 
+    Tambien podemos concatenar dos variables de una forma mas concisa con +=
+    var mensajeFinal = "El invierno llego"; Var = " con un frío muy cruel";
+    esto podria ser en una situacion real que esa parte del mensaje se personalisada
+    o que el usuario tenga que ingresar algun valor para tener la cadena completa.
+    Longitud de una CdC Esto es muy comun en programacion Ej→ var miCadena = "A";
+    Para aberiguar cuantos caracteres tiene una cadena con console.log() seria,
+    console.log(miCadena.length) Esta propiedad→lenght nos va a permitir saber 
+    cuantos caracteres tiene la cadena. 
+    Nota: Los espacios se cuentan como un caracter.
+    Notación de corchetes en JS, Esta es una notación que nos permite acceder 
+    a los caracteres de una cadena. Definimos  var lenguajeDeProgramacion;
+    lenguajeDeProgramacion  = “Javascript”; Esa cadena tiene una estructura interna
+    que nos va a permitir acceder a sus caracteres, veamos un diagrama de EJ.
+    Cadena: → J A V A S C R I P T
+    Índices:→ 0 1 2 3 4 5 6 7 8 9
+    c/u de esos caracteres tiene un índice asociado y podemos usar ese índice para 
+    acceder a ese carácter usando corchetes en console.log(variable[0]); 
+    en este caso es 0 por que es el primer índice.  
+    Inmutabilidad de cadenas→ no se pueden cambiar, es solo lectura.
+    Nota: En una cadena el último índice es longitud -1 Ej. var miCadena;
+    miCadena = "JavaScript" consol.log(miCadena.length -1); se muestra el numero
+    del ultimo índice por que no está envuelta por corchetes. Si agregamos los
+    corchetes se mostrara la última letra. Ej→ variable[variable.length -1]
+    También se puede inicializar una variable para agregarla a continuación de 
+    length Var n; n = -4 variable[variable.length variable]
+    Palabras en Blanco: Concatenar cadenas compuestas de caracteres y variables con 
+    espacios en blanco. Declaramos las variables.
+    var miSustantivo  = "perro";
+    var miAdgetivo =  "negro";
+    var miVerbo  = "corrió";
+    var miAdverbio = "rápidamente";
+    var miEspacio " "; 
+    oracion  =  "El " + miSustantivo + miEspacio + miAdgetivo + miEspacio + 
+    miVerbo + miEspacio + miAdverbio + " a la tienda";
+    resultado→ El perro negro corrio rapidamente a la tienda
+    Siguiente tema: Arreglos (Arrays) Los arrays son estructura de datos que nos 
+    permiten agregar múltiples valores en una misma estructura. 
+    Para crear un arrays escribimos corchetes [] y dentro de los corchetes 
+    tendríamos los elementos de ese arrays Ej. definimos una variable  
+    var miArrays; miArrays = [“Daniel”,  24];
+    0: "Daniel"
+    1: 24
+    length: 2
  */
  var a; 
  var b = 2;
@@ -117,4 +157,33 @@
  var mensajeFinal = " con un frío muy cruel";
  mensajeComleto += mensajeFinal; //concatenando variables con =+
  console.log(mensajeComleto);
+ var miCadena; 
+ miCadena = "A";
+ console.log(miCadena.length); //se muestra el resultado. 1 caracter
+ var lenguajeDeProgramacion;
+ lenguajeDeProgramacion = "Javascript";//caracter J es índice 0 
+ console.log(lenguajeDeProgramacion[0]);//se mostra J
+ var miCadena;
+ miCadena = "JavaScript" 
+ console.log(miCadena.length -1); //Sin [] se muesta el ulimo indice 9
+ console.log(miCadena[miCadena.length -1]); //Con [] se muesta la ultima letra
+ var n; 
+ n = 4;
+ console.log(miCadena[miCadena.length-n]);//se muestra la letra r
+ var miSustantivo  = "perro";
+ var miAdgetivo =  "negro";
+ var miVerbo  = "corrió";
+ var miAdverbio = "rápidamente";
+ var miEspacio = " ";
+ var oracion;
+ oracion = "El " + miSustantivo + miEspacio + miAdgetivo + miEspacio + miVerbo + miEspacio + miAdverbio + " a la tienda";
+ console.log(oracion);// Muestra la frace completa
+ var miArrays; 
+ miArrays = ["Daniel", 24];
+ console.log(miArrays);
+ /*
+   0: "Daniel"
+   1: 24
+   length:2
+ */
 </script>
