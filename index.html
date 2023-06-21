@@ -130,10 +130,57 @@
       Ej→ miModificacion [1] = "Manuel"; Otra cosa que se permite en JS es  tomar 
       un elemento del arrays, digamos el índice [2] y asignarle  elementos 
       anidados. EJ→ miModificacion [2] = [1, 2, 3];
-    #Acceder arrays multidimencionale 
+     #Acceder arrays multidimencionale: 
+     accesosArraysAnidados = [[1 ,2, 3], [4, 5, 6], [7, 8. 9] ];
+     Para acceder a los elementos mostramos el siguiente diagrama.
+     
+     Arreglo:             [[1, 2, 3], [4, 5, 6], [7, 8. 9]];
+     Índices:                  0          1          2
+     Índices internos:     [0, 1, 2], [0, 1, 2], [0, 1, 2]; 
+     
+     La explicación grafica no muestra Cómo accedemos al arrays multidimensional 
+     para eso tendremos que usar dos indicis. ¿Como accedemos al elemento 8? 
+     Primero usamos el índice 2 que nos permite acceder al elemento→[7, 8. 9] 
+     y seguidamente el índice 1 que deja el puntero en el num. 8 para tratarlo.
+     El codigo seria: 
+     var accesosArraysAnidados;
+     accesosArraysAnidados = [[1 ,2, 3], [4, 5, 6], [7, 8, 9] ];
+     // se muestra el acceso a cada elmento
+     console.log(accesosArraysAnidados[0]);
+     console.log(accesosArraysAnidados[1]);
+     console.log(accesosArraysAnidados[2]);
+    # Para acceder algunos de los elementos anidados en c/u de esos array usaremos
+     el segundo índice que vimos en el diagrama. Digamos que queremos acceder al 
+     elemento 6 del primer array  [4, 5, 6] → accesosArraysAnidados[1] [2];
+     console.log(accesosArraysAnidados[1] [2]); //vemos el elemento 6
+    #Métodos:
+     Los arrays son estructuras de datos muy poderosas, no solo podemos acceder y
+     modificar los elementos de un array si no que podemos agregar elementos.
+     Digamos que tenemos una lista de cadenas de caracteres en este caso son las 
+     estaciones del año a la cual le falta el verano. en este caso son las 
+     estaciones del año a la cual le falta el verano. 
+     var estaciones = ["invierno"; "otoño"; "primavera"]; 
+     ¿Cómo podemos agregar esa cadena de caracteres al arrego? Con algo  llamado método,
+     El método es como una función que podemos llamar para hacer algo con un elemento de nuestro código. 
+    #.push() este método nos permite añadir un elemento al final del arrays 
+     variable→ estaciones.push("verano") //["invierno"; "otoño"; "primavera";"verano"];
+    #.pop() este metodo nos permite remover el ultimo elemento de un array que nos 
+     entrega un retorno que podemos asignarlo a una variable para su 
+     taratamiento en el proyecto. 
+     var estacion = estaciones.pop() → ["invierno"; "otoño"; "primavera"];
+    #.shift() este metodo nos permite remover el primer elemento de un array
+     estaciones.shift(); 
+     ["invierno"; "otoño"; "primavera";"verano"] En este array se extrae "invierno" 
+    #.unshift()este metodo nos permite agregar un elemento al principio de un array 
+     tenemos que indicar entre los () que elemento se agregara. 
+     estaciones.shift("invierno");
+    #Lista de compras:
+     miListaDeCompras = [["Arroz" 1], ["Aceite" 2], ["Fideos" 3], ["Cafe" 1]];
+     console.log("Voy a comprar ") + miListaDeCompras[0][1] + " kg de " + miListaDeCompras[0][0]
+ */   
 
-  */
- var a; 
+                              
+ var a;
  var b = 2;
  console.log(a); // undefind
  console.log(b); // tiene un valor
@@ -262,4 +309,29 @@
   console.log(miModificacion);// se mostrara el indice 1 con el nuevo valor "Manuel"
   miModificacion [2] = [1, 2, 3]; 
   console.log(miModificacion);// se mostrara el indice 1 con el nuevo valor [[1,2,3]]
+
+  var accesosArraysAnidados;
+  accesosArraysAnidados = [[1 ,2, 3], [4, 5, 6], [7, 8, 9] ];
+  // se muestra el acceso a cada elmento
+  console.log(accesosArraysAnidados[0]);
+  console.log(accesosArraysAnidados[1]);
+  console.log(accesosArraysAnidados[2]);
+  // acceder al primer array segundo elemento
+  console.log(accesosArraysAnidados[1] [2]); //vemos el elemento 6
+  var estaciones = ["invierno","otoño", "primavera"];
+  console.log(estaciones);
+  //.push()
+  estaciones.push("verano");
+  console.log(estaciones); //Con .push() agregamos "verano" al final del arrays 
+  
+  //.pop()
+  estacion = estaciones.pop();
+  /*Extraemos el ultimo elemento que esta al final del arrays 
+  .pop() entrega un retorno lo asignamo a una variable 
+  */
+  console.log(estaciones); //["invierno","otoño", "primavera"]
+  console.log(estacion); // "verano"
+  
+  miListaDeCompras = [["Arroz", 1], ["Aceite", 2], ["Fideos", 3], ["Cafe", 1]];
+  console.log("Voy a comprar " + miListaDeCompras[0][1] + " kg de " + miListaDeCompras[0][0]);
 </script>
