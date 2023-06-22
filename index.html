@@ -174,11 +174,60 @@
     #.unshift()este metodo nos permite agregar un elemento al principio de un array 
      tenemos que indicar entre los () que elemento se agregara. 
      estaciones.shift("invierno");
-    #Lista de compras:
+    #Lista de compras: mini proyecto de una lista de compra.
      miListaDeCompras = [["Arroz" 1], ["Aceite" 2], ["Fideos" 3], ["Cafe" 1]];
-     console.log("Voy a comprar ") + miListaDeCompras[0][1] + " kg de " + miListaDeCompras[0][0]
- */   
+     CODIGO:
+     miListaDeCompras = [["Arroz", 1], ["Aceite", 2], ["Fideos", 3], ["Café", 1]];
+     console.log("Voy a comprar " + miListaDeCompras[0][1] + " kg de " + 
+     miListaDeCompras[0][0] + " tambien " + miListaDeCompras[1][1] + " Litros de "
+     + miListaDeCompras[1][0] + " y " + miListaDeCompras[2][1] + " paquetes de " + 
+     miListaDeCompras[2][0] + " por ultimo " + miListaDeCompras[3][1] + 
+     " un paquetes de 1/2 kg de " + miListaDeCompras[3][0]);
+     Resultado en pantalla:
+     Voy a comprar 1 kg de Arroz tambien 2 Litros de Aceite y 3 paquetes 
+     de Fideos por ultimo 1 un paquetes de 1/2 kg de Café
+    #FUNCIONES:
+     Con las funciones podemos escribir código que podemos reutilizar
+     en nuestro programa, Declaración → function mostrarMensaje()
+     {
+	     console.log(“Hola Manu);
+     } 
+    #ARGUMENTOS:
+     Lo primero que necesitamos saber para una operación, es que operando vamos a usar 
+     y que valores vamos a tener.→ Function sumar(a, b) lo que envuelven los paréntesis 
+     se los denominan parámetros, son cualquier nombre que tú le quieras asignar 
+     a un valor que se va a recibir o a tomar cuando llamemos a la función. 
+     La parte de la función que va entre las llaves se denomina cuerpo. 
+     Si vamos a sumar a+b ¿que vamos hacer en el cuerpo de la function? 
+     Vamos a tomar los valores de a y de b esos valores que en estos momentos
+     no existen. En el cuerpo de la fuction declaramos la variable suma y le 
+     asignamos los parámetros a+b.
+     function sumar(a, b )
+     {
+        var suma = a + b;
+        console.log(“El resultado de  “ + a “ + ” b + “ es  ” + suma);	
+     }
+        
+     Ahora vamos a llamar a la function. Sabemos que tenemos dos parámetros, 
+     tenemos que pasar un valor para cada uno. Los valores se asignan en el mismo 
+     orden en que aparecen en la lista de parámetros en la definición de la function.  Para a es 5 y para b es 3
+     sumar(5, 3); 
+     Para ilustrar por que las funciones nos ayudan a escribir código que es más 
+     conciso y fácil de leer de modo tal que evita la repetición de código. 
+     Podemos llamar a esta function varias veces. 
+     sumar(57, 3);
+     sumar(31, 83);
+     sumar(11, 43);
+     Estos valores que estamos pasando se denominan argumentos. 
+     Los argumentos son los valores que asignamos a los parámetros. 
+     Esos dos conceptos trabajan juntos para permitir que las function 
+     sea la herramienta poderosísima que son en programación.
+     Veamos otra variación que podemos tener cuando llamamos a una fumction 
+     En lugar de escribir los valores directamente en la lista de argumentos →(5, 3 )←  
+     también podemos asignarles a variables y pasarlas como argumentos. 
+     Ej. var x = 5; var y = 3; sumar(x, y); y el resultado sería el mismo
 
+ */   
                               
  var a;
  var b = 2;
@@ -326,12 +375,43 @@
   
   //.pop()
   estacion = estaciones.pop();
-  /*Extraemos el ultimo elemento que esta al final del arrays 
+  /*Extraemos el último elemento que esta al final del arrays 
   .pop() entrega un retorno lo asignamo a una variable 
   */
   console.log(estaciones); //["invierno","otoño", "primavera"]
   console.log(estacion); // "verano"
   
-  miListaDeCompras = [["Arroz", 1], ["Aceite", 2], ["Fideos", 3], ["Cafe", 1]];
-  console.log("Voy a comprar " + miListaDeCompras[0][1] + " kg de " + miListaDeCompras[0][0]);
+  //Mostrar lista de compras 
+  miListaDeCompras = [["Arroz", 1], ["Aceite", 2], ["Fideos", 3], ["Café", 1]];
+  console.log("Voy a comprar " + miListaDeCompras[0][1] + " kg de " + 
+  miListaDeCompras[0][0] + " también " + miListaDeCompras[1][1] + " Litros de "
+  + miListaDeCompras[1][0] + " y " + miListaDeCompras[2][1] + " paquetes de " + 
+  miListaDeCompras[2][0] + " por ultimo " + miListaDeCompras[3][1] + 
+  " un paquetes de 1/2 kg de " + miListaDeCompras[3][0]);
+  /*Resultado en pantalla:
+    Voy a comprar 1 kg de Arroz también 2 Litros de Aceite y 3 paquetes 
+    de Fideos por ultimo 1 paquetes de 1/2 kg de Café
+  */
+  //FUNCIONES: function
+  function mostrarMensaje()
+  {
+	  console.log("Hola Manu"); //Podemos llamar a la function cuantas veces sea necesario
+  } 
+  mostrarMensaje();
+  mostrarMensaje();
+  function sumar(a, b)
+    {
+      var suma = a + b;
+      console.log("El resultado de " + a + " + " + b + " es " + suma);	
+    }
+    sumar(5, 3) //resultado 8
+    sumar(57, 3);//resultado 60
+    sumar(31, 83);//resultado 114
+    sumar(11, 43);//resultado 54
+
+    var x = 5; 
+    var y = 3; 
+    sumar(x, y);//resultado 8
+
 </script>
+ 
