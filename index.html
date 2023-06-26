@@ -12,7 +12,7 @@
   var miVariable = 16; // Numerical
   console.log(miVariable);
  /*
-    #La asignación de las variable dependerá del uso que se
+  #La asignación de las variable dependerá del uso que se
       le darán en el desarrollo del proyecto. Se usara la convencion (camellCase),
       se inicia la variable con la primera letra en minuscula y la palabra sigiente sin
       espasio con la primera letra en Mayuscula.
@@ -20,7 +20,7 @@
       var   
       let 
       const
-    #OPERADOR DE ASIGNACIONES
+  #OPERADOR DE ASIGNACIONES
       var a; var b = 2 La variable (a) esta basia en console.log dara 
       error undefind
       la variable (b) mostrara la asignacion, La variable (a) ya esta declarada 
@@ -42,7 +42,7 @@
       la regla nombrada → (variable operador asignación valor) Ej. de * y /
       Var salario = 45000 lo incrementamos salario *=5 y lo reducimos a la mitad 
       salario /= 2;
-    #Variables con cadenas de caracteres. Las cadenas de caracteres se definen 
+  #Variables con cadenas de caracteres. Las cadenas de caracteres se definen 
       rodeandolas con comillas var miNombre = "Manuel"; ¿Como podemos incluir parte de 
       la cadena entre comillas? Eso se denomina secuencias de Escape: hay dos formas para 
       lograr eso, 1) se antepone una barra invertida antes de cada comilla dentro 
@@ -51,7 +51,7 @@
       secuencias de escapes muy usadas son: Mostrar la barra invertida en la cadena→ \\
       o lograr un salro de linea en la cadena→ \n. Concatenar cadenas de caracteres, 
       para eso se usa el signo + Ej→ miNombre = "Manuel" + " Orozco" 
-    #Concatenar variables con cadena de caracteres:Ej→ var verbo = "programar";
+  #Concatenar variables con cadena de caracteres:Ej→ var verbo = "programar";
       var mensaje = "Estoy aprendiendo a " + verbo; Tambien se puede segir 
       concatenando la cadena despues de la variable. Ej. sigiente linea,
       mensaje = "Estoy aprendiendo a " + verbo + " con freeCodeCamp"; 
@@ -59,12 +59,12 @@
       var mensajeFinal = "El invierno llego"; Var = " con un frío muy cruel";
       esto podria ser en una situacion real que esa parte del mensaje se personalisada
       o que el usuario tenga que ingresar algun valor para tener la cadena completa.
-    #Longitud de una CdC Esto es muy comun en programacion Ej→ var miCadena = "A";
+  #Longitud de una CdC Esto es muy comun en programacion Ej→ var miCadena = "A";
       Para aberiguar cuantos caracteres tiene una cadena con console.log() seria,
       console.log(miCadena.length) Esta propiedad→lenght nos va a permitir saber 
       cuantos caracteres tiene la cadena. 
       Nota: Los espacios se cuentan como un caracter.
-    #Notación de corchetes en JS, Esta es una notación que nos permite acceder 
+  #Notación de corchetes en JS, Esta es una notación que nos permite acceder 
       a los caracteres de una cadena. Definimos  var lenguajeDeProgramacion;
       lenguajeDeProgramacion  = “Javascript”; Esa cadena tiene una estructura interna
       que nos va a permitir acceder a sus caracteres, veamos un diagrama de EJ.
@@ -73,14 +73,14 @@
       c/u de esos caracteres tiene un índice asociado y podemos usar ese índice para 
       acceder a ese carácter usando corchetes en console.log(variable[0]); 
       en este caso es 0 por que es el primer índice.  
-    #Inmutabilidad de cadenas→ no se pueden cambiar, es solo lectura.
+  #Inmutabilidad de cadenas→ no se pueden cambiar, es solo lectura.
       Nota: En una cadena el último índice es longitud -1 Ej. var miCadena;
       miCadena = "JavaScript" consol.log(miCadena.length -1); se muestra el numero
       del ultimo índice por que no está envuelta por corchetes. Si agregamos los
       corchetes se mostrara la última letra. Ej→ variable[variable.length -1]
       También se puede inicializar una variable para agregarla a continuación de 
       length Var n; n = -4 variable[variable.length variable]
-    #Palabras en Blanco: Concatenar cadenas compuestas de caracteres y variables con 
+  #Palabras en Blanco: Concatenar cadenas compuestas de caracteres y variables con 
       espacios en blanco. Declaramos las variables.
       var miSustantivo  = "perro";
       var miAdgetivo =  "negro";
@@ -90,12 +90,12 @@
       oracion  =  "El " + miSustantivo + miEspacio + miAdgetivo + miEspacio + 
       miVerbo + miEspacio + miAdverbio + " a la tienda";
       resultado→ El perro negro corrio rapidamente a la tienda
-    #Siguiente tema: Arreglos (Arrays) Los arrays son estructura de datos que 
+  #Siguiente tema: Arreglos (Arrays) Los arrays son estructura de datos que 
       nos permiten agregar múltiples valores en una misma estructura, 
       a diferencia de las cadenas de la caracteres que son Inmutabes, 
       cabe destacar que los arrays si se pueden modificar sus indices 
       los array son mutables. 
-    #Para crear un arrays escribimos corchetes [] y dentro de los corchetes 
+  #Para crear un arrays escribimos corchetes [] y dentro de los corchetes 
       tendríamos los elementos de ese arrays Ej. definimos una variable  
       var miArrays; miArrays = [“Daniel”,  24];
       0: "Daniel"
@@ -103,13 +103,13 @@
       length: 2
       Los arrays son estructuras muy poderosoas para trabajar con valores 
       relacionados. 
-    #Arrays anidados: Algo muy interesante de los arrays es que 
+  #Arrays anidados: Algo muy interesante de los arrays es que 
       pueden contener cualquier tipo de datos., caracteres, números, decimales 
       y los podemos anidar usando una variable. Ej. aqui tenemos unas variables
       var listaDeEstudiantes = [["Nora", 18], ["Daniel", 24]];
       var listaDeProductos = [["Camisas", 15.25, "s-32"], ["Zapatos", 30.45, "s-11"], ["Pantalones", 28.50, "s-33" ]]; 
       console.log(listaDeProductos); Ahora pasamos al siguiente tema:
-    #Acceder a los elementos de un Arrays:
+  #Acceder a los elementos de un Arrays:
       Definimos una var miAcceso = [10, 20, 30]; 
       Diagrama
         Arreglos: 10, 20, 30 
@@ -120,7 +120,7 @@
       programación. EJ→ inicializamos una variable var suma;
       suma = miAcceso[0]  +  miAcceso[1]  +  miAcceso[2];
       console.log(miAcceso) resultado 60
-    #Modificar los elementos de un array: Es otra parte importante en programación
+  #Modificar los elementos de un array: Es otra parte importante en programación
       var miModificacion; miModificacion = [10, 20, 30]; Accedemos al elemento a 
       modificar de la misma manera. Escribimos  la variable, enlazamos entre
       corchetes con el número del índice del elemento a modificar. 
@@ -130,7 +130,7 @@
       Ej→ miModificacion [1] = "Manuel"; Otra cosa que se permite en JS es  tomar 
       un elemento del arrays, digamos el índice [2] y asignarle  elementos 
       anidados. EJ→ miModificacion [2] = [1, 2, 3];
-     #Acceder arrays multidimencionale: 
+  #Acceder arrays multidimencionale: 
      accesosArraysAnidados = [[1 ,2, 3], [4, 5, 6], [7, 8. 9] ];
      Para acceder a los elementos mostramos el siguiente diagrama.
      
@@ -149,11 +149,11 @@
      console.log(accesosArraysAnidados[0]);
      console.log(accesosArraysAnidados[1]);
      console.log(accesosArraysAnidados[2]);
-    # Para acceder algunos de los elementos anidados en c/u de esos array usaremos
+  # Para acceder algunos de los elementos anidados en c/u de esos array usaremos
      el segundo índice que vimos en el diagrama. Digamos que queremos acceder al 
      elemento 6 del primer array  [4, 5, 6] → accesosArraysAnidados[1] [2];
      console.log(accesosArraysAnidados[1] [2]); //vemos el elemento 6
-    #Métodos:
+  #Métodos:
      Los arrays son estructuras de datos muy poderosas, no solo podemos acceder y
      modificar los elementos de un array si no que podemos agregar elementos.
      Digamos que tenemos una lista de cadenas de caracteres en este caso son las 
@@ -162,19 +162,18 @@
      var estaciones = ["invierno"; "otoño"; "primavera"]; 
      ¿Cómo podemos agregar esa cadena de caracteres al arrego? Con algo  llamado método,
      El método es como una función que podemos llamar para hacer algo con un elemento de nuestro código. 
-    #.push() este método nos permite añadir un elemento al final del arrays 
+  #.push() este método nos permite añadir un elemento al final del arrays 
      variable→ estaciones.push("verano") //["invierno"; "otoño"; "primavera";"verano"];
-    #.pop() este metodo nos permite remover el ultimo elemento de un array que nos 
-     entrega un retorno que podemos asignarlo a una variable para su 
-     taratamiento en el proyecto. 
-     var estacion = estaciones.pop() → ["invierno"; "otoño"; "primavera"];
-    #.shift() este metodo nos permite remover el primer elemento de un array
+  #.pop() este metodo nos permite remover el primer elemento de un array y nos 
+     entrega un retorno que podemos asignarlo a una variable para su taratamiento en el proyecto. 
+     var estacion = estaciones.pop() → ["otoño"; "primavera"; "verano"]; estrajo invierno
+  #.shift() este metodo nos permite remover el primer elemento de un array
      estaciones.shift(); 
      ["invierno"; "otoño"; "primavera";"verano"] En este array se extrae "invierno" 
-    #.unshift()este metodo nos permite agregar un elemento al principio de un array 
+  #.unshift()este metodo nos permite agregar un elemento al principio de un array 
      tenemos que indicar entre los () que elemento se agregara. 
      estaciones.shift("invierno");
-    #Lista de compras: mini proyecto de una lista de compra.
+  #Lista de compras: mini proyecto de una lista de compra.
      miListaDeCompras = [["Arroz" 1], ["Aceite" 2], ["Fideos" 3], ["Cafe" 1]];
      CODIGO:
      miListaDeCompras = [["Arroz", 1], ["Aceite", 2], ["Fideos", 3], ["Café", 1]];
@@ -186,13 +185,13 @@
      Resultado en pantalla:
      Voy a comprar 1 kg de Arroz tambien 2 Litros de Aceite y 3 paquetes 
      de Fideos por ultimo 1 un paquetes de 1/2 kg de Café
-    #FUNCIONES:
+  #FUNCIONES:
      Con las funciones podemos escribir código que podemos reutilizar
      en nuestro programa, Declaración → function mostrarMensaje()
      {
 	     console.log(“Hola Manu);
      } 
-    #ARGUMENTOS:
+  #ARGUMENTOS:
      Lo primero que necesitamos saber para una operación, es que operando vamos a usar 
      y que valores vamos a tener.→ Function sumar(a, b) lo que envuelven los paréntesis 
      se los denominan parámetros, son cualquier nombre que tú le quieras asignar 
@@ -225,7 +224,142 @@
      Veamos otra variación que podemos tener cuando llamamos a una fumction 
      En lugar de escribir los valores directamente en la lista de argumentos →(5, 3 )←  
      también podemos asignarles a variables y pasarlas como argumentos. 
-     Ej. var x = 5; var y = 3; sumar(x, y); y el resultado sería el mismo
+     Ej. var x = 5; var y = 3; sumar(x, y); y el resultado sería el mismo.
+     No solo podemos pasar números. Vamos a definir otra función para un ej. de CdC
+     function concatenarTresCadenas(cadena1, cadena2, cadena 3)
+     {
+       console.log(cadena1 + " " + cadena2 + " " + cadena3);
+     } 
+     concatenarTresCadenas("Estoy", "aprendiendo", "a programar");
+  #Ámbito Global: 
+    Algo muy importante e JS es que no todas las variables pueden usarcé en todas las 
+    distintas partes del programa. Tenemos dos tipos de variables GLOBALES y LOCALES.
+    Una variable con ámbito global está definida dentro del programa y no dentro de la 
+    function. Var miVariableGlobal = 5; global por que la definimos dentro del 
+    programa y NO dentro de una function. Si necesitamos acceder a su valor, digamos
+    usarla en el programa podemos hacerlo.
+    console.log(miVariableGlobal);
+    Y también podemos usarla dentro de una function  
+    function miFuncion()
+    {
+     console.log(miVariableGlobal);
+    }
+    Y también va a estar definida luego de la definición de la function, básicamente
+    en cualquier lugar del programa. Para comprobar que si está definida debemos 
+    llamar a la function.
+    function miFuncion();
+    console.log(miVariableGlobal);
+  #AMBITO LOCAL: 
+    Ahora veamos cómo funcionan las variables locales. Estos tipos de variable 
+    las definimos dentro de una function  que solo se pueden utilizar dentro 
+    de esa function.
+    Function miFunction()
+    {
+      Var miVariableLocal =  4;
+      console.loc(miVariableLocal );
+    }
+    Vamos a llamar a la function para ver que esa variable si está definida
+    miFunction(); //resultado 4
+    Pero luego veamos que queremos acceder a esa variable local fuera de la function. 
+    Esto nos dará un error de no definición de la variable. Si declaras una variable 
+    dentro de una function solo se podrá usar solo dentro del cuerpo de la function.
+  #Ámbito Local vs Ámbito Global:
+    Veamos que sucede cuando tenemos una v/local y una v /global con el mismo nombre. 
+    var miNombre = "Nora"
+    function mostrarMiNombre()
+    {
+        var miNombre = "Ricardo";
+        console.log(miNombre);
+    }
+    Cuando intentamos verificar la variable llamando la function, vemos que predomina la 
+    v/local sobre la v/global
+    mostrarMiNombre(); //resultado Ricardo
+    Pero si tratamos de mostrar la variable global en el programa, lo podemos hacer
+    y la podemos usar en cualquier lugar del proyecto.
+    console.log(miNombre);
+  #RETORNAR UN VALOR 
+    Las function pueden retornar un valor además de recibir valores con 
+    propiedades especiales para poder interactuar con el programa principal.
+    function sumar(a, b)
+    {
+      return a + b; // no lleva coma
+    }
+    //si nosotros llamamos a la function
+    sumar(5, 3); //no se muestra nada, para eso usamos
+    console.log(sumar(5, 3)); //resultado retorna 8
+  #UNDEFINED:
+    Así cómo podemos retornar un valor específico en una function con return, también 
+    podemos omitir esa sentencia  pero aun así la function va a retornar un valor por 
+    defecto, ese valor va a ser UNDEFINED. 
+    Si definimos una function que en vez de retornar el lugar de la suma lo vamos 
+    a mostrar en la consola.
+    function sumar(x, y)
+    {
+      Console.log(x + y);// no lleva coma
+      //sin return x + y; 
+    }
+    Como no estamos retornando ningún valor explícitamente 
+    console.log(5, 3); // vemos aquí UNDEFINED
+  #ASIGNAR UN VALOR RETORNANDO
+    Cuando una fuction retorna un valor podemos asignarle ese valor a una variable. EJ.
+    function sumar(a, b)
+    {
+      return a + b; // no lleva coma
+    }
+    var resultado = Sumar(5, 3); //resultado ahora vale 8
+    console.log(resultado); //se muestra 8
+    Otro ejemplo, podemos definir una function con una cadena de caracteres con nuestra meta. 
+    ¿Cuál va a ser nuestra meta? Vamos a retornar una cadena de caracteres 
+    function crearCadenaConMeta(lenguajeDeProgramacion)
+    {
+        return "Mi meta es aprender " + lenguajeDeProgramacion;
+    }
+    Si llamamos a la function y pasamos la cadena de caracteres “JavaScript” el parámetro va a tener 
+    ese valor cuando llamemos a la function y lo asignamos a una variable para su tratamiento 
+    var miMeta = crearCadenaConMeta("JavaScript");
+    console.log(miMeta); //resultado: Mi meta es aprender JavaScript
+  #Permanece en Fila
+    Vamos hacer una variación de una cola (queu) es una estructura de datos que nos va a permitir agregar 
+    elementos a una fila. Vamos a tener una estructura de datos abstracta, en la cual los elementos se 
+    mantienen en orden. Los nuevos elementos se pueden añadir al final de la cola y los elementos previos 
+    se retiran al principio de la cola. Vamos a definir una function que se llame próximo en la fila, esa 
+    function debe tomar un arreglo, que se va a llamar arreglo←ese va a ser el nombre del parámetro y va a 
+    tomar un número que se llamara →elemento ese va a ser el parámetro, ambos van a ser los argumentos. 
+    La tarea es agregar el numero al final del argumento  →arreglo. Y luego la function debe eliminar el 
+    primer elemento del arreglo. Es un ciclo vamos agregarlo al final y si se agrega un elemento significa 
+    que el primero debe ser eliminado. La function proximoEnLaFila(){ } debe retornar el elemento que fue 
+    removido. ¿Qué es lo primero que queremos hacer cuando llamamos a function? 
+    Agregar el el número al parámetro elemento al final del array con el método .push 
+    Luego que agregamos al parámetro del elemento en el array. Debemos eliminar el primer elemento con 
+    el método .shitf() no toma ningún argumento, los paréntesis vacíos. Y la parte final de lo que debe 
+    cumplir la function, es que debe retornar el elemento que fue removido. Recordemos que el método 
+    .shift también retorna ese elemento es ahí donde anteponemos return.
+    
+    function proximoEnLaFila(arreglo, elemento);
+    { 
+      arreglo.push(elemento); //agregar al final del array
+      return arreglo.shift(); //shift es el que va a remover  el primer elemento del array
+    } 
+    Definimos una variable
+    var miArreglo = [1, 2, 3, 4, 5,] 
+    
+    Queremos ver el estatus de nuestro arreglo antes de llamar a la function
+    console.log("Antes: " + JSON.stringify(miArreglo));
+    
+    Llamamos a la function, y el primer elemento que toma es el arreglo y ¿cuál argumento 
+    pasamos? →La variable miArreglo como argumento →se cambia a [1, 2, 3, 4, 5,] y luego 
+    que tenemos ese arreglo queremos agregar un elemento que será →6 El efecto de llamar
+    a esta function es que  se elimina el primer elemento →1 y se agrega el último elemento →6
+    [2, 3, 4, 5, 6]
+    
+    console.log(proximoEnLaFila(miArreglo, 6));// aquí realizamos el cambio 
+    
+    Luego de esto mostramos después de hacer el cambio
+    console.log("Después: " + JSON.stringify(miArreglo));
+
+
+
+
 
  */   
                               
@@ -400,18 +534,99 @@
   mostrarMensaje();
   mostrarMensaje();
   function sumar(a, b)
-    {
-      var suma = a + b;
-      console.log("El resultado de " + a + " + " + b + " es " + suma);	
-    }
-    sumar(5, 3) //resultado 8
-    sumar(57, 3);//resultado 60
-    sumar(31, 83);//resultado 114
-    sumar(11, 43);//resultado 54
+  {
+    var suma = a + b;
+    console.log("El resultado de " + a + " + " + b + " es " + suma);	
+  }
+  sumar(5, 3) //resultado 8
+  sumar(57, 3);//resultado 60
+  sumar(31, 83);//resultado 114
+  sumar(11, 43);//resultado 54
 
-    var x = 5; 
-    var y = 3; 
-    sumar(x, y);//resultado 8
+  var x = 5; 
+  var y = 3; 
+  sumar(x, y);//resultado 8
 
+  function concatenarTresCadenas(cadena1, cadena2, cadena3)
+  {
+    console.log(cadena1 + " " + cadena2 + " " + cadena3);
+  } 
+  concatenarTresCadenas("Estoy", "aprendiendo", "a programar"); 
+ //Resultado: Estoy aprendiendo a programar
+ 
+ //Ámbito Global:
+ miVariableGlobal = 5;// global esta definida fuera de la function 
+ console.log(miVariableGlobal);
+ function miFuncion()
+ {
+   console.log(miVariableGlobal);// se puede usar dentro de la function
+ }
+ miFuncion();//llamamos a la function 
+ console.log(miVariableGlobal);//vemos que si esta definida en la function
+ //AMBITO LOCAL: 
+ function miFunction()
+ {
+    var miVariableLocal =  4;
+    console.log(miVariableLocal);
+ }
+  //Vamos a llamar a la function para ver que esa variable si está definida
+  miFunction(); //resultado 4
+
+  //Ámbito Local vs Ámbito Global: 
+ var miNombre = "Nora"
+ function mostrarMiNombre()
+ {
+    var miNombre = "Ricardo";
+    console.log(miNombre);
+ }
+ mostrarMiNombre(); //resultado Ricardo
+ console.log(miNombre);//variable global resultado Nora
+
+ //RETORNAR UN VALOR:
+ function sumar(a, b)
+ {
+   return a + b; // no lleva coma
+ }
+ //si nosotros llamamos a la function
+ //sumar(5, 3); //no se muestra nada, para eso usamos
+ console.log(sumar(5, 3)); //resultado retorna 8
+
+ //UNDEFINED:
+ function sumando(x, y)
+ {
+    var x = 15
+    var y = 10
+    console.log(x + y);// no lleva coma
+   //sin return x + y; 
+ }
+ //Como no estamos retornando ningún valor explícitamente 
+ console.log(sumando(15, 10));// vemos aquí UNDEFINED 
+ 
+ //ASIGNAR UN VALOR RETORNANDO
+ //Cuando una function retorna un valor podemos asignarle ese valor a una variable
+ function sumar(a, b)
+ {
+   return a + b; // no lleva coma
+ }
+ resultado = sumar(15, 3); //resultado ahora vale 18
+ console.log(resultado);// se muestra 18
+ //Otro ejemplo con CdC
+ function crearCadenaConMeta(lenguajeDeProgramacion)
+ {
+    return "Mi meta es aprender " + lenguajeDeProgramacion;
+ }
+ var miMeta = crearCadenaConMeta("JavaScript");
+ console.log(miMeta);//resultado: Mi meta es aprender JavaScript
+ //Permanece en Fila:
+  function proximoEnLaFila(arreglo, elemento)
+ { 
+    arreglo.push(elemento); //agregar al final del arreglo
+    return arreglo.shift(); //shift remueve el primer elemento del array y retorna el elemento
+ } 
+  var miArreglo = [1, 2, 3, 4, 5,] //Definimos una variable
+  console.log("Antes: " + JSON.stringify(miArreglo));// se muestra antes
+  console.log(proximoEnLaFila(miArreglo, 6));// aquí realizamos el cambio 
+  console.log("Después: " + JSON.stringify(miArreglo));//mostramos después de hacer el cambio
+  //Resultado [2, 3, 4, 5, 6] 
 </script>
  
