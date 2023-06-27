@@ -344,7 +344,8 @@
     var miArreglo = [1, 2, 3, 4, 5,] 
     
     Queremos ver el estatus de nuestro arreglo antes de llamar a la function
-    console.log("Antes: " + JSON.stringify(miArreglo));
+    console.log("Antes: " + JSON.stringify(miArreglo)); Nota:JSON.stringify() es una 
+    funcion muy util que nos muestra los array en la consola en un formato espesifico   
     
     Llamamos a la function, y el primer elemento que toma es el arreglo y ¿cuál argumento 
     pasamos? →La variable miArreglo como argumento →se cambia a [1, 2, 3, 4, 5,] y luego 
@@ -356,13 +357,55 @@
     
     Luego de esto mostramos después de hacer el cambio
     console.log("Después: " + JSON.stringify(miArreglo));
+  #VALORES BOOLEANOS  
+        Verdadero            Falso 
+    console.log(true)  console.log(false)
+  #Operadores de igualdad
+   Esto que tenemos entre parentesis se denomina una exprecion, va a evaluar 
+   true o false
+   console.log(5 == 5) true / consol.loge(6 == 5) false
+   De igual forma podemos comparar cadenas de caracteres la comparacion tambien 
+   se hace en base de mayusculas o minusculas
+   console.log("Hola" == "Hola") true / console.log("Hola" == "hola")false
+   Es importante saber que no se deve comparar array con este operador
+   console.log([1,2,3]==[1,2,3]);//false 
+   El resultado va a ser false, ¿por que? porque 
+   no compara los elemento de los array sino que compara si los arreglos en la memoria 
+   representan el mismo objeto.
+  #Operador de igualdad estricta:
+   Este operador nos permite comparar si ambos tipos de datos son los mismos. 
+   Veamos la diferencia ente igualdad == e igualdad estricta. === 
+   console.log(9 == 9); // Resultado true
+   Pero si tenemos dos valores que son de distinto tipos de datos pero que representan
+   el mismo número, el resultado también va a ser true ¿Qué ocurre con este operador? 
+   antes de realizar la comparación. Ambos valores se convierten a un tipo de 
+   dato común, por eso es que el resultado nos dice true
+   console.log(9 == "9"); // Resultado true
+   Pero si queremos que la comparación también determine que el tipo de dato es 
+   el mismo o no, es ahí donde usamos el operador de igualdad estricta. 
+   console.log(9 === "9"); // Resultado es false
+  #Operador de desigualdad:
+   Este operador compara dos valores y retorna true si su valor es distinto y retorna
+   false si son iguales.
+   console.log(9 != 6)//Resultado true
+   console.log(9 != 9)//Resultado false
+   De igual manera sucede con cadena de caracteres, pero en el caso de los array 
+   Podemos intentar comparar array con este operador
+   console.log([1,2,3] != [1,2,3]);//Resultado es true 
+   pero no los va a comparar en base a sus elementos,  sino en base a como están 
+   representados como objetos en la memoria del dispositivo que es algo relacionado 
+   a como se almacenan en la memoria.
+  #Operador de desigualdad estricta: 
 
+ 
+
+  
 
 
 
 
  */   
-                              
+                           
  var a;
  var b = 2;
  console.log(a); // undefind
@@ -617,16 +660,34 @@
  }
  var miMeta = crearCadenaConMeta("JavaScript");
  console.log(miMeta);//resultado: Mi meta es aprender JavaScript
+ 
  //Permanece en Fila:
   function proximoEnLaFila(arreglo, elemento)
  { 
-    arreglo.push(elemento); //agregar al final del arreglo
-    return arreglo.shift(); //shift remueve el primer elemento del array y retorna el elemento
+    arreglo.push(elemento); //agregar al final del array un valor→6 
+    return arreglo.shift(); //shift remueve el primer elemento del array y retorna 
+    //el elemento que seria→1
  } 
   var miArreglo = [1, 2, 3, 4, 5,] //Definimos una variable
   console.log("Antes: " + JSON.stringify(miArreglo));// se muestra antes
   console.log(proximoEnLaFila(miArreglo, 6));// aquí realizamos el cambio 
   console.log("Después: " + JSON.stringify(miArreglo));//mostramos después de hacer el cambio
   //Resultado [2, 3, 4, 5, 6] 
+  //BOOLEANOS
+  console.log(true) //VERDADERO  
+  console.log(false)//FALSO
+  
+  //Operadores de igualdad: numero y cadenas
+  console.log(5 == 5); //resultado→true
+  console.log("Hola" == "Hola")// true  
+  console.log("Hola" == "hola")//false
+  console.log([1,2,3]==[1,2,3]);//No compara array, el resultado va a ser false
+ 
+ //Operador de igualdad estricta:
+ console.log(9 === "9"); // Resultado es false
+ //Operador de desigualdad:
+ console.log(9 != 6)//Resultado true
+ console.log(9 != 9)//Resultado false
+ console.log([1,2,3] != [1,2,3]);//Resultado es true , no compara el contenido
 </script>
  
