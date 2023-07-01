@@ -395,15 +395,111 @@
    pero no los va a comparar en base a sus elementos,  sino en base a como están 
    representados como objetos en la memoria del dispositivo que es algo relacionado 
    a como se almacenan en la memoria.
-  #Operador de desigualdad estricta: 
-
- 
-
+  #Operador de desigualdad estricta:
+   En el tema anterior con el operador de desigualdad si nosotros comparábamos 
+   si los siguientes valores (1 != "1"); eran distinto, el resultado sería false 
+   porque != ← este operador convierte ambos valores a un tipo de datos común antes 
+   de hacer la comparación y detecta que ambos números son iguales. 
+   Pero que ocurre con  el operador  !== ← de desigualdad estricta (1 !== "1"); ahora 
+   el resultado sería→ true porque también está comparando si ambos valores son 
+   del mismo tipo de datos, no lo convierte a un tipo de dato común.
+   console.log(1 != "1");// true esta mal 
+   console.log(1 != "1");// false esta bien
+  # Operador mayor que: 
+    En javaScipt además de comparar valore si son iguales o diferentes también podemos 
+    comparar el valor relativo de los valores. Si un valor es mayor o menor que, el 
+    otro o menor igual o mayor igual.
+    Operador mayor que > Digamos que queremos saber si (6 > 5); ←true (3 > 10); ←false
+    También podemos comparar cadena de caracteres. El criterio con que JavaScript 
+    compara las cadenas de caracteres es según el orden alfabético. 
+    ("B" > "A");true ←Estamos diciendo que si la letra “B” es mayor que la letra “A” 
+    según el orden alfabético como estamos usando este operador mayor que > Cuando 
+    aplicamos a cadena actúa como si estuviera más allá adentro del diccionario.
+    Si tuviéramos otra cadena console.log("A,C,B" > "A","B","C"); //true ←
+    Como javascript compara esta cadena. Compara cada uno de los caracteres en su 
+    secuencia. A = A / C = B compara C viene después que B SI. Ahí se determina el 
+    orden de la cadena porque el primer par de caracteres desiguale que encuentra
+    y compara define el resultado, de manera tal que es true. 
+    Si una cadena tiene más caracteres que otra verificamos→ ("AB" > "A");true←         
+    porque tiene más caracteres. Por orden alfabético también podemos comparar palabras  
+    ("Mundo" > "Hola");true← Por orden alfabético M viene después que la letra H  en 
+    el alfabeto asi a modo de ejemplo comparamos ("M" > "H");true← Otro dato 
+    interesante es que podemos usar estos datos de comparación con variables. 
+    var az = 15; /  var by = 8;
+    console.log(az > by);//true /  console.log(by > az);//false
+  #Mayor o igual que:
+   Este operador >= nos permite incluir el caso en que ambos valores sea iguales,
+   (5 > 5); //false (5 >= 5); //true En el caso de cadenas de caracteres también 
+   aplica cuando las cadena sean iguales el valor va a ser true
+   Menor que: Este operador < nos permite verificar (5 < 6); //true, si el número a la 
+   izquierda es mayor (10 < 8);//false. También se puede usar para cadena de caracteres
+   siempre la comparación de cadena será por orden alfabético ("A" < "B");true porque 
+   A esta antes que B en el alfabeto. En este ejemplo ("A ,C, B" > "A","B","C");//true← 
+   el proceso va a ser igual que en ejemplos anteriores. Tambien podemos comparar los 
+   valores de variable. 
+  #Operador menor o igual que: basicamente funciona igual que menor que <  
+   (5 < 5); //false / (5 >= 5); //true.
+  #Operadores lógicos "and" Estos operadores lógicos nos permiten expresar distintas 
+  expresiones para formar condiciones un poco más elaboradas o más complejas
+   Tabla de verdad de operador Y→AND←→&&←en JS se expresa con &&
+   | x | z | x && Z |tenemos dos expresiones x y z y los unimos x && z
+   | ↓   ↓     ↓    | 
+   ├----------------┤
+   | ↓   ↓     ↓    |
+   | T | T |   T    |Si x es true y z es true toda esa expresión es true
+   | T | F |   F    |En cambio si alguno de ellos es false o ambos 
+   | F | T |   F    |entonces la expresión va a ser 
+   | F | F |   F    |←false
+   La operación solo es verdadera cuando ambos operadores son verdaderos.
   
+   #Operador logico "or"
+   Tabla de verdad del operador O→OR←→||←en JS se expresa con ||
+   | x | z | x && Z |tenemos dos expresiones x y z y los unimos x || z
+   | ↓   ↓     ↓    | 
+   ├----------------┤
+   | ↓   ↓     ↓    |En el operador OR si cualquiera de los operandos es true entonses
+   | T | T |   T    |el resultado es verdadero
+   | T | F |   T    |←true 
+   | F | T |   T    |←true
+   | F | F |   F    |←false
+   La operación solo es verdadera si alguno de los dos operandos o ambos son true
 
-
-
-
+  #Operador logico "not" 
+   Tabla de verdad del operador NO→NOT←→!←en JS se expresa con !
+   Para: !x 
+   | x | !x| 
+   | ↓   ↓ |     
+   ├-------┤
+   | ↓   ↓ |  
+   | T | F | Si la expresión es true agregando el operador not la convertimos en false  
+   | F | T |Si la expresión es false agregando el operador not la convertimos en true
+ 
+  #Setencias Condicionales:
+  Las condiciónale determinan que rumbo va a continuar nuestro código, en el caso de 
+  (if) o si en español siguiendo el ejemplo seria if(condición la cual si es verdadera)
+  {ejecutara lo que esta ente las llaves} o cuerpo de la condicional. 
+  También se pueden usar los operadores lógicos→ && || !← para condiciones 
+  más elaboradas.
+  var cond = 5
+  if (cond > 2) // la condición se cumple
+  {
+    console.log("La condición es verdadera"); // ejecuta el código
+  }
+  if((cond > 2) && (cond < 10)); //condiciones mas complejas
+  {
+    console.log("La condición es verdadera"); // ejecuta el codigo
+  }
+  var estación = "invierno"
+  if(estación == "invierno")// la condición se cumple
+  {
+    console.log("¡Si! Me encanta el invierno");// ejecuta el código
+  } 
+  if (cond < 2) // la condición NO se cumple
+  {
+    console.log("La condición es verdadera"); // NO ejecuta el código
+  }
+    console.log("La condición no es verdadera"); // Continua la ejecución saltando el if
+  #Clausula  “else”
  */   
                            
  var a;
@@ -689,5 +785,41 @@
  console.log(9 != 6)//Resultado true
  console.log(9 != 9)//Resultado false
  console.log([1,2,3] != [1,2,3]);//Resultado es true , no compara el contenido
+ 
+ //Operador de desigualdad estricta:
+ console.log(1 != "1");// true esta mal 
+ console.log(1 !== "1");// false esta bien
+ 
+ console.log("B" > "A");//true
+ console.log("A, C, B" > "A, B, C");//true
+ console.log("AB" > "A");//true
+ console.log("Mundo" > "Hola");//true
+ console.log("M" > "H");//true
+ var az = 15;
+ var by = 8;
+ console.log(az > by);//true
+ console.log(by > az);//false
+ 
+ //Setencias Condicionales:
+ var cond = 5
+ if (cond > 2) // la condicion se cumple
+ {
+    console.log("La condición es verdadera"); // ejecuta el codigo
+ }
+ if((cond > 2) && (cond < 10)); //condiciones mas complejas
+ {
+  console.log("La condición es verdadera"); // ejecuta el codigo
+ }
+ var estación = "invierno"
+ if(estación == "invierno")// la condicion se cumple
+{
+console.log("¡Si! Me encanta el invierno");// ejecuta el codigo
+} 
+if (cond < 2) // la condicion NO se cumple
+ {
+    console.log("La condición es verdadera"); // NO ejecuta el codigo
+ }
+ console.log("La condición no es verdadera"); // Continua la ejecucion saltando el if
+
 </script>
  
