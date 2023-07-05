@@ -11,7 +11,7 @@
   console.log(miVariable);
   var miVariable = 16; // Numerical
   console.log(miVariable);
- /*
+  /*
   #La asignación de las variable dependerá del uso que se
       le darán en el desarrollo del proyecto. Se usara la convencion (camellCase),
       se inicia la variable con la primera letra en minuscula y la palabra sigiente sin
@@ -92,7 +92,7 @@
       resultado→ El perro negro corrio rapidamente a la tienda
   #Siguiente tema: Arreglos (Arrays) Los arrays son estructura de datos que 
       nos permiten agregar múltiples valores en una misma estructura, 
-      a diferencia de las cadenas de la caracteres que son Inmutabes, 
+      a diferencia de las cadenas de los caracteres que son Inmutabes, 
       cabe destacar que los arrays si se pueden modificar sus indices 
       los array son mutables. 
   #Para crear un arrays escribimos corchetes [] y dentro de los corchetes 
@@ -271,8 +271,8 @@
         var miNombre = "Ricardo";
         console.log(miNombre);
     }
-    Cuando intentamos verificar la variable llamando la function, vemos que predomina la 
-    v/local sobre la v/global
+    Cuando intentamos verificar la variable llamando la function, vemos que predomina 
+    la variable local sobre la variable global
     mostrarMiNombre(); //resultado Ricardo
     Pero si tratamos de mostrar la variable global en el programa, lo podemos hacer
     y la podemos usar en cualquier lugar del proyecto.
@@ -312,7 +312,7 @@
     ¿Cuál va a ser nuestra meta? Vamos a retornar una cadena de caracteres 
     function crearCadenaConMeta(lenguajeDeProgramacion)
     {
-        return "Mi meta es aprender " + lenguajeDeProgramacion;
+      return "Mi meta es aprender " + lenguajeDeProgramacion;
     }
     Si llamamos a la function y pasamos la cadena de caracteres “JavaScript” el parámetro va a tener 
     ese valor cuando llamemos a la function y lo asignamos a una variable para su tratamiento 
@@ -440,7 +440,7 @@
   #Operador menor o igual que: basicamente funciona igual que menor que <  
    (5 < 5); //false / (5 >= 5); //true.
   #Operadores lógicos "and" Estos operadores lógicos nos permiten expresar distintas 
-  expresiones para formar condiciones un poco más elaboradas o más complejas
+   expresiones para formar condiciones un poco más elaboradas o más complejas
    Tabla de verdad de operador Y→AND←→&&←en JS se expresa con &&
    | x | z | x && Z |tenemos dos expresiones x y z y los unimos x && z
    | ↓   ↓     ↓    | 
@@ -452,7 +452,7 @@
    | F | F |   F    |←false
    La operación solo es verdadera cuando ambos operadores son verdaderos.
   
-   #Operador logico "or"
+  #Operador logico "or"
    Tabla de verdad del operador O→OR←→||←en JS se expresa con ||
    | x | z | x && Z |tenemos dos expresiones x y z y los unimos x || z
    | ↓   ↓     ↓    | 
@@ -475,33 +475,368 @@
    | F | T |Si la expresión es false agregando el operador not la convertimos en true
  
   #Setencias Condicionales:
-  Las condiciónale determinan que rumbo va a continuar nuestro código, en el caso de 
-  (if) o si en español siguiendo el ejemplo seria if(condición la cual si es verdadera)
-  {ejecutara lo que esta ente las llaves} o cuerpo de la condicional. 
-  También se pueden usar los operadores lógicos→ && || !← para condiciones 
-  más elaboradas.
-  var cond = 5
-  if (cond > 2) // la condición se cumple
-  {
+    Las condiciónale determinan que rumbo va a continuar nuestro código, en el caso de 
+   (if) o si en español siguiendo el ejemplo seria if(condición la cual si es verdadera)
+   {ejecutara lo que esta ente las llaves} o cuerpo de la condicional. 
+   También se pueden usar los operadores lógicos→ && || !← para condiciones 
+   más elaboradas.
+   var cond = 5
+   if (cond > 2) // la condición se cumple
+   {
     console.log("La condición es verdadera"); // ejecuta el código
-  }
-  if((cond > 2) && (cond < 10)); //condiciones mas complejas
-  {
+   }
+   if((cond > 2) && (cond < 10)); //condiciones mas complejas
+   {
     console.log("La condición es verdadera"); // ejecuta el codigo
-  }
-  var estación = "invierno"
-  if(estación == "invierno")// la condición se cumple
-  {
+   }
+   var estación = "invierno"
+   if(estación == "invierno")// la condición se cumple
+   {
     console.log("¡Si! Me encanta el invierno");// ejecuta el código
-  } 
-  if (cond < 2) // la condición NO se cumple
-  {
+   } 
+   if (cond < 2) // la condición NO se cumple
+   {
     console.log("La condición es verdadera"); // NO ejecuta el código
-  }
+   }
     console.log("La condición no es verdadera"); // Continua la ejecución saltando el if
   #Clausula  “else”
- */   
-                           
+   También podemos expandir nuestras condicionales si la condición de la condicional es false            
+   if (false)
+   {
+      console.log("si la condición es true se ejecuta este código");
+   } 
+   else
+   {
+      console.log("La condición es false ignora el if y se ejecuta else con este código");
+   }
+  #Clausula else if
+   Los condicionales también pueden verificar  y manejar varias condiciones, con la 
+   cláusula else if que  nos permite manejar exactamente eso→manejar condiciones 
+   alternativa y decidir por la primera condición que encuentre y sea verdadera→ true. 
+   Para el ejemplo es conveniente trabajar con funciones:Esta funcion va a tomar un 
+   valor como un parametro y va a determinar si el valor es dibicible entre 2 o 3 
+   o si no es divicible entre ninguno.
+   function clasificarValor(valor)
+   {
+      if(valor % 2 == 0)//genera un resto igual a cero es true
+      {
+        console.log("Divisible entre 2");
+      } 
+        else if(valor % 3 == 0)
+      {
+        console.log("Divisible entre 3");
+      }  
+      else 
+      {
+        console.log("NO es divisible entre las opciones");
+      } 
+    }
+  #Condicionales Orden logico, se llama a la function y se ejecuta segun el caso  
+    clasificarValor(2) //caso 1 se ejecuta por que es el primer true que encuentra
+    clasificarValor(15)//caso 2 se ejecuta por que caso 1 es false
+    clasificarValor(7) //caso 3 se ejecuta por que caso 1 y 2 son false
+    var elcasoUno = "caso 1 se ejecuta por que es el primer true que encuentra"
+    var elCasoDos = "caso 2 se ejecuta por que caso 1 es false"
+    var elCasoTres = "caso 3 se ejecuta por que caso 1 y 2 son false"
+    console.log(elcasoUno); 
+    console.log(elCasoDos); 
+    console.log(elCasoTres);
+  #Encadenar sentencias "if else"
+    Vamos a ver un ejemplo con dos clausulas else if creando una funcion
+    function interpretarIMC(indiceDeMasaCorporal)
+    {
+      if(indiceDeMasaCorporal < 18.5)
+      {
+        console.log("Bajo peso");
+      }
+      else if(indiceDeMasaCorporal <= 24.9 )
+      {
+        console.log("peso Normal");
+      }
+      else if(indiceDeMasaCorporal <= 29.9)
+      {
+        console.log("Sobrepeso");
+      }
+      else
+      {
+        console.log("Obeso"); 
+      }
+    } 
+    interpretarIMC(17.8);//caso 1 se ejecuta por que es el primer true que encuentra
+    interpretarIMC(22.2);//caso 2 se ejecuta por que caso 1 es false
+    interpretarIMC(28.5);//caso 3 se ejecuta por que caso 1 caso 2 es false
+    interpretarIMC(32.2);//caso 4 se ejecuta por que no encuentra ningun true
+    var casoIF = "Caso 1 se ejecuta por que es el primer true que encuentra"
+    var casoPrimerElseIf = "Caso 2 se ejecuta por que caso 1 es false"
+    var casoSegundoElseIf = "Caso 3 se ejecuta por que caso 1 caso 2 es false"
+    var casoElse = "Caso 4 se ejecuta por que no encuentra ningun true"
+    console.log(casiIF); 
+    console.log(casoPrimerElseIf); 
+    console.log(casoSegundoElseIf);
+    console.log(casoElse)
+  #Codigo de golf
+    Definimos una funcion que va a llevar como parametro→par que es el numero 
+    promedio de gopes esperados y→golpes que es el numero de golpes ejecutados.
+    para prosegir con este mini proyecto deberemos usar condicionales para implementar
+    esta tabla.
+    Golpes              Retornar
+    ---------------------------------
+    1                 "Hole-in-one!"
+    <= par - 2        "Eagle"
+    par - 1           "Birdie" 
+    par               "Par" 
+    par + 1           "Bogey"
+    par + 2           "Doble Bogey"
+    >= par + 3        "Go Home!"
+    Nota: par y golpes siempre seran numericos y positivos, el parametro par es→4                         
+    function PuntageDeGolf(par, golpes)
+    {
+      if(golpes == 1)
+      {
+        return "Hole-in-one!";     
+      } 
+      else if(golpes <= par - 2)
+      {
+        return "Eagle";
+      }
+      else if(golpes == par - 1)
+      {
+        return "Birdie";  
+      }
+      else if(golpes == par) 
+      {
+        return "Par";  
+      }
+      else if(golpes == par + 1) 
+      {
+        return "Bogey";  
+      }
+      else if(golpes == par + 2) 
+      {
+        return "Double Bogey";  
+      }
+      else if(>= par + 3)        
+      {
+        return "Go Home!";
+      }
+    }
+    console.log(puntajeDeGolf(4, 1));//par 4 retorna 1 se muestra  "Hole-in-one!"
+    console.log(puntajeDeGolf(4, 2));//par 4 <= par -2 retorna 2 se muestra  "Eagle" 
+    console.log(puntajeDeGolf(4, 3));//par 4 par -1 retorna 3 se muestra  "Birdie"
+    console.log(puntajeDeGolf(4, 4));//par 4 par retorna 4 se muestra  "Par"
+    console.log(puntajeDeGolf(4, 5));//par 4 par +1 retorna 5 se muestra  "Bogey"
+    console.log(puntajeDeGolf(4, 6));//par 4 par +2 retorna 6 se muestra "Doble Bogey"
+    console.log(puntajeDeGolf(4, 8));//par 4 >= par +3 retorna 7 se muestra "Go Home!"
+     
+  #Sentencia Switch:
+    Ahora vamos a ver otra estructura que en cierta forma remplaza los condicionales en JS
+    Definimos una función con un parámetro →valor,  este parámetro va a ser un numero entre 
+    1 y 4 cada uno de esos valores va a estar asociados a una cadena específica. A una cadena 
+    de caracteres, la función va a retornar esa clasificación, esa cadena a partir del numero en
+    lugar de condicionales vamos a usar la sentencia switch que nos permite escribir código 
+    que es muy similar a una condicional. Pero swifch nos permite a partir de un valor decidir 
+    que va a pasar en base a ese valor. Nota: para no entrar en un bucle infinito siempre se 
+    finalisa con la sentencia→ break;
+    function clasificarValor(valor)
+    {
+      var respuesta;//variable local
+      switch (valor)
+      {
+        case 1:
+          respuesta = "alpha";
+          break;//siempre se finalisa con break;  
+        case 2:
+          respuesta = "beta";
+          break;
+        case 3:
+          respuesta = "gamma";
+          break;
+        case 4:
+          respuesta = "delta";
+          break;      
+      } 
+      return respuesta;
+    } 
+    Y finalmente vamos a retornar el valor→ respuesta. return se coloca fuera de las llaves 
+    del switch por que no es parte del bloque swich. Finalmente llamamos a la función para 
+    pasarle los valore, que podemos asignarle a una variable o para mostrarlo en pantalla
+    console.loc(clasificarValor(1));
+    console.loc(clasificarValor(2));
+    console.loc(clasificarValor(3));
+    console.loc(clasificarValor(4));
+  #Ahora vamos a usar switch con una cadena de caracteres solo declarando una variable 
+    var producto = "helado"
+    switch (producto)
+    {
+      case  "pizza":
+        console.log("La pizza basica cuesta $550");
+        break;
+      case "hambueguesa":
+        console.log("Las hamburguesas cuestan $250");
+        break;
+      case "helado":
+        console.log("El helado cuesta $95");
+        break;       
+      }
+      //Como la variable valor se asigno "helado" se muestra→ ("El helado cuesta $95")
+    }
+    console.log("Luego del switch continua ejecutando el codigo");
+  
+  #Sentencia Switch opción predeterminada
+   También podemos agregar una opción predeterminada a la sentencia switch que es el 
+   equivalente a else en una condicional if. Esa opción se va a ejecutar si ningunos de 
+   los valores es el valor de la variable o de la expresión. Esta función va a seleccionar 
+   el idioma que corresponda a un valor espesifico. 
+   function seleccionarIdioma(valor)
+   {
+      var idioma;
+      switch(valor)//dentro de la sentencia agregamos el parametro
+      {
+        case 1: 
+          idioma = "Español";
+        break;
+        case 2: 
+          idioma = "Frances";
+          break;
+        case 3: 
+          idioma = "Italiano";
+          break;  
+        default:
+          idioma = "Ingles";
+          break;// es opcional pero por norma lo usamos
+      } 
+      return idioma;
+   }
+   console.log(seleccionarIdioma(1));//valor=1 se ejecuta caso1 var idioma es "Español"
+   console.log(seleccionarIdioma(2));//valor=2 se ejecuta caso2 var idioma es "Frances"
+   console.log(seleccionarIdioma(4));//se ejecuta por defecto var es "Ingles" 
+
+  #Sentencia switch multiples casos:
+   En las sentencias switch también podemos optar ejecutar un código específico para varios 
+   valores vamos a tener números entre 1 y 6 que van a representar los valores en el dispositivo. 
+   El parámetro se va a llamar valor, el parámetro que va a representar el volumen que va ser 
+   una cadena de caracteres que va a definir la intensidad del volumen. Para eso usaremos la 
+   sentencia switch , esa sentencia va a depender del valor del parámetro. Pero si queremos 
+   que el volumen intermedio sea el caso 2 o el 3, lo podemos hacer dentro de un solo break dos
+   valores pueden realizar la misma acción. También podemos tener más de dos casos manejado de 
+   la misma forma caso 4, 5 y 6 y si es valor esta fuera de rango, digamos 7 se ejecuta por defecto
+   function clacificarVolumen(valor)
+   {
+      var volumen; 
+      switch(valor)
+      {
+        case 1:
+          volumen = "Bajo";
+        break;
+        case 2:
+        case 3:
+          volumen = "Intermedio";
+        break;
+        case 4:
+        case 5:
+        case 6:    
+          volumen = "Alto";
+        break;
+        default:
+          volumen = "Sin volumen";
+        break; 
+      }
+      return volumen; 
+   } 
+   console.log(clacificarVolumen(1));//valor=1 se ejecuta caso1 var volumen "Bajo"
+   console.log(clacificarVolumen(2));//valor=2 se ejecuta caso2,3 var volumen "Intermedio"
+   console.log(clacificarVolumen(4));//valor=4 se ejecuta caso4,5,6 var volumen "Alto"
+   console.log(clacificarVolumen(7));//valor=7 se ejecuta default var volumen "Sin volumen"      
+   
+  #Reemplazar “if… else” por  “switch” 
+   En ciertos casos podemos remplazar condicionales con la sentencia switch en el ejemplo 
+   vemos que el nombre de la función y el parámetro al igual que la variable no cambian 
+   y en el final el retorno el mismo.  
+   function seleccionarIdioma(valor)
+   {
+      var idioma;
+      switch(valor)                 if(valor == 1 
+      {                             {
+        case 1:                       idioma = “Español”; 
+          idioma = "Español";       }  
+        break;                      else if (valor == 2)                                  
+        case 2:                     {                
+          idioma = "Frances";         idioma = "Frances";
+          break;                    }  
+        case 3:                     else if(valor == 3)        
+          idioma = "Italiano";      {    
+          break;                      idioma = "Italiano"; 
+        default:                    }
+          idioma = "Ingles";        else
+          break;                    {
+      }                               idioma  = “ingles”;                            
+      return idioma;                } 
+   } 
+  #Retornar valores Vooleanos:
+   Como retornar valores booleano de una forma muy concisa desde una función, inicialmente 
+   lo podíamos iniciar con un condicional que funciona y va a cumplir su propósito pero lo 
+   mismo lo podemos hacer en una sola línea simplemente retornar el valor de una comparación.
+   →return a < b; ←nota la diferencia de lo conciso que es en comparación de usar condicional
+   function esMenorQue(a, b)
+   {
+     If(a < b)
+     {
+       return  true;
+     }
+     Else 
+     {
+       return false;
+     }
+  }
+  function esMenorQue(a, b)
+  {
+    return a < b;
+  }
+  console.log(esMenorQue(3, 6))
+
+#Patrón  de retorno anticipado
+  Cuando retornamos el valor de una función, en ese momento que retornamos el valor la función 
+  se detiene completamente. Cualquier línea que esta luego del return no se va a ejecutar. 
+  En el ejemplo vamos a intentar mostrar otro mensaje después de return→Esa línea nunca se va a 
+  ejecutar y la función se detiene en el return. Eso es algo importante porque ese patrón 
+  anticipado es muy útil, específicamente cuando necesitamos detener la función.
+  function miFuncion()
+  {
+    console.log("Hola")
+    return "Mundo";
+    console.log("Adios");//unreachable code detecte (7027) ←codigo inalcansable detectado
+  }
+  console.log(miFuncion());
+   
+  function raizCuadrada(num)
+  {
+    if(num < 0)
+    {
+      return undefined
+    }
+  }
+#Patron de valor anticipado
+  A continuación en este ejemplo definimos una función y le damos un parámetro→ num, la raíz 
+  cuadrada de un número negativo no existe, así  que si esa condición es verdadera num<0 no 
+  podemos calcular la raíz cuadrada. En ese caso lo que hacemos es detener la función y 
+  retornamos un valor que sería→ udefefined En el caso de que el valor sea valido→ num>0. 
+  Digamos que pasamos 25, la condición del if no se cumple la raíz cuadrada seria 5 
+  pero si pasamos un numero negativo la condición if es true y se ejecuta retrun undefined
+  function raizCuadrada(num)
+  {
+    if(num < 0)//num no es menor que 0 y el resultado es 5 pero si pasamos -5 ahi entra al if
+    // y se ejecuta return undefined
+    {
+      return undefined//aqui se detiene la funcion si la condicion es true
+    }
+    return Math.sqrt(num);//el parametro num calculamos la raiz cuadrada  
+  }
+  console.log(raizCuadrada(25));//pasamos a num el valor 25 que nos devueve su raiz 5
+  console.log(raizCuadrada(-5))//pasamos a num el valor -5 que nos devueve undefined
+
+
+
+  */                         
  var a;
  var b = 2;
  console.log(a); // undefind
@@ -691,79 +1026,79 @@
     console.log(cadena1 + " " + cadena2 + " " + cadena3);
   } 
   concatenarTresCadenas("Estoy", "aprendiendo", "a programar"); 
- //Resultado: Estoy aprendiendo a programar
+  //Resultado: Estoy aprendiendo a programar
  
- //Ámbito Global:
- miVariableGlobal = 5;// global esta definida fuera de la function 
- console.log(miVariableGlobal);
- function miFuncion()
- {
-   console.log(miVariableGlobal);// se puede usar dentro de la function
- }
- miFuncion();//llamamos a la function 
- console.log(miVariableGlobal);//vemos que si esta definida en la function
- //AMBITO LOCAL: 
- function miFunction()
- {
+  //Ámbito Global:
+  miVariableGlobal = 5;// global esta definida fuera de la function 
+  console.log(miVariableGlobal);
+  function miFuncion()
+  {
+    console.log(miVariableGlobal);// se puede usar dentro de la function
+  }
+  miFuncion();//llamamos a la function 
+  console.log(miVariableGlobal);//vemos que si esta definida en la function
+  //AMBITO LOCAL: 
+  function miFunction()
+  {
     var miVariableLocal =  4;
     console.log(miVariableLocal);
- }
+  }
   //Vamos a llamar a la function para ver que esa variable si está definida
   miFunction(); //resultado 4
 
   //Ámbito Local vs Ámbito Global: 
- var miNombre = "Nora"
- function mostrarMiNombre()
- {
+  var miNombre = "Nora"
+  function mostrarMiNombre()
+  {
     var miNombre = "Ricardo";
     console.log(miNombre);
- }
- mostrarMiNombre(); //resultado Ricardo
- console.log(miNombre);//variable global resultado Nora
+  }
+  mostrarMiNombre(); //resultado Ricardo
+  console.log(miNombre);//variable global resultado Nora
 
- //RETORNAR UN VALOR:
- function sumar(a, b)
- {
-   return a + b; // no lleva coma
- }
- //si nosotros llamamos a la function
- //sumar(5, 3); //no se muestra nada, para eso usamos
- console.log(sumar(5, 3)); //resultado retorna 8
+  //RETORNAR UN VALOR:
+  function sumar(a, b)
+  {
+    return a + b; // no lleva coma
+  }
+  //si nosotros llamamos a la function
+  //sumar(5, 3); //no se muestra nada, para eso usamos
+  console.log(sumar(5, 3)); //resultado retorna 8
 
- //UNDEFINED:
- function sumando(x, y)
- {
+  //UNDEFINED:
+  function sumando(x, y)
+  {
     var x = 15
     var y = 10
     console.log(x + y);// no lleva coma
-   //sin return x + y; 
- }
- //Como no estamos retornando ningún valor explícitamente 
- console.log(sumando(15, 10));// vemos aquí UNDEFINED 
+    //sin return x + y; 
+  }
+  //Como no estamos retornando ningún valor explícitamente 
+  console.log(sumando(15, 10));// vemos aquí UNDEFINED 
  
- //ASIGNAR UN VALOR RETORNANDO
- //Cuando una function retorna un valor podemos asignarle ese valor a una variable
- function sumar(a, b)
- {
+  //ASIGNAR UN VALOR RETORNANDO
+  //Cuando una function retorna un valor podemos asignarle ese valor a una variable
+  function sumar(a, b)
+  {
    return a + b; // no lleva coma
- }
- resultado = sumar(15, 3); //resultado ahora vale 18
- console.log(resultado);// se muestra 18
- //Otro ejemplo con CdC
- function crearCadenaConMeta(lenguajeDeProgramacion)
- {
+  }
+  resultado = sumar(15, 3); //resultado ahora vale 18
+  console.log(resultado);// se muestra 18
+  //Otro ejemplo con CdC
+  function crearCadenaConMeta(lenguajeDeProgramacion)
+  {
     return "Mi meta es aprender " + lenguajeDeProgramacion;
- }
- var miMeta = crearCadenaConMeta("JavaScript");
- console.log(miMeta);//resultado: Mi meta es aprender JavaScript
+  }
+  var miMeta = crearCadenaConMeta("JavaScript");
+  console.log(miMeta);//resultado: Mi meta es aprender JavaScript
  
- //Permanece en Fila:
+  //Permanece en Fila:
   function proximoEnLaFila(arreglo, elemento)
- { 
+  { 
     arreglo.push(elemento); //agregar al final del array un valor→6 
     return arreglo.shift(); //shift remueve el primer elemento del array y retorna 
     //el elemento que seria→1
- } 
+  } 
   var miArreglo = [1, 2, 3, 4, 5,] //Definimos una variable
   console.log("Antes: " + JSON.stringify(miArreglo));// se muestra antes
   console.log(proximoEnLaFila(miArreglo, 6));// aquí realizamos el cambio 
@@ -779,47 +1114,276 @@
   console.log("Hola" == "hola")//false
   console.log([1,2,3]==[1,2,3]);//No compara array, el resultado va a ser false
  
- //Operador de igualdad estricta:
- console.log(9 === "9"); // Resultado es false
- //Operador de desigualdad:
- console.log(9 != 6)//Resultado true
- console.log(9 != 9)//Resultado false
- console.log([1,2,3] != [1,2,3]);//Resultado es true , no compara el contenido
+  //Operador de igualdad estricta:
+  console.log(9 === "9"); // Resultado es false
+  //Operador de desigualdad:
+  console.log(9 != 6)//Resultado true
+  console.log(9 != 9)//Resultado false
+  console.log([1,2,3] != [1,2,3]);//Resultado es true , no compara el contenido
  
- //Operador de desigualdad estricta:
- console.log(1 != "1");// true esta mal 
- console.log(1 !== "1");// false esta bien
+  //Operador de desigualdad estricta:
+  console.log(1 != "1");// true esta mal 
+  console.log(1 !== "1");// false esta bien
  
- console.log("B" > "A");//true
- console.log("A, C, B" > "A, B, C");//true
- console.log("AB" > "A");//true
- console.log("Mundo" > "Hola");//true
- console.log("M" > "H");//true
- var az = 15;
- var by = 8;
- console.log(az > by);//true
- console.log(by > az);//false
+  console.log("B" > "A");//true
+  console.log("A, C, B" > "A, B, C");//true
+  console.log("AB" > "A");//true
+  console.log("Mundo" > "Hola");//true
+  console.log("M" > "H");//true
+  var az = 15;
+  var by = 8;
+  console.log(az > by);//true
+  console.log(by > az);//false
  
- //Setencias Condicionales:
- var cond = 5
- if (cond > 2) // la condicion se cumple
- {
+  //Setencias Condicionales:
+  var cond = 5
+  if (cond > 2) // la condicion se cumple
+  {
     console.log("La condición es verdadera"); // ejecuta el codigo
- }
- if((cond > 2) && (cond < 10)); //condiciones mas complejas
- {
+  }
+  if((cond > 2) && (cond < 10)); //condiciones mas complejas
+  {
   console.log("La condición es verdadera"); // ejecuta el codigo
- }
- var estación = "invierno"
- if(estación == "invierno")// la condicion se cumple
-{
-console.log("¡Si! Me encanta el invierno");// ejecuta el codigo
-} 
-if (cond < 2) // la condicion NO se cumple
- {
+  }
+  var estación = "invierno"
+  if(estación == "invierno")// la condicion se cumple
+  {
+    console.log("¡Si! Me encanta el invierno");// ejecuta el codigo
+  } 
+  if (cond < 2) // la condicion NO se cumple
+  {
     console.log("La condición es verdadera"); // NO ejecuta el codigo
- }
- console.log("La condición no es verdadera"); // Continua la ejecucion saltando el if
+  }
+  console.log("La condición no es verdadera"); // Continua la ejecucion saltando el if
+  //Clausula  “else”
+  if (false)
+  {
+    console.log("si la condición es true se ejecuta este código");
+  } 
+  else
+  {
+    console.log("La condición es false ignora el if y se ejecuta else con este código");
+  }
+  //Clausula else if
+  function clasificarValor(valor)
+  {
+    if(valor % 2 == 0)//genera un resto igual a cero es true
+    {
+      console.log("Divisible entre 2");
+    } 
+    else if(valor % 3 == 0)
+    {
+      console.log("Divisible entre 3");
+    }
+    else 
+    {
+      console.log("NO es divisible entre las opciones");
+    } 
+  }
+  clasificarValor(2)
+  clasificarValor(15)
+  clasificarValor(7)
+  var elcasoUno = "caso 1 se ejecuta por que es el primer true que encuentra"
+  var elCasoDos = "caso 2 se ejecuta por que caso 1 es false"
+  var elCasoTres = "caso 3 se ejecuta por que caso 1 y 2 son false"
+  console.log(elcasoUno); 
+  console.log(elCasoDos); 
+  console.log(elCasoTres);
+  //Condicionales Orden logico 
+  function interpretarIMC(indiceDeMasaCorporal)
+  {
+    if(indiceDeMasaCorporal < 18.5)
+    {
+      console.log("Bajo peso");
+    }
+    else if(indiceDeMasaCorporal <= 24.9 )
+    {
+      console.log("peso Normal");
+    }
+    else if(indiceDeMasaCorporal <= 29.9)
+    {
+      console.log("Sobrepeso");
+    }
+    else
+    {
+      console.log("Obeso"); 
+    }
+  } 
+  interpretarIMC(17.8);//caso 1 se ejecuta por que es el primer true que encuentra
+  interpretarIMC(22.2);//caso 2 se ejecuta por que caso 1 es false
+  interpretarIMC(28.5);//caso 3 se ejecuta por que caso 1 caso 2 es false
+  interpretarIMC(32.2);//caso 4 se ejecuta por que no encuentra ningun true
+  var casoIF = "Caso 1 se ejecuta por que es el primer true que encuentra"
+  var casoPrimerElseIf = "Caso 2 se ejecuta por que caso 1 es false"
+  var casoSegundoElseIf = "Caso 3 se ejecuta por que caso 1 caso 2 es false"
+  var casoElse = "Caso 4 se ejecuta por que no encuentra ningun true"
+  console.log(casoIF); 
+  console.log(casoPrimerElseIf); 
+  console.log(casoSegundoElseIf);
+  console.log(casoElse);
 
+  function puntajeDeGolf(par, golpes)
+  {
+    if(golpes == 1)
+    {
+      return "Hole-in-one!";     
+    } 
+    else if(golpes <= par - 2)
+    {
+      return "Eagle";
+    }
+    else if(golpes == par - 1)
+    {
+      return "Birdie";  
+    }
+    else if(golpes == par) 
+    {
+      return "Par";  
+    }
+    else if(golpes == par + 1) 
+    {
+      return "Bogey";  
+    }
+    else if(golpes == par + 2) 
+    {
+      return "Double Bogey";  
+    }
+    else if(golpes >= par + 3)        
+    {
+      return "Go Home!";
+    }
+  } 
+  console.log(puntajeDeGolf(4, 1));//par 4 retorna 1 se muestra  "Hole-in-one!"
+  console.log(puntajeDeGolf(4, 2));//par 4 <= par -2 retorna 2 se muestra  "Eagle" 
+  console.log(puntajeDeGolf(4, 3));//par 4 par -1 retorna 3 se muestra  "Birdie"
+  console.log(puntajeDeGolf(4, 4));//par 4 par retorna 4 se muestra  "Par"
+  console.log(puntajeDeGolf(4, 5));//par 4 par +1 retorna 5 se muestra  "Bogey"
+  console.log(puntajeDeGolf(4, 6));//par 4 par +2 retorna 6 se muestra "Doble Bogey"
+  console.log(puntajeDeGolf(4, 8));//par 4 >= par +3 retorna 7se muestra "Go Home!"
+    
+  //Sentencia Switch:
+  function clasificarValor(valor)
+  {
+    var respuesta;//variable local
+    switch (valor)
+    {
+      case 1:
+        respuesta = "alpha";
+        break;//siempre se finalisa con break;  
+      case 2:
+        respuesta = "beta";
+        break;
+      case 3:
+        respuesta = "gamma";
+        break;
+      case 4:
+        respuesta = "delta";
+        break;      
+    } 
+    return respuesta;
+  }
+  console.log(clasificarValor(1));//valor=1 se ejecuta caso1 respuesta vale→"alpha"  
+  console.log(clasificarValor(2));//valor=2 se ejecuta caso2 respuesta vale→"beta"
+  console.log(clasificarValor(3));//valor=3 se ejecuta caso3 respuesta vale→"gamma"
+  console.log(clasificarValor(4));//valor=4 se ejecuta caso4 respuesta vale→"delta"
+    
+  //Ahora vamos a usar switch con una cadena de caracteres solo declarando una variable 
+  var producto = "helado"
+  switch (producto)
+  {
+    case  "pizza":
+      console.log("La pizza basica cuesta $550");
+      break;
+    case "hambueguesa":
+      console.log("Las hamburguesas cuestan $250");
+      break;
+    case "helado":
+      console.log("El helado cuesta $95");
+      break;       
+  }
+  //Como la variable valor se asigno "helado" se muestra→ ("El helado cuesta $95")
+  console.log("Luego del switch continua ejecutando el codigo");
+     
+  //Sentencia Switch opción predeterminada 
+  function seleccionarIdioma(valor)
+  {
+    var idioma;
+    switch(valor)//dentro de la sentencia agregamos el parametro
+    {
+      case 1: 
+        idioma = "Español";
+        break;
+      case 2: 
+        idioma = "Frances";
+        break;
+      case 3: 
+        idioma = "Italiano";
+        break;  
+      default:
+        idioma = "Ingles";
+        break;// es opcional pero por norma lo usamos
+    } 
+    return idioma;
+  }
+  console.log(seleccionarIdioma(1));//valor=1 se ejecuta caso1 var idioma es "Español"
+  console.log(seleccionarIdioma(2));//valor=1 se ejecuta caso1 var idioma es "Frances"
+  console.log(seleccionarIdioma(3));//valor=1 se ejecuta caso1 var idioma es "Italiano"
+  console.log(seleccionarIdioma(4));//se ejecuta por defecto var es "Ingles" 
+  
+  //Sentencia switch  múltiples casos:
+  function clacificarVolumen(valor)
+  {
+    var volumen; 
+    switch(valor)
+      {
+        case 1:
+          volumen = "Bajo";
+        break;
+        case 2:
+        case 3:
+          volumen = "Intermedio";
+        break;
+        case 4:
+        case 5:
+        case 6:    
+          volumen = "Alto";
+        break;
+        default:
+          volumen = "Sin volumen";
+        break; 
+      }
+      return volumen; 
+  } 
+  console.log(clacificarVolumen(1));//valor=1 se ejecuta caso1 var volumen "Bajo"
+  console.log(clacificarVolumen(2));//valor=2 se ejecuta caso2,3 var volumen "Intermedio"
+  console.log(clacificarVolumen(4));//valor=4 se ejecuta caso4,5,6 var volumen "Alto"
+  console.log(clacificarVolumen(7));//valor=7 se ejecuta default var volumen "Sin volumen"
+  //Retornar valores Vooleanos:
+  function esMenorQue(a, b)
+  {
+    return a < b;//en una sola linea remplasamos la condicional if
+  }
+  console.log(esMenorQue(3, 6));
+  //Patrón  de retorno anticipado
+  function miFuncion()
+  {
+    console.log("Hola")
+    return "Mundo";
+    console.log("Adios");//unreachable code detecte (7027) ←codigo inalcansable detectado
+  }
+  console.log(miFuncion());//nos muestra "hola" "Mundo"
+  
+  //Patron de valor anticipado
+  function raizCuadrada(num)
+  {
+    if(num < 0)//num no es menor que 0 y el resultado es 5 pero si pasamos -5 ahi entra al if
+    // y se ejecuta return undefined
+    {
+      return undefined//aqui se detiene la funcion si la condicion es true
+    }
+    return Math.sqrt(num);//el parametro num calculamos la raiz cuadrada  
+  }
+  console.log(raizCuadrada(25));//pasamos a num el valor 25 que nos devueve su raiz 5
+  console.log(raizCuadrada(-5))//pasamos a num el valor -5 que nos devueve undefined
 </script>
  
