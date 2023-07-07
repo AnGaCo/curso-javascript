@@ -779,62 +779,176 @@
    →return a < b; ←nota la diferencia de lo conciso que es en comparación de usar condicional
    function esMenorQue(a, b)
    {
-     If(a < b)
-     {
-       return  true;
-     }
-     Else 
-     {
-       return false;
-     }
-  }
-  function esMenorQue(a, b)
-  {
-    return a < b;
-  }
-  console.log(esMenorQue(3, 6))
-
-#Patrón  de retorno anticipado
-  Cuando retornamos el valor de una función, en ese momento que retornamos el valor la función 
-  se detiene completamente. Cualquier línea que esta luego del return no se va a ejecutar. 
-  En el ejemplo vamos a intentar mostrar otro mensaje después de return→Esa línea nunca se va a 
-  ejecutar y la función se detiene en el return. Eso es algo importante porque ese patrón 
-  anticipado es muy útil, específicamente cuando necesitamos detener la función.
-  function miFuncion()
-  {
-    console.log("Hola")
-    return "Mundo";
-    console.log("Adios");//unreachable code detecte (7027) ←codigo inalcansable detectado
-  }
-  console.log(miFuncion());
-   
-  function raizCuadrada(num)
-  {
-    if(num < 0)
-    {
-      return undefined
+      If(a < b)
+      {
+        return  true;
+      }
+      Else 
+      {
+        return false;
+      }
     }
-  }
-#Patron de valor anticipado
-  A continuación en este ejemplo definimos una función y le damos un parámetro→ num, la raíz 
-  cuadrada de un número negativo no existe, así  que si esa condición es verdadera num<0 no 
-  podemos calcular la raíz cuadrada. En ese caso lo que hacemos es detener la función y 
-  retornamos un valor que sería→ udefefined En el caso de que el valor sea valido→ num>0. 
-  Digamos que pasamos 25, la condición del if no se cumple la raíz cuadrada seria 5 
-  pero si pasamos un numero negativo la condición if es true y se ejecuta retrun undefined
-  function raizCuadrada(num)
-  {
-    if(num < 0)//num no es menor que 0 y el resultado es 5 pero si pasamos -5 ahi entra al if
-    // y se ejecuta return undefined
+    function esMenorQue(a, b)
     {
-      return undefined//aqui se detiene la funcion si la condicion es true
+      return a < b;
     }
-    return Math.sqrt(num);//el parametro num calculamos la raiz cuadrada  
+    console.log(esMenorQue(3, 6))
+
+  #Patrón  de retorno anticipado
+    Cuando retornamos el valor de una función, en ese momento que retornamos el valor la función 
+    se detiene completamente. Cualquier línea que esta luego del return no se va a ejecutar. 
+    En el ejemplo vamos a intentar mostrar otro mensaje después de return→Esa línea nunca se va a 
+    ejecutar y la función se detiene en el return. Eso es algo importante porque ese patrón 
+    anticipado es muy útil, específicamente cuando necesitamos detener la función.
+    function miFuncion()
+    {
+      console.log("Hola")
+      return "Mundo";
+      console.log("Adios");//unreachable code detecte (7027) ←codigo inalcansable detectado
+    }
+    console.log(miFuncion());
+    
+    function raizCuadrada(num)
+    {
+      if(num < 0)
+      {
+        return undefined
+      }
+    }
+  #Patron de valor anticipado
+    A continuación en este ejemplo definimos una función y le damos un parámetro→ num, la raíz 
+    cuadrada de un número negativo no existe, así  que si esa condición es verdadera num<0 no 
+    podemos calcular la raíz cuadrada. En ese caso lo que hacemos es detener la función y 
+    retornamos un valor que sería→ udefefined En el caso de que el valor sea valido→ num>0. 
+    Digamos que pasamos 25, la condición del if no se cumple la raíz cuadrada seria 5 
+    pero si pasamos un numero negativo la condición if es true y se ejecuta retrun undefined
+    function raizCuadrada(num)
+    {
+      if(num < 0)//num no es menor que 0 y el resultado es 5 pero si pasamos -5 ahi entra al if
+      // y se ejecuta return undefined
+      {
+        return undefined//aqui se detiene la funcion si la condicion es true
+      }
+      return Math.sqrt(num);//el parametro num calculamos la raiz cuadrada  
+    }
+    console.log(raizCuadrada(25));//pasamos a num el valor 25 que nos devueve su raiz 5
+    console.log(raizCuadrada(-5))//pasamos a num el valor -5 que nos devueve undefined
+
+  #Juegos de Cartas: La meta es definir una función para contar cartas
+    Lo primero que definimos es la variable global luego la función con un parametro
+    →carta, en la función declaramos una variable local decisión, esa va a ser la decisión 
+    final. Si apostar o esperar! pero primero tenemos que actualizar el valor del conteo 
+    en la sentencia switch, esa sentencia va a evaluar el valor del parametro→carta y 
+    dependiendo de su valor actualizamos el valor del conteo. Ahi podemos ver en la tabala que si 
+    el valor es 2, 3, 4, 5, 6 tenemos que aumentar el valor de la variable→conteo en uno con un 
+    contador ++ y luego break. Para la segunda categoria de valores 7, 8, 9 sabemos que  la tabla 
+    indica→CERO no hay que cambiar el valor del conteo por eso no lo incluimos en la sentenci switch. 
+    Si miramos la tabla veremos que si tenemos que incluir los casos→10, "J","Q","K","A" en 
+    cualquiera de estos caso tenemos que reducir el valor en uno con un contador -- y break 
+    fuera de switch creamos un condicional if si la variable conteo > 0→true la variable 
+    local decision sera"Apostar" si no sera "Esperar" dependiendo del condicional sera el 
+    retorno que obtenemos. 
+      
+  #Tabla:
+    Cambio de conteo            carta
+    +1                         2, 3, 4, 5, 6
+    0                         7, 8, 9
+    -1                         10, "J","Q","K","A"
+  #Codigo
+    var conteo = 0;
+    function contarCartas(carta)
+    {
+      var decision;
+      switch(carta)
+      {
+        case2:
+        case3:
+        case4:
+        case5:
+        case6:
+          conteo ++;
+        break;	
+        case10:
+        case"J":
+        case"Q":
+        case"K":
+        case"A":
+          conteo--;
+        brek; 
+      }
+      if(conteo > 0)
+      {
+        Decision  = "Apostar"
+      }
+      else
+      {
+        Decision = "Esperar"
+      }
+        return conteo + " " + decision; 
+    } 
+    console.log(contarCartas(2));
+    console.log(contarCartas(3));
+    console.log(contarCartas(7));
+    console.log(contarCartas("K"));
+    console.log(contarCartas("A"));
+
+  #Crear Objetos:
+    Los objetos nos permiten guardar la secuencia o un conjunto de propiedades que están 
+    relacionadas con sus correspondientes valores. En el ejemplo digamos que queremos representar 
+    las propiedades de nuestro perro.
+    Secuencia que en verdad representa el objeto
+ 
+    // Se usa connotacion de punto
+    var miPerro = {
+      "nombre": "camilo",
+      "edad": 3,
+      "peso": 6,
+      "rasa": "sharpei"    
+    };
+    Esta combinación de propiedades→ a la izquierda y de valores→ a la derecha, lo denominamos 
+    un objeto. Digamos que es como una forma de agruparlas todas bajo una misma estructura de 
+    datos, que  podemos usar y acceder a través de la variable→miPerro. Nota: Las propiedades 
+    y los valores  no necesaria mente siendo una sola palabra se usan las comillas. Propiedades 
+    de los valores se separan con→ : y al final de la línea va una→ , También se pueden usar 
+    números como propiedades→5: “cinco”,
+  #Acceder a propiedades notación de puntos:
+    Si necesitamos acceder al objeto que es camilo, podemos acceder a ese valor con la notación 
+    de punto. Escribimos el nombre de la variable seguido de un punto escribimos el nombre de 
+    la propiedad Ej.  console.log(miPerro.edad); se muestra 3 
+  #Acceder a propiedades notación de corchetes: 
+    Una notación alternativa que podemos usar para acceder a las propiedades  de un objeto, en el 
+    siguiente código como podemos notar que hay propiedades que son cadenas de caracteres con 
+    espacios, en ese caso si o si van entre comillas y debemos usar la notación de corchetes que  
+    es equivalente  con la notación de punto. Esto quiere decir que podemos acceder a cualquiera 
+    de las propiedades del objeto.     
+     
+    //Se usa conotacion de corchetes
+    var miCuaderno = {
+      "color": "verde"
+      "categoria": 3,
+      "numero de paginas": 200,
+      "numero de hojas": 100
+    };
+  #Acceder a propiedades Variables
+    Como acceder a una propiedad de un objeto usando una variable. Vamos a escribir el valor 
+    entre corchetes usando una variable, para poder acceder a un lugar específico de esos valores 
+    definimos la variable→ posición. Como podemos acceder: Escribimos el nombre de la variable 
+    que contiene a ese  objeto→resultado  y entre corchete pasamos en vez de el nombre de la 
+    propiedad pasamos el nombre de la variable→posicion esto es equivalente a escribir 4  pero 
+    como estamos escribiendo una variable podemos trabajar con esa variable en nuestro programa 
+    haciendo que el acceso sea más dinámico. Para mostrar ese resultado llamamos a consol.log
+    solo usando la notación de corchetes.
+
+    var resultados = {
+    1: "Manuel5711",
+    2: "Nora3578",
+    3: "Lucas2115",
+    4: "Cecilia4598"
   }
-  console.log(raizCuadrada(25));//pasamos a num el valor 25 que nos devueve su raiz 5
-  console.log(raizCuadrada(-5))//pasamos a num el valor -5 que nos devueve undefined
+  var posicion = (4);
+  console.log(resultados[posicion]);
 
-
+#Actualizar Propiedades:
 
   */                         
  var a;
@@ -1385,5 +1499,80 @@
   }
   console.log(raizCuadrada(25));//pasamos a num el valor 25 que nos devueve su raiz 5
   console.log(raizCuadrada(-5))//pasamos a num el valor -5 que nos devueve undefined
+  //Juego de Cartas:
+  var conteo = 0;
+  function contarCartas(carta)
+  {
+    var decision;
+    switch(carta)
+    {
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+          conteo ++;
+        break;	
+        case 10:
+        case "J":
+        case "Q":
+        case "K":
+        case "A":
+          conteo--;
+        break; 
+     }
+      if(conteo > 0)
+      {
+        decision  = "Apostar"
+      }
+      else
+      {
+        decision = "Esperar"
+    }
+    return conteo + " " + decision; 
+  } 
+  console.log(contarCartas(2));
+  console.log(contarCartas(3));
+  console.log(contarCartas(7));
+  console.log(contarCartas("K"));
+  console.log(contarCartas("A"));
+  //Crear Objetos:
+  //Se usa conotacion de punto  
+  var miPerro = {
+      "nombre": "camilo",
+      "edad": 3,
+      "peso": 6,
+      "rasa": "sharpei"    
+  };
+  console.log("Conotacion de punto");
+  console.log(miPerro.nombre);
+  console.log(miPerro.peso);
+  
+  //Se usa conotacion de corchetes    
+  var miCuaderno = {
+      "color": "verde",
+      "categoria": 3,
+      "numero de paginas": 200,
+      "numero de hojas": 100
+  };
+  console.log("Connotacion de corchetes");
+  console.log(miCuaderno["categoria"]);
+  console.log(miCuaderno["numero de paginas"]); 
+  
+  //Acceder a propiedades usando Variables
+  var resultados = {
+    1: "Manuel5711",
+    2: "Nora3578",
+    3: "Lucas2115",
+    4: "Cecilia4598"
+  }
+  var posicion = (1);
+  console.log(resultados[posicion]);
+  var posicion = (2);
+  console.log(resultados[posicion]);
+  var posicion = (3);
+  console.log(resultados[posicion]);
+  var posicion = (4);
+  console.log(resultados[posicion]);
 </script>
  
