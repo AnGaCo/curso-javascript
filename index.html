@@ -65,21 +65,21 @@
       cuantos caracteres tiene la cadena. 
       Nota: Los espacios se cuentan como un caracter.
   #Notación de corchetes en JS, Esta es una notación que nos permite acceder 
-      a los caracteres de una cadena. Definimos  var lenguajeDeProgramacion;
+      a los caracteres de una cadena. Definimos var lenguajeDeProgramacion;
       lenguajeDeProgramacion  = “Javascript”; Esa cadena tiene una estructura interna
       que nos va a permitir acceder a sus caracteres, veamos un diagrama de EJ.
       Cadena: → J A V A S C R I P T
       Índices:→ 0 1 2 3 4 5 6 7 8 9
       c/u de esos caracteres tiene un índice asociado y podemos usar ese índice para 
       acceder a ese carácter usando corchetes en console.log(variable[0]); 
-      en este caso es 0 por que es el primer índice.  
+      en este caso es 0 por que es el primer indice mostrando la letra J     
   #Inmutabilidad de cadenas→ no se pueden cambiar, es solo lectura.
       Nota: En una cadena el último índice es longitud -1 Ej. var miCadena;
       miCadena = "JavaScript" consol.log(miCadena.length -1); se muestra el numero
       del ultimo índice por que no está envuelta por corchetes. Si agregamos los
       corchetes se mostrara la última letra. Ej→ variable[variable.length -1]
       También se puede inicializar una variable para agregarla a continuación de 
-      length Var n; n = -4 variable[variable.length variable]
+      length Var n; n = 4 variable[variable.length -variable]
   #Palabras en Blanco: Concatenar cadenas compuestas de caracteres y variables con 
       espacios en blanco. Declaramos las variables.
       var miSustantivo  = "perro";
@@ -160,7 +160,7 @@
      estaciones del año a la cual le falta el verano. en este caso son las 
      estaciones del año a la cual le falta el verano. 
      var estaciones = ["invierno"; "otoño"; "primavera"]; 
-     ¿Cómo podemos agregar esa cadena de caracteres al arrego? Con algo  llamado método,
+     ¿Cómo podemos agregar esa cadena de caracteres al arrego? Con algo llamado método,
      El método es como una función que podemos llamar para hacer algo con un elemento de nuestro código. 
   #.push() este método nos permite añadir un elemento al final del arrays 
      variable→ estaciones.push("verano") //["invierno"; "otoño"; "primavera";"verano"];
@@ -329,7 +329,7 @@
     primer elemento del arreglo. Es un ciclo vamos agregarlo al final y si se agrega un elemento significa 
     que el primero debe ser eliminado. La function proximoEnLaFila(){ } debe retornar el elemento que fue 
     removido. ¿Qué es lo primero que queremos hacer cuando llamamos a function? 
-    Agregar el el número al parámetro elemento al final del array con el método .push 
+    Agregar el número al parámetro elemento al final del array con el método .push 
     Luego que agregamos al parámetro del elemento en el array. Debemos eliminar el primer elemento con 
     el método .shitf() no toma ningún argumento, los paréntesis vacíos. Y la parte final de lo que debe 
     cumplir la function, es que debe retornar el elemento que fue removido. Recordemos que el método 
@@ -350,7 +350,7 @@
     Llamamos a la function, y el primer elemento que toma es el arreglo y ¿cuál argumento 
     pasamos? →La variable miArreglo como argumento →se cambia a [1, 2, 3, 4, 5,] y luego 
     que tenemos ese arreglo queremos agregar un elemento que será →6 El efecto de llamar
-    a esta function es que  se elimina el primer elemento →1 y se agrega el último elemento →6
+    a esta function es que se elimina el primer elemento →1 y se agrega el último elemento →6
     [2, 3, 4, 5, 6]
     
     console.log(proximoEnLaFila(miArreglo, 6));// aquí realizamos el cambio 
@@ -944,12 +944,154 @@
     2: "Nora3578",
     3: "Lucas2115",
     4: "Cecilia4598"
-  }
-  var posicion = (4);
-  console.log(resultados[posicion]);
+   }
+   var posicion = (4);
+   console.log(resultados[posicion]);
 
-#Actualizar Propiedades:
+  #Actualizar Propiedades:
+    Además de crear un objeto en el proyecto y acceder a sus propiedades, también puedes actualizar 
+    el valor de esas propiedades para permitir que tu objeto cambie durante la ejecución del 
+    programa. Vamos a ver un ej. que llamaremos mochila. Con console.log escribimos 
+    la variable mochila separada por un punto→ color resultado azul
 
+    var mochila = {
+      "valor": "azul",
+      "tamaño":"mediano",
+      "contenido" :["botella de agua", "cuaderno"]
+    };
+    console.log(mochila.color);// resultado azul
+    
+    Una vez que ya tenemos estas propiedades definidas, digamos que queremos cambiar el color de 
+    la mochila vamos a acceder a ellas y la actualizaremos. Para acceder a la propiedad color 
+    Lo que hacemos es escribir el nombre de la variable que contiene el objeto seguido de un 
+    punto, el nombre de la propiedad que queremos actualizar y luego le asignamos el valor→"verde" 
+    Ej.
+    mochila.color = "verde";//reasignamos el valor 
+    console.log(mochila.color);//resultado verde    
+    
+    También podemos trabajar con sus valores para modificarlos. Si queremos agregar algo a la 
+    mochila, tendríamos que acceder al valor de la propiedad contenido. Para actualizar este valor 
+    podemos usar notación de punto→mochila.contenido. consolle.log(mochila.contenido); vemos 
+    ["botella de agua", "y cuaderno"] Digamos que queremos agregar un lápiz a nuestra mochila,
+    el codigo es→ mochila.contenido.push(); Llamamos al método push que agrega un elemento al 
+    final del arreglo
+    console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno"]
+    mochila.contenido.push("lapiz")//se agrega lapiz
+    console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno,", "lapiz"]
+    Nota: pop() este metodo nos permite remover el primer elemento de un array
+  # Agregar Propiedades:
+    También puedes agregar propiedades a un objeto en JS. Ej. Vamos a tener un objeto que va
+    a representar un curso
+    var curso = {
+      "titulo": "Aprende JavaScript desde cero",
+      "idioma": "Español",
+      "duracion": 30   
+    };
+    Como podemos agregar una cuarta propiedad? La propiedad se va a llamar vista, va ser el 
+    número de vista desde que se publicó el curso. La sintaxis es la misma que utilizamos para 
+    cambiar una propiedad pero en este caso vamos a escribir el nombre de la propiedad que 
+    queremos agregar. Primero el nombre de la variable seguida de un punto, el nombre de la 
+    propiedad nueva y luego el valor que queremos asignar.  
+    curso.vista = 34500
+    console.log(curso.vista);//resultado 34500
+    Nota: Si intentamos acceder a una propiedad que no existe el resultado será undefine
+    También podemos en vez de usar notación de punto, podemos usar notación de corchetes.
+    console.log(["vista"]); //resultado 34500
+  #Eliminar Propiedades:
+    Continuando como ejemplo del objeto curso. Ahora vamos a ver cómo puedes eliminar una 
+    propiedad de este objeto. La palabra clave aquí es→ DELETE que significa sacar o eliminar 
+    en español. Digamos que ya no queremos tener un registro de la propiedad duración en el
+    objeto curso, tenemos que escribir anteponiendo delete seguido de un espacio, el nombre 
+    de la variable separando esta con un punto y la propiedad que queremos eliminar. 
+    La sintaxis seria:→delete curso.duracion; 
+    console.log(curso.duracion);//vista antes de borrar 30
+    delete curso.duracion;// nombre del obj un punto y la propiedad a eliminar 
+    console.log(curso.duracion);//despues de borrar→ undefined
+    Si cambiamos la línea de código anterior por una que nos muestre el obj completo
+    console.log(curso); este es el obj que se nos presenta: 
+    {"titulo": "Aprende  JavaScript desde cero",  "idioma": "Español"} 
+
+  #Objetos para Búsquedas:
+    Según el caso podemos usar un objeto para remplazar una sentencia switch. Tenemos una función 
+    (buscar elemento químico). Si analizamos el elemento switch podemos ver que a partir del valor 
+    de símbolo vamos a asociar ese símbolo con su nombre completo→"Aluminio" Es decir que "Al" 
+    estaría asociado "Aluminio" y así será hasta finalizar la sentencia. Cuando tienes una sentencia 
+    switch con esta estructura que asocia dos valores podemos escribir código más conciso con un 
+    objeto, recuerda que los obj nos permiten asociar una propiedad con su valor.
+  #El código que a continuación se presenta usando switch perfectamente puede ser remplazado 
+  por un objeto.
+    Function buscarElementoQimico(simbolo)
+    {
+      Var elementoQuimico = "";
+      switch(simblo)
+      {
+        case "Al":
+          elementoQuimico = "Aluminio";
+          break;
+        case "S":
+          elementoQuimico = "Azufre";
+          break;
+        case "Cl":
+          elementoQuimico = "Cloro";
+          break;
+        case "He":
+          elementoQuimico = "Helio";
+          break; 
+        case "B":
+          elementoQuimico = "Boro";
+          break;
+        case "Li":
+          elementoQuimico = "Litio";
+          break;
+      }
+      return elementoQuimico;             
+    }
+  #En el siguiente ej. veremos cómo  podemos remplazar switch por un objeto:
+    Function buscarElementoQimico(simbolo)
+    {
+      var simbolosQuimicos = {
+      "Al": "Aluminio",
+      "S": "Azufre",
+      "Cl": "Cloro",
+      "Hd": "Helio",
+      "B": "Boro",
+      "Li": "Litio";   
+      };
+      Return simbolosQuimicos[simbolo];//esto retorna el nombre completo del elemento símbolo 
+    }
+    Ya tenemos el objeto al cual hemos restructurando nuestro código de una forma específica y que 
+    realiza exactamente lo mismo que switch pero de forma más concisa. Podemos acceder a las  
+    propiedades del obj con notación de corchetes y pasar el valor del parametro →simbolo a la 
+    variable→simbolosQuimicos esto nos va a retornar el valor correspondiente a ese simblo.  
+    Ahora veamos si retorna el valor apropiado:
+    console.log(buscarElementoQimico("Al"));
+    console.log(buscarElementoQimico("S"));
+    console.log(buscarElementoQimico("Cl"));
+    console.log(buscarElementoQimico("Hd"));
+    console.log(buscarElementoQimico("B"));
+    console.log(buscarElementoQimico("Li"));
+
+  #Verificar Propiedades:
+    Otra operación muy importante es verificar si el obj tiene una propiedad o no, si tratamos de 
+    acceder a una propiedad que no existe en el obj el resultado será undefind.  Podemos verificar 
+    si la propiedad existe o no antes de usarla. Para averiguar si el obj tiene una propiedad 
+    especifica escribimos el nombre de la variable que contiene  el obj→miCofre  y llamamos al 
+    método→ hasOwnProperty() Este método es muy útil si estamos trabajando con un condicional
+    var miCofre = {
+      "oculto": "cajon",
+      "color": "verde",
+      "guardo":"recuerdos"
+    };
+    miCofre.hasOwnProperty("color");//pegunta si la propiedad existe→si entra al if muestra true
+    if(miCofre.hasOwnProperty("color"))
+    {
+      console.log(true);
+    }
+    else
+    {
+      console.log(false);
+    }
+   
   */                         
  var a;
  var b = 2;
@@ -1506,30 +1648,29 @@
     var decision;
     switch(carta)
     {
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-        case 6:
-          conteo ++;
-        break;	
-        case 10:
-        case "J":
-        case "Q":
-        case "K":
-        case "A":
-          conteo--;
-        break; 
-     }
-      if(conteo > 0)
-      {
-        decision  = "Apostar"
-      }
-      else
-      {
-        decision = "Esperar"
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+        conteo ++;
+      break;	
+      case 10:
+      case "J":
+      case "Q":
+      case "K":
+      case "A":
+        conteo--;
+      break; 
     }
-    return conteo + " " + decision; 
+    if(conteo > 0)
+    {
+      decision  = "Apostar"
+    }
+    else
+    {
+      decision = "Esperar"
+    }return conteo + " " + decision; 
   } 
   console.log(contarCartas(2));
   console.log(contarCartas(3));
@@ -1574,5 +1715,70 @@
   console.log(resultados[posicion]);
   var posicion = (4);
   console.log(resultados[posicion]);
+  
+  //Actualizar Propiedades:
+  var mochila = {
+    "valor": "azul",
+    "tamaño":"mediano",
+    "contenido" :["botella de agua", "cuaderno"]
+  };
+  //console.log(mochila.color); resultado azul
+  mochila.color = "verde";//reasignamos el valor 
+  console.log(mochila.color);//resultado verde    
+  //console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno"]
+  mochila.contenido.push("lapiz")//con push se agrega lapiz
+  console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno,", "lapiz"]
+ //Agregar Propiedades:
+  var curso = {
+      "titulo": "Aprende JavaScript desde cero",
+      "idioma": "Español",
+      "duracion": 30   
+  };
+  curso.vista = 34500
+  console.log(curso.vista);//resultado 34500
+  console.log(["vista"]); //resultado 34500
+  //Eliminar Propiedades:
+  console.log(curso.duracion);//vista antes de borrar 30
+  delete curso.duracion;// nombre del obj un punto y la propiedad a eliminar 
+  console.log(curso.duracion);//despues de borrar→ undefined
+  /*Si cambiamos la línea de código anterior por una que nos muestre el obj completo
+  console.log(curso); este es el obj que se nos presenta: 
+  {"titulo": "Aprende  JavaScript desde cero",  "idioma": "Español"} */
+
+  //Objetos para Búsquedas:
+  function buscarElementoQimico(simbolo)
+  {
+    var simbolosQuimicos = {
+    "Al": "Aluminio",
+    "S": "Azufre",
+    "Cl": "Cloro",
+    "Hd": "Helio",
+    "B": "Boro",
+    "Li": "Litio"   
+    };
+    return simbolosQuimicos[simbolo];//esto retorna el nombre completo del elemento símbolo
+  }
+  console.log(buscarElementoQimico("Al"));
+  console.log(buscarElementoQimico("S"));
+  console.log(buscarElementoQimico("Cl"));
+  console.log(buscarElementoQimico("Hd"));
+  console.log(buscarElementoQimico("B"));
+  console.log(buscarElementoQimico("Li"));
+  //Verificar Propiedades:  
+  var miCofre = {
+  "oculto": "cajon",
+  "color": "verde",
+  "guardo":"recuerdos"
+  };
+  miCofre.hasOwnProperty("color");//pegunta si la propiedad existe→si entra al if muestra true 
+  if(miCofre.hasOwnProperty("color"))
+  {
+    console.log(true);
+  }
+  else
+  {
+    console.log(false);
+  }
+
 </script>
  
