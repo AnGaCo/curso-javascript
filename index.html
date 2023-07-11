@@ -1075,22 +1075,83 @@
     Otra operación muy importante es verificar si el obj tiene una propiedad o no, si tratamos de 
     acceder a una propiedad que no existe en el obj el resultado será undefind.  Podemos verificar 
     si la propiedad existe o no antes de usarla. Para averiguar si el obj tiene una propiedad 
-    especifica escribimos el nombre de la variable que contiene  el obj→miCofre  y llamamos al 
+    especifica escribimos el nombre de la variable que contiene  el obj→miCofre y llamamos al 
     método→ hasOwnProperty() Este método es muy útil si estamos trabajando con un condicional
     var miCofre = {
       "oculto": "cajon",
       "color": "verde",
       "guardo":"recuerdos"
     };
-    miCofre.hasOwnProperty("color");//pegunta si la propiedad existe→si entra al if muestra true
-    if(miCofre.hasOwnProperty("color"))
+    miCofre.hasOwnProperty("color");//pegunta si la propiedad existe
+  #Utilizar condiconal:  
+    Para ilustrar como este método que es muy útil en un condicional vamos a definir una función que 
+    va a verificar si un obj tiene una propiedad o no y va a mostrar un mensaje, La funcion va a tomar 
+    dos parámetros. En el if retorna una cadena,  que va ser la unión de una cadena→"propiedad " +  
+    con el valor de la propiedad en ese objeto   
+    //Utilizar condiconal:
+    function verificarPropiedad(obj, propiedad)//propiedad del obj
     {
-      console.log(true);
-    }
-    else
-    {
-      console.log(false);
-    }
+      if(obj.hasOwnProperty("propiedad"))// es true por que el obj tiene esa propiedad 
+       {
+        return "propiedad: " + obj[propiedad]; //propiedad es el parámetro “color”
+       }
+      else
+       {
+        return "El objeto no tiene esta propiedad"//la propieda que pasamos no existe false
+       }
+    }  
+    console.log(verificarPropiedad(miCofre, color));//resultado propiedad: verde  
+  
+    #Objetos Complejos:   
+    Estos tipos de objetos tienen combinaciones de distintos tipos de datos. Como sus valores, los 
+    valores de las propiedades,  puedes ver que la variable→ ordenesDePizzas contiene un array[]. Esto 
+    nos dice que es un array de objetos porque  están las llaves que abren y sierran el objeto y dentro 
+    de cada objeto que tenemos aquí,  en nuestro array tenemos secuencias de propiedades y sus valore 
+    que siguen un formato muy similar, las mismas propiedades asociadas a distintos valores. Estos es un 
+    formato que normalmente se usa muy similar al formato JSON→(JavaScript, Object, Notacion). 
+    Primero que nada debemos entender que inicialmente estamos trabajando con un array, asique cada uno 
+    de esos objetos tienen un lugar en ese array, como si fuera un elemento,  como si tuviéramos dos 
+    elementos con una cadena de caracteres, o dos números. Pero en este caso tenemos dos objetos que c/u 
+    de ellos tiene su conjunto de propiedades y los valores de esas propiedades. Veamos su estructura: 
+    El primer obj representa una pizza margarita. Pero en el segundo obj representa una pizza de cuatro 
+    quesos. Ambos obj tienen la misma propiedad pero sus valores son distintos. 
+    A continuación en el primer obj tenemos el tamaño de la pizza individual y en el segundo obj es 
+    familiar. Retornando al primer obj sigue precio 5,67 y en el segundo obj precio 18.34 esto nos 
+    demuestra que podemos albergar valores de distintos tipos. Luego vemos toppings que están representados 
+    como otro array[] En consecuencia tenemos un array externos que contiene a los dos obj y dentro del 
+    primer y segundo obj tenemos otro array como el valor de una propiedad→ Toppings[] con este ejemplo 
+    puedes ver que los obj son muy versátiles y con ellos podemos trabajar para cualquier dato que se 
+    necesite. Aquí representamos  toppings como un array  porque necesitamos varios elementos.luego para 
+    llevar es un valor booleano, true si se ordenó para llevar o false si la pizza es para comer en el 
+    lugar. Como podemos acceder a estos obj? La estructura de datos principal que contiene los obj es 
+    un array es por eso que el primer obj esta en el índice cero, el segundo obj está en el índice uno y 
+    los obj están separados con una coma→esto es muy importante porque son elemento distinto del array.
+    var ordenesDePizzas = [
+      {
+        "tipo": "margarita",
+        "tamaño": "individual",
+        "precio": "5.67",
+        "toppings": [
+          "extra queso",
+          "chanpiñones",
+          "piña"
+        ],
+        "paraLlevar": true  
+      },
+      {
+        "tipo": "cuatro quesos",
+        "tamaño": "familiar",
+        "precio": "18.34",
+        "toppings": [
+          "extra queso",
+          "pimenton",
+        ],
+        "paraLlevar": false
+      }
+    ];
+    console.log(ordenesDePizzas[0]);
+    console.log(ordenesDePizzas[1]);
+        
    
   */                         
  var a;
@@ -1770,15 +1831,45 @@
   "color": "verde",
   "guardo":"recuerdos"
   };
-  miCofre.hasOwnProperty("color");//pegunta si la propiedad existe→si entra al if muestra true 
-  if(miCofre.hasOwnProperty("color"))
+  console.log(miCofre.hasOwnProperty("oculto"));//pegunta si la propiedad existe→si  
+  //Utilizar condiconal:
+  function verificarPropiedad(obj, propiedad)//propiedad del obj
   {
-    console.log(true);
-  }
-  else
-  {
-    console.log(false);
-  }
-
+    if(obj.hasOwnProperty(propiedad))// es true por que el obj tiene esa propiedad 
+    {
+      return "Propiedad: " + obj[propiedad]; //propiedad es el parámetro “color”
+    }
+    else
+    {
+      return "El objeto no tiene esta propiedad"//la propieda que pasamos no existe false
+    }
+  }  
+  console.log(verificarPropiedad(miCofre, "color"));//resultado Verde
+  //Objetos Complejos: 
+  var ordenesDePizzas = [
+    {
+      "tipo": "margarita",
+      "tamaño": "individual",
+      "precio": "5.67",
+        "toppings": [
+          "extra queso",
+          "chanpiñones",
+          "piña"
+      ],
+      "paraLlevar": true  
+    },
+    {
+    "tipo": "cuatro quesos",
+      "tamaño": "familiar",
+      "precio": "18.34",
+        "toppings": [
+          "extra queso",
+          "pimenton",
+      ],
+      "paraLlevar": false
+    }
+  ];
+  console.log(ordenesDePizzas[0]);
+  console.log(ordenesDePizzas[1]);
 </script>
  
