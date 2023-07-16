@@ -1,18 +1,22 @@
+    
 <script>
   console.log("Manuel Orozco");
   console.log("curso de javaScript")
   //Tema Uno, Comentarios:
-  /* para una linea → // comentarios
+  /* 
+  para una linea → // comentarios
   Para varias lineas → "/* comentarios varios /*" 
   El encomillado es solo a titulo de destacar. 
   */ 
-  //Variables: 
-  var miVariable = "De-freeCodeCamp"; // String
-  console.log(miVariable);
-  var miVariable = 16; // Numerical
-  console.log(miVariable);
   /*
-  #La asignación de las variable dependerá del uso que se
+    Variables: 
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/nWSe2u9s01Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    var miVariable = "De-freeCodeCamp"; // String
+    console.log(miVariable);
+    var miVariable = 16; // Numerical
+    console.log(miVariable);
+
+    #La asignación de las variable dependerá del uso que se
       le darán en el desarrollo del proyecto. Se usara la convencion (camellCase),
       se inicia la variable con la primera letra en minuscula y la palabra sigiente sin
       espasio con la primera letra en Mayuscula.
@@ -20,7 +24,7 @@
       var   
       let 
       const
-  #OPERADOR DE ASIGNACIONES
+    #OPERADOR DE ASIGNACIONES
       var a; var b = 2 La variable (a) esta basia en console.log dara 
       error undefind
       la variable (b) mostrara la asignacion, La variable (a) ya esta declarada 
@@ -42,7 +46,7 @@
       la regla nombrada → (variable operador asignación valor) Ej. de * y /
       Var salario = 45000 lo incrementamos salario *=5 y lo reducimos a la mitad 
       salario /= 2;
-  #Variables con cadenas de caracteres. Las cadenas de caracteres se definen 
+    #Variables con cadenas de caracteres. Las cadenas de caracteres se definen 
       rodeandolas con comillas var miNombre = "Manuel"; ¿Como podemos incluir parte de 
       la cadena entre comillas? Eso se denomina secuencias de Escape: hay dos formas para 
       lograr eso, 1) se antepone una barra invertida antes de cada comilla dentro 
@@ -51,7 +55,7 @@
       secuencias de escapes muy usadas son: Mostrar la barra invertida en la cadena→ \\
       o lograr un salro de linea en la cadena→ \n. Concatenar cadenas de caracteres, 
       para eso se usa el signo + Ej→ miNombre = "Manuel" + " Orozco" 
-  #Concatenar variables con cadena de caracteres:Ej→ var verbo = "programar";
+    #Concatenar variables con cadena de caracteres:Ej→ var verbo = "programar";
       var mensaje = "Estoy aprendiendo a " + verbo; Tambien se puede segir 
       concatenando la cadena despues de la variable. Ej. sigiente linea,
       mensaje = "Estoy aprendiendo a " + verbo + " con freeCodeCamp"; 
@@ -59,12 +63,12 @@
       var mensajeFinal = "El invierno llego"; Var = " con un frío muy cruel";
       esto podria ser en una situacion real que esa parte del mensaje se personalisada
       o que el usuario tenga que ingresar algun valor para tener la cadena completa.
-  #Longitud de una CdC Esto es muy comun en programacion Ej→ var miCadena = "A";
+    #Longitud de una CdC Esto es muy comun en programacion Ej→ var miCadena = "A";
       Para aberiguar cuantos caracteres tiene una cadena con console.log() seria,
       console.log(miCadena.length) Esta propiedad→lenght nos va a permitir saber 
       cuantos caracteres tiene la cadena. 
       Nota: Los espacios se cuentan como un caracter.
-  #Notación de corchetes en JS, Esta es una notación que nos permite acceder 
+    #Notación de corchetes en JS, Esta es una notación que nos permite acceder 
       a los caracteres de una cadena. Definimos var lenguajeDeProgramacion;
       lenguajeDeProgramacion  = “Javascript”; Esa cadena tiene una estructura interna
       que nos va a permitir acceder a sus caracteres, veamos un diagrama de EJ.
@@ -73,14 +77,14 @@
       c/u de esos caracteres tiene un índice asociado y podemos usar ese índice para 
       acceder a ese carácter usando corchetes en console.log(variable[0]); 
       en este caso es 0 por que es el primer indice mostrando la letra J     
-  #Inmutabilidad de cadenas→ no se pueden cambiar, es solo lectura.
+    #Inmutabilidad de cadenas→ no se pueden cambiar, es solo lectura.
       Nota: En una cadena el último índice es longitud -1 Ej. var miCadena;
       miCadena = "JavaScript" consol.log(miCadena.length -1); se muestra el numero
       del ultimo índice por que no está envuelta por corchetes. Si agregamos los
       corchetes se mostrara la última letra. Ej→ variable[variable.length -1]
       También se puede inicializar una variable para agregarla a continuación de 
       length Var n; n = 4 variable[variable.length -variable]
-  #Palabras en Blanco: Concatenar cadenas compuestas de caracteres y variables con 
+    #Palabras en Blanco: Concatenar cadenas compuestas de caracteres y variables con 
       espacios en blanco. Declaramos las variables.
       var miSustantivo  = "perro";
       var miAdgetivo =  "negro";
@@ -90,12 +94,12 @@
       oracion  =  "El " + miSustantivo + miEspacio + miAdgetivo + miEspacio + 
       miVerbo + miEspacio + miAdverbio + " a la tienda";
       resultado→ El perro negro corrio rapidamente a la tienda
-  #Siguiente tema: Arreglos (Arrays) Los arrays son estructura de datos que 
+    #Siguiente tema: Arreglos (Arrays) Los arrays son estructura de datos que 
       nos permiten agregar múltiples valores en una misma estructura, 
       a diferencia de las cadenas de los caracteres que son Inmutabes, 
       cabe destacar que los arrays si se pueden modificar sus indices 
       los array son mutables. 
-  #Para crear un arrays escribimos corchetes [] y dentro de los corchetes 
+    #Para crear un arrays escribimos corchetes [] y dentro de los corchetes 
       tendríamos los elementos de ese arrays Ej. definimos una variable  
       var miArrays; miArrays = [“Daniel”,  24];
       0: "Daniel"
@@ -103,13 +107,13 @@
       length: 2
       Los arrays son estructuras muy poderosoas para trabajar con valores 
       relacionados. 
-  #Arrays anidados: Algo muy interesante de los arrays es que 
+    #Arrays anidados: Algo muy interesante de los arrays es que 
       pueden contener cualquier tipo de datos., caracteres, números, decimales 
       y los podemos anidar usando una variable. Ej. aqui tenemos unas variables
       var listaDeEstudiantes = [["Nora", 18], ["Daniel", 24]];
       var listaDeProductos = [["Camisas", 15.25, "s-32"], ["Zapatos", 30.45, "s-11"], ["Pantalones", 28.50, "s-33" ]]; 
       console.log(listaDeProductos); Ahora pasamos al siguiente tema:
-  #Acceder a los elementos de un Arrays:
+    #Acceder a los elementos de un Arrays:
       Definimos una var miAcceso = [10, 20, 30]; 
       Diagrama
         Arreglos: 10, 20, 30 
@@ -120,7 +124,7 @@
       programación. EJ→ inicializamos una variable var suma;
       suma = miAcceso[0]  +  miAcceso[1]  +  miAcceso[2];
       console.log(miAcceso) resultado 60
-  #Modificar los elementos de un array: Es otra parte importante en programación
+    #Modificar los elementos de un array: Es otra parte importante en programación
       var miModificacion; miModificacion = [10, 20, 30]; Accedemos al elemento a 
       modificar de la misma manera. Escribimos  la variable, enlazamos entre
       corchetes con el número del índice del elemento a modificar. 
@@ -130,1124 +134,1276 @@
       Ej→ miModificacion [1] = "Manuel"; Otra cosa que se permite en JS es  tomar 
       un elemento del arrays, digamos el índice [2] y asignarle  elementos 
       anidados. EJ→ miModificacion [2] = [1, 2, 3];
-  #Acceder arrays multidimencionale: 
-     accesosArraysAnidados = [[1 ,2, 3], [4, 5, 6], [7, 8. 9] ];
-     Para acceder a los elementos mostramos el siguiente diagrama.
-     
-     Arreglo:             [[1, 2, 3], [4, 5, 6], [7, 8. 9]];
-     Índices:                  0          1          2
-     Índices internos:     [0, 1, 2], [0, 1, 2], [0, 1, 2]; 
-     
-     La explicación grafica no muestra Cómo accedemos al arrays multidimensional 
-     para eso tendremos que usar dos indicis. ¿Como accedemos al elemento 8? 
-     Primero usamos el índice 2 que nos permite acceder al elemento→[7, 8. 9] 
-     y seguidamente el índice 1 que deja el puntero en el num. 8 para tratarlo.
-     El codigo seria: 
-     var accesosArraysAnidados;
-     accesosArraysAnidados = [[1 ,2, 3], [4, 5, 6], [7, 8, 9] ];
-     // se muestra el acceso a cada elmento
-     console.log(accesosArraysAnidados[0]);
-     console.log(accesosArraysAnidados[1]);
-     console.log(accesosArraysAnidados[2]);
-  # Para acceder algunos de los elementos anidados en c/u de esos array usaremos
-     el segundo índice que vimos en el diagrama. Digamos que queremos acceder al 
-     elemento 6 del primer array  [4, 5, 6] → accesosArraysAnidados[1] [2];
-     console.log(accesosArraysAnidados[1] [2]); //vemos el elemento 6
-  #Métodos:
-     Los arrays son estructuras de datos muy poderosas, no solo podemos acceder y
-     modificar los elementos de un array si no que podemos agregar elementos.
-     Digamos que tenemos una lista de cadenas de caracteres en este caso son las 
-     estaciones del año a la cual le falta el verano. en este caso son las 
-     estaciones del año a la cual le falta el verano. 
-     var estaciones = ["invierno"; "otoño"; "primavera"]; 
-     ¿Cómo podemos agregar esa cadena de caracteres al arrego? Con algo llamado método,
-     El método es como una función que podemos llamar para hacer algo con un elemento de nuestro código. 
-  #.push() este método nos permite añadir un elemento al final del arrays 
-     variable→ estaciones.push("verano") //["invierno"; "otoño"; "primavera";"verano"];
-  #.pop() este metodo nos permite remover el primer elemento de un array y nos 
-     entrega un retorno que podemos asignarlo a una variable para su taratamiento en el proyecto. 
-     var estacion = estaciones.pop() → ["otoño"; "primavera"; "verano"]; estrajo invierno
-  #.shift() este metodo nos permite remover el primer elemento de un array
-     estaciones.shift(); 
-     ["invierno"; "otoño"; "primavera";"verano"] En este array se extrae "invierno" 
-  #.unshift()este metodo nos permite agregar un elemento al principio de un array 
-     tenemos que indicar entre los () que elemento se agregara. 
-     estaciones.shift("invierno");
-  #Lista de compras: mini proyecto de una lista de compra.
-     miListaDeCompras = [["Arroz" 1], ["Aceite" 2], ["Fideos" 3], ["Cafe" 1]];
-     CODIGO:
-     miListaDeCompras = [["Arroz", 1], ["Aceite", 2], ["Fideos", 3], ["Café", 1]];
-     console.log("Voy a comprar " + miListaDeCompras[0][1] + " kg de " + 
-     miListaDeCompras[0][0] + " tambien " + miListaDeCompras[1][1] + " Litros de "
-     + miListaDeCompras[1][0] + " y " + miListaDeCompras[2][1] + " paquetes de " + 
-     miListaDeCompras[2][0] + " por ultimo " + miListaDeCompras[3][1] + 
-     " un paquetes de 1/2 kg de " + miListaDeCompras[3][0]);
-     Resultado en pantalla:
-     Voy a comprar 1 kg de Arroz tambien 2 Litros de Aceite y 3 paquetes 
-     de Fideos por ultimo 1 un paquetes de 1/2 kg de Café
-  #FUNCIONES:
-     Con las funciones podemos escribir código que podemos reutilizar
-     en nuestro programa, Declaración → function mostrarMensaje()
-     {
-	     console.log(“Hola Manu);
-     } 
-  #ARGUMENTOS:
-     Lo primero que necesitamos saber para una operación, es que operando vamos a usar 
-     y que valores vamos a tener.→ Function sumar(a, b) lo que envuelven los paréntesis 
-     se los denominan parámetros, son cualquier nombre que tú le quieras asignar 
-     a un valor que se va a recibir o a tomar cuando llamemos a la función. 
-     La parte de la función que va entre las llaves se denomina cuerpo. 
-     Si vamos a sumar a+b ¿que vamos hacer en el cuerpo de la function? 
-     Vamos a tomar los valores de a y de b esos valores que en estos momentos
-     no existen. En el cuerpo de la fuction declaramos la variable suma y le 
-     asignamos los parámetros a+b.
-     function sumar(a, b )
-     {
-        var suma = a + b;
-        console.log(“El resultado de  “ + a “ + ” b + “ es  ” + suma);	
-     }
-        
-     Ahora vamos a llamar a la function. Sabemos que tenemos dos parámetros, 
-     tenemos que pasar un valor para cada uno. Los valores se asignan en el mismo 
-     orden en que aparecen en la lista de parámetros en la definición de la function.  Para a es 5 y para b es 3
-     sumar(5, 3); 
-     Para ilustrar por que las funciones nos ayudan a escribir código que es más 
-     conciso y fácil de leer de modo tal que evita la repetición de código. 
-     Podemos llamar a esta function varias veces. 
-     sumar(57, 3);
-     sumar(31, 83);
-     sumar(11, 43);
-     Estos valores que estamos pasando se denominan argumentos. 
-     Los argumentos son los valores que asignamos a los parámetros. 
-     Esos dos conceptos trabajan juntos para permitir que las function 
-     sea la herramienta poderosísima que son en programación.
-     Veamos otra variación que podemos tener cuando llamamos a una fumction 
-     En lugar de escribir los valores directamente en la lista de argumentos →(5, 3 )←  
-     también podemos asignarles a variables y pasarlas como argumentos. 
-     Ej. var x = 5; var y = 3; sumar(x, y); y el resultado sería el mismo.
-     No solo podemos pasar números. Vamos a definir otra función para un ej. de CdC
-     function concatenarTresCadenas(cadena1, cadena2, cadena 3)
-     {
-       console.log(cadena1 + " " + cadena2 + " " + cadena3);
-     } 
-     concatenarTresCadenas("Estoy", "aprendiendo", "a programar");
-  #Ámbito Global: 
-    Algo muy importante e JS es que no todas las variables pueden usarcé en todas las 
-    distintas partes del programa. Tenemos dos tipos de variables GLOBALES y LOCALES.
-    Una variable con ámbito global está definida dentro del programa y no dentro de la 
-    function. Var miVariableGlobal = 5; global por que la definimos dentro del 
-    programa y NO dentro de una function. Si necesitamos acceder a su valor, digamos
-    usarla en el programa podemos hacerlo.
-    console.log(miVariableGlobal);
-    Y también podemos usarla dentro de una function  
-    function miFuncion()
-    {
-     console.log(miVariableGlobal);
-    }
-    Y también va a estar definida luego de la definición de la function, básicamente
-    en cualquier lugar del programa. Para comprobar que si está definida debemos 
-    llamar a la function.
-    function miFuncion();
-    console.log(miVariableGlobal);
-  #AMBITO LOCAL: 
-    Ahora veamos cómo funcionan las variables locales. Estos tipos de variable 
-    las definimos dentro de una function  que solo se pueden utilizar dentro 
-    de esa function.
-    Function miFunction()
-    {
-      Var miVariableLocal =  4;
-      console.loc(miVariableLocal );
-    }
-    Vamos a llamar a la function para ver que esa variable si está definida
-    miFunction(); //resultado 4
-    Pero luego veamos que queremos acceder a esa variable local fuera de la function. 
-    Esto nos dará un error de no definición de la variable. Si declaras una variable 
-    dentro de una function solo se podrá usar solo dentro del cuerpo de la function.
-  #Ámbito Local vs Ámbito Global:
-    Veamos que sucede cuando tenemos una v/local y una v /global con el mismo nombre. 
-    var miNombre = "Nora"
-    function mostrarMiNombre()
-    {
-        var miNombre = "Ricardo";
-        console.log(miNombre);
-    }
-    Cuando intentamos verificar la variable llamando la function, vemos que predomina 
-    la variable local sobre la variable global
-    mostrarMiNombre(); //resultado Ricardo
-    Pero si tratamos de mostrar la variable global en el programa, lo podemos hacer
-    y la podemos usar en cualquier lugar del proyecto.
-    console.log(miNombre);
-  #RETORNAR UN VALOR 
-    Las function pueden retornar un valor además de recibir valores con 
-    propiedades especiales para poder interactuar con el programa principal.
-    function sumar(a, b)
-    {
-      return a + b; // no lleva coma
-    }
-    //si nosotros llamamos a la function
-    sumar(5, 3); //no se muestra nada, para eso usamos
-    console.log(sumar(5, 3)); //resultado retorna 8
-  #UNDEFINED:
-    Así cómo podemos retornar un valor específico en una function con return, también 
-    podemos omitir esa sentencia  pero aun así la function va a retornar un valor por 
-    defecto, ese valor va a ser UNDEFINED. 
-    Si definimos una function que en vez de retornar el lugar de la suma lo vamos 
-    a mostrar en la consola.
-    function sumar(x, y)
-    {
-      Console.log(x + y);// no lleva coma
-      //sin return x + y; 
-    }
-    Como no estamos retornando ningún valor explícitamente 
-    console.log(5, 3); // vemos aquí UNDEFINED
-  #ASIGNAR UN VALOR RETORNANDO
-    Cuando una fuction retorna un valor podemos asignarle ese valor a una variable. EJ.
-    function sumar(a, b)
-    {
-      return a + b; // no lleva coma
-    }
-    var resultado = Sumar(5, 3); //resultado ahora vale 8
-    console.log(resultado); //se muestra 8
-    Otro ejemplo, podemos definir una function con una cadena de caracteres con nuestra meta. 
-    ¿Cuál va a ser nuestra meta? Vamos a retornar una cadena de caracteres 
-    function crearCadenaConMeta(lenguajeDeProgramacion)
-    {
-      return "Mi meta es aprender " + lenguajeDeProgramacion;
-    }
-    Si llamamos a la function y pasamos la cadena de caracteres “JavaScript” el parámetro va a tener 
-    ese valor cuando llamemos a la function y lo asignamos a una variable para su tratamiento 
-    var miMeta = crearCadenaConMeta("JavaScript");
-    console.log(miMeta); //resultado: Mi meta es aprender JavaScript
-  #Permanece en Fila
-    Vamos hacer una variación de una cola (queu) es una estructura de datos que nos va a permitir agregar 
-    elementos a una fila. Vamos a tener una estructura de datos abstracta, en la cual los elementos se 
-    mantienen en orden. Los nuevos elementos se pueden añadir al final de la cola y los elementos previos 
-    se retiran al principio de la cola. Vamos a definir una function que se llame próximo en la fila, esa 
-    function debe tomar un arreglo, que se va a llamar arreglo←ese va a ser el nombre del parámetro y va a 
-    tomar un número que se llamara →elemento ese va a ser el parámetro, ambos van a ser los argumentos. 
-    La tarea es agregar el numero al final del argumento  →arreglo. Y luego la function debe eliminar el 
-    primer elemento del arreglo. Es un ciclo vamos agregarlo al final y si se agrega un elemento significa 
-    que el primero debe ser eliminado. La function proximoEnLaFila(){ } debe retornar el elemento que fue 
-    removido. ¿Qué es lo primero que queremos hacer cuando llamamos a function? 
-    Agregar el número al parámetro elemento al final del array con el método .push 
-    Luego que agregamos al parámetro del elemento en el array. Debemos eliminar el primer elemento con 
-    el método .shitf() no toma ningún argumento, los paréntesis vacíos. Y la parte final de lo que debe 
-    cumplir la function, es que debe retornar el elemento que fue removido. Recordemos que el método 
-    .shift también retorna ese elemento es ahí donde anteponemos return.
-    
-    function proximoEnLaFila(arreglo, elemento);
-    { 
-      arreglo.push(elemento); //agregar al final del array
-      return arreglo.shift(); //shift es el que va a remover  el primer elemento del array
-    } 
-    Definimos una variable
-    var miArreglo = [1, 2, 3, 4, 5,] 
-    
-    Queremos ver el estatus de nuestro arreglo antes de llamar a la function
-    console.log("Antes: " + JSON.stringify(miArreglo)); Nota:JSON.stringify() es una 
-    funcion muy util que nos muestra los array en la consola en un formato espesifico   
-    
-    Llamamos a la function, y el primer elemento que toma es el arreglo y ¿cuál argumento 
-    pasamos? →La variable miArreglo como argumento →se cambia a [1, 2, 3, 4, 5,] y luego 
-    que tenemos ese arreglo queremos agregar un elemento que será →6 El efecto de llamar
-    a esta function es que se elimina el primer elemento →1 y se agrega el último elemento →6
-    [2, 3, 4, 5, 6]
-    
-    console.log(proximoEnLaFila(miArreglo, 6));// aquí realizamos el cambio 
-    
-    Luego de esto mostramos después de hacer el cambio
-    console.log("Después: " + JSON.stringify(miArreglo));
-  #VALORES BOOLEANOS  
-        Verdadero            Falso 
-    console.log(true)  console.log(false)
-  #Operadores de igualdad
-   Esto que tenemos entre parentesis se denomina una exprecion, va a evaluar 
-   true o false
-   console.log(5 == 5) true / consol.loge(6 == 5) false
-   De igual forma podemos comparar cadenas de caracteres la comparacion tambien 
-   se hace en base de mayusculas o minusculas
-   console.log("Hola" == "Hola") true / console.log("Hola" == "hola")false
-   Es importante saber que no se deve comparar array con este operador
-   console.log([1,2,3]==[1,2,3]);//false 
-   El resultado va a ser false, ¿por que? porque 
-   no compara los elemento de los array sino que compara si los arreglos en la memoria 
-   representan el mismo objeto.
-  #Operador de igualdad estricta:
-   Este operador nos permite comparar si ambos tipos de datos son los mismos. 
-   Veamos la diferencia ente igualdad == e igualdad estricta. === 
-   console.log(9 == 9); // Resultado true
-   Pero si tenemos dos valores que son de distinto tipos de datos pero que representan
-   el mismo número, el resultado también va a ser true ¿Qué ocurre con este operador? 
-   antes de realizar la comparación. Ambos valores se convierten a un tipo de 
-   dato común, por eso es que el resultado nos dice true
-   console.log(9 == "9"); // Resultado true
-   Pero si queremos que la comparación también determine que el tipo de dato es 
-   el mismo o no, es ahí donde usamos el operador de igualdad estricta. 
-   console.log(9 === "9"); // Resultado es false
-  #Operador de desigualdad:
-   Este operador compara dos valores y retorna true si su valor es distinto y retorna
-   false si son iguales.
-   console.log(9 != 6)//Resultado true
-   console.log(9 != 9)//Resultado false
-   De igual manera sucede con cadena de caracteres, pero en el caso de los array 
-   Podemos intentar comparar array con este operador
-   console.log([1,2,3] != [1,2,3]);//Resultado es true 
-   pero no los va a comparar en base a sus elementos,  sino en base a como están 
-   representados como objetos en la memoria del dispositivo que es algo relacionado 
-   a como se almacenan en la memoria.
-  #Operador de desigualdad estricta:
-   En el tema anterior con el operador de desigualdad si nosotros comparábamos 
-   si los siguientes valores (1 != "1"); eran distinto, el resultado sería false 
-   porque != ← este operador convierte ambos valores a un tipo de datos común antes 
-   de hacer la comparación y detecta que ambos números son iguales. 
-   Pero que ocurre con  el operador  !== ← de desigualdad estricta (1 !== "1"); ahora 
-   el resultado sería→ true porque también está comparando si ambos valores son 
-   del mismo tipo de datos, no lo convierte a un tipo de dato común.
-   console.log(1 != "1");// true esta mal 
-   console.log(1 != "1");// false esta bien
-  # Operador mayor que: 
-    En javaScipt además de comparar valore si son iguales o diferentes también podemos 
-    comparar el valor relativo de los valores. Si un valor es mayor o menor que, el 
-    otro o menor igual o mayor igual.
-    Operador mayor que > Digamos que queremos saber si (6 > 5); ←true (3 > 10); ←false
-    También podemos comparar cadena de caracteres. El criterio con que JavaScript 
-    compara las cadenas de caracteres es según el orden alfabético. 
-    ("B" > "A");true ←Estamos diciendo que si la letra “B” es mayor que la letra “A” 
-    según el orden alfabético como estamos usando este operador mayor que > Cuando 
-    aplicamos a cadena actúa como si estuviera más allá adentro del diccionario.
-    Si tuviéramos otra cadena console.log("A,C,B" > "A","B","C"); //true ←
-    Como javascript compara esta cadena. Compara cada uno de los caracteres en su 
-    secuencia. A = A / C = B compara C viene después que B SI. Ahí se determina el 
-    orden de la cadena porque el primer par de caracteres desiguale que encuentra
-    y compara define el resultado, de manera tal que es true. 
-    Si una cadena tiene más caracteres que otra verificamos→ ("AB" > "A");true←         
-    porque tiene más caracteres. Por orden alfabético también podemos comparar palabras  
-    ("Mundo" > "Hola");true← Por orden alfabético M viene después que la letra H  en 
-    el alfabeto asi a modo de ejemplo comparamos ("M" > "H");true← Otro dato 
-    interesante es que podemos usar estos datos de comparación con variables. 
-    var az = 15; /  var by = 8;
-    console.log(az > by);//true /  console.log(by > az);//false
-  #Mayor o igual que:
-   Este operador >= nos permite incluir el caso en que ambos valores sea iguales,
-   (5 > 5); //false (5 >= 5); //true En el caso de cadenas de caracteres también 
-   aplica cuando las cadena sean iguales el valor va a ser true
-   Menor que: Este operador < nos permite verificar (5 < 6); //true, si el número a la 
-   izquierda es mayor (10 < 8);//false. También se puede usar para cadena de caracteres
-   siempre la comparación de cadena será por orden alfabético ("A" < "B");true porque 
-   A esta antes que B en el alfabeto. En este ejemplo ("A ,C, B" > "A","B","C");//true← 
-   el proceso va a ser igual que en ejemplos anteriores. Tambien podemos comparar los 
-   valores de variable. 
-  #Operador menor o igual que: basicamente funciona igual que menor que <  
-   (5 < 5); //false / (5 >= 5); //true.
-  #Operadores lógicos "and" Estos operadores lógicos nos permiten expresar distintas 
-   expresiones para formar condiciones un poco más elaboradas o más complejas
-   Tabla de verdad de operador Y→AND←→&&←en JS se expresa con &&
-   | x | z | x && Z |tenemos dos expresiones x y z y los unimos x && z
-   | ↓   ↓     ↓    | 
-   ├----------------┤
-   | ↓   ↓     ↓    |
-   | T | T |   T    |Si x es true y z es true toda esa expresión es true
-   | T | F |   F    |En cambio si alguno de ellos es false o ambos 
-   | F | T |   F    |entonces la expresión va a ser 
-   | F | F |   F    |←false
-   La operación solo es verdadera cuando ambos operadores son verdaderos.
-  
-  #Operador logico "or"
-   Tabla de verdad del operador O→OR←→||←en JS se expresa con ||
-   | x | z | x && Z |tenemos dos expresiones x y z y los unimos x || z
-   | ↓   ↓     ↓    | 
-   ├----------------┤
-   | ↓   ↓     ↓    |En el operador OR si cualquiera de los operandos es true entonses
-   | T | T |   T    |el resultado es verdadero
-   | T | F |   T    |←true 
-   | F | T |   T    |←true
-   | F | F |   F    |←false
-   La operación solo es verdadera si alguno de los dos operandos o ambos son true
+    #Acceder arrays multidimencionale: 
+      accesosArraysAnidados = [[1 ,2, 3], [4, 5, 6], [7, 8. 9] ];
+      Para acceder a los elementos mostramos el siguiente diagrama.
 
-  #Operador logico "not" 
-   Tabla de verdad del operador NO→NOT←→!←en JS se expresa con !
-   Para: !x 
-   | x | !x| 
-   | ↓   ↓ |     
-   ├-------┤
-   | ↓   ↓ |  
-   | T | F | Si la expresión es true agregando el operador not la convertimos en false  
-   | F | T |Si la expresión es false agregando el operador not la convertimos en true
- 
-  #Setencias Condicionales:
-    Las condiciónale determinan que rumbo va a continuar nuestro código, en el caso de 
-   (if) o si en español siguiendo el ejemplo seria if(condición la cual si es verdadera)
-   {ejecutara lo que esta ente las llaves} o cuerpo de la condicional. 
-   También se pueden usar los operadores lógicos→ && || !← para condiciones 
-   más elaboradas.
-   var cond = 5
-   if (cond > 2) // la condición se cumple
-   {
-    console.log("La condición es verdadera"); // ejecuta el código
-   }
-   if((cond > 2) && (cond < 10)); //condiciones mas complejas
-   {
-    console.log("La condición es verdadera"); // ejecuta el codigo
-   }
-   var estación = "invierno"
-   if(estación == "invierno")// la condición se cumple
-   {
-    console.log("¡Si! Me encanta el invierno");// ejecuta el código
-   } 
-   if (cond < 2) // la condición NO se cumple
-   {
-    console.log("La condición es verdadera"); // NO ejecuta el código
-   }
-    console.log("La condición no es verdadera"); // Continua la ejecución saltando el if
-  #Clausula  “else”
-   También podemos expandir nuestras condicionales si la condición de la condicional es false            
-   if (false)
-   {
-      console.log("si la condición es true se ejecuta este código");
-   } 
-   else
-   {
-      console.log("La condición es false ignora el if y se ejecuta else con este código");
-   }
-  #Clausula else if
-   Los condicionales también pueden verificar  y manejar varias condiciones, con la 
-   cláusula else if que  nos permite manejar exactamente eso→manejar condiciones 
-   alternativa y decidir por la primera condición que encuentre y sea verdadera→ true. 
-   Para el ejemplo es conveniente trabajar con funciones:Esta funcion va a tomar un 
-   valor como un parametro y va a determinar si el valor es dibicible entre 2 o 3 
-   o si no es divicible entre ninguno.
-   function clasificarValor(valor)
-   {
-      if(valor % 2 == 0)//genera un resto igual a cero es true
+      Arreglo:             [[1, 2, 3], [4, 5, 6], [7, 8. 9]];
+      Índices:                  0          1          2
+      Índices internos:     [0, 1, 2], [0, 1, 2], [0, 1, 2]; 
+
+      La explicación grafica no muestra Cómo accedemos al arrays multidimensional 
+      para eso tendremos que usar dos indicis. ¿Como accedemos al elemento 8? 
+      Primero usamos el índice 2 que nos permite acceder al elemento→[7, 8. 9] 
+      y seguidamente el índice 1 que deja el puntero en el num. 8 para tratarlo.
+      El codigo seria: 
+      var accesosArraysAnidados;
+      accesosArraysAnidados = [[1 ,2, 3], [4, 5, 6], [7, 8, 9] ];
+      // se muestra el acceso a cada elmento
+      console.log(accesosArraysAnidados[0]);
+      console.log(accesosArraysAnidados[1]);
+      console.log(accesosArraysAnidados[2]);
+    # Para acceder algunos de los elementos anidados en c/u de esos array usaremos
+      el segundo índice que vimos en el diagrama. Digamos que queremos acceder al 
+      elemento 6 del primer array  [4, 5, 6] → accesosArraysAnidados[1] [2];
+      console.log(accesosArraysAnidados[1] [2]); //vemos el elemento 6
+    #Métodos:
+      Los arrays son estructuras de datos muy poderosas, no solo podemos acceder y
+      modificar los elementos de un array si no que podemos agregar elementos.
+      Digamos que tenemos una lista de cadenas de caracteres en este caso son las 
+      estaciones del año a la cual le falta el verano. en este caso son las 
+      estaciones del año a la cual le falta el verano. 
+      var estaciones = ["invierno"; "otoño"; "primavera"]; 
+      ¿Cómo podemos agregar esa cadena de caracteres al arrego? Con algo llamado método,
+      El método es como una función que podemos llamar para hacer algo con un elemento de nuestro código. 
+    #.push() este método nos permite añadir un elemento al final del arrays 
+      variable→ estaciones.push("verano") //["invierno"; "otoño"; "primavera";"verano"];
+    #.pop() este metodo nos permite remover el primer elemento de un array y nos 
+      entrega un retorno que podemos asignarlo a una variable para su taratamiento en el proyecto. 
+      var estacion = estaciones.pop() → ["otoño"; "primavera"; "verano"]; estrajo invierno
+    #.shift() este metodo nos permite remover el primer elemento de un array
+      estaciones.shift(); 
+      ["invierno"; "otoño"; "primavera";"verano"] En este array se extrae "invierno" 
+    #.unshift()este metodo nos permite agregar un elemento al principio de un array 
+      tenemos que indicar entre los () que elemento se agregara. 
+      estaciones.shift("invierno");
+    #Lista de compras: mini proyecto de una lista de compra.
+      miListaDeCompras = [["Arroz" 1], ["Aceite" 2], ["Fideos" 3], ["Cafe" 1]];
+      CODIGO:
+      miListaDeCompras = [["Arroz", 1], ["Aceite", 2], ["Fideos", 3], ["Café", 1]];
+      console.log("Voy a comprar " + miListaDeCompras[0][1] + " kg de " + 
+      miListaDeCompras[0][0] + " tambien " + miListaDeCompras[1][1] + " Litros de "
+      + miListaDeCompras[1][0] + " y " + miListaDeCompras[2][1] + " paquetes de " + 
+      miListaDeCompras[2][0] + " por ultimo " + miListaDeCompras[3][1] + 
+      " un paquetes de 1/2 kg de " + miListaDeCompras[3][0]);
+      Resultado en pantalla:
+      Voy a comprar 1 kg de Arroz tambien 2 Litros de Aceite y 3 paquetes 
+      de Fideos por ultimo 1 un paquetes de 1/2 kg de Café
+    #FUNCIONES:
+      Con las funciones podemos escribir código que podemos reutilizar
+      en nuestro programa, Declaración → function mostrarMensaje()
       {
-        console.log("Divisible entre 2");
+        console.log(“Hola Manu);
       } 
-        else if(valor % 3 == 0)
+    #ARGUMENTOS:
+      Lo primero que necesitamos saber para una operación, es que operando vamos a usar 
+      y que valores vamos a tener.→ Function sumar(a, b) lo que envuelven los paréntesis 
+      se los denominan parámetros, son cualquier nombre que tú le quieras asignar 
+      a un valor que se va a recibir o a tomar cuando llamemos a la función. 
+      La parte de la función que va entre las llaves se denomina cuerpo. 
+      Si vamos a sumar a+b ¿que vamos hacer en el cuerpo de la function? 
+      Vamos a tomar los valores de a y de b esos valores que en estos momentos
+      no existen. En el cuerpo de la fuction declaramos la variable suma y le 
+      asignamos los parámetros a+b.
+      function sumar(a, b )
       {
-        console.log("Divisible entre 3");
-      }  
-      else 
+          var suma = a + b;
+          console.log(“El resultado de  “ + a “ + ” b + “ es  ” + suma);	
+      }
+          
+      Ahora vamos a llamar a la function. Sabemos que tenemos dos parámetros, 
+      tenemos que pasar un valor para cada uno. Los valores se asignan en el mismo 
+      orden en que aparecen en la lista de parámetros en la definición de la function.  Para a es 5 y para b es 3
+      sumar(5, 3); 
+      Para ilustrar por que las funciones nos ayudan a escribir código que es más 
+      conciso y fácil de leer de modo tal que evita la repetición de código. 
+      Podemos llamar a esta function varias veces. 
+      sumar(57, 3);
+      sumar(31, 83);
+      sumar(11, 43);
+      Estos valores que estamos pasando se denominan argumentos. 
+      Los argumentos son los valores que asignamos a los parámetros. 
+      Esos dos conceptos trabajan juntos para permitir que las function 
+      sea la herramienta poderosísima que son en programación.
+      Veamos otra variación que podemos tener cuando llamamos a una fumction 
+      En lugar de escribir los valores directamente en la lista de argumentos →(5, 3 )←  
+      también podemos asignarles a variables y pasarlas como argumentos. 
+      Ej. var x = 5; var y = 3; sumar(x, y); y el resultado sería el mismo.
+      No solo podemos pasar números. Vamos a definir otra función para un ej. de CdC
+      function concatenarTresCadenas(cadena1, cadena2, cadena 3)
       {
-        console.log("NO es divisible entre las opciones");
+        console.log(cadena1 + " " + cadena2 + " " + cadena3);
       } 
-    }
-  #Condicionales Orden logico, se llama a la function y se ejecuta segun el caso  
-    clasificarValor(2) //caso 1 se ejecuta por que es el primer true que encuentra
-    clasificarValor(15)//caso 2 se ejecuta por que caso 1 es false
-    clasificarValor(7) //caso 3 se ejecuta por que caso 1 y 2 son false
-    var elcasoUno = "caso 1 se ejecuta por que es el primer true que encuentra"
-    var elCasoDos = "caso 2 se ejecuta por que caso 1 es false"
-    var elCasoTres = "caso 3 se ejecuta por que caso 1 y 2 son false"
-    console.log(elcasoUno); 
-    console.log(elCasoDos); 
-    console.log(elCasoTres);
-  #Encadenar sentencias "if else"
-    Vamos a ver un ejemplo con dos clausulas else if creando una funcion
-    function interpretarIMC(indiceDeMasaCorporal)
-    {
-      if(indiceDeMasaCorporal < 18.5)
+      concatenarTresCadenas("Estoy", "aprendiendo", "a programar");
+    #Ámbito Global: 
+      Algo muy importante e JS es que no todas las variables pueden usarcé en todas las 
+      distintas partes del programa. Tenemos dos tipos de variables GLOBALES y LOCALES.
+      Una variable con ámbito global está definida dentro del programa y no dentro de la 
+      function. Var miVariableGlobal = 5; global por que la definimos dentro del 
+      programa y NO dentro de una function. Si necesitamos acceder a su valor, digamos
+      usarla en el programa podemos hacerlo.
+      console.log(miVariableGlobal);
+      Y también podemos usarla dentro de una function  
+      function miFuncion()
       {
-        console.log("Bajo peso");
+      console.log(miVariableGlobal);
       }
-      else if(indiceDeMasaCorporal <= 24.9 )
+      Y también va a estar definida luego de la definición de la function, básicamente
+      en cualquier lugar del programa. Para comprobar que si está definida debemos 
+      llamar a la function.
+      function miFuncion();
+      console.log(miVariableGlobal);
+    #AMBITO LOCAL: 
+      Ahora veamos cómo funcionan las variables locales. Estos tipos de variable 
+      las definimos dentro de una function  que solo se pueden utilizar dentro 
+      de esa function.
+      Function miFunction()
       {
-        console.log("peso Normal");
+        Var miVariableLocal =  4;
+        console.loc(miVariableLocal );
       }
-      else if(indiceDeMasaCorporal <= 29.9)
+      Vamos a llamar a la function para ver que esa variable si está definida
+      miFunction(); //resultado 4
+      Pero luego veamos que queremos acceder a esa variable local fuera de la function. 
+      Esto nos dará un error de no definición de la variable. Si declaras una variable 
+      dentro de una function solo se podrá usar solo dentro del cuerpo de la function.
+    #Ámbito Local vs Ámbito Global:
+      Veamos que sucede cuando tenemos una v/local y una v /global con el mismo nombre. 
+      var miNombre = "Nora"
+      function mostrarMiNombre()
       {
-        console.log("Sobrepeso");
+          var miNombre = "Ricardo";
+          console.log(miNombre);
       }
+      Cuando intentamos verificar la variable llamando la function, vemos que predomina 
+      la variable local sobre la variable global
+      mostrarMiNombre(); //resultado Ricardo
+      Pero si tratamos de mostrar la variable global en el programa, lo podemos hacer
+      y la podemos usar en cualquier lugar del proyecto.
+      console.log(miNombre);
+    #RETORNAR UN VALOR 
+      Las function pueden retornar un valor además de recibir valores con 
+      propiedades especiales para poder interactuar con el programa principal.
+      function sumar(a, b)
+      {
+        return a + b; // no lleva coma
+      }
+      //si nosotros llamamos a la function
+      sumar(5, 3); //no se muestra nada, para eso usamos
+      console.log(sumar(5, 3)); //resultado retorna 8
+    #UNDEFINED:
+      Así cómo podemos retornar un valor específico en una function con return, también 
+      podemos omitir esa sentencia  pero aun así la function va a retornar un valor por 
+      defecto, ese valor va a ser UNDEFINED. 
+      Si definimos una function que en vez de retornar el lugar de la suma lo vamos 
+      a mostrar en la consola.
+      function sumar(x, y)
+      {
+        Console.log(x + y);// no lleva coma
+        //sin return x + y; 
+      }
+      Como no estamos retornando ningún valor explícitamente 
+      console.log(5, 3); // vemos aquí UNDEFINED
+    #ASIGNAR UN VALOR RETORNANDO
+      Cuando una fuction retorna un valor podemos asignarle ese valor a una variable. EJ.
+      function sumar(a, b)
+      {
+        return a + b; // no lleva coma
+      }
+      var resultado = Sumar(5, 3); //resultado ahora vale 8
+      console.log(resultado); //se muestra 8
+      Otro ejemplo, podemos definir una function con una cadena de caracteres con nuestra meta. 
+      ¿Cuál va a ser nuestra meta? Vamos a retornar una cadena de caracteres 
+      function crearCadenaConMeta(lenguajeDeProgramacion)
+      {
+        return "Mi meta es aprender " + lenguajeDeProgramacion;
+      }
+      Si llamamos a la function y pasamos la cadena de caracteres “JavaScript” el parámetro va a tener 
+      ese valor cuando llamemos a la function y lo asignamos a una variable para su tratamiento 
+      var miMeta = crearCadenaConMeta("JavaScript");
+      console.log(miMeta); //resultado: Mi meta es aprender JavaScript
+    #Permanece en Fila
+      Vamos hacer una variación de una cola (queu) es una estructura de datos que nos va a permitir agregar 
+      elementos a una fila. Vamos a tener una estructura de datos abstracta, en la cual los elementos se 
+      mantienen en orden. Los nuevos elementos se pueden añadir al final de la cola y los elementos previos 
+      se retiran al principio de la cola. Vamos a definir una function que se llame próximo en la fila, esa 
+      function debe tomar un arreglo, que se va a llamar arreglo←ese va a ser el nombre del parámetro y va a 
+      tomar un número que se llamara →elemento ese va a ser el parámetro, ambos van a ser los argumentos. 
+      La tarea es agregar el numero al final del argumento  →arreglo. Y luego la function debe eliminar el 
+      primer elemento del arreglo. Es un ciclo vamos agregarlo al final y si se agrega un elemento significa 
+      que el primero debe ser eliminado. La function proximoEnLaFila(){ } debe retornar el elemento que fue 
+      removido. ¿Qué es lo primero que queremos hacer cuando llamamos a function? 
+      Agregar el número al parámetro elemento al final del array con el método .push 
+      Luego que agregamos al parámetro del elemento en el array. Debemos eliminar el primer elemento con 
+      el método .shitf() no toma ningún argumento, los paréntesis vacíos. Y la parte final de lo que debe 
+      cumplir la function, es que debe retornar el elemento que fue removido. Recordemos que el método 
+      .shift también retorna ese elemento es ahí donde anteponemos return.
+
+      function proximoEnLaFila(arreglo, elemento);
+      { 
+        arreglo.push(elemento); //agregar al final del array
+        return arreglo.shift(); //shift es el que va a remover  el primer elemento del array
+      } 
+      Definimos una variable
+      var miArreglo = [1, 2, 3, 4, 5,] 
+
+      Queremos ver el estatus de nuestro arreglo antes de llamar a la function
+      console.log("Antes: " + JSON.stringify(miArreglo)); Nota:JSON.stringify() es una 
+      funcion muy util que nos muestra los array en la consola en un formato espesifico   
+
+      Llamamos a la function, y el primer elemento que toma es el arreglo y ¿cuál argumento 
+      pasamos? →La variable miArreglo como argumento →se cambia a [1, 2, 3, 4, 5,] y luego 
+      que tenemos ese arreglo queremos agregar un elemento que será →6 El efecto de llamar
+      a esta function es que se elimina el primer elemento →1 y se agrega el último elemento →6
+      [2, 3, 4, 5, 6]
+
+      console.log(proximoEnLaFila(miArreglo, 6));// aquí realizamos el cambio 
+
+      Luego de esto mostramos después de hacer el cambio
+      console.log("Después: " + JSON.stringify(miArreglo));
+    #VALORES BOOLEANOS  
+        Verdadero            Falso 
+        console.log(true)  console.log(false)
+    #Operadores de igualdad
+      Esto que tenemos entre parentesis se denomina una exprecion, va a evaluar 
+      true o false
+      console.log(5 == 5) true / consol.loge(6 == 5) false
+      De igual forma podemos comparar cadenas de caracteres la comparacion tambien 
+      se hace en base de mayusculas o minusculas
+      console.log("Hola" == "Hola") true / console.log("Hola" == "hola")false
+      Es importante saber que no se deve comparar array con este operador
+      console.log([1,2,3]==[1,2,3]);//false 
+      El resultado va a ser false, ¿por que? porque 
+      no compara los elemento de los array sino que compara si los arreglos en la memoria 
+      representan el mismo objeto.
+    #Operador de igualdad estricta:
+      Este operador nos permite comparar si ambos tipos de datos son los mismos. 
+      Veamos la diferencia ente igualdad == e igualdad estricta. === 
+      console.log(9 == 9); // Resultado true
+      Pero si tenemos dos valores que son de distinto tipos de datos pero que representan
+      el mismo número, el resultado también va a ser true ¿Qué ocurre con este operador? 
+      antes de realizar la comparación. Ambos valores se convierten a un tipo de 
+      dato común, por eso es que el resultado nos dice true
+      console.log(9 == "9"); // Resultado true
+      Pero si queremos que la comparación también determine que el tipo de dato es 
+      el mismo o no, es ahí donde usamos el operador de igualdad estricta. 
+      console.log(9 === "9"); // Resultado es false
+    #Operador de desigualdad:
+      Este operador compara dos valores y retorna true si su valor es distinto y retorna
+      false si son iguales.
+      console.log(9 != 6)//Resultado true
+      console.log(9 != 9)//Resultado false
+      De igual manera sucede con cadena de caracteres, pero en el caso de los array 
+      Podemos intentar comparar array con este operador
+      console.log([1,2,3] != [1,2,3]);//Resultado es true 
+      pero no los va a comparar en base a sus elementos,  sino en base a como están 
+      representados como objetos en la memoria del dispositivo que es algo relacionado 
+      a como se almacenan en la memoria.
+    #Operador de desigualdad estricta:
+      En el tema anterior con el operador de desigualdad si nosotros comparábamos 
+      si los siguientes valores (1 != "1"); eran distinto, el resultado sería false 
+      porque != ← este operador convierte ambos valores a un tipo de datos común antes 
+      de hacer la comparación y detecta que ambos números son iguales. 
+      Pero que ocurre con  el operador  !== ← de desigualdad estricta (1 !== "1"); ahora 
+      el resultado sería→ true porque también está comparando si ambos valores son 
+      del mismo tipo de datos, no lo convierte a un tipo de dato común.
+      console.log(1 != "1");// true esta mal 
+      console.log(1 != "1");// false esta bien
+    # Operador mayor que: 
+      En javaScipt además de comparar valore si son iguales o diferentes también podemos 
+      comparar el valor relativo de los valores. Si un valor es mayor o menor que, el 
+      otro o menor igual o mayor igual.
+      Operador mayor que > Digamos que queremos saber si (6 > 5); ←true (3 > 10); ←false
+      También podemos comparar cadena de caracteres. El criterio con que JavaScript 
+      compara las cadenas de caracteres es según el orden alfabético. 
+      ("B" > "A");true ←Estamos diciendo que si la letra “B” es mayor que la letra “A” 
+      según el orden alfabético como estamos usando este operador mayor que > Cuando 
+      aplicamos a cadena actúa como si estuviera más allá adentro del diccionario.
+      Si tuviéramos otra cadena console.log("A,C,B" > "A","B","C"); //true ←
+      Como javascript compara esta cadena. Compara cada uno de los caracteres en su 
+      secuencia. A = A / C = B compara C viene después que B SI. Ahí se determina el 
+      orden de la cadena porque el primer par de caracteres desiguale que encuentra
+      y compara define el resultado, de manera tal que es true. 
+      Si una cadena tiene más caracteres que otra verificamos→ ("AB" > "A");true←         
+      porque tiene más caracteres. Por orden alfabético también podemos comparar palabras  
+      ("Mundo" > "Hola");true← Por orden alfabético M viene después que la letra H  en 
+      el alfabeto asi a modo de ejemplo comparamos ("M" > "H");true← Otro dato 
+      interesante es que podemos usar estos datos de comparación con variables. 
+      var az = 15; /  var by = 8;
+      console.log(az > by);//true /  console.log(by > az);//false
+    #Mayor o igual que:
+      Este operador >= nos permite incluir el caso en que ambos valores sea iguales,
+      (5 > 5); //false (5 >= 5); //true En el caso de cadenas de caracteres también 
+      aplica cuando las cadena sean iguales el valor va a ser true
+      Menor que: Este operador < nos permite verificar (5 < 6); //true, si el número a la 
+      izquierda es mayor (10 < 8);//false. También se puede usar para cadena de caracteres
+      siempre la comparación de cadena será por orden alfabético ("A" < "B");true porque 
+      A esta antes que B en el alfabeto. En este ejemplo ("A ,C, B" > "A","B","C");//true← 
+      el proceso va a ser igual que en ejemplos anteriores. Tambien podemos comparar los 
+      valores de variable. 
+      #Operador menor o igual que: basicamente funciona igual que menor que <  
+      (5 < 5); //false / (5 >= 5); //true.
+    #Operadores lógicos "and" Estos operadores lógicos nos permiten expresar distintas 
+      expresiones para formar condiciones un poco más elaboradas o más complejas
+      Tabla de verdad de operador Y→AND←→&&←en JS se expresa con &&
+      | x | z | x && Z |tenemos dos expresiones x y z y los unimos x && z
+      | ↓   ↓     ↓    | 
+      ├----------------┤
+      | ↓   ↓     ↓    |
+      | T | T |   T    |Si x es true y z es true toda esa expresión es true
+      | T | F |   F    |En cambio si alguno de ellos es false o ambos 
+      | F | T |   F    |entonces la expresión va a ser 
+      | F | F |   F    |←false
+      La operación solo es verdadera cuando ambos operadores son verdaderos.
+
+    #Operador logico "or"
+      Tabla de verdad del operador O→OR←→||←en JS se expresa con ||
+      | x | z | x && Z |tenemos dos expresiones x y z y los unimos x || z
+      | ↓   ↓     ↓    | 
+      ├----------------┤
+      | ↓   ↓     ↓    |En el operador OR si cualquiera de los operandos es true entonses
+      | T | T |   T    |el resultado es verdadero
+      | T | F |   T    |←true 
+      | F | T |   T    |←true
+      | F | F |   F    |←false
+      La operación solo es verdadera si alguno de los dos operandos o ambos son true
+
+    #Operador logico "not" 
+      Tabla de verdad del operador NO→NOT←→!←en JS se expresa con !
+      Para: !x 
+      | x | !x| 
+      | ↓   ↓ |     
+      ├-------┤
+      | ↓   ↓ |  
+      | T | F | Si la expresión es true agregando el operador not la convertimos en false  
+      | F | T |Si la expresión es false agregando el operador not la convertimos en true
+
+    #Setencias Condicionales:
+      Las condiciónale determinan que rumbo va a continuar nuestro código, en el caso de 
+      (if) o si en español siguiendo el ejemplo seria if(condición la cual si es verdadera)
+      {ejecutara lo que esta ente las llaves} o cuerpo de la condicional. 
+      También se pueden usar los operadores lógicos→ && || !← para condiciones 
+      más elaboradas.
+      var cond = 5
+      if (cond > 2) // la condición se cumple
+      {
+      console.log("La condición es verdadera"); // ejecuta el código
+      }
+      if((cond > 2) && (cond < 10)); //condiciones mas complejas
+      {
+      console.log("La condición es verdadera"); // ejecuta el codigo
+      }
+      var estación = "invierno"
+      if(estación == "invierno")// la condición se cumple
+      {
+      console.log("¡Si! Me encanta el invierno");// ejecuta el código
+      } 
+      if (cond < 2) // la condición NO se cumple
+      {
+      console.log("La condición es verdadera"); // NO ejecuta el código
+      }
+      console.log("La condición no es verdadera"); // Continua la ejecución saltando el if
+    #Clausula  “else”
+      También podemos expandir nuestras condicionales si la condición de la condicional es false            
+      if (false)
+      {
+        console.log("si la condición es true se ejecuta este código");
+      } 
       else
       {
-        console.log("Obeso"); 
+        console.log("La condición es false ignora el if y se ejecuta else con este código");
       }
-    } 
-    interpretarIMC(17.8);//caso 1 se ejecuta por que es el primer true que encuentra
-    interpretarIMC(22.2);//caso 2 se ejecuta por que caso 1 es false
-    interpretarIMC(28.5);//caso 3 se ejecuta por que caso 1 caso 2 es false
-    interpretarIMC(32.2);//caso 4 se ejecuta por que no encuentra ningun true
-    var casoIF = "Caso 1 se ejecuta por que es el primer true que encuentra"
-    var casoPrimerElseIf = "Caso 2 se ejecuta por que caso 1 es false"
-    var casoSegundoElseIf = "Caso 3 se ejecuta por que caso 1 caso 2 es false"
-    var casoElse = "Caso 4 se ejecuta por que no encuentra ningun true"
-    console.log(casiIF); 
-    console.log(casoPrimerElseIf); 
-    console.log(casoSegundoElseIf);
-    console.log(casoElse)
-  #Codigo de golf
-    Definimos una funcion que va a llevar como parametro→par que es el numero 
-    promedio de gopes esperados y→golpes que es el numero de golpes ejecutados.
-    para prosegir con este mini proyecto deberemos usar condicionales para implementar
-    esta tabla.
-    Golpes              Retornar
-    ---------------------------------
-    1                 "Hole-in-one!"
-    <= par - 2        "Eagle"
-    par - 1           "Birdie" 
-    par               "Par" 
-    par + 1           "Bogey"
-    par + 2           "Doble Bogey"
-    >= par + 3        "Go Home!"
-    Nota: par y golpes siempre seran numericos y positivos, el parametro par es→4                         
-    function PuntageDeGolf(par, golpes)
-    {
-      if(golpes == 1)
+    #Clausula else if
+      Los condicionales también pueden verificar  y manejar varias condiciones, con la 
+      cláusula else if que  nos permite manejar exactamente eso→manejar condiciones 
+      alternativa y decidir por la primera condición que encuentre y sea verdadera→ true. 
+      Para el ejemplo es conveniente trabajar con funciones:Esta funcion va a tomar un 
+      valor como un parametro y va a determinar si el valor es dibicible entre 2 o 3 
+      o si no es divicible entre ninguno.
+      function clasificarValor(valor)
       {
-        return "Hole-in-one!";     
+        if(valor % 2 == 0)//genera un resto igual a cero es true
+        {
+          console.log("Divisible entre 2");
+        } 
+          else if(valor % 3 == 0)
+        {
+          console.log("Divisible entre 3");
+        }  
+        else 
+        {
+          console.log("NO es divisible entre las opciones");
+        } 
+      }
+    #Condicionales Orden logico, se llama a la function y se ejecuta segun el caso  
+      clasificarValor(2) //caso 1 se ejecuta por que es el primer true que encuentra
+      clasificarValor(15)//caso 2 se ejecuta por que caso 1 es false
+      clasificarValor(7) //caso 3 se ejecuta por que caso 1 y 2 son false
+      var elcasoUno = "caso 1 se ejecuta por que es el primer true que encuentra"
+      var elCasoDos = "caso 2 se ejecuta por que caso 1 es false"
+      var elCasoTres = "caso 3 se ejecuta por que caso 1 y 2 son false"
+      console.log(elcasoUno); 
+      console.log(elCasoDos); 
+      console.log(elCasoTres);
+    #Encadenar sentencias "if else"
+      Vamos a ver un ejemplo con dos clausulas else if creando una funcion
+      function interpretarIMC(indiceDeMasaCorporal)
+      {
+        if(indiceDeMasaCorporal < 18.5)
+        {
+          console.log("Bajo peso");
+        }
+        else if(indiceDeMasaCorporal <= 24.9 )
+        {
+          console.log("peso Normal");
+        }
+        else if(indiceDeMasaCorporal <= 29.9)
+        {
+          console.log("Sobrepeso");
+        }
+        else
+        {
+          console.log("Obeso"); 
+        }
       } 
-      else if(golpes <= par - 2)
+      interpretarIMC(17.8);//caso 1 se ejecuta por que es el primer true que encuentra
+      interpretarIMC(22.2);//caso 2 se ejecuta por que caso 1 es false
+      interpretarIMC(28.5);//caso 3 se ejecuta por que caso 1 caso 2 es false
+      interpretarIMC(32.2);//caso 4 se ejecuta por que no encuentra ningun true
+      var casoIF = "Caso 1 se ejecuta por que es el primer true que encuentra"
+      var casoPrimerElseIf = "Caso 2 se ejecuta por que caso 1 es false"
+      var casoSegundoElseIf = "Caso 3 se ejecuta por que caso 1 caso 2 es false"
+      var casoElse = "Caso 4 se ejecuta por que no encuentra ningun true"
+      console.log(casiIF); 
+      console.log(casoPrimerElseIf); 
+      console.log(casoSegundoElseIf);
+      console.log(casoElse)
+    #Codigo de golf
+      Definimos una funcion que va a llevar como parametro→par que es el numero 
+      promedio de gopes esperados y→golpes que es el numero de golpes ejecutados.
+      para prosegir con este mini proyecto deberemos usar condicionales para implementar
+      esta tabla.
+      Golpes              Retornar
+      ---------------------------------
+      1                 "Hole-in-one!"
+      <= par - 2        "Eagle"
+      par - 1           "Birdie" 
+      par               "Par" 
+      par + 1           "Bogey"
+      par + 2           "Doble Bogey"
+      >= par + 3        "Go Home!"
+      Nota: par y golpes siempre seran numericos y positivos, el parametro par es→4                         
+      function PuntageDeGolf(par, golpes)
       {
-        return "Eagle";
+        if(golpes == 1)
+        {
+          return "Hole-in-one!";     
+        } 
+        else if(golpes <= par - 2)
+        {
+          return "Eagle";
+        }
+        else if(golpes == par - 1)
+        {
+          return "Birdie";  
+        }
+        else if(golpes == par) 
+        {
+          return "Par";  
+        }
+        else if(golpes == par + 1) 
+        {
+          return "Bogey";  
+        }
+        else if(golpes == par + 2) 
+        {
+          return "Double Bogey";  
+        }
+        else if(>= par + 3)        
+        {
+          return "Go Home!";
+        }
       }
-      else if(golpes == par - 1)
-      {
-        return "Birdie";  
-      }
-      else if(golpes == par) 
-      {
-        return "Par";  
-      }
-      else if(golpes == par + 1) 
-      {
-        return "Bogey";  
-      }
-      else if(golpes == par + 2) 
-      {
-        return "Double Bogey";  
-      }
-      else if(>= par + 3)        
-      {
-        return "Go Home!";
-      }
-    }
-    console.log(puntajeDeGolf(4, 1));//par 4 retorna 1 se muestra  "Hole-in-one!"
-    console.log(puntajeDeGolf(4, 2));//par 4 <= par -2 retorna 2 se muestra  "Eagle" 
-    console.log(puntajeDeGolf(4, 3));//par 4 par -1 retorna 3 se muestra  "Birdie"
-    console.log(puntajeDeGolf(4, 4));//par 4 par retorna 4 se muestra  "Par"
-    console.log(puntajeDeGolf(4, 5));//par 4 par +1 retorna 5 se muestra  "Bogey"
-    console.log(puntajeDeGolf(4, 6));//par 4 par +2 retorna 6 se muestra "Doble Bogey"
-    console.log(puntajeDeGolf(4, 8));//par 4 >= par +3 retorna 7 se muestra "Go Home!"
-     
-  #Sentencia Switch:
-    Ahora vamos a ver otra estructura que en cierta forma remplaza los condicionales en JS
-    Definimos una función con un parámetro →valor,  este parámetro va a ser un numero entre 
-    1 y 4 cada uno de esos valores va a estar asociados a una cadena específica. A una cadena 
-    de caracteres, la función va a retornar esa clasificación, esa cadena a partir del numero en
-    lugar de condicionales vamos a usar la sentencia switch que nos permite escribir código 
-    que es muy similar a una condicional. Pero swifch nos permite a partir de un valor decidir 
-    que va a pasar en base a ese valor. Nota: para no entrar en un bucle infinito siempre se 
-    finalisa con la sentencia→ break;
-    function clasificarValor(valor)
-    {
-      var respuesta;//variable local
-      switch (valor)
-      {
-        case 1:
-          respuesta = "alpha";
-          break;//siempre se finalisa con break;  
-        case 2:
-          respuesta = "beta";
-          break;
-        case 3:
-          respuesta = "gamma";
-          break;
-        case 4:
-          respuesta = "delta";
-          break;      
-      } 
-      return respuesta;
-    } 
-    Y finalmente vamos a retornar el valor→ respuesta. return se coloca fuera de las llaves 
-    del switch por que no es parte del bloque swich. Finalmente llamamos a la función para 
-    pasarle los valore, que podemos asignarle a una variable o para mostrarlo en pantalla
-    console.loc(clasificarValor(1));
-    console.loc(clasificarValor(2));
-    console.loc(clasificarValor(3));
-    console.loc(clasificarValor(4));
-  #Ahora vamos a usar switch con una cadena de caracteres solo declarando una variable 
-    var producto = "helado"
-    switch (producto)
-    {
-      case  "pizza":
-        console.log("La pizza basica cuesta $550");
-        break;
-      case "hambueguesa":
-        console.log("Las hamburguesas cuestan $250");
-        break;
-      case "helado":
-        console.log("El helado cuesta $95");
-        break;       
-      }
-      //Como la variable valor se asigno "helado" se muestra→ ("El helado cuesta $95")
-    }
-    console.log("Luego del switch continua ejecutando el codigo");
-  
-  #Sentencia Switch opción predeterminada
-   También podemos agregar una opción predeterminada a la sentencia switch que es el 
-   equivalente a else en una condicional if. Esa opción se va a ejecutar si ningunos de 
-   los valores es el valor de la variable o de la expresión. Esta función va a seleccionar 
-   el idioma que corresponda a un valor espesifico. 
-   function seleccionarIdioma(valor)
-   {
-      var idioma;
-      switch(valor)//dentro de la sentencia agregamos el parametro
-      {
-        case 1: 
-          idioma = "Español";
-        break;
-        case 2: 
-          idioma = "Frances";
-          break;
-        case 3: 
-          idioma = "Italiano";
-          break;  
-        default:
-          idioma = "Ingles";
-          break;// es opcional pero por norma lo usamos
-      } 
-      return idioma;
-   }
-   console.log(seleccionarIdioma(1));//valor=1 se ejecuta caso1 var idioma es "Español"
-   console.log(seleccionarIdioma(2));//valor=2 se ejecuta caso2 var idioma es "Frances"
-   console.log(seleccionarIdioma(4));//se ejecuta por defecto var es "Ingles" 
+      console.log(puntajeDeGolf(4, 1));//par 4 retorna 1 se muestra  "Hole-in-one!"
+      console.log(puntajeDeGolf(4, 2));//par 4 <= par -2 retorna 2 se muestra  "Eagle" 
+      console.log(puntajeDeGolf(4, 3));//par 4 par -1 retorna 3 se muestra  "Birdie"
+      console.log(puntajeDeGolf(4, 4));//par 4 par retorna 4 se muestra  "Par"
+      console.log(puntajeDeGolf(4, 5));//par 4 par +1 retorna 5 se muestra  "Bogey"
+      console.log(puntajeDeGolf(4, 6));//par 4 par +2 retorna 6 se muestra "Doble Bogey"
+      console.log(puntajeDeGolf(4, 8));//par 4 >= par +3 retorna 7 se muestra "Go Home!"
 
-  #Sentencia switch multiples casos:
-   En las sentencias switch también podemos optar ejecutar un código específico para varios 
-   valores vamos a tener números entre 1 y 6 que van a representar los valores en el dispositivo. 
-   El parámetro se va a llamar valor, el parámetro que va a representar el volumen que va ser 
-   una cadena de caracteres que va a definir la intensidad del volumen. Para eso usaremos la 
-   sentencia switch , esa sentencia va a depender del valor del parámetro. Pero si queremos 
-   que el volumen intermedio sea el caso 2 o el 3, lo podemos hacer dentro de un solo break dos
-   valores pueden realizar la misma acción. También podemos tener más de dos casos manejado de 
-   la misma forma caso 4, 5 y 6 y si es valor esta fuera de rango, digamos 7 se ejecuta por defecto
-   function clacificarVolumen(valor)
-   {
-      var volumen; 
-      switch(valor)
+    #Sentencia Switch:
+      Ahora vamos a ver otra estructura que en cierta forma remplaza los condicionales en JS
+      Definimos una función con un parámetro →valor,  este parámetro va a ser un numero entre 
+      1 y 4 cada uno de esos valores va a estar asociados a una cadena específica. A una cadena 
+      de caracteres, la función va a retornar esa clasificación, esa cadena a partir del numero en
+      lugar de condicionales vamos a usar la sentencia switch que nos permite escribir código 
+      que es muy similar a una condicional. Pero swifch nos permite a partir de un valor decidir 
+      que va a pasar en base a ese valor. Nota: para no entrar en un bucle infinito siempre se 
+      finalisa con la sentencia→ break;
+      function clasificarValor(valor)
       {
-        case 1:
-          volumen = "Bajo";
-        break;
-        case 2:
-        case 3:
-          volumen = "Intermedio";
-        break;
-        case 4:
-        case 5:
-        case 6:    
-          volumen = "Alto";
-        break;
-        default:
-          volumen = "Sin volumen";
-        break; 
-      }
-      return volumen; 
-   } 
-   console.log(clacificarVolumen(1));//valor=1 se ejecuta caso1 var volumen "Bajo"
-   console.log(clacificarVolumen(2));//valor=2 se ejecuta caso2,3 var volumen "Intermedio"
-   console.log(clacificarVolumen(4));//valor=4 se ejecuta caso4,5,6 var volumen "Alto"
-   console.log(clacificarVolumen(7));//valor=7 se ejecuta default var volumen "Sin volumen"      
-   
-  #Reemplazar “if… else” por  “switch” 
-   En ciertos casos podemos remplazar condicionales con la sentencia switch en el ejemplo 
-   vemos que el nombre de la función y el parámetro al igual que la variable no cambian 
-   y en el final el retorno el mismo.  
-   function seleccionarIdioma(valor)
-   {
-      var idioma;
-      switch(valor)                 if(valor == 1 
-      {                             {
-        case 1:                       idioma = “Español”; 
-          idioma = "Español";       }  
-        break;                      else if (valor == 2)                                  
-        case 2:                     {                
-          idioma = "Frances";         idioma = "Frances";
-          break;                    }  
-        case 3:                     else if(valor == 3)        
-          idioma = "Italiano";      {    
-          break;                      idioma = "Italiano"; 
-        default:                    }
-          idioma = "Ingles";        else
-          break;                    {
-      }                               idioma  = “ingles”;                            
-      return idioma;                } 
-   } 
-  #Retornar valores Vooleanos:
-   Como retornar valores booleano de una forma muy concisa desde una función, inicialmente 
-   lo podíamos iniciar con un condicional que funciona y va a cumplir su propósito pero lo 
-   mismo lo podemos hacer en una sola línea simplemente retornar el valor de una comparación.
-   →return a < b; ←nota la diferencia de lo conciso que es en comparación de usar condicional
-   function esMenorQue(a, b)
-   {
-      If(a < b)
+        var respuesta;//variable local
+        switch (valor)
+        {
+          case 1:
+            respuesta = "alpha";
+            break;//siempre se finalisa con break;  
+          case 2:
+            respuesta = "beta";
+            break;
+          case 3:
+            respuesta = "gamma";
+            break;
+          case 4:
+            respuesta = "delta";
+            break;      
+        } 
+        return respuesta;
+      } 
+      Y finalmente vamos a retornar el valor→ respuesta. return se coloca fuera de las llaves 
+      del switch por que no es parte del bloque swich. Finalmente llamamos a la función para 
+      pasarle los valore, que podemos asignarle a una variable o para mostrarlo en pantalla
+      console.loc(clasificarValor(1));
+      console.loc(clasificarValor(2));
+      console.loc(clasificarValor(3));
+      console.loc(clasificarValor(4));
+    #Ahora vamos a usar switch con una cadena de caracteres solo declarando una variable 
+      var producto = "helado"
+      switch (producto)
       {
-        return  true;
+        case  "pizza":
+          console.log("La pizza basica cuesta $550");
+          break;
+        case "hambueguesa":
+          console.log("Las hamburguesas cuestan $250");
+          break;
+        case "helado":
+          console.log("El helado cuesta $95");
+          break;       
+        }
+        //Como la variable valor se asigno "helado" se muestra→ ("El helado cuesta $95")
       }
-      Else 
-      {
-        return false;
-      }
-    }
-    function esMenorQue(a, b)
-    {
-      return a < b;
-    }
-    console.log(esMenorQue(3, 6))
+      console.log("Luego del switch continua ejecutando el codigo");
 
-  #Patrón  de retorno anticipado
-    Cuando retornamos el valor de una función, en ese momento que retornamos el valor la función 
-    se detiene completamente. Cualquier línea que esta luego del return no se va a ejecutar. 
-    En el ejemplo vamos a intentar mostrar otro mensaje después de return→Esa línea nunca se va a 
-    ejecutar y la función se detiene en el return. Eso es algo importante porque ese patrón 
-    anticipado es muy útil, específicamente cuando necesitamos detener la función.
-    function miFuncion()
-    {
+    #Sentencia Switch opción predeterminada
+      También podemos agregar una opción predeterminada a la sentencia switch que es el 
+      equivalente a else en una condicional if. Esa opción se va a ejecutar si ningunos de 
+      los valores es el valor de la variable o de la expresión. Esta función va a seleccionar 
+      el idioma que corresponda a un valor espesifico. 
+      function seleccionarIdioma(valor)
+      {
+        var idioma;
+        switch(valor)//dentro de la sentencia agregamos el parametro
+        {
+          case 1: 
+            idioma = "Español";
+          break;
+          case 2: 
+            idioma = "Frances";
+            break;
+          case 3: 
+            idioma = "Italiano";
+            break;  
+          default:
+            idioma = "Ingles";
+            break;// es opcional pero por norma lo usamos
+        } 
+        return idioma;
+      }
+      console.log(seleccionarIdioma(1));//valor=1 se ejecuta caso1 var idioma es "Español"
+      console.log(seleccionarIdioma(2));//valor=2 se ejecuta caso2 var idioma es "Frances"
+      console.log(seleccionarIdioma(4));//se ejecuta por defecto var es "Ingles" 
+
+    #Sentencia switch multiples casos:
+      En las sentencias switch también podemos optar ejecutar un código específico para varios 
+      valores vamos a tener números entre 1 y 6 que van a representar los valores en el dispositivo. 
+      El parámetro se va a llamar valor, el parámetro que va a representar el volumen que va ser 
+      una cadena de caracteres que va a definir la intensidad del volumen. Para eso usaremos la 
+      sentencia switch , esa sentencia va a depender del valor del parámetro. Pero si queremos 
+      que el volumen intermedio sea el caso 2 o el 3, lo podemos hacer dentro de un solo break dos
+      valores pueden realizar la misma acción. También podemos tener más de dos casos manejado de 
+      la misma forma caso 4, 5 y 6 y si es valor esta fuera de rango, digamos 7 se ejecuta por defecto
+      function clacificarVolumen(valor)
+      {
+        var volumen; 
+        switch(valor)
+        {
+          case 1:
+            volumen = "Bajo";
+          break;
+          case 2:
+          case 3:
+            volumen = "Intermedio";
+          break;
+          case 4:
+          case 5:
+          case 6:    
+            volumen = "Alto";
+          break;
+          default:
+            volumen = "Sin volumen";
+          break; 
+        }
+        return volumen; 
+      } 
+      console.log(clacificarVolumen(1));//valor=1 se ejecuta caso1 var volumen "Bajo"
+      console.log(clacificarVolumen(2));//valor=2 se ejecuta caso2,3 var volumen "Intermedio"
+      console.log(clacificarVolumen(4));//valor=4 se ejecuta caso4,5,6 var volumen "Alto"
+      console.log(clacificarVolumen(7));//valor=7 se ejecuta default var volumen "Sin volumen"      
+
+    #Reemplazar “if… else” por  “switch” 
+      En ciertos casos podemos remplazar condicionales con la sentencia switch en el ejemplo 
+      vemos que el nombre de la función y el parámetro al igual que la variable no cambian 
+      y en el final el retorno el mismo.  
+      function seleccionarIdioma(valor)
+      {
+        var idioma;
+        switch(valor)                 if(valor == 1 
+        {                             {
+          case 1:                       idioma = “Español”; 
+            idioma = "Español";       }  
+          break;                      else if (valor == 2)                                  
+          case 2:                     {                
+            idioma = "Frances";         idioma = "Frances";
+            break;                    }  
+          case 3:                     else if(valor == 3)        
+            idioma = "Italiano";      {    
+            break;                      idioma = "Italiano"; 
+          default:                    }
+            idioma = "Ingles";        else
+            break;                    {
+        }                               idioma  = “ingles”;                            
+        return idioma;                } 
+      } 
+    #Retornar valores Vooleanos:
+      Como retornar valores booleano de una forma muy concisa desde una función, inicialmente 
+      lo podíamos iniciar con un condicional que funciona y va a cumplir su propósito pero lo 
+      mismo lo podemos hacer en una sola línea simplemente retornar el valor de una comparación.
+      →return a < b; ←nota la diferencia de lo conciso que es en comparación de usar condicional
+      function esMenorQue(a, b)
+      {
+        If(a < b)
+        {
+          return  true;
+        }
+        Else 
+        {
+          return false;
+        }
+      }
+      function esMenorQue(a, b)
+      {
+        return a < b;
+      }
+      console.log(esMenorQue(3, 6))
+
+    #Patrón  de retorno anticipado
+      Cuando retornamos el valor de una función, en ese momento que retornamos el valor la función 
+      se detiene completamente. Cualquier línea que esta luego del return no se va a ejecutar. 
+      En el ejemplo vamos a intentar mostrar otro mensaje después de return→Esa línea nunca se va a 
+      ejecutar y la función se detiene en el return. Eso es algo importante porque ese patrón 
+      anticipado es muy útil, específicamente cuando necesitamos detener la función.
+      function miFuncion()
+      {
       console.log("Hola")
       return "Mundo";
       console.log("Adios");//unreachable code detecte (7027) ←codigo inalcansable detectado
-    }
-    console.log(miFuncion());
-    
-    function raizCuadrada(num)
-    {
-      if(num < 0)
-      {
-        return undefined
       }
-    }
-  #Patron de valor anticipado
-    A continuación en este ejemplo definimos una función y le damos un parámetro→ num, la raíz 
-    cuadrada de un número negativo no existe, así  que si esa condición es verdadera num<0 no 
-    podemos calcular la raíz cuadrada. En ese caso lo que hacemos es detener la función y 
-    retornamos un valor que sería→ udefefined En el caso de que el valor sea valido→ num>0. 
-    Digamos que pasamos 25, la condición del if no se cumple la raíz cuadrada seria 5 
-    pero si pasamos un numero negativo la condición if es true y se ejecuta retrun undefined
-    function raizCuadrada(num)
-    {
-      if(num < 0)//num no es menor que 0 y el resultado es 5 pero si pasamos -5 ahi entra al if
-      // y se ejecuta return undefined
-      {
-        return undefined//aqui se detiene la funcion si la condicion es true
-      }
-      return Math.sqrt(num);//el parametro num calculamos la raiz cuadrada  
-    }
-    console.log(raizCuadrada(25));//pasamos a num el valor 25 que nos devueve su raiz 5
-    console.log(raizCuadrada(-5))//pasamos a num el valor -5 que nos devueve undefined
+      console.log(miFuncion());
 
-  #Juegos de Cartas: La meta es definir una función para contar cartas
-    Lo primero que definimos es la variable global luego la función con un parametro
-    →carta, en la función declaramos una variable local decisión, esa va a ser la decisión 
-    final. Si apostar o esperar! pero primero tenemos que actualizar el valor del conteo 
-    en la sentencia switch, esa sentencia va a evaluar el valor del parametro→carta y 
-    dependiendo de su valor actualizamos el valor del conteo. Ahi podemos ver en la tabala que si 
-    el valor es 2, 3, 4, 5, 6 tenemos que aumentar el valor de la variable→conteo en uno con un 
-    contador ++ y luego break. Para la segunda categoria de valores 7, 8, 9 sabemos que  la tabla 
-    indica→CERO no hay que cambiar el valor del conteo por eso no lo incluimos en la sentenci switch. 
-    Si miramos la tabla veremos que si tenemos que incluir los casos→10, "J","Q","K","A" en 
-    cualquiera de estos caso tenemos que reducir el valor en uno con un contador -- y break 
-    fuera de switch creamos un condicional if si la variable conteo > 0→true la variable 
-    local decision sera"Apostar" si no sera "Esperar" dependiendo del condicional sera el 
-    retorno que obtenemos. 
+      function raizCuadrada(num)
+      {
+        if(num < 0)
+        {
+          return undefined
+        }
+      }
+    #Patron de valor anticipado
+      A continuación en este ejemplo definimos una función y le damos un parámetro→ num, la raíz 
+      cuadrada de un número negativo no existe, así  que si esa condición es verdadera num<0 no 
+      podemos calcular la raíz cuadrada. En ese caso lo que hacemos es detener la función y 
+      retornamos un valor que sería→ udefefined En el caso de que el valor sea valido→ num>0. 
+      Digamos que pasamos 25, la condición del if no se cumple la raíz cuadrada seria 5 
+      pero si pasamos un numero negativo la condición if es true y se ejecuta retrun undefined
+      function raizCuadrada(num)
+      {
+        if(num < 0)//num no es menor que 0 y el resultado es 5 pero si pasamos -5 ahi entra al if
+        // y se ejecuta return undefined
+        {
+          return undefined//aqui se detiene la funcion si la condicion es true
+        }
+        return Math.sqrt(num);//el parametro num calculamos la raiz cuadrada  
+      }
+      console.log(raizCuadrada(25));//pasamos a num el valor 25 que nos devueve su raiz 5
+      console.log(raizCuadrada(-5))//pasamos a num el valor -5 que nos devueve undefined
+
+    #Juegos de Cartas: La meta es definir una función para contar cartas
+      Lo primero que definimos es la variable global luego la función con un parametro
+      →carta, en la función declaramos una variable local decisión, esa va a ser la decisión 
+      final. Si apostar o esperar! pero primero tenemos que actualizar el valor del conteo 
+      en la sentencia switch, esa sentencia va a evaluar el valor del parametro→carta y 
+      dependiendo de su valor actualizamos el valor del conteo. Ahi podemos ver en la tabala que si 
+      el valor es 2, 3, 4, 5, 6 tenemos que aumentar el valor de la variable→conteo en uno con un 
+      contador ++ y luego break. Para la segunda categoria de valores 7, 8, 9 sabemos que  la tabla 
+      indica→CERO no hay que cambiar el valor del conteo por eso no lo incluimos en la sentenci switch. 
+      Si miramos la tabla veremos que si tenemos que incluir los casos→10, "J","Q","K","A" en 
+      cualquiera de estos caso tenemos que reducir el valor en uno con un contador -- y break 
+      fuera de switch creamos un condicional if si la variable conteo > 0→true la variable 
+      local decision sera"Apostar" si no sera "Esperar" dependiendo del condicional sera el 
+      retorno que obtenemos. 
       
-  #Tabla:
-    Cambio de conteo            carta
-    +1                         2, 3, 4, 5, 6
-    0                         7, 8, 9
-    -1                         10, "J","Q","K","A"
-  #Codigo
-    var conteo = 0;
-    function contarCartas(carta)
-    {
-      var decision;
-      switch(carta)
+    #Tabla:
+      Cambio de conteo            carta
+      +1                         2, 3, 4, 5, 6
+      0                         7, 8, 9
+      -1                         10, "J","Q","K","A"
+    #Codigo
+      var conteo = 0;
+      function contarCartas(carta)
       {
-        case2:
-        case3:
-        case4:
-        case5:
-        case6:
-          conteo ++;
-        break;	
-        case10:
-        case"J":
-        case"Q":
-        case"K":
-        case"A":
-          conteo--;
-        brek; 
-      }
-      if(conteo > 0)
-      {
-        Decision  = "Apostar"
-      }
-      else
-      {
-        Decision = "Esperar"
-      }
-        return conteo + " " + decision; 
-    } 
-    console.log(contarCartas(2));
-    console.log(contarCartas(3));
-    console.log(contarCartas(7));
-    console.log(contarCartas("K"));
-    console.log(contarCartas("A"));
+        var decision;
+        switch(carta)
+        {
+          case2:
+          case3:
+          case4:
+          case5:
+          case6:
+            conteo ++;
+          break;	
+          case10:
+          case"J":
+          case"Q":
+          case"K":
+          case"A":
+            conteo--;
+          brek; 
+        }
+        if(conteo > 0)
+        {
+          Decision  = "Apostar"
+        }
+        else
+        {
+          Decision = "Esperar"
+        }
+          return conteo + " " + decision; 
+      } 
+      console.log(contarCartas(2));
+      console.log(contarCartas(3));
+      console.log(contarCartas(7));
+      console.log(contarCartas("K"));
+      console.log(contarCartas("A"));
 
-  #Crear Objetos:
-    Los objetos nos permiten guardar la secuencia o un conjunto de propiedades que están 
-    relacionadas con sus correspondientes valores. En el ejemplo digamos que queremos representar 
-    las propiedades de nuestro perro.
-    Secuencia que en verdad representa el objeto
- 
-    // Se usa connotacion de punto
-    var miPerro = {
-      "nombre": "camilo",
-      "edad": 3,
-      "peso": 6,
-      "rasa": "sharpei"    
-    };
-    Esta combinación de propiedades→ a la izquierda y de valores→ a la derecha, lo denominamos 
-    un objeto. Digamos que es como una forma de agruparlas todas bajo una misma estructura de 
-    datos, que  podemos usar y acceder a través de la variable→miPerro. Nota: Las propiedades 
-    y los valores  no necesaria mente siendo una sola palabra se usan las comillas. Propiedades 
-    de los valores se separan con→ : y al final de la línea va una→ , También se pueden usar 
-    números como propiedades→5: “cinco”,
-  #Acceder a propiedades notación de puntos:
-    Si necesitamos acceder al objeto que es camilo, podemos acceder a ese valor con la notación 
-    de punto. Escribimos el nombre de la variable seguido de un punto escribimos el nombre de 
-    la propiedad Ej.  console.log(miPerro.edad); se muestra 3 
-  #Acceder a propiedades notación de corchetes: 
-    Una notación alternativa que podemos usar para acceder a las propiedades  de un objeto, en el 
-    siguiente código como podemos notar que hay propiedades que son cadenas de caracteres con 
-    espacios, en ese caso si o si van entre comillas y debemos usar la notación de corchetes que  
-    es equivalente  con la notación de punto. Esto quiere decir que podemos acceder a cualquiera 
-    de las propiedades del objeto.     
-     
-    //Se usa conotacion de corchetes
-    var miCuaderno = {
-      "color": "verde"
-      "categoria": 3,
-      "numero de paginas": 200,
-      "numero de hojas": 100
-    };
-  #Acceder a propiedades Variables
-    Como acceder a una propiedad de un objeto usando una variable. Vamos a escribir el valor 
-    entre corchetes usando una variable, para poder acceder a un lugar específico de esos valores 
-    definimos la variable→ posición. Como podemos acceder: Escribimos el nombre de la variable 
-    que contiene a ese  objeto→resultado  y entre corchete pasamos en vez de el nombre de la 
-    propiedad pasamos el nombre de la variable→posicion esto es equivalente a escribir 4  pero 
-    como estamos escribiendo una variable podemos trabajar con esa variable en nuestro programa 
-    haciendo que el acceso sea más dinámico. Para mostrar ese resultado llamamos a consol.log
-    solo usando la notación de corchetes.
+    #Crear Objetos:
+      Los objetos nos permiten guardar la secuencia o un conjunto de propiedades que están 
+      relacionadas con sus correspondientes valores. En el ejemplo digamos que queremos representar 
+      las propiedades de nuestro perro.
+      Secuencia que en verdad representa el objeto
 
-    var resultados = {
-    1: "Manuel5711",
-    2: "Nora3578",
-    3: "Lucas2115",
-    4: "Cecilia4598"
-   }
-   var posicion = (4);
-   console.log(resultados[posicion]);
-
-  #Actualizar Propiedades:
-    Además de crear un objeto en el proyecto y acceder a sus propiedades, también puedes actualizar 
-    el valor de esas propiedades para permitir que tu objeto cambie durante la ejecución del 
-    programa. Vamos a ver un ej. que llamaremos mochila. Con console.log escribimos 
-    la variable mochila separada por un punto→ color resultado azul
-
-    var mochila = {
-      "valor": "azul",
-      "tamaño":"mediano",
-      "contenido" :["botella de agua", "cuaderno"]
-    };
-    console.log(mochila.color);// resultado azul
-    
-    Una vez que ya tenemos estas propiedades definidas, digamos que queremos cambiar el color de 
-    la mochila vamos a acceder a ellas y la actualizaremos. Para acceder a la propiedad color 
-    Lo que hacemos es escribir el nombre de la variable que contiene el objeto seguido de un 
-    punto, el nombre de la propiedad que queremos actualizar y luego le asignamos el valor→"verde" 
-    Ej.
-    mochila.color = "verde";//reasignamos el valor 
-    console.log(mochila.color);//resultado verde    
-    
-    También podemos trabajar con sus valores para modificarlos. Si queremos agregar algo a la 
-    mochila, tendríamos que acceder al valor de la propiedad contenido. Para actualizar este valor 
-    podemos usar notación de punto→mochila.contenido. consolle.log(mochila.contenido); vemos 
-    ["botella de agua", "y cuaderno"] Digamos que queremos agregar un lápiz a nuestra mochila,
-    el codigo es→ mochila.contenido.push(); Llamamos al método push que agrega un elemento al 
-    final del arreglo
-    console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno"]
-    mochila.contenido.push("lapiz")//se agrega lapiz
-    console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno,", "lapiz"]
-    Nota: pop() este metodo nos permite remover el primer elemento de un array
-  # Agregar Propiedades:
-    También puedes agregar propiedades a un objeto en JS. Ej. Vamos a tener un objeto que va
-    a representar un curso
-    var curso = {
-      "titulo": "Aprende JavaScript desde cero",
-      "idioma": "Español",
-      "duracion": 30   
-    };
-    Como podemos agregar una cuarta propiedad? La propiedad se va a llamar vista, va ser el 
-    número de vista desde que se publicó el curso. La sintaxis es la misma que utilizamos para 
-    cambiar una propiedad pero en este caso vamos a escribir el nombre de la propiedad que 
-    queremos agregar. Primero el nombre de la variable seguida de un punto, el nombre de la 
-    propiedad nueva y luego el valor que queremos asignar.  
-    curso.vista = 34500
-    console.log(curso.vista);//resultado 34500
-    Nota: Si intentamos acceder a una propiedad que no existe el resultado será undefine
-    También podemos en vez de usar notación de punto, podemos usar notación de corchetes.
-    console.log(["vista"]); //resultado 34500
-  #Eliminar Propiedades:
-    Continuando como ejemplo del objeto curso. Ahora vamos a ver cómo puedes eliminar una 
-    propiedad de este objeto. La palabra clave aquí es→ DELETE que significa sacar o eliminar 
-    en español. Digamos que ya no queremos tener un registro de la propiedad duración en el
-    objeto curso, tenemos que escribir anteponiendo delete seguido de un espacio, el nombre 
-    de la variable separando esta con un punto y la propiedad que queremos eliminar. 
-    La sintaxis seria:→delete curso.duracion; 
-    console.log(curso.duracion);//vista antes de borrar 30
-    delete curso.duracion;// nombre del obj un punto y la propiedad a eliminar 
-    console.log(curso.duracion);//despues de borrar→ undefined
-    Si cambiamos la línea de código anterior por una que nos muestre el obj completo
-    console.log(curso); este es el obj que se nos presenta: 
-    {"titulo": "Aprende  JavaScript desde cero",  "idioma": "Español"} 
-
-  #Objetos para Búsquedas:
-    Según el caso podemos usar un objeto para remplazar una sentencia switch. Tenemos una función 
-    (buscar elemento químico). Si analizamos el elemento switch podemos ver que a partir del valor 
-    de símbolo vamos a asociar ese símbolo con su nombre completo→"Aluminio" Es decir que "Al" 
-    estaría asociado "Aluminio" y así será hasta finalizar la sentencia. Cuando tienes una sentencia 
-    switch con esta estructura que asocia dos valores podemos escribir código más conciso con un 
-    objeto, recuerda que los obj nos permiten asociar una propiedad con su valor.
-  #El código que a continuación se presenta usando switch perfectamente puede ser remplazado 
-  por un objeto.
-    Function buscarElementoQimico(simbolo)
-    {
-      Var elementoQuimico = "";
-      switch(simblo)
-      {
-        case "Al":
-          elementoQuimico = "Aluminio";
-          break;
-        case "S":
-          elementoQuimico = "Azufre";
-          break;
-        case "Cl":
-          elementoQuimico = "Cloro";
-          break;
-        case "He":
-          elementoQuimico = "Helio";
-          break; 
-        case "B":
-          elementoQuimico = "Boro";
-          break;
-        case "Li":
-          elementoQuimico = "Litio";
-          break;
-      }
-      return elementoQuimico;             
-    }
-  #En el siguiente ej. veremos cómo  podemos remplazar switch por un objeto:
-    Function buscarElementoQimico(simbolo)
-    {
-      var simbolosQuimicos = {
-      "Al": "Aluminio",
-      "S": "Azufre",
-      "Cl": "Cloro",
-      "Hd": "Helio",
-      "B": "Boro",
-      "Li": "Litio";   
+      // Se usa connotacion de punto
+        var miPerro = {
+        "nombre": "camilo",
+        "edad": 3,
+        "peso": 6,
+        "rasa": "sharpei"    
       };
-      Return simbolosQuimicos[simbolo];//esto retorna el nombre completo del elemento símbolo 
-    }
-    Ya tenemos el objeto al cual hemos restructurando nuestro código de una forma específica y que 
-    realiza exactamente lo mismo que switch pero de forma más concisa. Podemos acceder a las  
-    propiedades del obj con notación de corchetes y pasar el valor del parametro →simbolo a la 
-    variable→simbolosQuimicos esto nos va a retornar el valor correspondiente a ese simblo.  
-    Ahora veamos si retorna el valor apropiado:
-    console.log(buscarElementoQimico("Al"));
-    console.log(buscarElementoQimico("S"));
-    console.log(buscarElementoQimico("Cl"));
-    console.log(buscarElementoQimico("Hd"));
-    console.log(buscarElementoQimico("B"));
-    console.log(buscarElementoQimico("Li"));
+      Esta combinación de propiedades→ a la izquierda y de valores→ a la derecha, lo denominamos 
+      un objeto. Digamos que es como una forma de agruparlas todas bajo una misma estructura de 
+      datos, que  podemos usar y acceder a través de la variable→miPerro. Nota: Las propiedades 
+      y los valores  no necesaria mente siendo una sola palabra se usan las comillas. Propiedades 
+      de los valores se separan con→ : y al final de la línea va una→ , También se pueden usar 
+      números como propiedades→5: “cinco”,
+    #Acceder a propiedades notación de puntos:
+      Si necesitamos acceder al objeto que es camilo, podemos acceder a ese valor con la notación 
+      de punto. Escribimos el nombre de la variable seguido de un punto escribimos el nombre de 
+      la propiedad Ej.  console.log(miPerro.edad); se muestra 3 
+    #Acceder a propiedades notación de corchetes: 
+      Una notación alternativa que podemos usar para acceder a las propiedades  de un objeto, en el 
+      siguiente código como podemos notar que hay propiedades que son cadenas de caracteres con 
+      espacios, en ese caso si o si van entre comillas y debemos usar la notación de corchetes que  
+      es equivalente  con la notación de punto. Esto quiere decir que podemos acceder a cualquiera 
+      de las propiedades del objeto.     
 
-  #Verificar Propiedades:
-    Otra operación muy importante es verificar si el obj tiene una propiedad o no, si tratamos de 
-    acceder a una propiedad que no existe en el obj el resultado será undefind.  Podemos verificar 
-    si la propiedad existe o no antes de usarla. Para averiguar si el obj tiene una propiedad 
-    especifica escribimos el nombre de la variable que contiene  el obj→miCofre y llamamos al 
-    método→ hasOwnProperty() Este método es muy útil si estamos trabajando con un condicional
-    var miCofre = {
-      "oculto": "cajon",
-      "color": "verde",
-      "guardo":"recuerdos"
-    };
-    miCofre.hasOwnProperty("color");//pegunta si la propiedad existe
-  #Utilizar condiconal:  
-    Para ilustrar como este método que es muy útil en un condicional vamos a definir una función que 
-    va a verificar si un obj tiene una propiedad o no y va a mostrar un mensaje, La funcion va a tomar 
-    dos parámetros. En el if retorna una cadena,  que va ser la unión de una cadena→"propiedad " +  
-    con el valor de la propiedad en ese objeto   
-    //Utilizar condiconal:
-    function verificarPropiedad(obj, propiedad)//propiedad del obj
-    {
-      if(obj.hasOwnProperty("propiedad"))// es true por que el obj tiene esa propiedad 
-       {
-        return "propiedad: " + obj[propiedad]; //propiedad es el parámetro “color”
-       }
-      else
-       {
-        return "El objeto no tiene esta propiedad"//la propieda que pasamos no existe false
-       }
-    }  
-    console.log(verificarPropiedad(miCofre, color));//resultado propiedad: verde  
-  
-    #Objetos Complejos:   
-    Estos tipos de objetos tienen combinaciones de distintos tipos de datos. Como sus valores, los 
-    valores de las propiedades,  puedes ver que la variable→ ordenesDePizzas contiene un array[]. Esto 
-    nos dice que es un array de objetos porque  están las llaves que abren y sierran el objeto y dentro 
-    de cada objeto que tenemos aquí,  en nuestro array tenemos secuencias de propiedades y sus valore 
-    que siguen un formato muy similar, las mismas propiedades asociadas a distintos valores. Estos es un 
-    formato que normalmente se usa muy similar al formato JSON→(JavaScript, Object, Notacion). 
-    Primero que nada debemos entender que inicialmente estamos trabajando con un array, asique cada uno 
-    de esos objetos tienen un lugar en ese array, como si fuera un elemento,  como si tuviéramos dos 
-    elementos con una cadena de caracteres, o dos números. Pero en este caso tenemos dos objetos que c/u 
-    de ellos tiene su conjunto de propiedades y los valores de esas propiedades. Veamos su estructura: 
-    El primer obj representa una pizza margarita. Pero en el segundo obj representa una pizza de cuatro 
-    quesos. Ambos obj tienen la misma propiedad pero sus valores son distintos. 
-    A continuación en el primer obj tenemos el tamaño de la pizza individual y en el segundo obj es 
-    familiar. Retornando al primer obj sigue precio 5,67 y en el segundo obj precio 18.34 esto nos 
-    demuestra que podemos albergar valores de distintos tipos. Luego vemos toppings que están representados 
-    como otro array[] En consecuencia tenemos un array externos que contiene a los dos obj y dentro del 
-    primer y segundo obj tenemos otro array como el valor de una propiedad→ Toppings[] con este ejemplo 
-    puedes ver que los obj son muy versátiles y con ellos podemos trabajar para cualquier dato que se 
-    necesite. Aquí representamos  toppings como un array  porque necesitamos varios elementos.luego para 
-    llevar es un valor booleano, true si se ordenó para llevar o false si la pizza es para comer en el 
-    lugar. Como podemos acceder a estos obj? La estructura de datos principal que contiene los obj es 
-    un array es por eso que el primer obj esta en el índice cero, el segundo obj está en el índice uno y 
-    los obj están separados con una coma→esto es muy importante porque son elemento distinto del array.
-    var ordenesDePizzas = [
+      //Se usa conotacion de corchetes
+      var miCuaderno = {
+        "color": "verde"
+        "categoria": 3,
+        "numero de paginas": 200,
+        "numero de hojas": 100
+      };
+    #Acceder a propiedades Variables
+      Como acceder a una propiedad de un objeto usando una variable. Vamos a escribir el valor 
+      entre corchetes usando una variable, para poder acceder a un lugar específico de esos valores 
+      definimos la variable→ posición. Como podemos acceder: Escribimos el nombre de la variable 
+      que contiene a ese  objeto→resultado  y entre corchete pasamos en vez de el nombre de la 
+      propiedad pasamos el nombre de la variable→posicion esto es equivalente a escribir 4  pero 
+      como estamos escribiendo una variable podemos trabajar con esa variable en nuestro programa 
+      haciendo que el acceso sea más dinámico. Para mostrar ese resultado llamamos a consol.log
+      solo usando la notación de corchetes.
+
+      var resultados = {
+      1: "Manuel5711",
+      2: "Nora3578",
+      3: "Lucas2115",
+      4: "Cecilia4598"
+      }
+      var posicion = (4);
+      console.log(resultados[posicion]);
+
+    #Actualizar Propiedades:
+      Además de crear un objeto en el proyecto y acceder a sus propiedades, también puedes actualizar 
+      el valor de esas propiedades para permitir que tu objeto cambie durante la ejecución del 
+      programa. Vamos a ver un ej. que llamaremos mochila. Con console.log escribimos 
+      la variable mochila separada por un punto→ color resultado azul
+
+      var mochila = {
+        "valor": "azul",
+        "tamaño":"mediano",
+        "contenido" :["botella de agua", "cuaderno"]
+      };
+      console.log(mochila.color);// resultado azul
+
+      Una vez que ya tenemos estas propiedades definidas, digamos que queremos cambiar el color de 
+      la mochila vamos a acceder a ellas y la actualizaremos. Para acceder a la propiedad color 
+      Lo que hacemos es escribir el nombre de la variable que contiene el objeto seguido de un 
+      punto, el nombre de la propiedad que queremos actualizar y luego le asignamos el valor→"verde" 
+      Ej.
+      mochila.color = "verde";//reasignamos el valor 
+      console.log(mochila.color);//resultado verde    
+
+      También podemos trabajar con sus valores para modificarlos. Si queremos agregar algo a la 
+      mochila, tendríamos que acceder al valor de la propiedad contenido. Para actualizar este valor 
+      podemos usar notación de punto→mochila.contenido. consolle.log(mochila.contenido); vemos 
+      ["botella de agua", "y cuaderno"] Digamos que queremos agregar un lápiz a nuestra mochila,
+      el codigo es→ mochila.contenido.push(); Llamamos al método push que agrega un elemento al 
+      final del arreglo
+      console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno"]
+      mochila.contenido.push("lapiz")//se agrega lapiz
+      console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno,", "lapiz"]
+      Nota: pop() este metodo nos permite remover el primer elemento de un array
+    # Agregar Propiedades:
+      También puedes agregar propiedades a un objeto en JS. Ej. Vamos a tener un objeto que va
+      a representar un curso
+      var curso = {
+        "titulo": "Aprende JavaScript desde cero",
+        "idioma": "Español",
+        "duracion": 30   
+      };
+      Como podemos agregar una cuarta propiedad? La propiedad se va a llamar vista, va ser el 
+      número de vista desde que se publicó el curso. La sintaxis es la misma que utilizamos para 
+      cambiar una propiedad pero en este caso vamos a escribir el nombre de la propiedad que 
+      queremos agregar. Primero el nombre de la variable seguida de un punto, el nombre de la 
+      propiedad nueva y luego el valor que queremos asignar.  
+      curso.vista = 34500
+      console.log(curso.vista);//resultado 34500
+      Nota: Si intentamos acceder a una propiedad que no existe el resultado será undefine
+      También podemos en vez de usar notación de punto, podemos usar notación de corchetes.
+      console.log(["vista"]); //resultado 34500
+    #Eliminar Propiedades:
+      Continuando como ejemplo del objeto curso. Ahora vamos a ver cómo puedes eliminar una 
+      propiedad de este objeto. La palabra clave aquí es→ DELETE que significa sacar o eliminar 
+      en español. Digamos que ya no queremos tener un registro de la propiedad duración en el
+      objeto curso, tenemos que escribir anteponiendo delete seguido de un espacio, el nombre 
+      de la variable separando esta con un punto y la propiedad que queremos eliminar. 
+      La sintaxis seria:→delete curso.duracion; 
+      console.log(curso.duracion);//vista antes de borrar 30
+      delete curso.duracion;// nombre del obj un punto y la propiedad a eliminar 
+      console.log(curso.duracion);//despues de borrar→ undefined
+      Si cambiamos la línea de código anterior por una que nos muestre el obj completo
+      console.log(curso); este es el obj que se nos presenta: 
+      {"titulo": "Aprende  JavaScript desde cero",  "idioma": "Español"} 
+
+    #Objetos para Búsquedas:
+      Según el caso podemos usar un objeto para remplazar una sentencia switch. Tenemos una función 
+      (buscar elemento químico). Si analizamos el elemento switch podemos ver que a partir del valor 
+      de símbolo vamos a asociar ese símbolo con su nombre completo→"Aluminio" Es decir que "Al" 
+      estaría asociado "Aluminio" y así será hasta finalizar la sentencia. Cuando tienes una sentencia 
+      switch con esta estructura que asocia dos valores podemos escribir código más conciso con un 
+      objeto, recuerda que los obj nos permiten asociar una propiedad con su valor.
+    #El código que a continuación se presenta usando switch perfectamente puede ser remplazado 
+      por un objeto.
+      Function buscarElementoQimico(simbolo)
       {
-        "tipo": "margarita",
-        "tamaño": "individual",
-        "precio": "5.67",
-        "toppings": [
-          "extra queso",
-          "chanpiñones",
-          "piña"
-        ],
-        "paraLlevar": true  
+        Var elementoQuimico = "";
+        switch(simblo)
+        {
+          case "Al":
+            elementoQuimico = "Aluminio";
+            break;
+          case "S":
+            elementoQuimico = "Azufre";
+            break;
+          case "Cl":
+            elementoQuimico = "Cloro";
+            break;
+          case "He":
+            elementoQuimico = "Helio";
+            break; 
+          case "B":
+            elementoQuimico = "Boro";
+            break;
+          case "Li":
+            elementoQuimico = "Litio";
+            break;
+        }
+        return elementoQuimico;             
+      }
+    #En el siguiente ej. veremos cómo  podemos remplazar switch por un objeto:
+      Function buscarElementoQimico(simbolo)
+      {
+        var simbolosQuimicos = {
+        "Al": "Aluminio",
+        "S": "Azufre",
+        "Cl": "Cloro",
+        "Hd": "Helio",
+        "B": "Boro",
+        "Li": "Litio";   
+        };
+        Return simbolosQuimicos[simbolo];//esto retorna el nombre completo del elemento símbolo 
+      }
+      Ya tenemos el objeto al cual hemos restructurando nuestro código de una forma específica y que 
+      realiza exactamente lo mismo que switch pero de forma más concisa. Podemos acceder a las  
+      propiedades del obj con notación de corchetes y pasar el valor del parametro →simbolo a la 
+      variable→simbolosQuimicos esto nos va a retornar el valor correspondiente a ese simblo.  
+      Ahora veamos si retorna el valor apropiado:
+      console.log(buscarElementoQimico("Al"));
+      console.log(buscarElementoQimico("S"));
+      console.log(buscarElementoQimico("Cl"));
+      console.log(buscarElementoQimico("Hd"));
+      console.log(buscarElementoQimico("B"));
+      console.log(buscarElementoQimico("Li"));
+
+    #Verificar Propiedades:
+      Otra operación muy importante es verificar si el obj tiene una propiedad o no, si tratamos de 
+      acceder a una propiedad que no existe en el obj el resultado será undefind.  Podemos verificar 
+      si la propiedad existe o no antes de usarla. Para averiguar si el obj tiene una propiedad 
+      especifica escribimos el nombre de la variable que contiene  el obj→miCofre y llamamos al 
+      método→ hasOwnProperty() Este método es muy útil si estamos trabajando con un condicional
+      var miCofre = {
+        "oculto": "cajon",
+        "color": "verde",
+        "guardo":"recuerdos"
+      };
+      miCofre.hasOwnProperty("color");//pegunta si la propiedad existe
+    #Utilizar condiconal:  
+      Para ilustrar como este método que es muy útil en un condicional vamos a definir una función que 
+      va a verificar si un obj tiene una propiedad o no y va a mostrar un mensaje, La funcion va a tomar 
+      dos parámetros. En el if retorna una cadena,  que va ser la unión de una cadena→"propiedad " +  
+      con el valor de la propiedad en ese objeto   
+      //Utilizar condiconal:
+      function verificarPropiedad(obj, propiedad)//propiedad del obj
+      {
+        if(obj.hasOwnProperty("propiedad"))// es true por que el obj tiene esa propiedad 
+        {
+          return "propiedad: " + obj[propiedad]; //propiedad es el parámetro “color”
+        }
+        else
+        {
+          return "El objeto no tiene esta propiedad"//la propieda que pasamos no existe false
+        }
+      }  
+      console.log(verificarPropiedad(miCofre, color));//resultado propiedad: verde  
+
+    #Objetos Complejos:   
+      Estos tipos de objetos tienen combinaciones de distintos tipos de datos. Como sus valores, los 
+      valores de las propiedades,  puedes ver que la variable→ ordenesDePizzas contiene un array[]. Esto 
+      nos dice que es un array de objetos porque  están las llaves que abren y sierran el objeto y dentro 
+      de cada objeto que tenemos aquí,  en nuestro array tenemos secuencias de propiedades y sus valore 
+      que siguen un formato muy similar, las mismas propiedades asociadas a distintos valores. Estos es un 
+      formato que normalmente se usa muy similar al formato JSON→(JavaScript, Object, Notacion). 
+      Primero que nada debemos entender que inicialmente estamos trabajando con un array, asique cada uno 
+      de esos objetos tienen un lugar en ese array, como si fuera un elemento,  como si tuviéramos dos 
+      elementos con una cadena de caracteres, o dos números. Pero en este caso tenemos dos objetos que c/u 
+      de ellos tiene su conjunto de propiedades y los valores de esas propiedades. Veamos su estructura: 
+      El primer obj representa una pizza margarita. Pero en el segundo obj representa una pizza de cuatro 
+      quesos. Ambos obj tienen la misma propiedad pero sus valores son distintos. 
+      A continuación en el primer obj tenemos el tamaño de la pizza individual y en el segundo obj es 
+      familiar. Retornando al primer obj sigue precio 5,67 y en el segundo obj precio 18.34 esto nos 
+      demuestra que podemos albergar valores de distintos tipos. Luego vemos toppings que están representados 
+      como otro array[] En consecuencia tenemos un array externos que contiene a los dos obj y dentro del 
+      primer y segundo obj tenemos otro array como el valor de una propiedad→ Toppings[] con este ejemplo 
+      puedes ver que los obj son muy versátiles y con ellos podemos trabajar para cualquier dato que se 
+      necesite. Aquí representamos toppings como un array porque necesitamos varios elementos.luego para 
+      llevar es un valor booleano, true si se ordenó para llevar o false si la pizza es para comer en el 
+      lugar. Como podemos acceder a estos obj? La estructura de datos principal que contiene los obj es 
+      un array es por eso que el primer obj esta en el índice cero, el segundo obj está en el índice uno y 
+      los obj están separados con una coma→esto es muy importante porque son elemento distinto del array.
+      Para acceder al primer obj usamos el indise[0] y de igual manera para el segundo obj pero usamos el 
+      indise[1] Digamos que queremos acceder al tipo de pizza del primer obj. Para eso se pueden usar tanto 
+      notación de punto como notación de corchetes. Se accede a la primera propidad→tipo del primer obj 
+      y se muestra por consola el valor margarita. A diferencia de notación de punto. La notación de 
+      corchete la podemos usar pero a no olvidar que el valor de la propiedad va con comillas “tipo”. 
+      Tambien podemos acceder a la propieda toppings. Como agregar una tercera orden de pizza:
+      Agregamos una coma en la llave de cierre del segundo obj y en la siguiente línea un par de llaves 
+      copiamos y pegamos el segundo obj para modificarlo y ya tenemos un tercer obj con el índice 2
+
+    #Como agregar una tercera orden de pizza:      
+      var ordenesDePizzas = [
+        {
+          "tipo": "margarita",
+          "tamaño": "individual",
+          "precio": "5.67",
+          "toppings": [
+            "extra queso",
+            "chanpiñones",
+            "piña"
+          ],
+          "paraLlevar": true  
+        },
+        {
+          "tipo": "cuatro quesos",
+          "tamaño": "familiar",
+          "precio": "18.34",
+          "toppings": [
+            "extra queso",
+            "pimenton",
+          ],
+          "paraLlevar": false
+        },
+        {
+        "tipo": "napolitana",
+          "tamaño": "familiar",
+          "precio": "6.90",
+          "toppings": [],
+          "paraLlevar": false 
+        }
+      ];
+      console.log(ordenesDePizzas[0]);//se  accede al primer obj y se muestra por consola
+      console.log(ordenesDePizzas[1]); //se  accede al segundo obj y se muestra por consola
+      console.log(ordenesDePizzas[0].tipo);//se accede a la primer propidad→tipo del primer obj y se muestra por consola el valor margarita
+      console.log(ordenesDePizzas[1].toppings)// veremos el array del segundo obj[“extra queso”, “pimentón”
+      console.log(ordenesDePizzas[2].tipo);//se accede a la primer propidad→tipo del tercer obj y se muestra por consola el valor napolitana
+    
+    #"Objetos Anidados:
+      Son objetos dentro de otros objetos, similares a los array anidados. En el ejercicio tenemos un obj 
+      principal que está asignado a la variable mi receta. Ese obj tiene 3 propiedades con sus elementos 
+      cuya primera propiedad del obj se denomina→descripcion, su segunda propiedad→costo  y en la tercera 
+      propiedad que denominamos→ingredientes cuyo valor es un obj, es ahí donde este nuevo obj se contituye 
+      como anidado y a su vez tenemos→masa y→cobertura que se le asignan  otros obj como propiedades.
+
+      var miReceta = {
+        "descripcion": "mi postre favorito",
+        "costo": 15.6,
+        "ingredientes": { //obj ingrediente
+          "masa": { //sub_obj de ingrediente masa
+            "harina": "100 grs",
+            "sal": "2 cucharadita",
+            "agua": "1 taza"
+          },//cierre de sub_obj masa
+          "cobertura": { //obj cobertura
+            "azucar": "120 grs",
+            "chocolate": "4 cucharadas",
+            "mantequilla": "200 grs"
+          } //cierre obj cobertura
+        } //cierre obj ingredientes
+      } //cierre obj principal miReceta
+      /*
+      Con notación de punto accedemos a las distintas propiedades que mostrara  por pantalla  el elemento 
+      que corresponda a es propiedad. Cabe destacar que si usamos notación de corchetes remplazamos el 
+      punto por corchetes y la propiedad entre comillas y el resultado será exactamente igual. La ventaja 
+      de usar notación de corchetes es que si la propiedad está asignada a una variable la podemos usar. 
+      Y es obligatorio usar corchetes si la propiedad es una cadena de caracteres con espacios.
+      Var = “harina”
+      
+      console.log(miReceta.descripcion);//con notación de punto
+      console.log(miReceta.costo);//con notación de punto
+      console.log(miReceta.ingredientes);//con notación de punto
+      console.log(miReceta.ingredientes["masa"]);//con notación de corchetes  siguiendo el paht
+      console.log(miReceta.ingredientes.masa["harina"]);//con notación de corchetes siguiendo el paht
+      console.log(miReceta.ingredientes.masa["sal"]);//con notación de corchetes, array con espacios  
+    
+    #Array Anidados:
+      Los array anidados son estructuras más complejas. Como por ejemplo dentro de un obj que es parte de 
+      un array. Veamos un array que va a contener dos obj con listas  de  plantas. El primer obj va a 
+      contener dos propiedades, estas no se rodean con comillas  porque  el  nombre de las propiedades son 
+      una sola palabra, tipo y lista El segundo obj vamos a usar las mismas propiedades→tipo y lista. 
+      Para ambos obj la propiedad→lista el valor  será  un array. De esta manera tenemos un array que 
+      alberga dos objetos y dentro  de esos obj los array de las propidades→lista de manera tal que son lo 
+      que llamamos array anidados. Los array son parte de un obj y a su vez ese obj es parte de otro array. 
+      La sintaxis que tenemos que usar para acceder a sus elementos es distinta. La estructura principal 
+      que contiene los dos obj es un array de modo que el primer obj está en el índice [0] y el segundo 
+      obj en el índice [1]. Si queremos acceder al primer elemento de la primera propieda del obj [0] en
+      este caso→flores el path seria misPlantas[0].lista[0], el puntero se sitúa en rosas, y adentrándonos  
+      más profundo en el array principal para ver el primer elemento del obj[1] el path seria.  
+      misPlantas[1].lista[1]; el puntero se sitúa en→pino.
+       
+       
+      var misPlantas = [
+      {
+        tipo: "flores",
+        lista:[
+        "rosas",
+        "tulipanes",
+        "diente de leon"
+        ]  
       },
       {
-        "tipo": "cuatro quesos",
-        "tamaño": "familiar",
-        "precio": "18.34",
-        "toppings": [
-          "extra queso",
-          "pimenton",
-        ],
-        "paraLlevar": false
+        tipo: "arboles",
+        lista:[
+        "abeto",
+        "pino",
+        "abedul"
+      ] 
       }
-    ];
-    console.log(ordenesDePizzas[0]);
-    console.log(ordenesDePizzas[1]);
-        
-   
-  */                         
- var a;
- var b = 2;
- console.log(a); // undefind
- console.log(b); // tiene un valor
- a = 10 //asignacion a la variable a
- console.log(a)
- a = 5
- b = a
- console.log(a); 
- console.log(b);
- a = 11
- var b;
+      ];
+      var primeraFlor = misPlantas[0].lista[0];
+      console.log(primeraFlor);//vemos el valor rosas
+      var segundoArbol = misPlantas[1].lista[1];
+      console.log(segundoArbol);//vemos el valor pino
+  
+    #Colección de Discos:
+      Comenzaremos con un ejercicio ejemplificador: 
+      Tenemos un obj que representa parte de una colección de álbumes musicales. Cada álbum tiene un número 
+      de identificación único (id)→"numero de identificacion unico" asociados a otra propiedades. 
+      No todos los álbumes tiene la información completa.
+      var coleccionDeDiscos = {
+        7853: { //la propiedad 7853 su valor es un obj
+          tituloDelAlbum: "Bee Gees Greatest",
+          artista: "Bee Gees",
+          canciones: ["Stayin Alove"]
+        },
+        5430: { //la propiedad 5430 su valor es un obj
+          tituloDelAlbum: "ABBA Gold"
+        }
+      };
+    # A continuación vemos una descripción de cómo debe ser la función. 
+      Definimos la función actualizarDisco que tome los siguientes 4 parámetros:
+      1-disco(el obj que representa la colección de disco).
+      2–id. (el id del disco del albun que queremos modificar)                                                                                                                                                                           –propiedad (“artista” o “canciones”).                                                                                                                         –valor.                                                                                                                                                                    Tu meta es completar la función implementando las siguientes reglas para modificar el obj pasando a la función:                                                                                                                                            -Si “valor” es una cadena  vacía, elimina la propiedad del álbum correspondiente.                               
+      3-propiedad (que puede ser artista o canciones)
+      4-valor (el valor de esa propiedad)
+      Si el parametro→valor es una cadena vacia elimina la propiedad correspondiente “propiedad” es igual a la cadena de caracteres “canciones” pero el álbum no tiene una propiedad 
+      llamada canciones crea un array vacío y agrega el “valor” a ese array.
+      Vamos a ir implementando estas reglas paso a paso, ya que el proceso es detallado primero vamos a 
+      definir la función para implementar la primera regla.
+      
+      function actualizarDiscos(disco, id, propiedad, valor) 
+      {
+        if("valor" === "" )//si disco es exactamente igual a una cadena vacia entonces
+        { //↓cubrimos la primera regla y tercera regla
+          delete disco[id][propiedad];//borramos la propiedad del albun corespondiente
+        }
+        else if(propiedad === "canciones")
+        { //↓cubrimos la segunda y tercera regla
+          discos[id][propiedad] = disco[id][propiedad] || [];//accedemos al obj correspondiente, luego
+          //accedemos a la propiedad canciones y le acignamos un array vacio.
+          //Pero que pasa si la propiedad no existe... En ese caso usaremos el operador logico→or que nos 
+          //permite escojer entre dos obciones: Primero se va a acceder, y si este valor no esta definido  
+          // el operador or nos permite como espesificar un valor de respaldo que en este caso va a ser un
+          // array vasio[] y de forma segura podemos llamar al metodo push()    
+          discos[id][propiedad].push(valor);//agregamos el valor a ese array vacio llamando al metodo push y
+          //agregamos el valor que pasamos como argumento
+        }
+        else
+        { //↓cubrimos la cuarta regla
+          discos[id][propiedad] = valor;
+        }
+      }
+      console.log(coleccionDeDiscos.tituloDelAlbum);
+      actualizarDiscos(colleccionDeDisco, 7853, "tituloDelAlbum", "");
+      console.log(coleccionDeDiscos.tituloDelAlbum);
+     
 
- b = a;
- console.log(a); 
- console.log(b);
- a = 25; 
- a ++; //se incrementa en uno
- console.log(a);
- var ventasDiarias;
- ventasDiarias = 13567.34;
- ventasDiarias += 345.67; 
- //se incrementa el valor
- console.log(ventasDiarias) // total actualisado 13913.01
- var altaAlumnos;
- var vajaAlumnos;
- altaAlumnos = 456;
- vajaAlumnos = 456;/* se le asigna a vaja el valor de alta para mantener siempre 
- el valor en alta a lo largo del proyecto */
- vajaAlumnos -= 6;
- console.log(vajaAlumnos);
- console.log(altaAlumnos);
- var salario = 45000; 
- salario *=5; // Lo incrementamos en 5
- console.log(salario);  
- salario /= 2; //lo reducimos a la mitad salario /= 2;
- console.log(salario);
- var miNombre = "Manuel";
- var ejemplo = "Estoy aprendiendo JavaScript";
- console.log(miNombre);
- miNombre =  "Manuel Ej1 \"Manu\"";
- console.log(miNombre);
- miNombre = 'Manuel Ej2 "Manu"';
- console.log(miNombre);
- console.log(ejemplo);
- ejemplo = "Estoy aprendiendo JavaScript \ncurso desde 0 \\ freeCodeCamp";//Secuencias de escape
- console.log(ejemplo);
- miNombre = "Manuel" + " Orozco";
- console.log(miNombre); //concatenado
- var verbo = "programar";
- var mensaje = "Estoy aprendiendo a " + verbo;
- console.log(mensaje);
- mensaje = "Estoy aprendiendo a " + verbo + " con freeCodeCamp";
- console.log(mensaje);
- var mensajeComleto = "El invierno llego"; 
- var mensajeFinal = " con un frío muy cruel";
- mensajeComleto += mensajeFinal; //concatenando variables con =+
- console.log(mensajeComleto);
- var miCadena; 
- miCadena = "A";
- console.log(miCadena.length); //se muestra el resultado. 1 caracter
- var lenguajeDeProgramacion;
- lenguajeDeProgramacion = "Javascript";//caracter J es índice 0 
- console.log(lenguajeDeProgramacion[0]);//se mostra J
- var miCadena;
- miCadena = "JavaScript" 
- console.log(miCadena.length -1); //Sin [] se muesta el ulimo indice 9
- console.log(miCadena[miCadena.length -1]); //Con [] se muesta la ultima letra
- var n; 
- n = 4;
- console.log(miCadena[miCadena.length-n]);//se muestra la letra r
- var miSustantivo  = "perro";
- var miAdgetivo =  "negro";
- var miVerbo  = "corrió";
- var miAdverbio = "rápidamente";
- var miEspacio = " ";
- var oracion;
- oracion = "El " + miSustantivo + miEspacio + miAdgetivo + miEspacio + miVerbo + miEspacio + miAdverbio + " a la tienda";
- console.log(oracion);// Muestra la frace completa
- var miArrays; 
- 
- miArrays = ["Daniel", 24];
- console.log(miArrays);
- /*
-   (2) ['Daniel', 24]
-   0: "Daniel"
-   1: 24
-   length:2
- */
- 
- var listaDeEstudiantes;
- listaDeEstudiantes = [["Nora", 18], ["Manuel", 24]];
- console.log(listaDeEstudiantes);
- /*
+
+  */  
+        
+  //↓Todo codigo↓
+  var a;
+  var b = 2;
+  console.log(a); // undefind
+  console.log(b); // tiene un valor
+  a = 10 //asignacion a la variable a
+  console.log(a)
+  a = 5
+  b = a
+  console.log(a); 
+  console.log(b);
+  a = 11
+  var b;
+
+  b = a;
+  console.log(a); 
+  console.log(b);
+  a = 25; 
+  a ++; //se incrementa en uno
+  console.log(a);
+  var ventasDiarias;
+  ventasDiarias = 13567.34;
+  ventasDiarias += 345.67; 
+  //se incrementa el valor
+  console.log(ventasDiarias) // total actualisado 13913.01
+  var altaAlumnos;
+  var vajaAlumnos;
+  altaAlumnos = 456;
+  vajaAlumnos = 456;/* se le asigna a vaja el valor de alta para mantener siempre 
+  el valor en alta a lo largo del proyecto */
+  vajaAlumnos -= 6;
+  console.log(vajaAlumnos);
+  console.log(altaAlumnos);
+  var salario = 45000; 
+  salario *=5; // Lo incrementamos en 5
+  console.log(salario);  
+  salario /= 2; //lo reducimos a la mitad salario /= 2;
+  console.log(salario);
+  var miNombre = "Manuel";
+  var ejemplo = "Estoy aprendiendo JavaScript";
+  console.log(miNombre);
+  miNombre =  "Manuel Ej1 \"Manu\"";
+  console.log(miNombre);
+  miNombre = 'Manuel Ej2 "Manu"';
+  console.log(miNombre);
+  console.log(ejemplo);
+  ejemplo = "Estoy aprendiendo JavaScript \ncurso desde 0 \\ freeCodeCamp";//Secuencias de escape
+  console.log(ejemplo);
+  miNombre = "Manuel" + " Orozco";
+  console.log(miNombre); //concatenado
+  var verbo = "programar";
+  var mensaje = "Estoy aprendiendo a " + verbo;
+  console.log(mensaje);
+  mensaje = "Estoy aprendiendo a " + verbo + " con freeCodeCamp";
+  console.log(mensaje);
+  var mensajeComleto = "El invierno llego"; 
+  var mensajeFinal = " con un frío muy cruel";
+  mensajeComleto += mensajeFinal; //concatenando variables con =+
+  console.log(mensajeComleto);
+  var miCadena; 
+  miCadena = "A";
+  console.log(miCadena.length); //se muestra el resultado. 1 caracter
+  var lenguajeDeProgramacion;
+  lenguajeDeProgramacion = "Javascript";//caracter J es índice 0 
+  console.log(lenguajeDeProgramacion[0]);//se mostra J
+  var miCadena;
+  miCadena = "JavaScript" 
+  console.log(miCadena.length -1); //Sin [] se muesta el ulimo indice 9
+  console.log(miCadena[miCadena.length -1]); //Con [] se muesta la ultima letra
+  var n; 
+  n = 4;
+  console.log(miCadena[miCadena.length-n]);//se muestra la letra r
+  var miSustantivo  = "perro";
+  var miAdgetivo =  "negro";
+  var miVerbo  = "corrió";
+  var miAdverbio = "rápidamente";
+  var miEspacio = " ";
+  var oracion;
+  oracion = "El " + miSustantivo + miEspacio + miAdgetivo + miEspacio + miVerbo + miEspacio + miAdverbio + " a la tienda";
+  console.log(oracion);// Muestra la frace completa
+  var miArrays; 
+
+  miArrays = ["Daniel", 24];
+  console.log(miArrays);
+  /*
+  (2) ['Daniel', 24]
+  0: "Daniel"
+  1: 24
+  length:2
+  */
+
+  var listaDeEstudiantes;
+  listaDeEstudiantes = [["Nora", 18], ["Manuel", 24]];
+  console.log(listaDeEstudiantes);
+  /*
     (2) [Array (2), Array (2)]
     0: Array(2)
     0: "Nora"
@@ -1257,18 +1413,18 @@
     0: "Manuel"
     1: 24
     length: 2 
- */
- 
- var listaDeProductos;
- var listaDeProductos = [["Camisas", 15.25, "s-32"], ["Zapatos", 30.45, "s-11"], ["Pantalones", 28.50, "s-33" ]]; 
- console.log(listaDeProductos);
- /*
-    (3) [Array(3), Array(3), Array(3)]
-    0: (3) ['Camisas', 15.25, 's-32']
-    1: (3) ['Zapatos', 30.45, 's-11']
-    2: (3) ['Pantalones', 28.5, 's-33']
-    length: 3
- */
+  */
+
+  var listaDeProductos;
+  var listaDeProductos = [["Camisas", 15.25, "s-32"], ["Zapatos", 30.45, "s-11"], ["Pantalones", 28.50, "s-33" ]]; 
+  console.log(listaDeProductos);
+  /*
+  (3) [Array(3), Array(3), Array(3)]
+  0: (3) ['Camisas', 15.25, 's-32']
+  1: (3) ['Zapatos', 30.45, 's-11']
+  2: (3) ['Pantalones', 28.5, 's-33']
+  length: 3
+  */
   var miAcceso;
   var miAcceso = [10, 20, 30];
   var suma;
@@ -1297,7 +1453,7 @@
   //.push()
   estaciones.push("verano");
   console.log(estaciones); //Con .push() agregamos "verano" al final del arrays 
-  
+
   //.pop()
   estacion = estaciones.pop();
   /*Extraemos el último elemento que esta al final del arrays 
@@ -1305,7 +1461,7 @@
   */
   console.log(estaciones); //["invierno","otoño", "primavera"]
   console.log(estacion); // "verano"
-  
+
   //Mostrar lista de compras 
   miListaDeCompras = [["Arroz", 1], ["Aceite", 2], ["Fideos", 3], ["Café", 1]];
   console.log("Voy a comprar " + miListaDeCompras[0][1] + " kg de " + 
@@ -1314,20 +1470,20 @@
   miListaDeCompras[2][0] + " por ultimo " + miListaDeCompras[3][1] + 
   " un paquetes de 1/2 kg de " + miListaDeCompras[3][0]);
   /*Resultado en pantalla:
-    Voy a comprar 1 kg de Arroz también 2 Litros de Aceite y 3 paquetes 
-    de Fideos por ultimo 1 paquetes de 1/2 kg de Café
+  Voy a comprar 1 kg de Arroz también 2 Litros de Aceite y 3 paquetes 
+  de Fideos por ultimo 1 paquetes de 1/2 kg de Café
   */
   //FUNCIONES: function
   function mostrarMensaje()
   {
-	  console.log("Hola Manu"); //Podemos llamar a la function cuantas veces sea necesario
+  console.log("Hola Manu"); //Podemos llamar a la function cuantas veces sea necesario
   } 
   mostrarMensaje();
   mostrarMensaje();
   function sumar(a, b)
   {
-    var suma = a + b;
-    console.log("El resultado de " + a + " + " + b + " es " + suma);	
+  var suma = a + b;
+  console.log("El resultado de " + a + " + " + b + " es " + suma);	
   }
   sumar(5, 3) //resultado 8
   sumar(57, 3);//resultado 60
@@ -1340,25 +1496,25 @@
 
   function concatenarTresCadenas(cadena1, cadena2, cadena3)
   {
-    console.log(cadena1 + " " + cadena2 + " " + cadena3);
+  console.log(cadena1 + " " + cadena2 + " " + cadena3);
   } 
   concatenarTresCadenas("Estoy", "aprendiendo", "a programar"); 
   //Resultado: Estoy aprendiendo a programar
- 
+
   //Ámbito Global:
   miVariableGlobal = 5;// global esta definida fuera de la function 
   console.log(miVariableGlobal);
   function miFuncion()
   {
-    console.log(miVariableGlobal);// se puede usar dentro de la function
+  console.log(miVariableGlobal);// se puede usar dentro de la function
   }
   miFuncion();//llamamos a la function 
   console.log(miVariableGlobal);//vemos que si esta definida en la function
   //AMBITO LOCAL: 
   function miFunction()
   {
-    var miVariableLocal =  4;
-    console.log(miVariableLocal);
+  var miVariableLocal =  4;
+  console.log(miVariableLocal);
   }
   //Vamos a llamar a la function para ver que esa variable si está definida
   miFunction(); //resultado 4
@@ -1367,8 +1523,8 @@
   var miNombre = "Nora"
   function mostrarMiNombre()
   {
-    var miNombre = "Ricardo";
-    console.log(miNombre);
+  var miNombre = "Ricardo";
+  console.log(miNombre);
   }
   mostrarMiNombre(); //resultado Ricardo
   console.log(miNombre);//variable global resultado Nora
@@ -1376,7 +1532,7 @@
   //RETORNAR UN VALOR:
   function sumar(a, b)
   {
-    return a + b; // no lleva coma
+  return a + b; // no lleva coma
   }
   //si nosotros llamamos a la function
   //sumar(5, 3); //no se muestra nada, para eso usamos
@@ -1385,36 +1541,36 @@
   //UNDEFINED:
   function sumando(x, y)
   {
-    var x = 15
-    var y = 10
-    console.log(x + y);// no lleva coma
-    //sin return x + y; 
+  var x = 15
+  var y = 10
+  console.log(x + y);// no lleva coma
+  //sin return x + y; 
   }
   //Como no estamos retornando ningún valor explícitamente 
   console.log(sumando(15, 10));// vemos aquí UNDEFINED 
- 
+
   //ASIGNAR UN VALOR RETORNANDO
   //Cuando una function retorna un valor podemos asignarle ese valor a una variable
   function sumar(a, b)
   {
-   return a + b; // no lleva coma
+  return a + b; // no lleva coma
   }
   resultado = sumar(15, 3); //resultado ahora vale 18
   console.log(resultado);// se muestra 18
   //Otro ejemplo con CdC
   function crearCadenaConMeta(lenguajeDeProgramacion)
   {
-    return "Mi meta es aprender " + lenguajeDeProgramacion;
+  return "Mi meta es aprender " + lenguajeDeProgramacion;
   }
   var miMeta = crearCadenaConMeta("JavaScript");
   console.log(miMeta);//resultado: Mi meta es aprender JavaScript
- 
+
   //Permanece en Fila:
   function proximoEnLaFila(arreglo, elemento)
   { 
-    arreglo.push(elemento); //agregar al final del array un valor→6 
-    return arreglo.shift(); //shift remueve el primer elemento del array y retorna 
-    //el elemento que seria→1
+  arreglo.push(elemento); //agregar al final del array un valor→6 
+  return arreglo.shift(); //shift remueve el primer elemento del array y retorna 
+  //el elemento que seria→1
   } 
   var miArreglo = [1, 2, 3, 4, 5,] //Definimos una variable
   console.log("Antes: " + JSON.stringify(miArreglo));// se muestra antes
@@ -1424,24 +1580,24 @@
   //BOOLEANOS
   console.log(true) //VERDADERO  
   console.log(false)//FALSO
-  
+
   //Operadores de igualdad: numero y cadenas
   console.log(5 == 5); //resultado→true
   console.log("Hola" == "Hola")// true  
   console.log("Hola" == "hola")//false
   console.log([1,2,3]==[1,2,3]);//No compara array, el resultado va a ser false
- 
+
   //Operador de igualdad estricta:
   console.log(9 === "9"); // Resultado es false
   //Operador de desigualdad:
   console.log(9 != 6)//Resultado true
   console.log(9 != 9)//Resultado false
   console.log([1,2,3] != [1,2,3]);//Resultado es true , no compara el contenido
- 
+
   //Operador de desigualdad estricta:
   console.log(1 != "1");// true esta mal 
   console.log(1 !== "1");// false esta bien
- 
+
   console.log("B" > "A");//true
   console.log("A, C, B" > "A, B, C");//true
   console.log("AB" > "A");//true
@@ -1451,12 +1607,12 @@
   var by = 8;
   console.log(az > by);//true
   console.log(by > az);//false
- 
+
   //Setencias Condicionales:
   var cond = 5
   if (cond > 2) // la condicion se cumple
   {
-    console.log("La condición es verdadera"); // ejecuta el codigo
+  console.log("La condición es verdadera"); // ejecuta el codigo
   }
   if((cond > 2) && (cond < 10)); //condiciones mas complejas
   {
@@ -1465,37 +1621,37 @@
   var estación = "invierno"
   if(estación == "invierno")// la condicion se cumple
   {
-    console.log("¡Si! Me encanta el invierno");// ejecuta el codigo
+  console.log("¡Si! Me encanta el invierno");// ejecuta el codigo
   } 
   if (cond < 2) // la condicion NO se cumple
   {
-    console.log("La condición es verdadera"); // NO ejecuta el codigo
+  console.log("La condición es verdadera"); // NO ejecuta el codigo
   }
   console.log("La condición no es verdadera"); // Continua la ejecucion saltando el if
   //Clausula  “else”
   if (false)
   {
-    console.log("si la condición es true se ejecuta este código");
+  console.log("si la condición es true se ejecuta este código");
   } 
   else
   {
-    console.log("La condición es false ignora el if y se ejecuta else con este código");
+  console.log("La condición es false ignora el if y se ejecuta else con este código");
   }
   //Clausula else if
   function clasificarValor(valor)
   {
-    if(valor % 2 == 0)//genera un resto igual a cero es true
-    {
-      console.log("Divisible entre 2");
-    } 
-    else if(valor % 3 == 0)
-    {
-      console.log("Divisible entre 3");
-    }
-    else 
-    {
-      console.log("NO es divisible entre las opciones");
-    } 
+  if(valor % 2 == 0)//genera un resto igual a cero es true
+  {
+    console.log("Divisible entre 2");
+  } 
+  else if(valor % 3 == 0)
+  {
+    console.log("Divisible entre 3");
+  }
+  else 
+  {
+    console.log("NO es divisible entre las opciones");
+  } 
   }
   clasificarValor(2)
   clasificarValor(15)
@@ -1509,22 +1665,22 @@
   //Condicionales Orden logico 
   function interpretarIMC(indiceDeMasaCorporal)
   {
-    if(indiceDeMasaCorporal < 18.5)
-    {
-      console.log("Bajo peso");
-    }
-    else if(indiceDeMasaCorporal <= 24.9 )
-    {
-      console.log("peso Normal");
-    }
-    else if(indiceDeMasaCorporal <= 29.9)
-    {
-      console.log("Sobrepeso");
-    }
-    else
-    {
-      console.log("Obeso"); 
-    }
+  if(indiceDeMasaCorporal < 18.5)
+  {
+    console.log("Bajo peso");
+  }
+  else if(indiceDeMasaCorporal <= 24.9 )
+  {
+    console.log("peso Normal");
+  }
+  else if(indiceDeMasaCorporal <= 29.9)
+  {
+    console.log("Sobrepeso");
+  }
+  else
+  {
+    console.log("Obeso"); 
+  }
   } 
   interpretarIMC(17.8);//caso 1 se ejecuta por que es el primer true que encuentra
   interpretarIMC(22.2);//caso 2 se ejecuta por que caso 1 es false
@@ -1541,34 +1697,34 @@
 
   function puntajeDeGolf(par, golpes)
   {
-    if(golpes == 1)
-    {
-      return "Hole-in-one!";     
-    } 
-    else if(golpes <= par - 2)
-    {
-      return "Eagle";
-    }
-    else if(golpes == par - 1)
-    {
-      return "Birdie";  
-    }
-    else if(golpes == par) 
-    {
-      return "Par";  
-    }
-    else if(golpes == par + 1) 
-    {
-      return "Bogey";  
-    }
-    else if(golpes == par + 2) 
-    {
-      return "Double Bogey";  
-    }
-    else if(golpes >= par + 3)        
-    {
-      return "Go Home!";
-    }
+  if(golpes == 1)
+  {
+    return "Hole-in-one!";     
+  } 
+  else if(golpes <= par - 2)
+  {
+    return "Eagle";
+  }
+  else if(golpes == par - 1)
+  {
+    return "Birdie";  
+  }
+  else if(golpes == par) 
+  {
+    return "Par";  
+  }
+  else if(golpes == par + 1) 
+  {
+    return "Bogey";  
+  }
+  else if(golpes == par + 2) 
+  {
+    return "Double Bogey";  
+  }
+  else if(golpes >= par + 3)        
+  {
+    return "Go Home!";
+  }
   } 
   console.log(puntajeDeGolf(4, 1));//par 4 retorna 1 se muestra  "Hole-in-one!"
   console.log(puntajeDeGolf(4, 2));//par 4 <= par -2 retorna 2 se muestra  "Eagle" 
@@ -1577,99 +1733,99 @@
   console.log(puntajeDeGolf(4, 5));//par 4 par +1 retorna 5 se muestra  "Bogey"
   console.log(puntajeDeGolf(4, 6));//par 4 par +2 retorna 6 se muestra "Doble Bogey"
   console.log(puntajeDeGolf(4, 8));//par 4 >= par +3 retorna 7se muestra "Go Home!"
-    
+
   //Sentencia Switch:
   function clasificarValor(valor)
   {
-    var respuesta;//variable local
-    switch (valor)
-    {
-      case 1:
-        respuesta = "alpha";
-        break;//siempre se finalisa con break;  
-      case 2:
-        respuesta = "beta";
-        break;
-      case 3:
-        respuesta = "gamma";
-        break;
-      case 4:
-        respuesta = "delta";
-        break;      
-    } 
-    return respuesta;
+  var respuesta;//variable local
+  switch (valor)
+  {
+    case 1:
+      respuesta = "alpha";
+      break;//siempre se finalisa con break;  
+    case 2:
+      respuesta = "beta";
+      break;
+    case 3:
+      respuesta = "gamma";
+      break;
+    case 4:
+      respuesta = "delta";
+      break;      
+  } 
+  return respuesta;
   }
   console.log(clasificarValor(1));//valor=1 se ejecuta caso1 respuesta vale→"alpha"  
   console.log(clasificarValor(2));//valor=2 se ejecuta caso2 respuesta vale→"beta"
   console.log(clasificarValor(3));//valor=3 se ejecuta caso3 respuesta vale→"gamma"
   console.log(clasificarValor(4));//valor=4 se ejecuta caso4 respuesta vale→"delta"
-    
+
   //Ahora vamos a usar switch con una cadena de caracteres solo declarando una variable 
   var producto = "helado"
   switch (producto)
   {
-    case  "pizza":
-      console.log("La pizza basica cuesta $550");
-      break;
-    case "hambueguesa":
-      console.log("Las hamburguesas cuestan $250");
-      break;
-    case "helado":
-      console.log("El helado cuesta $95");
-      break;       
+  case  "pizza":
+    console.log("La pizza basica cuesta $550");
+    break;
+  case "hambueguesa":
+    console.log("Las hamburguesas cuestan $250");
+    break;
+  case "helado":
+    console.log("El helado cuesta $95");
+    break;       
   }
   //Como la variable valor se asigno "helado" se muestra→ ("El helado cuesta $95")
   console.log("Luego del switch continua ejecutando el codigo");
-     
+
   //Sentencia Switch opción predeterminada 
   function seleccionarIdioma(valor)
   {
-    var idioma;
-    switch(valor)//dentro de la sentencia agregamos el parametro
-    {
-      case 1: 
-        idioma = "Español";
-        break;
-      case 2: 
-        idioma = "Frances";
-        break;
-      case 3: 
-        idioma = "Italiano";
-        break;  
-      default:
-        idioma = "Ingles";
-        break;// es opcional pero por norma lo usamos
-    } 
-    return idioma;
+  var idioma;
+  switch(valor)//dentro de la sentencia agregamos el parametro
+  {
+    case 1: 
+      idioma = "Español";
+      break;
+    case 2: 
+      idioma = "Frances";
+      break;
+    case 3: 
+      idioma = "Italiano";
+      break;  
+    default:
+      idioma = "Ingles";
+      break;// es opcional pero por norma lo usamos
+  } 
+  return idioma;
   }
   console.log(seleccionarIdioma(1));//valor=1 se ejecuta caso1 var idioma es "Español"
   console.log(seleccionarIdioma(2));//valor=1 se ejecuta caso1 var idioma es "Frances"
   console.log(seleccionarIdioma(3));//valor=1 se ejecuta caso1 var idioma es "Italiano"
   console.log(seleccionarIdioma(4));//se ejecuta por defecto var es "Ingles" 
-  
+
   //Sentencia switch  múltiples casos:
   function clacificarVolumen(valor)
   {
-    var volumen; 
-    switch(valor)
-      {
-        case 1:
-          volumen = "Bajo";
-        break;
-        case 2:
-        case 3:
-          volumen = "Intermedio";
-        break;
-        case 4:
-        case 5:
-        case 6:    
-          volumen = "Alto";
-        break;
-        default:
-          volumen = "Sin volumen";
-        break; 
-      }
-      return volumen; 
+  var volumen; 
+  switch(valor)
+    {
+      case 1:
+        volumen = "Bajo";
+      break;
+      case 2:
+      case 3:
+        volumen = "Intermedio";
+      break;
+      case 4:
+      case 5:
+      case 6:    
+        volumen = "Alto";
+      break;
+      default:
+        volumen = "Sin volumen";
+      break; 
+    }
+    return volumen; 
   } 
   console.log(clacificarVolumen(1));//valor=1 se ejecuta caso1 var volumen "Bajo"
   console.log(clacificarVolumen(2));//valor=2 se ejecuta caso2,3 var volumen "Intermedio"
@@ -1678,27 +1834,27 @@
   //Retornar valores Vooleanos:
   function esMenorQue(a, b)
   {
-    return a < b;//en una sola linea remplasamos la condicional if
+  return a < b;//en una sola linea remplasamos la condicional if
   }
   console.log(esMenorQue(3, 6));
   //Patrón  de retorno anticipado
   function miFuncion()
   {
-    console.log("Hola")
-    return "Mundo";
-    console.log("Adios");//unreachable code detecte (7027) ←codigo inalcansable detectado
+  console.log("Hola")
+  return "Mundo";
+  console.log("Adios");//unreachable code detecte (7027) ←codigo inalcansable detectado
   }
   console.log(miFuncion());//nos muestra "hola" "Mundo"
-  
+
   //Patron de valor anticipado
   function raizCuadrada(num)
   {
-    if(num < 0)//num no es menor que 0 y el resultado es 5 pero si pasamos -5 ahi entra al if
-    // y se ejecuta return undefined
-    {
-      return undefined//aqui se detiene la funcion si la condicion es true
-    }
-    return Math.sqrt(num);//el parametro num calculamos la raiz cuadrada  
+  if(num < 0)//num no es menor que 0 y el resultado es 5 pero si pasamos -5 ahi entra al if
+  // y se ejecuta return undefined
+  {
+    return undefined//aqui se detiene la funcion si la condicion es true
+  }
+  return Math.sqrt(num);//el parametro num calculamos la raiz cuadrada  
   }
   console.log(raizCuadrada(25));//pasamos a num el valor 25 que nos devueve su raiz 5
   console.log(raizCuadrada(-5))//pasamos a num el valor -5 que nos devueve undefined
@@ -1706,32 +1862,32 @@
   var conteo = 0;
   function contarCartas(carta)
   {
-    var decision;
-    switch(carta)
-    {
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-      case 6:
-        conteo ++;
-      break;	
-      case 10:
-      case "J":
-      case "Q":
-      case "K":
-      case "A":
-        conteo--;
-      break; 
-    }
-    if(conteo > 0)
-    {
-      decision  = "Apostar"
-    }
-    else
-    {
-      decision = "Esperar"
-    }return conteo + " " + decision; 
+  var decision;
+  switch(carta)
+  {
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      conteo ++;
+    break;	
+    case 10:
+    case "J":
+    case "Q":
+    case "K":
+    case "A":
+      conteo--;
+    break; 
+  }
+  if(conteo > 0)
+  {
+    decision  = "Apostar"
+  }
+  else
+  {
+    decision = "Esperar"
+  }return conteo + " " + decision; 
   } 
   console.log(contarCartas(2));
   console.log(contarCartas(3));
@@ -1741,32 +1897,32 @@
   //Crear Objetos:
   //Se usa conotacion de punto  
   var miPerro = {
-      "nombre": "camilo",
-      "edad": 3,
-      "peso": 6,
-      "rasa": "sharpei"    
+    "nombre": "camilo",
+    "edad": 3,
+    "peso": 6,
+    "rasa": "sharpei"    
   };
   console.log("Conotacion de punto");
   console.log(miPerro.nombre);
   console.log(miPerro.peso);
-  
+
   //Se usa conotacion de corchetes    
   var miCuaderno = {
-      "color": "verde",
-      "categoria": 3,
-      "numero de paginas": 200,
-      "numero de hojas": 100
+    "color": "verde",
+    "categoria": 3,
+    "numero de paginas": 200,
+    "numero de hojas": 100
   };
   console.log("Connotacion de corchetes");
   console.log(miCuaderno["categoria"]);
   console.log(miCuaderno["numero de paginas"]); 
-  
+
   //Acceder a propiedades usando Variables
   var resultados = {
-    1: "Manuel5711",
-    2: "Nora3578",
-    3: "Lucas2115",
-    4: "Cecilia4598"
+  1: "Manuel5711",
+  2: "Nora3578",
+  3: "Lucas2115",
+  4: "Cecilia4598"
   }
   var posicion = (1);
   console.log(resultados[posicion]);
@@ -1776,12 +1932,12 @@
   console.log(resultados[posicion]);
   var posicion = (4);
   console.log(resultados[posicion]);
-  
+
   //Actualizar Propiedades:
   var mochila = {
-    "valor": "azul",
-    "tamaño":"mediano",
-    "contenido" :["botella de agua", "cuaderno"]
+  "valor": "azul",
+  "tamaño":"mediano",
+  "contenido" :["botella de agua", "cuaderno"]
   };
   //console.log(mochila.color); resultado azul
   mochila.color = "verde";//reasignamos el valor 
@@ -1789,11 +1945,11 @@
   //console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno"]
   mochila.contenido.push("lapiz")//con push se agrega lapiz
   console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno,", "lapiz"]
- //Agregar Propiedades:
+  //Agregar Propiedades:
   var curso = {
-      "titulo": "Aprende JavaScript desde cero",
-      "idioma": "Español",
-      "duracion": 30   
+    "titulo": "Aprende JavaScript desde cero",
+    "idioma": "Español",
+    "duracion": 30   
   };
   curso.vista = 34500
   console.log(curso.vista);//resultado 34500
@@ -1809,15 +1965,15 @@
   //Objetos para Búsquedas:
   function buscarElementoQimico(simbolo)
   {
-    var simbolosQuimicos = {
-    "Al": "Aluminio",
-    "S": "Azufre",
-    "Cl": "Cloro",
-    "Hd": "Helio",
-    "B": "Boro",
-    "Li": "Litio"   
-    };
-    return simbolosQuimicos[simbolo];//esto retorna el nombre completo del elemento símbolo
+  var simbolosQuimicos = {
+  "Al": "Aluminio",
+  "S": "Azufre",
+  "Cl": "Cloro",
+  "Hd": "Helio",
+  "B": "Boro",
+  "Li": "Litio"   
+  };
+  return simbolosQuimicos[simbolo];//esto retorna el nombre completo del elemento símbolo
   }
   console.log(buscarElementoQimico("Al"));
   console.log(buscarElementoQimico("S"));
@@ -1835,41 +1991,143 @@
   //Utilizar condiconal:
   function verificarPropiedad(obj, propiedad)//propiedad del obj
   {
-    if(obj.hasOwnProperty(propiedad))// es true por que el obj tiene esa propiedad 
-    {
-      return "Propiedad: " + obj[propiedad]; //propiedad es el parámetro “color”
-    }
-    else
-    {
-      return "El objeto no tiene esta propiedad"//la propieda que pasamos no existe false
-    }
+  if(obj.hasOwnProperty(propiedad))// es true por que el obj tiene esa propiedad 
+  {
+    return "Propiedad: " + obj[propiedad]; //propiedad es el parámetro “color”
+  }
+  else
+  {
+    return "El objeto no tiene esta propiedad"//la propieda que pasamos no existe false
+  }
   }  
   console.log(verificarPropiedad(miCofre, "color"));//resultado Verde
   //Objetos Complejos: 
   var ordenesDePizzas = [
+  {
+    "tipo": "margarita",
+    "tamaño": "individual",
+    "precio": "5.67",
+      "toppings": [
+        "extra queso",
+        "chanpiñones",
+        "piña"
+    ],
+    "paraLlevar": true  
+  },
+  {
+  "tipo": "cuatro quesos",
+    "tamaño": "familiar",
+    "precio": "18.34",
+      "toppings": [
+        "extra queso",
+        "pimenton",
+    ],
+    "paraLlevar": false
+  },
+  {
+    "tipo": "napolitana",
+    "tamaño": "individual",
+    "precio": "6.78",
+    "toppings": [],
+    "paraLlevar": true      
+  }
+  ];
+  console.log(ordenesDePizzas[0]);//se  accede al primer obj y se muestra por consola
+  console.log(ordenesDePizzas[1]); //se  accede al segundo obj y se muestra por consola
+  console.log(ordenesDePizzas[0].tipo);//se accede a la primer propidad→tipo del primer obj y se muestra por consola el valor margarita
+  console.log(ordenesDePizzas[1].toppings)// veremos el array del segundo obj[“extra queso”, “pimentón”]
+  
+  //Objetos Anidados:
+  var miReceta = {
+    "descripcion": "mi postre favorito",
+    "costo": 15.6,
+    "ingredientes": { //obj ingrediente
+      "masa": { //sub_obj de ingrediente masa
+        "harina": "100 grs",
+        "sal": "2 cucharadita",
+        "agua": "1 taza"
+      },//cierre de sub_obj masa
+      "cobertura": { //obj cobertura
+        "azucar": "120 grs",
+        "chocolate": "4 cucharadas",
+        "mantequilla": "200 grs"
+      } //cierre obj cobertura
+    } //cierre obj ingredientes
+  } //cierre obj principal miReceta
+  Var = "harina";
+  console.log(miReceta.descripcion);//con notación de punto
+  console.log(miReceta.costo);//con notación de punto
+  console.log(miReceta.ingredientes);//con notación de punto
+  console.log(miReceta.ingredientes["masa"]);//con notación de corchetes  siguiendo el paht
+  console.log(miReceta.ingredientes.masa["harina"]);//con notación de corchetes siguiendo el paht
+  console.log(miReceta.ingredientes.masa["sal"]);//con notación de corchetes, array con espacios  
+  //Array Anidados:
+  var misPlantas = [
     {
-      "tipo": "margarita",
-      "tamaño": "individual",
-      "precio": "5.67",
-        "toppings": [
-          "extra queso",
-          "chanpiñones",
-          "piña"
-      ],
-      "paraLlevar": true  
+      tipo: "flores",
+      lista:[
+      "rosas",
+      "tulipanes",
+      "diente de leon"
+      ]  
     },
     {
-    "tipo": "cuatro quesos",
-      "tamaño": "familiar",
-      "precio": "18.34",
-        "toppings": [
-          "extra queso",
-          "pimenton",
-      ],
-      "paraLlevar": false
+      tipo: "arboles",
+      lista:[
+      "abeto",
+      "pino",
+      "abedul"
+    ] 
     }
   ];
-  console.log(ordenesDePizzas[0]);
-  console.log(ordenesDePizzas[1]);
+  var primeraFlor = misPlantas[0].lista[0];
+  console.log(primeraFlor);//vemos el valor rosas
+  var segundoArbol = misPlantas[1].lista[1];
+  console.log(segundoArbol);//vemos el valor pino
+
+  //Colección de Discos:
+  var coleccionDeDiscos  =  {
+    7853: {
+          tituloDelAlbum: "Bee Gees Greatest",
+          artista: "Bee Gees",
+          canciones: ["Stayin Alove"]
+        },
+        5430: {
+          tituloDelAlbum: "ABBA Gold"
+        }
+  }      
+
+  function actualizarDiscos(disco, id, propiedad, valor) 
+  {
+    if("valor" === "" )//si disco es exactamente igual a una cadena vacia entonces
+    {
+       delete disco[id][propiedad];//borramos la prpiedad del albun corespondiente
+    }
+    else if(propiedad === "canciones")
+    {
+      disco[id][propiedad] = disco[id][propiedad] || [];//accedemos al obj correspondiente, luego
+      //accedemos a la propiedad canciones y le acignamos un array vacio.
+      //Pero que pasa si la propiedad no existe... En ese caso usaremos el operador logico→or que nos 
+      //permite escojer entre dos obciones: Primero se va a acceder, y si este valor no esta definido  
+      // el operador or nos permite como espesificar un valor de respaldo que en este caso va a ser un
+      // array vasio[] y de forma segura podemos llamar al metodo push()    
+      disco[id][propiedad].push(valor);//agregamos el valor a ese array vacio llamando al metodo push y
+      //agregamos el valor que pasamos como argumento
+    }
+    else
+        { //↓cubrimos la cuarta regla
+          disco[id][propiedad] = valor;
+        }
+  }  
+  console.log(coleccionDeDiscos[7853].tituloDelAlbum);// antes de hacer el cambio
+  actualizarDiscos(coleccionDeDiscos, 7853, "tituloDelAlbum", "");//pasamos como argumento la
+  //coleccionDeDiscos en este caso no la usamos como variable, pasamos el id, pasamos el nombre de la
+  //propiedad y el valor en una cadena vacia"" por que vamos a probar la primera condicion del if
+  console.log(coleccionDeDiscos[7853].tituloDelAlbum);//despues de hacer el cambio es undefined
+  
+  console.log(coleccionDeDiscos[5430].canciones);// antes de hacer el cambio undefined
+  actualizarDiscos(coleccionDeDiscos, 5430, "canciones", "mamma mia");
+  console.log(coleccionDeDiscos[5430].canciones);//despues de hacer el cambio ["mamma mia"] 
+        
 </script>
  
