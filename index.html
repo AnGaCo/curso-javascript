@@ -2,19 +2,17 @@
 <script>
   console.log("Manuel Orozco");
   console.log("curso de javaScript")
-  //Tema Uno, Comentarios:
-  /* 
-  para una linea → // comentarios
-  Para varias lineas → "/* comentarios varios /*" 
-  El encomillado es solo a titulo de destacar. 
-  */ 
+  
   /*
-    Variables: 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/nWSe2u9s01Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    var miVariable = "De-freeCodeCamp"; // String
-    console.log(miVariable);
-    var miVariable = 16; // Numerical
-    console.log(miVariable);
+    #Tema Uno, Comentarios:
+      Para una linea → // comentarios
+      Para varias lineas → "/* comentarios varios /*" 
+      El encomillado es solo a titulo de destacar. 
+    #Variables: 
+      var miVariable = "De-freeCodeCamp"; // String
+      console.log(miVariable);
+      var miVariable = 16; // Numerical
+      console.log(miVariable);
 
     #La asignación de las variable dependerá del uso que se
       le darán en el desarrollo del proyecto. Se usara la convencion (camellCase),
@@ -1301,12 +1299,107 @@
           discos[id][propiedad] = valor;
         }
       }
-      console.log(coleccionDeDiscos.tituloDelAlbum);
-      actualizarDiscos(colleccionDeDisco, 7853, "tituloDelAlbum", "");
-      console.log(coleccionDeDiscos.tituloDelAlbum);
+      //Trabajando con el primer obj↓  
+      console.log(coleccionDeDiscos[7853].tituloDelAlbum);// antes de hacer el cambio
+      actualizarDiscos(coleccionDeDiscos, 7853, "tituloDelAlbum", "");//pasamos como argumento la
+      //coleccionDeDiscos en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+      //propiedad y el valor en una cadena vacia"" por que vamos a probar la primera condicion: if(...)
+      console.log(coleccionDeDiscos.tituloDelAlbum);//despues de hacer el cambio es undefined
+      console.log(coleccionDeDiscos[7853].canciones);//pasamos como argumento la coleccionDeDiscos 
+      //en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+      //propiedad y el valor por que vamos a probar la tercra condicion: else{...}
+    
+      //Trabajando con el segundo obj↓
+      console.log(coleccionDeDiscos[5430].canciones);// antes de hacer el cambio undefined
+      actualizarDiscos(coleccionDeDiscos, 5430, "canciones", "mamma mia");//pasamos como argumento la
+      //coleccionDeDiscos en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+      //propiedad y el valor que NO existen en el obj y probamos la segunda condicion→else if(...)
+      console.log(coleccionDeDiscos[5430].canciones);//despues de hacer el cambio ["mamma mia"] 
+      console.log(coleccionDeDiscos[5430].artista);// antes de hacer el cambio undefined
+      actualizarDiscos(coleccionDeDiscos, 5430, "artista", "ABBA");
+      console.log(coleccionDeDiscos[5430].artista);//despues de hacer el cambio ["ABBA"]
+      console.log(coleccionDeDiscos[5430].canciones);//pasamos como argumento la coleccionDeDiscos 
+      //en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+      //propiedad y el valor por que vamos a probar la tercra condicion: else{...} 
      
-
-
+    #Ciclo “WHILE”
+      Esos ciclos o bucles que  en ingles se denomina loop  nos permiten repetir unas secuencias de 
+      instrucciones un número específico de veces. Tenemos dos tipos de ciclos:→ while o for, comenzaremos 
+      viendo los ciclos while. Este tipo de bucles se los utiliza cuando no tenemos un número preciso de 
+      interacciones. Una (interacción) es una repetición del bloque de código que queremos repetir. 
+      Cuando no sabemos el número preciso que queremos realizar, pero si sabemos que es lo que tiene que 
+      ser cierto para continuar el proceso usamos un bucle while. Nota:entre los while(...) va la condición
+      que tiene que ser true para continuar el proceso. 
+      Vamos a definir una variable:
+      var cont = 0
+      while(cont <= 3) 
+      {
+        Console.log(“Aprendiendo bucles con white”);
+        Cont++;
+      }
+      console.log("salio del bucle");  
+    #Veamos otros dos ejemplo de un bucle White:
+      Ej1) Definimos dos variables, una es un array vacío la otra un contador. Mostramos por consola la 
+      variable miArreglo y veremos→ [[]] ¿por que el array sigue siendo un array vacío? Si si la variable 
+      cont; no esta definida vemos los array vacios
+      //Llamamos al operador push()
+      var miArreglo = [];
+      var cont = 0;
+      //Si si la variable cont; no esta definida vemos los array vacios [[]] 
+      console.log([miArreglo]);
+      while(cont <= 10)//hacer mientras se cumpla la condición
+        {
+          miArreglo.push(cont);//Con cada loop del bucle, push() agrega un numero
+          cont++;//incrementa en uno hasta que cont sea mayor que 10
+        }
+      console.log(miArreglo);//resultado [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+    #Ej2 Llamamos al operador pop() 
+      var numeros = [1,2,3,4,5,8,9,6,7];
+      while(numeros.length > 5)//se usa length por que nos da el largo de la cadena
+      {
+        numeros.pop();//Con cada loop del bucle, pop() quita un numero hasta que la condicion sea false
+      }
+      console.log(numeros);//resultado [ 1, 2, 3, 4, 5 ]
+      
+      var miArreglo = [];
+      var conta = 0
+      for(conta = 1; conta < 20; conta += 2)
+      {
+        miArreglo.push(conta);
+      }
+      console.log(miArreglo);
+    
+    #Ciclo "for"
+      Vamos hacer algo equivalente con lo que hicimos con el bucle while agregando un número del 0 hasta 
+      el 9 de un array. Pero con el bucle for() el código se escribe diferente. La secuencias de 
+      instrucciones que van entre llaves se denominan el cuerpo del bucle y las instrucciones condicionales 
+      van entre los paréntesis de for(…), en lugar de escribir una condición como escribíamos en el bucle 
+      while, para un bucle for tenemos que especificar tres aspecto de como se va a ejecutarse el bucle. 
+      Lo primero que tenemos que hacer es inicializar el valor de una variable que se va a usar y actualizar 
+      en el bucle. Veamos el primer aspecto →for(var conta = 0;) esa variable la denominamos la variable 
+      del bucle. Esa variable decide si el bucle se sigue ejecutando o NO. Luego el segundo aspecto del 
+      bucle separado por un  ; tenemos la condición si el bucle continua o NO→ for(…; conta <10;) y luego 
+      el tercer aspecto tenemos que decirle como queremos actualizar esa variable en cada iteración. 
+      Si queremos incrementar el valor en uno escribimos for(…; …; conta ++) de esta forma quedaría 
+      conformado→ fot(var conta = 0; conta < 10; conta++) {ahora pasamos al cuerpo del bucle lo que va 
+      entre llaves}. Lo que haremos es llamar al operador push()→ miArreglo.push(miArreglo);  
+      
+      var miArreglo = [];
+      var cont = 0;
+      for(cont = 0; cont < 10; conta++)
+      {
+        miArreglo.push(cont);
+      }
+      console.log(miArreglo);//[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+      
+      var miArreglo = [];
+      var conta = 0
+      for(conta = 1; conta < 20; conta += 2)
+      {
+        miArreglo.push(conta);
+      }
+      console.log(miArreglo);//resultado→[ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 ]
+      
   */  
         
   //↓Todo codigo↓
@@ -2093,7 +2186,9 @@
           canciones: ["Stayin Alove"]
         },
         5430: {
-          tituloDelAlbum: "ABBA Gold"
+          tituloDelAlbum: "ABBA Gold",
+          //artista: "ABBA",
+          //canciones: ["mamma mia"]
         }
   }      
 
@@ -2118,16 +2213,75 @@
         { //↓cubrimos la cuarta regla
           disco[id][propiedad] = valor;
         }
-  }  
+  }
+  //Trabajando con el primer obj↓  
   console.log(coleccionDeDiscos[7853].tituloDelAlbum);// antes de hacer el cambio
   actualizarDiscos(coleccionDeDiscos, 7853, "tituloDelAlbum", "");//pasamos como argumento la
-  //coleccionDeDiscos en este caso no la usamos como variable, pasamos el id, pasamos el nombre de la
-  //propiedad y el valor en una cadena vacia"" por que vamos a probar la primera condicion del if
-  console.log(coleccionDeDiscos[7853].tituloDelAlbum);//despues de hacer el cambio es undefined
-  
+  //coleccionDeDiscos en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+  //propiedad y el valor en una cadena vacia"" por que vamos a probar la primera condicion: if(...)
+  console.log(coleccionDeDiscos.tituloDelAlbum);//despues de hacer el cambio es undefined
+  console.log(coleccionDeDiscos[7853].canciones);//pasamos como argumento la coleccionDeDiscos 
+  //en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+  //propiedad y el valor por que vamos a probar la tercra condicion: else{...}
+ 
+  //Trabajando con el segundo obj↓
   console.log(coleccionDeDiscos[5430].canciones);// antes de hacer el cambio undefined
-  actualizarDiscos(coleccionDeDiscos, 5430, "canciones", "mamma mia");
+  actualizarDiscos(coleccionDeDiscos, 5430, "canciones", "mamma mia");//pasamos como argumento la
+  //coleccionDeDiscos en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+  //propiedad y el valor que NO existen en el obj y probamos la segunda condicion→else if(...)
   console.log(coleccionDeDiscos[5430].canciones);//despues de hacer el cambio ["mamma mia"] 
-        
+  console.log(coleccionDeDiscos[5430].artista);// antes de hacer el cambio undefined
+  actualizarDiscos(coleccionDeDiscos, 5430, "artista", "ABBA");
+  console.log(coleccionDeDiscos[5430].artista);//despues de hacer el cambio ["ABBA"]
+  console.log(coleccionDeDiscos[5430].canciones);//pasamos como argumento la coleccionDeDiscos 
+  //en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+  //propiedad y el valor por que vamos a probar la tercra condicion: else{...} 
+  
+  //Ciclo "WHILE"
+  var cont = 0
+  while(cont <= 3) 
+  {
+    console.log("Aprendiendo bucles con white");
+    cont++;
+  }
+  console.log([cont]);
+  console.log("salio del bucle");
+  //Veamos otros dos ejemplo de un bucle White:
+  //Llamamos al operador push()
+  var miArreglo = [];
+  var cont = 0;
+  //Si si la variable cont; no esta definida vemos los array vacios [[]] 
+  console.log([miArreglo]);
+  while(cont <= 10)//hacer mientras se cumpla la condición
+    {
+      miArreglo.push(cont);//Con cada loop del bucle, push() agrega un numero
+      cont++;//incrementa en uno hasta que cont sea mayor que 10
+    }
+  console.log(miArreglo);//resultado [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+  //Llamamos al operador pop() 
+  var numeros = [1,2,3,4,5,8,9,6,7];
+  while(numeros.length > 5)//se usa length por que nos da el largo de la cadena
+  {
+    numeros.pop();//Con cada loop del bucle, pop() quita un numero hasta que la condicion sea false
+  }
+  console.log(numeros);//resultado [ 1, 2, 3, 4, 5 ]
+  
+  //Ciclo “for”
+  var miArreglo = [];
+  var cont = 0;
+  for(cont = 0; cont < 10; conta++)
+  {
+    miArreglo.push(cont);
+  }
+  console.log(miArreglo);//[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+  
+  var miArreglo = [];
+  var conta = 0
+  for(conta = 1; conta < 20; conta += 2)
+  {
+    miArreglo.push(conta);
+  }
+  console.log(miArreglo);//resultado→[1, 3, 5, 7, 9, 11, 13, 15, 17, 19] 
+
 </script>
  
