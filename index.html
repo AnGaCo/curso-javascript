@@ -1385,13 +1385,18 @@
       entre llaves}. Lo que haremos es llamar al operador push()→ miArreglo.push(miArreglo);  
       
       var miArreglo = [];
-      var cont = 0;
-      for(cont = 0; cont < 10; conta++)
+      var cont = 1;
+      for(cont = 1; cont < 10; conta++)
       {
         miArreglo.push(cont);
       }
       console.log(miArreglo);//[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-      
+    
+    #Numeros impares
+      Declaramos el array para guardar los números impares en ese array. La condición: continua mientras 
+      variable < 20 y para obtener los números impares incrementamos la variable en dos. Seguidamente 
+      llamamos el método push() y ente los paréntesis la variable conta. 
+      Por ultimo mostramos  el resultado en la consola.  
       var miArreglo = [];
       var conta = 0
       for(conta = 1; conta < 20; conta += 2)
@@ -1399,7 +1404,53 @@
         miArreglo.push(conta);
       }
       console.log(miArreglo);//resultado→[ 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 ]
+    
+    #Bucles for “Contar hacia atrás” 
+      Hasta ahora habíamos incrementado el valor de la variable del bucle, pero a continuación vamos a 
+      reducir su valor ya sea de reducirlo de 1 o deducirlo en -= 2 podemos también multiplicarlo  o 
+      dividirlo dependiendo la condicion
+
+      var miArreglo = [];
+      var decremento = 0
+      for(var decremento = 15; decremento >= 10; decremento--)
+      {
+        console.log(decremento);//resultado→15, 14,13, 12, 11, 10 
+      } 
       
+      
+      var miArreglo = [];
+      var decremento = 0
+      for(var decremento = 15; decremento >= 10; decremento -=2)
+      {
+        console.log(decremento);//resultado→15, 13, 11 
+      }
+
+    #Iterar Sobre un array con un bucle “for”
+      Iterar sobre un array significa que vas a obtener cada uno de los elementos de ese array y los vas a 
+      poder usar en el cuerpo del bucle. Los mismos principios que veremos aplican para cualquier tipo de 
+      datos que contenga el array, cualquier tipo de elemento, incluyendo obj, cadena de caracteres, array 
+      anidados y cualquier otro tipo de dato. Definimos el array con los valore [4, 6, 8, 2] En este caso 
+      vamos a sumar los valore usando un bucle y el total de la suma se va a ir  acumulando en la variable
+      →total que inicial mente tiene  un valor cero. Para eso vamos a tener que acceder a cada uno de esos 
+      valores en una iteración del bucle. En cada loop tenemos que ir acumulando  esos valore en el 
+      total←[4]+[6]+[8]+[2] que es la variable del bucle. La condición del for va ser que mientras la 
+      variable→puntero sea menor que la longitud del array entonces continuando el proceso vamos a 
+      incrementar el valor de puntero en uno antes de la próxima iteración. En el cuerpo del for vamos a 
+      implementar que va hacer el bucle, agregaremos un valor a la variable total con el operador += 
+      vamos a sumar el valor en el índice puntero del array. En laprimera interacion el puntero va a ser 
+      cero, en la segunda seis en la tercera 8 y en la cuarta dos.                                                                                         
+      [0, 1, 2, 3] 
+       ↑  ↑  ↑  ↑ 
+       4  6  8  2
+      Y para finalizar podemos mostrar en la consola luego del proceso
+      var miArreglo [4, 6, 8, 2];
+      var total = 0;
+      for(var puntero = 0; puntero < miArreglo.length; puntero++)
+      {
+        total += miArreglo[puntero];
+      }
+      console.log(total);
+
   */  
         
   //↓Todo codigo↓
@@ -2269,7 +2320,7 @@
   //Ciclo “for”
   var miArreglo = [];
   var cont = 0;
-  for(cont = 0; cont < 10; conta++)
+  for(cont = 0; cont < 10; cont++)
   {
     miArreglo.push(cont);
   }
@@ -2281,7 +2332,29 @@
   {
     miArreglo.push(conta);
   }
-  console.log(miArreglo);//resultado→[1, 3, 5, 7, 9, 11, 13, 15, 17, 19] 
+  console.log(miArreglo);//resultado→[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+  //Bucles for “Contar hacia atrás” 
+      var miArreglo = [];
+      var decremento = 0
+      for(var decremento = 15; decremento >= 10; decremento--)
+      {
+        console.log(decremento);//resultado→15, 14,13, 12, 11, 10 
+      } 
+      
+      var miArreglo = [];
+      var decremento = 0
+      for(var decremento = 15; decremento >= 10; decremento -=2)
+      {
+        console.log(decremento);//resultado→15, 13, 11 
+      }
 
+    //Iterar Sobre un array con un bucle “for” 
+      var miArreglo = [4, 6, 8, 2];
+      var total = 0;
+      for(var puntero = 0; puntero < miArreglo.length; puntero++)
+      {
+        total += miArreglo[puntero];
+      }
+      console.log(total);//resultado 20
 </script>
  
