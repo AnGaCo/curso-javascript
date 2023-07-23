@@ -1442,919 +1442,1240 @@
       [0, 1, 2, 3] 
        ↑  ↑  ↑  ↑ 
        4  6  8  2
-      Y para finalizar podemos mostrar en la consola luego del proceso
+      Y para finalizar podemos mostrar en la consola luego del proceso. Nota: Usar console.log dentro del 
+      bucle es muy útil para ver cómo funciona y como se van actualizando los valeres a medida que se 
+      ejecutan las interaciones.
+      
       var miArreglo [4, 6, 8, 2];
       var total = 0;
       for(var puntero = 0; puntero < miArreglo.length; puntero++)
       {
         total += miArreglo[puntero];
+        console.log("Interacin " + puntero);
+        console.log(miArreglo[puntero]);
       }
       console.log(total);
 
-  */  
+    #En otro ejemplo de iteración con un array: 
+      Digamos que tenemos un array de un conjunto con cadenas de caracteres de lenguajes de programación 
+      en minúscula y con un bucle for la queremos convertir en mayusculas  entonces podemos iterar sobre 
+      el array. Inicializamos la variable →i en cero para usarla como índice y vamos a continuar iterando 
+      mientas el valor de→i sea menor que la longitud del arreglo lenguaje, esa condición es prácticamente 
+      fija si comienzas desde cero y quieres iterar sobre todos los elementos de un array asique esto se va 
+      a volver algo rutinario que se va a usar→(var i = 0; i < lenguajes.length; i++) por ultimo vamos a 
+      incrementar el valor de i++ ahora vamos a mostrar el elemento pero en mayúscula. 
+      Paraeso vamos a llamar un método especifico, primero accedemos al elemento de la cadena de caracteres 
+      que contiene el array. Para eso escribimos el nombre del array→lenguaje[i] el índice que es la 
+      variable→i y para convertir esa cadena de caracteres en mayúscula usamos el método toUpperCase().
+      
+      var lenguajes = ["JavaScript", "Piytjon", "Java", "C++"];
+      for(var i = 0; i < lenguajes.length; i++)
+      {
+        console.log(lenguajes[i].toUpperCase());
+      }
+    
+    #En otro ejemplo vamos a trabajar en un bucle for dentro de una función: 
+      Vamos a definir una función que va a contar la cantidad de números pares en el array va a tomar un 
+      parámetro→arreglo y va a mantener un acumulado del total de  números pares que se han encontrado 
+      hasta el momento. Ese total se va actualizar a medida que consigamos números pares en el array por 
+      que vamos a iterar sobre todos sus elementos. Dentro de la función podemos escribir un bucle for y 
+      cómo vamos iterar sobe el array? En la condicional del for usamos el mismo patrón que ya hemos visto
+      →for(var i = 0; i < lenguajes.length; i++). Dentro de la función inicializamos una variable→total en 
+      cero y escribimos un condicional if (arreglo[y] % 2 == 0) que le pedimos? que el elemento[y] que 
+      corresponde a esa iteración es par si el resto de su división entre dos es igual a cero entonces 
+      incrementamos la variable→ total en uno y cuando el bucle termine y hayamos procesados todos los 
+      elementos del array retornamos el valor de la cantidad de números pares. En el ejemplo vemos como 
+      resultado que el valor es 4
+      function contarNumerosPares(arreglo)
+      {
+      var total = 0;
+      for(var y = 0; y < arreglo.length; y++)
+      {
+       if(arreglo[y] % 2 == 0)
+        {
+          total++
+        } 
+      }
+      return total;
+      }
+      console.log(contarNumerosPares([1, 3, 5]));//sin numeros pares el if es false el valor es cero
+      console.log(contarNumerosPares([1, 8, 3, 6, 5, 4, 2]));//resultado 4
+    
+    #Bucles for anidados:
+      También es muy útil aprender bucles dentro de otros bucles comúnmente denominados bucles anidados. 
+      Ej. de un bucle for anidado: Son muy útiles para procesar estructuras de datos multidimensionales. 
+      Tenemos un array que dentro del mismo contiene otros array→ [[], [], []] Como podemos hacer alguna 
+      operación con cada uno de los elementos de cada uno de los array, si usamos un bucle for vamos a usar 
+      el mismo patrón para iterar sobre los elementos de un array.
+      →for(var indiceI = 0; indiceI < nidosObj.length; indiceI++) Recordemos: la variable del índice que 
+      en este caso es→indiceI la inicializamos en cero, seguidamente separado por ; decimos que mientras 
+      indiceI sea menor que la longitud del array incremente indice I en uno por cada loop . 
+      Vamos a mostrar cada uno de esos elementos que obtenemos. miArreglo[indiceI] que por el momento es 
+      cero ya que tenemos tres array con índice 0 1 2, se recuerda que como son array anidado cada uno 
+      tiene un índice especifico. Si usamos console.log(nidosObj[indiceI]); el resultad por consola seria
+      →[1,2,3] [4,5,6][7,8,9] esto es útil cuando trabajamos con el array anidado. Pero qué pasa si tenemos 
+      que trabajar con los elementos de ese array anidado. Algo que podemos hacer es asignar  ese array 
+      a una variable→ miArregloAnidadi = nidoObj[indiceI]; y luego podemos iterar sobre los elementos usando 
+      otro bucle for() sobre ese array anidado. Aquí ya se pude ver el patrón. Vamos hacer lo mismo que con 
+      el array externo pero con el array anidado, es el mismo patrón pero con una variable distinta→  
+      for(var nidoUno = 0; nidoUno < arregloAnidado.length; nidoUno++) De igual manera que en el bucle 
+      anterior vamos a mostrar cada uno de esos elementos que obtenemos del arreglo anidado. 
+      console.log(nidosObj[nidoUno]);→este es un Elemento del array anidado. 
+      En el ejercio al pie se pude apreciar el desarrollo completo.   
+
+      var nidosObj = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+      for(var indiceI = 0; indiceI < nidosObj.length; indiceI++)
+      {
+        console.log(">> Nueva iteracion");
+        var arregloAnidado = nidosObj[indiceI];//Array
+        console.log("Arreglo " + arregloAnidado);
         
+        for( var nidoUno = 0; nidoUno < arregloAnidado.length; nidoUno++)
+        {
+          console.log(">>> Bucle anidado");
+          console.log("Elemento:");
+          console.log(arregloAnidado[nidoUno]);//Elemento
+        }
+      }   
+      Resultado de los console.log
+      >> Nueva iteracion
+      Arreglo 1,2,3
+      >>> Bucle anidado
+      Elemento:
+      1
+      >>> Bucle anidado
+      Elemento:
+      2
+      >>> Bucle anidado
+      Elemento:
+      3
+      >> Nueva iteracion
+      Arreglo 4,5,6
+      >>> Bucle anidado
+      Elemento:
+      4
+      >>> Bucle anidado
+      Elemento:
+      5
+      >>> Bucle anidado
+      Elemento:
+      6
+      >> Nueva iteracion
+      Arreglo 7,8,9
+      >>> Bucle anidado
+      Elemento:
+      7
+      >>> Bucle anidado
+      Elemento:
+      8
+      >>> Bucle anidado
+      Elemento:
+      9
+    #Ciclos o Bucles “Do…While”
+      Vamos a ver un tercer tipo de bucle que podemos usar el JS que es básicamente un bucle while pero 
+      con un pequeño cambio es el bucle→do while que traducido seria (hacer mientras) comencemos con un 
+      ejemplo del bucle while. 
+      //Ej. bucle while
+        var mientra;
+        mientra = 5;
+        while(mientra < 10)
+        {
+          console.log(mientra);
+          mientra++; 
+        }
+        El bucle do while nos permite otra cosa, la diferencia de este bucle con el bucle while es que al 
+        menos una vez→siempre se va a ejecutar las secuencias de instrucciones que están ente las llaves por 
+        que la condición esta al final. Si esa condición es true hará un loop y si es false continua.
+        Ahora bien, paraqué puede llegar a servir un bucle→do while? Una de las situaciones ideales para un 
+        bucle do while es cuando necesitas que el usuario ingresé un valor y se tiene que verificar si ese 
+        valor es válido o no.
+      //Ej. bucle do while    
+        var hacerMientra;
+        hacerMientra = 5;
+        Do
+        {
+        console.log(hacerMientra);
+        hacerMientra++;
+        } while(x < 10);
+
+    #Busqueda de perfil, Mini proyecto
+      Ahora vamos a combinar  array, objetos, bucles y funciones. Vamos a definir una función que nos va a permitir buscar en una 
+      lista un contacto. Digamos que tenemos en este mini proyecto una variable que contiene un array y dentro de ese array hay 
+      tres objetos que cada uno de ellos ocupa un índice específico en ese array. Dichos objetos alberga una lista de propiedades 
+      y elementos que lo denominaremos contactos
+      var contactos = [
+        {
+        "nombre": "Nora", 
+        "apellido": "Nav", 
+        "numero": "0543236543", 
+        "gustos": "" ["Pizza", "Programacion"] 
+        },
+        {
+        "nombre": "Harry", 
+        "apellido": "Potter", 
+        "numero": "0994372684", 
+        "gustos": "" ["Hogwarts", "Magia"] 
+        },
+        {
+        "nombre": "Sherlock", 
+        "apellido": "Holmes", 
+        "numero": "0487345643", 
+        "gustos": "" ["Casos interesantes", "Violin"] 
+        }
+      ];
+      
+      function buscarPerfil(nombreP, propiedad)
+      {
+        for(var i = 0; i < contactos.length; i++)
+        {
+          if(contactos[i].nombre === nombreP)//propiedad === parametro
+          {
+            return contactos[i][propiedad] || "La propiedad no existe";
+          }
+        }
+         return "El contacto no esta en la lista";
+      }  
+      console.log(buscarPerfil("Nora", "nombre"));//indice cero
+      console.log(buscarPerfil("Harry", "apellido"));//indice uno
+      console.log(buscarPerfil("Sherlock", "numero"));//indice dos
+      console.log(buscarPerfil("Manuel", "apellido")); 
+    #Definición de la función: 
+      Esta función va a permitirnos conseguir una propiedad de un contacto, en base a su nombre vamos a obtener su valor, 
+      obviamente si la propiedad existe. Primero dentro de la función escribimos un bucle for para poder iterar sobre los 
+      elementos del array, vamos a acceder al array directamente con la variabe→contactos que es una variable global y la 
+      podemos usar dentro de las funciones del programa.  for(var i = 0; i < contactos.length; i++ ) puedes ver el mismo patrón 
+      que hemos usado anteriormente para iterar con los elementos de un array. Dentro del bucle for  que vamos hacer tenemos un 
+      condicional con el cual vamos acceder a c/u de los contactos de los objetos usando el índice→i que inicialmente  su valor 
+      es cero luego cuando se actualice a uno podemos acceder al segundo objeto y de igual manera al tercero. Escrivimos un 
+      condicional→if(contactos[i].nombre === nombreP)//propiedad === parámetro. Que le estamos pidiendo al if? 
+      Si la variable→contacto[i]←es0 entonces con notación de punto preguntamos si la propiedad→nombre es igual al parámetro→nombreP 
+      que solicitamos, en este caso el elemento→“Nora”. Si eso es true tenemos que retornar el valor de la propiedad que corresponde 
+      y en el return verificar si la propiedad existe. return contactos[i][propiedad] || "La propiedad no existe"; Vamos a tomar 
+      ese contacto[i]→el que estamos verificando y vamos acceder a la propiedad que especificamos como parámetro. Aquí no podemos 
+      usar notación de punto porque [propiedad] es una variable, si usáramos notación de punto en lugar de notación de corchetes 
+      se buscaría una propiedad cuyo nombre sea propiedad. O sea no se va a remplazar el valor de la variable si no que se va a
+      buscar una propiedad con este nombre y eso no es lo que queremos. En realidad el objetivo es que se remplace aquí el valor 
+      de esta variable del parámetro. Si esa propiedad existe su valor se va a retornar, pero también tenemos que manejar el caso 
+      que la propiedad no exista. En ese caso retornamos una cadena de caracteres que avise lo ocurrido. En JS hay una forma muy 
+      sencilla y concisa de escribirlo. Decimos si la propiedad existe retorna esa propiedad pero si esa propiedad no existe ese 
+      valor va a ser ondefine y por lo tanto debemos usar el operador or→|| y retornamos→"La propiedad no existe"; También está 
+      la posibilidad del que contacto no exista. En ese caso el bucle for va a ejecutar todas sus iteraciones, una por cada contacto 
+      en la lista. La condición del if nunca va a ser verdadera y por lo tanto se va a completar este bucle y se va a pasar a la 
+      siguiente línea→ return "El contacto no está en la lista"; De este modo la función está terminada y ahora comprobaremos con 
+      console.log distinto requerimientos. 
+      console.log(buscarPerfil("Nora", "nombre"));//indice cero
+      console.log(buscarPerfil("Harry", "apellido"));//indice uno
+      console.log(buscarPerfil("Sherlock", "numero"));//indice dos
+      console.log(buscarPerfil("Manuel", "apellido"));//no existe 
+      
+    # Números Aleatoreos: 
+ 
+  */  
+    
   //↓Todo codigo↓
-  var a;
-  var b = 2;
-  console.log(a); // undefind
-  console.log(b); // tiene un valor
-  a = 10 //asignacion a la variable a
-  console.log(a)
-  a = 5
-  b = a
-  console.log(a); 
-  console.log(b);
-  a = 11
-  var b;
+    var a;
+    var b = 2;
+    console.log(a); // undefind
+    console.log(b); // tiene un valor
+    a = 10 //asignacion a la variable a
+    console.log(a)
+    a = 5
+    b = a
+    console.log(a); 
+    console.log(b);
+    a = 11
+    var b;
 
-  b = a;
-  console.log(a); 
-  console.log(b);
-  a = 25; 
-  a ++; //se incrementa en uno
-  console.log(a);
-  var ventasDiarias;
-  ventasDiarias = 13567.34;
-  ventasDiarias += 345.67; 
+    b = a;
+    console.log(a); 
+    console.log(b);
+    a = 25; 
+    a ++; //se incrementa en uno
+    console.log(a);
+    var ventasDiarias;
+    ventasDiarias = 13567.34;
+    ventasDiarias += 345.67; 
   //se incrementa el valor
-  console.log(ventasDiarias) // total actualisado 13913.01
-  var altaAlumnos;
-  var vajaAlumnos;
-  altaAlumnos = 456;
-  vajaAlumnos = 456;/* se le asigna a vaja el valor de alta para mantener siempre 
-  el valor en alta a lo largo del proyecto */
-  vajaAlumnos -= 6;
-  console.log(vajaAlumnos);
-  console.log(altaAlumnos);
-  var salario = 45000; 
-  salario *=5; // Lo incrementamos en 5
-  console.log(salario);  
-  salario /= 2; //lo reducimos a la mitad salario /= 2;
-  console.log(salario);
-  var miNombre = "Manuel";
-  var ejemplo = "Estoy aprendiendo JavaScript";
-  console.log(miNombre);
-  miNombre =  "Manuel Ej1 \"Manu\"";
-  console.log(miNombre);
-  miNombre = 'Manuel Ej2 "Manu"';
-  console.log(miNombre);
-  console.log(ejemplo);
-  ejemplo = "Estoy aprendiendo JavaScript \ncurso desde 0 \\ freeCodeCamp";//Secuencias de escape
-  console.log(ejemplo);
-  miNombre = "Manuel" + " Orozco";
-  console.log(miNombre); //concatenado
-  var verbo = "programar";
-  var mensaje = "Estoy aprendiendo a " + verbo;
-  console.log(mensaje);
-  mensaje = "Estoy aprendiendo a " + verbo + " con freeCodeCamp";
-  console.log(mensaje);
-  var mensajeComleto = "El invierno llego"; 
-  var mensajeFinal = " con un frío muy cruel";
-  mensajeComleto += mensajeFinal; //concatenando variables con =+
-  console.log(mensajeComleto);
-  var miCadena; 
-  miCadena = "A";
-  console.log(miCadena.length); //se muestra el resultado. 1 caracter
-  var lenguajeDeProgramacion;
-  lenguajeDeProgramacion = "Javascript";//caracter J es índice 0 
-  console.log(lenguajeDeProgramacion[0]);//se mostra J
-  var miCadena;
-  miCadena = "JavaScript" 
-  console.log(miCadena.length -1); //Sin [] se muesta el ulimo indice 9
-  console.log(miCadena[miCadena.length -1]); //Con [] se muesta la ultima letra
-  var n; 
-  n = 4;
-  console.log(miCadena[miCadena.length-n]);//se muestra la letra r
-  var miSustantivo  = "perro";
-  var miAdgetivo =  "negro";
-  var miVerbo  = "corrió";
-  var miAdverbio = "rápidamente";
-  var miEspacio = " ";
-  var oracion;
-  oracion = "El " + miSustantivo + miEspacio + miAdgetivo + miEspacio + miVerbo + miEspacio + miAdverbio + " a la tienda";
-  console.log(oracion);// Muestra la frace completa
-  var miArrays; 
+    console.log(ventasDiarias) // total actualisado 13913.01
+    var altaAlumnos;
+    var vajaAlumnos;
+    altaAlumnos = 456;
+    vajaAlumnos = 456;/* se le asigna a vaja el valor de alta para mantener siempre 
+    el valor en alta a lo largo del proyecto */
+    vajaAlumnos -= 6;
+    console.log(vajaAlumnos);
+    console.log(altaAlumnos);
+    var salario = 45000; 
+    salario *=5; // Lo incrementamos en 5
+    console.log(salario);  
+    salario /= 2; //lo reducimos a la mitad salario /= 2;
+    console.log(salario);
+    var miNombre = "Manuel";
+    var ejemplo = "Estoy aprendiendo JavaScript";
+    console.log(miNombre);
+    miNombre =  "Manuel Ej1 \"Manu\"";
+    console.log(miNombre);
+    miNombre = 'Manuel Ej2 "Manu"';
+    console.log(miNombre);
+    console.log(ejemplo);
+    ejemplo = "Estoy aprendiendo JavaScript \ncurso desde 0 \\ freeCodeCamp";//Secuencias de escape
+    console.log(ejemplo);
+    miNombre = "Manuel" + " Orozco";
+    console.log(miNombre); //concatenado
+    var verbo = "programar";
+    var mensaje = "Estoy aprendiendo a " + verbo;
+    console.log(mensaje);
+    mensaje = "Estoy aprendiendo a " + verbo + " con freeCodeCamp";
+    console.log(mensaje);
+    var mensajeComleto = "El invierno llego"; 
+    var mensajeFinal = " con un frío muy cruel";
+    mensajeComleto += mensajeFinal; //concatenando variables con =+
+    console.log(mensajeComleto);
+    var miCadena; 
+    miCadena = "A";
+    console.log(miCadena.length); //se muestra el resultado. 1 caracter
+    var lenguajeDeProgramacion;
+    lenguajeDeProgramacion = "Javascript";//caracter J es índice 0 
+    console.log(lenguajeDeProgramacion[0]);//se mostra J
+    var miCadena;
+    miCadena = "JavaScript" 
+    console.log(miCadena.length -1); //Sin [] se muesta el ulimo indice 9
+    console.log(miCadena[miCadena.length -1]); //Con [] se muesta la ultima letra
+    var n; 
+    n = 4;
+    console.log(miCadena[miCadena.length-n]);//se muestra la letra r
+    var miSustantivo  = "perro";
+    var miAdgetivo =  "negro";
+    var miVerbo  = "corrió";
+    var miAdverbio = "rápidamente";
+    var miEspacio = " ";
+    var oracion;
+    oracion = "El " + miSustantivo + miEspacio + miAdgetivo + miEspacio + miVerbo + miEspacio + miAdverbio + " a la tienda";
+    console.log(oracion);// Muestra la frace completa
+    var miArrays; 
 
-  miArrays = ["Daniel", 24];
-  console.log(miArrays);
-  /*
-  (2) ['Daniel', 24]
-  0: "Daniel"
-  1: 24
-  length:2
-  */
-
-  var listaDeEstudiantes;
-  listaDeEstudiantes = [["Nora", 18], ["Manuel", 24]];
-  console.log(listaDeEstudiantes);
-  /*
-    (2) [Array (2), Array (2)]
-    0: Array(2)
-    0: "Nora"
-    1: 18
-    length: 2
-    1: Array(2)
-    0: "Manuel"
+    miArrays = ["Daniel", 24];
+    console.log(miArrays);
+    /*
+    (2) ['Daniel', 24]
+    0: "Daniel"
     1: 24
-    length: 2 
-  */
+    length:2
+    */
 
-  var listaDeProductos;
-  var listaDeProductos = [["Camisas", 15.25, "s-32"], ["Zapatos", 30.45, "s-11"], ["Pantalones", 28.50, "s-33" ]]; 
-  console.log(listaDeProductos);
-  /*
-  (3) [Array(3), Array(3), Array(3)]
-  0: (3) ['Camisas', 15.25, 's-32']
-  1: (3) ['Zapatos', 30.45, 's-11']
-  2: (3) ['Pantalones', 28.5, 's-33']
-  length: 3
-  */
-  var miAcceso;
-  var miAcceso = [10, 20, 30];
-  var suma;
-  suma = miAcceso[0] + miAcceso[1] + miAcceso[2];//acceso a c/índice
-  console.log(suma); //suma es igual a 60
+    var listaDeEstudiantes;
+    listaDeEstudiantes = [["Nora", 18], ["Manuel", 24]];
+    console.log(listaDeEstudiantes);
+    /*
+      (2) [Array (2), Array (2)]
+      0: Array(2)
+      0: "Nora"
+      1: 18
+      length: 2
+      1: Array(2)
+      0: "Manuel"
+      1: 24
+      length: 2 
+    */
 
-  var miModificacion; 
-  miModificacion = [10, 20, 30];
-  miModificacion [0] = 40;
-  console.log(miModificacion);// se mostrara el indice 0 con el nuevo valor 40
-  miModificacion [1] = "Manuel";
-  console.log(miModificacion);// se mostrara el indice 1 con el nuevo valor "Manuel"
-  miModificacion [2] = [1, 2, 3]; 
-  console.log(miModificacion);// se mostrara el indice 1 con el nuevo valor [[1,2,3]]
+    var listaDeProductos;
+    var listaDeProductos = [["Camisas", 15.25, "s-32"], ["Zapatos", 30.45, "s-11"], ["Pantalones", 28.50, "s-33" ]]; 
+    console.log(listaDeProductos);
+    /*
+    (3) [Array(3), Array(3), Array(3)]
+    0: (3) ['Camisas', 15.25, 's-32']
+    1: (3) ['Zapatos', 30.45, 's-11']
+    2: (3) ['Pantalones', 28.5, 's-33']
+    length: 3
+    */
+    var miAcceso;
+    var miAcceso = [10, 20, 30];
+    var suma;
+    suma = miAcceso[0] + miAcceso[1] + miAcceso[2];//acceso a c/índice
+    console.log(suma); //suma es igual a 60
 
-  var accesosArraysAnidados;
-  accesosArraysAnidados = [[1 ,2, 3], [4, 5, 6], [7, 8, 9] ];
-  // se muestra el acceso a cada elmento
-  console.log(accesosArraysAnidados[0]);
-  console.log(accesosArraysAnidados[1]);
-  console.log(accesosArraysAnidados[2]);
-  // acceder al primer array segundo elemento
-  console.log(accesosArraysAnidados[1] [2]); //vemos el elemento 6
-  var estaciones = ["invierno","otoño", "primavera"];
-  console.log(estaciones);
+    var miModificacion; 
+    miModificacion = [10, 20, 30];
+    miModificacion [0] = 40;
+    console.log(miModificacion);// se mostrara el indice 0 con el nuevo valor 40
+    miModificacion [1] = "Manuel";
+    console.log(miModificacion);// se mostrara el indice 1 con el nuevo valor "Manuel"
+    miModificacion [2] = [1, 2, 3]; 
+    console.log(miModificacion);// se mostrara el indice 1 con el nuevo valor [[1,2,3]]
+
+    var accesosArraysAnidados;
+    accesosArraysAnidados = [[1 ,2, 3], [4, 5, 6], [7, 8, 9] ];
+    // se muestra el acceso a cada elmento
+    console.log(accesosArraysAnidados[0]);
+    console.log(accesosArraysAnidados[1]);
+    console.log(accesosArraysAnidados[2]);
+    // acceder al primer array segundo elemento
+    console.log(accesosArraysAnidados[1] [2]); //vemos el elemento 6
+    var estaciones = ["invierno","otoño", "primavera"];
+    console.log(estaciones);
   //.push()
-  estaciones.push("verano");
-  console.log(estaciones); //Con .push() agregamos "verano" al final del arrays 
+    estaciones.push("verano");
+    console.log(estaciones); //Con .push() agregamos "verano" al final del arrays 
 
   //.pop()
-  estacion = estaciones.pop();
-  /*Extraemos el último elemento que esta al final del arrays 
-  .pop() entrega un retorno lo asignamo a una variable 
-  */
-  console.log(estaciones); //["invierno","otoño", "primavera"]
-  console.log(estacion); // "verano"
+    estacion = estaciones.pop();
+    /*Extraemos el último elemento que esta al final del arrays 
+    .pop() entrega un retorno lo asignamo a una variable 
+    */
+    console.log(estaciones); //["invierno","otoño", "primavera"]
+    console.log(estacion); // "verano"
 
   //Mostrar lista de compras 
-  miListaDeCompras = [["Arroz", 1], ["Aceite", 2], ["Fideos", 3], ["Café", 1]];
-  console.log("Voy a comprar " + miListaDeCompras[0][1] + " kg de " + 
-  miListaDeCompras[0][0] + " también " + miListaDeCompras[1][1] + " Litros de "
-  + miListaDeCompras[1][0] + " y " + miListaDeCompras[2][1] + " paquetes de " + 
-  miListaDeCompras[2][0] + " por ultimo " + miListaDeCompras[3][1] + 
-  " un paquetes de 1/2 kg de " + miListaDeCompras[3][0]);
-  /*Resultado en pantalla:
-  Voy a comprar 1 kg de Arroz también 2 Litros de Aceite y 3 paquetes 
-  de Fideos por ultimo 1 paquetes de 1/2 kg de Café
-  */
+    miListaDeCompras = [["Arroz", 1], ["Aceite", 2], ["Fideos", 3], ["Café", 1]];
+    console.log("Voy a comprar " + miListaDeCompras[0][1] + " kg de " + 
+    miListaDeCompras[0][0] + " también " + miListaDeCompras[1][1] + " Litros de "
+    + miListaDeCompras[1][0] + " y " + miListaDeCompras[2][1] + " paquetes de " + 
+    miListaDeCompras[2][0] + " por ultimo " + miListaDeCompras[3][1] + 
+    " un paquetes de 1/2 kg de " + miListaDeCompras[3][0]);
+    /*Resultado en pantalla:
+    Voy a comprar 1 kg de Arroz también 2 Litros de Aceite y 3 paquetes 
+    de Fideos por ultimo 1 paquetes de 1/2 kg de Café
+    */
   //FUNCIONES: function
-  function mostrarMensaje()
-  {
-  console.log("Hola Manu"); //Podemos llamar a la function cuantas veces sea necesario
-  } 
-  mostrarMensaje();
-  mostrarMensaje();
-  function sumar(a, b)
-  {
-  var suma = a + b;
-  console.log("El resultado de " + a + " + " + b + " es " + suma);	
-  }
-  sumar(5, 3) //resultado 8
-  sumar(57, 3);//resultado 60
-  sumar(31, 83);//resultado 114
-  sumar(11, 43);//resultado 54
+    function mostrarMensaje()
+    {
+    console.log("Hola Manu"); //Podemos llamar a la function cuantas veces sea necesario
+    } 
+    mostrarMensaje();
+    mostrarMensaje();
+    function sumar(a, b)
+    {
+    var suma = a + b;
+    console.log("El resultado de " + a + " + " + b + " es " + suma);	
+    }
+    sumar(5, 3) //resultado 8
+    sumar(57, 3);//resultado 60
+    sumar(31, 83);//resultado 114
+    sumar(11, 43);//resultado 54
 
-  var x = 5; 
-  var y = 3; 
-  sumar(x, y);//resultado 8
+    var x = 5; 
+    var y = 3; 
+    sumar(x, y);//resultado 8
 
-  function concatenarTresCadenas(cadena1, cadena2, cadena3)
-  {
-  console.log(cadena1 + " " + cadena2 + " " + cadena3);
-  } 
-  concatenarTresCadenas("Estoy", "aprendiendo", "a programar"); 
-  //Resultado: Estoy aprendiendo a programar
+    function concatenarTresCadenas(cadena1, cadena2, cadena3)
+    {
+    console.log(cadena1 + " " + cadena2 + " " + cadena3);
+    } 
+    concatenarTresCadenas("Estoy", "aprendiendo", "a programar"); 
+    //Resultado: Estoy aprendiendo a programar
 
   //Ámbito Global:
-  miVariableGlobal = 5;// global esta definida fuera de la function 
-  console.log(miVariableGlobal);
-  function miFuncion()
-  {
-  console.log(miVariableGlobal);// se puede usar dentro de la function
-  }
-  miFuncion();//llamamos a la function 
-  console.log(miVariableGlobal);//vemos que si esta definida en la function
+    miVariableGlobal = 5;// global esta definida fuera de la function 
+    console.log(miVariableGlobal);
+    function miFuncion()
+    {
+    console.log(miVariableGlobal);// se puede usar dentro de la function
+    }
+    miFuncion();//llamamos a la function 
+    console.log(miVariableGlobal);//vemos que si esta definida en la function
   //AMBITO LOCAL: 
-  function miFunction()
-  {
-  var miVariableLocal =  4;
-  console.log(miVariableLocal);
-  }
-  //Vamos a llamar a la function para ver que esa variable si está definida
-  miFunction(); //resultado 4
+    function miFunction()
+    {
+    var miVariableLocal =  4;
+    console.log(miVariableLocal);
+    }
+    //Vamos a llamar a la function para ver que esa variable si está definida
+    miFunction(); //resultado 4
 
   //Ámbito Local vs Ámbito Global: 
-  var miNombre = "Nora"
-  function mostrarMiNombre()
-  {
-  var miNombre = "Ricardo";
-  console.log(miNombre);
-  }
-  mostrarMiNombre(); //resultado Ricardo
-  console.log(miNombre);//variable global resultado Nora
+    var miNombre = "Nora"
+    function mostrarMiNombre()
+    {
+    var miNombre = "Ricardo";
+    console.log(miNombre);
+    }
+    mostrarMiNombre(); //resultado Ricardo
+    console.log(miNombre);//variable global resultado Nora
 
   //RETORNAR UN VALOR:
-  function sumar(a, b)
-  {
-  return a + b; // no lleva coma
-  }
-  //si nosotros llamamos a la function
-  //sumar(5, 3); //no se muestra nada, para eso usamos
-  console.log(sumar(5, 3)); //resultado retorna 8
+    function sumar(a, b)
+    {
+    return a + b; // no lleva coma
+    }
+    //si nosotros llamamos a la function
+    //sumar(5, 3); //no se muestra nada, para eso usamos
+    console.log(sumar(5, 3)); //resultado retorna 8
 
   //UNDEFINED:
-  function sumando(x, y)
-  {
-  var x = 15
-  var y = 10
-  console.log(x + y);// no lleva coma
-  //sin return x + y; 
-  }
-  //Como no estamos retornando ningún valor explícitamente 
-  console.log(sumando(15, 10));// vemos aquí UNDEFINED 
+    function sumando(x, y)
+    {
+    var x = 15
+    var y = 10
+    console.log(x + y);// no lleva coma
+    //sin return x + y; 
+    }
+    //Como no estamos retornando ningún valor explícitamente 
+    console.log(sumando(15, 10));// vemos aquí UNDEFINED 
 
   //ASIGNAR UN VALOR RETORNANDO
-  //Cuando una function retorna un valor podemos asignarle ese valor a una variable
-  function sumar(a, b)
-  {
-  return a + b; // no lleva coma
-  }
-  resultado = sumar(15, 3); //resultado ahora vale 18
-  console.log(resultado);// se muestra 18
-  //Otro ejemplo con CdC
-  function crearCadenaConMeta(lenguajeDeProgramacion)
-  {
-  return "Mi meta es aprender " + lenguajeDeProgramacion;
-  }
-  var miMeta = crearCadenaConMeta("JavaScript");
-  console.log(miMeta);//resultado: Mi meta es aprender JavaScript
+    //Cuando una function retorna un valor podemos asignarle ese valor a una variable
+    function sumar(a, b)
+    {
+    return a + b; // no lleva coma
+    }
+    resultado = sumar(15, 3); //resultado ahora vale 18
+    console.log(resultado);// se muestra 18
+    //Otro ejemplo con CdC
+    function crearCadenaConMeta(lenguajeDeProgramacion)
+    {
+    return "Mi meta es aprender " + lenguajeDeProgramacion;
+    }
+    var miMeta = crearCadenaConMeta("JavaScript");
+    console.log(miMeta);//resultado: Mi meta es aprender JavaScript
 
   //Permanece en Fila:
-  function proximoEnLaFila(arreglo, elemento)
-  { 
-  arreglo.push(elemento); //agregar al final del array un valor→6 
-  return arreglo.shift(); //shift remueve el primer elemento del array y retorna 
-  //el elemento que seria→1
-  } 
-  var miArreglo = [1, 2, 3, 4, 5,] //Definimos una variable
-  console.log("Antes: " + JSON.stringify(miArreglo));// se muestra antes
-  console.log(proximoEnLaFila(miArreglo, 6));// aquí realizamos el cambio 
-  console.log("Después: " + JSON.stringify(miArreglo));//mostramos después de hacer el cambio
-  //Resultado [2, 3, 4, 5, 6] 
+    function proximoEnLaFila(arreglo, elemento)
+    { 
+    arreglo.push(elemento); //agregar al final del array un valor→6 
+    return arreglo.shift(); //shift remueve el primer elemento del array y retorna 
+    //el elemento que seria→1
+    } 
+    var miArreglo = [1, 2, 3, 4, 5,] //Definimos una variable
+    console.log("Antes: " + JSON.stringify(miArreglo));// se muestra antes
+    console.log(proximoEnLaFila(miArreglo, 6));// aquí realizamos el cambio 
+    console.log("Después: " + JSON.stringify(miArreglo));//mostramos después de hacer el cambio
+    //Resultado [2, 3, 4, 5, 6] 
   //BOOLEANOS
-  console.log(true) //VERDADERO  
-  console.log(false)//FALSO
+    console.log(true) //VERDADERO  
+    console.log(false)//FALSO
 
   //Operadores de igualdad: numero y cadenas
-  console.log(5 == 5); //resultado→true
-  console.log("Hola" == "Hola")// true  
-  console.log("Hola" == "hola")//false
-  console.log([1,2,3]==[1,2,3]);//No compara array, el resultado va a ser false
+    console.log(5 == 5); //resultado→true
+    console.log("Hola" == "Hola")// true  
+    console.log("Hola" == "hola")//false
+    console.log([1,2,3]==[1,2,3]);//No compara array, el resultado va a ser false
 
   //Operador de igualdad estricta:
-  console.log(9 === "9"); // Resultado es false
-  //Operador de desigualdad:
-  console.log(9 != 6)//Resultado true
-  console.log(9 != 9)//Resultado false
-  console.log([1,2,3] != [1,2,3]);//Resultado es true , no compara el contenido
+    console.log(9 === "9"); // Resultado es false
+    //Operador de desigualdad:
+    console.log(9 != 6)//Resultado true
+    console.log(9 != 9)//Resultado false
+    console.log([1,2,3] != [1,2,3]);//Resultado es true , no compara el contenido
 
   //Operador de desigualdad estricta:
-  console.log(1 != "1");// true esta mal 
-  console.log(1 !== "1");// false esta bien
+    console.log(1 != "1");// true esta mal 
+    console.log(1 !== "1");// false esta bien
 
-  console.log("B" > "A");//true
-  console.log("A, C, B" > "A, B, C");//true
-  console.log("AB" > "A");//true
-  console.log("Mundo" > "Hola");//true
-  console.log("M" > "H");//true
-  var az = 15;
-  var by = 8;
-  console.log(az > by);//true
-  console.log(by > az);//false
+    console.log("B" > "A");//true
+    console.log("A, C, B" > "A, B, C");//true
+    console.log("AB" > "A");//true
+    console.log("Mundo" > "Hola");//true
+    console.log("M" > "H");//true
+    var az = 15;
+    var by = 8;
+    console.log(az > by);//true
+    console.log(by > az);//false
 
   //Setencias Condicionales:
-  var cond = 5
-  if (cond > 2) // la condicion se cumple
-  {
-  console.log("La condición es verdadera"); // ejecuta el codigo
-  }
-  if((cond > 2) && (cond < 10)); //condiciones mas complejas
-  {
-  console.log("La condición es verdadera"); // ejecuta el codigo
-  }
-  var estación = "invierno"
-  if(estación == "invierno")// la condicion se cumple
-  {
-  console.log("¡Si! Me encanta el invierno");// ejecuta el codigo
-  } 
-  if (cond < 2) // la condicion NO se cumple
-  {
-  console.log("La condición es verdadera"); // NO ejecuta el codigo
-  }
-  console.log("La condición no es verdadera"); // Continua la ejecucion saltando el if
+    var cond = 5
+    if (cond > 2) // la condicion se cumple
+    {
+    console.log("La condición es verdadera"); // ejecuta el codigo
+    }
+    if((cond > 2) && (cond < 10)); //condiciones mas complejas
+    {
+    console.log("La condición es verdadera"); // ejecuta el codigo
+    }
+    var estación = "invierno"
+    if(estación == "invierno")// la condicion se cumple
+    {
+    console.log("¡Si! Me encanta el invierno");// ejecuta el codigo
+    } 
+    if (cond < 2) // la condicion NO se cumple
+    {
+    console.log("La condición es verdadera"); // NO ejecuta el codigo
+    }
+    console.log("La condición no es verdadera"); // Continua la ejecucion saltando el if
   //Clausula  “else”
-  if (false)
-  {
-  console.log("si la condición es true se ejecuta este código");
-  } 
-  else
-  {
-  console.log("La condición es false ignora el if y se ejecuta else con este código");
-  }
+    if (false)
+    {
+    console.log("si la condición es true se ejecuta este código");
+    } 
+    else
+    {
+    console.log("La condición es false ignora el if y se ejecuta else con este código");
+    }
   //Clausula else if
-  function clasificarValor(valor)
-  {
-  if(valor % 2 == 0)//genera un resto igual a cero es true
-  {
-    console.log("Divisible entre 2");
-  } 
-  else if(valor % 3 == 0)
-  {
-    console.log("Divisible entre 3");
-  }
-  else 
-  {
-    console.log("NO es divisible entre las opciones");
-  } 
-  }
-  clasificarValor(2)
-  clasificarValor(15)
-  clasificarValor(7)
-  var elcasoUno = "caso 1 se ejecuta por que es el primer true que encuentra"
-  var elCasoDos = "caso 2 se ejecuta por que caso 1 es false"
-  var elCasoTres = "caso 3 se ejecuta por que caso 1 y 2 son false"
-  console.log(elcasoUno); 
-  console.log(elCasoDos); 
-  console.log(elCasoTres);
+    function clasificarValor(valor)
+    {
+    if(valor % 2 == 0)//genera un resto igual a cero es true
+    {
+      console.log("Divisible entre 2");
+    } 
+    else if(valor % 3 == 0)
+    {
+      console.log("Divisible entre 3");
+    }
+    else 
+    {
+      console.log("NO es divisible entre las opciones");
+    } 
+    }
+    clasificarValor(2)
+    clasificarValor(15)
+    clasificarValor(7)
+    var elcasoUno = "caso 1 se ejecuta por que es el primer true que encuentra"
+    var elCasoDos = "caso 2 se ejecuta por que caso 1 es false"
+    var elCasoTres = "caso 3 se ejecuta por que caso 1 y 2 son false"
+    console.log(elcasoUno); 
+    console.log(elCasoDos); 
+    console.log(elCasoTres);
   //Condicionales Orden logico 
-  function interpretarIMC(indiceDeMasaCorporal)
-  {
-  if(indiceDeMasaCorporal < 18.5)
-  {
-    console.log("Bajo peso");
-  }
-  else if(indiceDeMasaCorporal <= 24.9 )
-  {
-    console.log("peso Normal");
-  }
-  else if(indiceDeMasaCorporal <= 29.9)
-  {
-    console.log("Sobrepeso");
-  }
-  else
-  {
-    console.log("Obeso"); 
-  }
-  } 
-  interpretarIMC(17.8);//caso 1 se ejecuta por que es el primer true que encuentra
-  interpretarIMC(22.2);//caso 2 se ejecuta por que caso 1 es false
-  interpretarIMC(28.5);//caso 3 se ejecuta por que caso 1 caso 2 es false
-  interpretarIMC(32.2);//caso 4 se ejecuta por que no encuentra ningun true
-  var casoIF = "Caso 1 se ejecuta por que es el primer true que encuentra"
-  var casoPrimerElseIf = "Caso 2 se ejecuta por que caso 1 es false"
-  var casoSegundoElseIf = "Caso 3 se ejecuta por que caso 1 caso 2 es false"
-  var casoElse = "Caso 4 se ejecuta por que no encuentra ningun true"
-  console.log(casoIF); 
-  console.log(casoPrimerElseIf); 
-  console.log(casoSegundoElseIf);
-  console.log(casoElse);
-
-  function puntajeDeGolf(par, golpes)
-  {
-  if(golpes == 1)
-  {
-    return "Hole-in-one!";     
-  } 
-  else if(golpes <= par - 2)
-  {
-    return "Eagle";
-  }
-  else if(golpes == par - 1)
-  {
-    return "Birdie";  
-  }
-  else if(golpes == par) 
-  {
-    return "Par";  
-  }
-  else if(golpes == par + 1) 
-  {
-    return "Bogey";  
-  }
-  else if(golpes == par + 2) 
-  {
-    return "Double Bogey";  
-  }
-  else if(golpes >= par + 3)        
-  {
-    return "Go Home!";
-  }
-  } 
-  console.log(puntajeDeGolf(4, 1));//par 4 retorna 1 se muestra  "Hole-in-one!"
-  console.log(puntajeDeGolf(4, 2));//par 4 <= par -2 retorna 2 se muestra  "Eagle" 
-  console.log(puntajeDeGolf(4, 3));//par 4 par -1 retorna 3 se muestra  "Birdie"
-  console.log(puntajeDeGolf(4, 4));//par 4 par retorna 4 se muestra  "Par"
-  console.log(puntajeDeGolf(4, 5));//par 4 par +1 retorna 5 se muestra  "Bogey"
-  console.log(puntajeDeGolf(4, 6));//par 4 par +2 retorna 6 se muestra "Doble Bogey"
-  console.log(puntajeDeGolf(4, 8));//par 4 >= par +3 retorna 7se muestra "Go Home!"
+    function interpretarIMC(indiceDeMasaCorporal)
+    {
+    if(indiceDeMasaCorporal < 18.5)
+    {
+      console.log("Bajo peso");
+    }
+    else if(indiceDeMasaCorporal <= 24.9 )
+    {
+      console.log("peso Normal");
+    }
+    else if(indiceDeMasaCorporal <= 29.9)
+    {
+      console.log("Sobrepeso");
+    }
+    else
+    {
+      console.log("Obeso"); 
+    }
+    } 
+    interpretarIMC(17.8);//caso 1 se ejecuta por que es el primer true que encuentra
+    interpretarIMC(22.2);//caso 2 se ejecuta por que caso 1 es false
+    interpretarIMC(28.5);//caso 3 se ejecuta por que caso 1 caso 2 es false
+    interpretarIMC(32.2);//caso 4 se ejecuta por que no encuentra ningun true
+    var casoIF = "Caso 1 se ejecuta por que es el primer true que encuentra"
+    var casoPrimerElseIf = "Caso 2 se ejecuta por que caso 1 es false"
+    var casoSegundoElseIf = "Caso 3 se ejecuta por que caso 1 caso 2 es false"
+    var casoElse = "Caso 4 se ejecuta por que no encuentra ningun true"
+    console.log(casoIF); 
+    console.log(casoPrimerElseIf); 
+    console.log(casoSegundoElseIf);
+    console.log(casoElse);
+  //Puntaje de golf
+    function puntajeDeGolf(par, golpes)
+    {
+    if(golpes == 1)
+    {
+      return "Hole-in-one!";     
+    } 
+    else if(golpes <= par - 2)
+    {
+      return "Eagle";
+    }
+    else if(golpes == par - 1)
+    {
+      return "Birdie";  
+    }
+    else if(golpes == par) 
+    {
+      return "Par";  
+    }
+    else if(golpes == par + 1) 
+    {
+      return "Bogey";  
+    }
+    else if(golpes == par + 2) 
+    {
+      return "Double Bogey";  
+    }
+    else if(golpes >= par + 3)        
+    {
+      return "Go Home!";
+    }
+    } 
+    console.log(puntajeDeGolf(4, 1));//par 4 retorna 1 se muestra  "Hole-in-one!"
+    console.log(puntajeDeGolf(4, 2));//par 4 <= par -2 retorna 2 se muestra  "Eagle" 
+    console.log(puntajeDeGolf(4, 3));//par 4 par -1 retorna 3 se muestra  "Birdie"
+    console.log(puntajeDeGolf(4, 4));//par 4 par retorna 4 se muestra  "Par"
+    console.log(puntajeDeGolf(4, 5));//par 4 par +1 retorna 5 se muestra  "Bogey"
+    console.log(puntajeDeGolf(4, 6));//par 4 par +2 retorna 6 se muestra "Doble Bogey"
+    console.log(puntajeDeGolf(4, 8));//par 4 >= par +3 retorna 7se muestra "Go Home!"
 
   //Sentencia Switch:
-  function clasificarValor(valor)
-  {
-  var respuesta;//variable local
-  switch (valor)
-  {
-    case 1:
-      respuesta = "alpha";
-      break;//siempre se finalisa con break;  
-    case 2:
-      respuesta = "beta";
-      break;
-    case 3:
-      respuesta = "gamma";
-      break;
-    case 4:
-      respuesta = "delta";
-      break;      
-  } 
-  return respuesta;
-  }
-  console.log(clasificarValor(1));//valor=1 se ejecuta caso1 respuesta vale→"alpha"  
-  console.log(clasificarValor(2));//valor=2 se ejecuta caso2 respuesta vale→"beta"
-  console.log(clasificarValor(3));//valor=3 se ejecuta caso3 respuesta vale→"gamma"
-  console.log(clasificarValor(4));//valor=4 se ejecuta caso4 respuesta vale→"delta"
-
-  //Ahora vamos a usar switch con una cadena de caracteres solo declarando una variable 
-  var producto = "helado"
-  switch (producto)
-  {
-  case  "pizza":
-    console.log("La pizza basica cuesta $550");
-    break;
-  case "hambueguesa":
-    console.log("Las hamburguesas cuestan $250");
-    break;
-  case "helado":
-    console.log("El helado cuesta $95");
-    break;       
-  }
-  //Como la variable valor se asigno "helado" se muestra→ ("El helado cuesta $95")
-  console.log("Luego del switch continua ejecutando el codigo");
-
-  //Sentencia Switch opción predeterminada 
-  function seleccionarIdioma(valor)
-  {
-  var idioma;
-  switch(valor)//dentro de la sentencia agregamos el parametro
-  {
-    case 1: 
-      idioma = "Español";
-      break;
-    case 2: 
-      idioma = "Frances";
-      break;
-    case 3: 
-      idioma = "Italiano";
-      break;  
-    default:
-      idioma = "Ingles";
-      break;// es opcional pero por norma lo usamos
-  } 
-  return idioma;
-  }
-  console.log(seleccionarIdioma(1));//valor=1 se ejecuta caso1 var idioma es "Español"
-  console.log(seleccionarIdioma(2));//valor=1 se ejecuta caso1 var idioma es "Frances"
-  console.log(seleccionarIdioma(3));//valor=1 se ejecuta caso1 var idioma es "Italiano"
-  console.log(seleccionarIdioma(4));//se ejecuta por defecto var es "Ingles" 
-
-  //Sentencia switch  múltiples casos:
-  function clacificarVolumen(valor)
-  {
-  var volumen; 
-  switch(valor)
+    function clasificarValor(valor)
+    {
+    var respuesta;//variable local
+    switch (valor)
     {
       case 1:
-        volumen = "Bajo";
-      break;
+        respuesta = "alpha";
+        break;//siempre se finalisa con break;  
       case 2:
+        respuesta = "beta";
+        break;
       case 3:
-        volumen = "Intermedio";
-      break;
+        respuesta = "gamma";
+        break;
       case 4:
-      case 5:
-      case 6:    
-        volumen = "Alto";
-      break;
-      default:
-        volumen = "Sin volumen";
-      break; 
+        respuesta = "delta";
+        break;      
+    } 
+    return respuesta;
     }
-    return volumen; 
-  } 
-  console.log(clacificarVolumen(1));//valor=1 se ejecuta caso1 var volumen "Bajo"
-  console.log(clacificarVolumen(2));//valor=2 se ejecuta caso2,3 var volumen "Intermedio"
-  console.log(clacificarVolumen(4));//valor=4 se ejecuta caso4,5,6 var volumen "Alto"
-  console.log(clacificarVolumen(7));//valor=7 se ejecuta default var volumen "Sin volumen"
+    console.log(clasificarValor(1));//valor=1 se ejecuta caso1 respuesta vale→"alpha"  
+    console.log(clasificarValor(2));//valor=2 se ejecuta caso2 respuesta vale→"beta"
+    console.log(clasificarValor(3));//valor=3 se ejecuta caso3 respuesta vale→"gamma"
+    console.log(clasificarValor(4));//valor=4 se ejecuta caso4 respuesta vale→"delta"
+
+  //Ahora vamos a usar switch con una cadena de caracteres solo declarando una variable 
+    var producto = "helado"
+    switch (producto)
+    {
+    case  "pizza":
+      console.log("La pizza basica cuesta $550");
+      break;
+    case "hambueguesa":
+      console.log("Las hamburguesas cuestan $250");
+      break;
+    case "helado":
+      console.log("El helado cuesta $95");
+      break;       
+    }
+    //Como la variable valor se asigno "helado" se muestra→ ("El helado cuesta $95")
+    console.log("Luego del switch continua ejecutando el codigo");
+
+  //Sentencia Switch opción predeterminada 
+    function seleccionarIdioma(valor)
+    {
+    var idioma;
+    switch(valor)//dentro de la sentencia agregamos el parametro
+    {
+      case 1: 
+        idioma = "Español";
+        break;
+      case 2: 
+        idioma = "Frances";
+        break;
+      case 3: 
+        idioma = "Italiano";
+        break;  
+      default:
+        idioma = "Ingles";
+        break;// es opcional pero por norma lo usamos
+    } 
+    return idioma;
+    }
+    console.log(seleccionarIdioma(1));//valor=1 se ejecuta caso1 var idioma es "Español"
+    console.log(seleccionarIdioma(2));//valor=1 se ejecuta caso1 var idioma es "Frances"
+    console.log(seleccionarIdioma(3));//valor=1 se ejecuta caso1 var idioma es "Italiano"
+    console.log(seleccionarIdioma(4));//se ejecuta por defecto var es "Ingles" 
+
+  //Sentencia switch  múltiples casos:
+    function clacificarVolumen(valor)
+    {
+    var volumen; 
+    switch(valor)
+      {
+        case 1:
+          volumen = "Bajo";
+        break;
+        case 2:
+        case 3:
+          volumen = "Intermedio";
+        break;
+        case 4:
+        case 5:
+        case 6:    
+          volumen = "Alto";
+        break;
+        default:
+          volumen = "Sin volumen";
+        break; 
+      }
+      return volumen; 
+    } 
+    console.log(clacificarVolumen(1));//valor=1 se ejecuta caso1 var volumen "Bajo"
+    console.log(clacificarVolumen(2));//valor=2 se ejecuta caso2,3 var volumen "Intermedio"
+    console.log(clacificarVolumen(4));//valor=4 se ejecuta caso4,5,6 var volumen "Alto"
+    console.log(clacificarVolumen(7));//valor=7 se ejecuta default var volumen "Sin volumen"
   //Retornar valores Vooleanos:
-  function esMenorQue(a, b)
-  {
-  return a < b;//en una sola linea remplasamos la condicional if
-  }
-  console.log(esMenorQue(3, 6));
+    function esMenorQue(a, b)
+    {
+    return a < b;//en una sola linea remplasamos la condicional if
+    }
+    console.log(esMenorQue(3, 6));
   //Patrón  de retorno anticipado
-  function miFuncion()
-  {
-  console.log("Hola")
-  return "Mundo";
-  console.log("Adios");//unreachable code detecte (7027) ←codigo inalcansable detectado
-  }
-  console.log(miFuncion());//nos muestra "hola" "Mundo"
+    function miFuncion()
+    {
+    console.log("Hola")
+    return "Mundo";
+    console.log("Adios");//unreachable code detecte (7027) ←codigo inalcansable detectado
+    }
+    console.log(miFuncion());//nos muestra "hola" "Mundo"
 
   //Patron de valor anticipado
-  function raizCuadrada(num)
-  {
-  if(num < 0)//num no es menor que 0 y el resultado es 5 pero si pasamos -5 ahi entra al if
-  // y se ejecuta return undefined
-  {
-    return undefined//aqui se detiene la funcion si la condicion es true
-  }
-  return Math.sqrt(num);//el parametro num calculamos la raiz cuadrada  
-  }
-  console.log(raizCuadrada(25));//pasamos a num el valor 25 que nos devueve su raiz 5
-  console.log(raizCuadrada(-5))//pasamos a num el valor -5 que nos devueve undefined
+    function raizCuadrada(num)
+    {
+    if(num < 0)//num no es menor que 0 y el resultado es 5 pero si pasamos -5 ahi entra al if
+    // y se ejecuta return undefined
+    {
+      return undefined//aqui se detiene la funcion si la condicion es true
+    }
+    return Math.sqrt(num);//el parametro num calculamos la raiz cuadrada  
+    }
+    console.log(raizCuadrada(25));//pasamos a num el valor 25 que nos devueve su raiz 5
+    console.log(raizCuadrada(-5))//pasamos a num el valor -5 que nos devueve undefined
   //Juego de Cartas:
-  var conteo = 0;
-  function contarCartas(carta)
-  {
-  var decision;
-  switch(carta)
-  {
-    case 2:
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-      conteo ++;
-    break;	
-    case 10:
-    case "J":
-    case "Q":
-    case "K":
-    case "A":
-      conteo--;
-    break; 
-  }
-  if(conteo > 0)
-  {
-    decision  = "Apostar"
-  }
-  else
-  {
-    decision = "Esperar"
-  }return conteo + " " + decision; 
-  } 
-  console.log(contarCartas(2));
-  console.log(contarCartas(3));
-  console.log(contarCartas(7));
-  console.log(contarCartas("K"));
-  console.log(contarCartas("A"));
+    var conteo = 0;
+    function contarCartas(carta)
+    {
+    var decision;
+    switch(carta)
+    {
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+      case 6:
+        conteo ++;
+      break;	
+      case 10:
+      case "J":
+      case "Q":
+      case "K":
+      case "A":
+        conteo--;
+      break; 
+    }
+    if(conteo > 0)
+    {
+      decision  = "Apostar"
+    }
+    else
+    {
+      decision = "Esperar"
+    }return conteo + " " + decision; 
+    } 
+    console.log(contarCartas(2));
+    console.log(contarCartas(3));
+    console.log(contarCartas(7));
+    console.log(contarCartas("K"));
+    console.log(contarCartas("A"));
   //Crear Objetos:
-  //Se usa conotacion de punto  
-  var miPerro = {
-    "nombre": "camilo",
-    "edad": 3,
-    "peso": 6,
-    "rasa": "sharpei"    
-  };
-  console.log("Conotacion de punto");
-  console.log(miPerro.nombre);
-  console.log(miPerro.peso);
+    //Se usa conotacion de punto  
+    var miPerro = {
+      "nombre": "camilo",
+      "edad": 3,
+      "peso": 6,
+      "rasa": "sharpei"    
+    };
+    console.log("Conotacion de punto");
+    console.log(miPerro.nombre);
+    console.log(miPerro.peso);
 
-  //Se usa conotacion de corchetes    
-  var miCuaderno = {
-    "color": "verde",
-    "categoria": 3,
-    "numero de paginas": 200,
-    "numero de hojas": 100
-  };
-  console.log("Connotacion de corchetes");
-  console.log(miCuaderno["categoria"]);
-  console.log(miCuaderno["numero de paginas"]); 
+    //Se usa conotacion de corchetes    
+    var miCuaderno = {
+      "color": "verde",
+      "categoria": 3,
+      "numero de paginas": 200,
+      "numero de hojas": 100
+    };
+    console.log("Connotacion de corchetes");
+    console.log(miCuaderno["categoria"]);
+    console.log(miCuaderno["numero de paginas"]); 
 
   //Acceder a propiedades usando Variables
-  var resultados = {
-  1: "Manuel5711",
-  2: "Nora3578",
-  3: "Lucas2115",
-  4: "Cecilia4598"
-  }
-  var posicion = (1);
-  console.log(resultados[posicion]);
-  var posicion = (2);
-  console.log(resultados[posicion]);
-  var posicion = (3);
-  console.log(resultados[posicion]);
-  var posicion = (4);
-  console.log(resultados[posicion]);
+    var resultados = {
+    1: "Manuel5711",
+    2: "Nora3578",
+    3: "Lucas2115",
+    4: "Cecilia4598"
+    }
+    var posicion = (1);
+    console.log(resultados[posicion]);
+    var posicion = (2);
+    console.log(resultados[posicion]);
+    var posicion = (3);
+    console.log(resultados[posicion]);
+    var posicion = (4);
+    console.log(resultados[posicion]);
 
   //Actualizar Propiedades:
-  var mochila = {
-  "valor": "azul",
-  "tamaño":"mediano",
-  "contenido" :["botella de agua", "cuaderno"]
-  };
-  //console.log(mochila.color); resultado azul
-  mochila.color = "verde";//reasignamos el valor 
-  console.log(mochila.color);//resultado verde    
-  //console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno"]
-  mochila.contenido.push("lapiz")//con push se agrega lapiz
-  console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno,", "lapiz"]
+    var mochila = {
+    "valor": "azul",
+    "tamaño":"mediano",
+    "contenido" :["botella de agua", "cuaderno"]
+    };
+    //console.log(mochila.color); resultado azul
+    mochila.color = "verde";//reasignamos el valor 
+    console.log(mochila.color);//resultado verde    
+    //console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno"]
+    mochila.contenido.push("lapiz")//con push se agrega lapiz
+    console.log(mochila.contenido);//vemos ["botella de agua", "cuaderno,", "lapiz"]
   //Agregar Propiedades:
-  var curso = {
-    "titulo": "Aprende JavaScript desde cero",
-    "idioma": "Español",
-    "duracion": 30   
-  };
-  curso.vista = 34500
-  console.log(curso.vista);//resultado 34500
-  console.log(["vista"]); //resultado 34500
+    var curso = {
+      "titulo": "Aprende JavaScript desde cero",
+      "idioma": "Español",
+      "duracion": 30   
+    };
+    curso.vista = 34500
+    console.log(curso.vista);//resultado 34500
+    console.log(["vista"]); //resultado 34500
   //Eliminar Propiedades:
-  console.log(curso.duracion);//vista antes de borrar 30
-  delete curso.duracion;// nombre del obj un punto y la propiedad a eliminar 
-  console.log(curso.duracion);//despues de borrar→ undefined
-  /*Si cambiamos la línea de código anterior por una que nos muestre el obj completo
-  console.log(curso); este es el obj que se nos presenta: 
-  {"titulo": "Aprende  JavaScript desde cero",  "idioma": "Español"} */
-
-  //Objetos para Búsquedas:
-  function buscarElementoQimico(simbolo)
-  {
-  var simbolosQuimicos = {
-  "Al": "Aluminio",
-  "S": "Azufre",
-  "Cl": "Cloro",
-  "Hd": "Helio",
-  "B": "Boro",
-  "Li": "Litio"   
-  };
-  return simbolosQuimicos[simbolo];//esto retorna el nombre completo del elemento símbolo
-  }
-  console.log(buscarElementoQimico("Al"));
-  console.log(buscarElementoQimico("S"));
-  console.log(buscarElementoQimico("Cl"));
-  console.log(buscarElementoQimico("Hd"));
-  console.log(buscarElementoQimico("B"));
-  console.log(buscarElementoQimico("Li"));
-  //Verificar Propiedades:  
-  var miCofre = {
-  "oculto": "cajon",
-  "color": "verde",
-  "guardo":"recuerdos"
-  };
-  console.log(miCofre.hasOwnProperty("oculto"));//pegunta si la propiedad existe→si  
-  //Utilizar condiconal:
-  function verificarPropiedad(obj, propiedad)//propiedad del obj
-  {
-  if(obj.hasOwnProperty(propiedad))// es true por que el obj tiene esa propiedad 
-  {
-    return "Propiedad: " + obj[propiedad]; //propiedad es el parámetro “color”
-  }
-  else
-  {
-    return "El objeto no tiene esta propiedad"//la propieda que pasamos no existe false
-  }
-  }  
-  console.log(verificarPropiedad(miCofre, "color"));//resultado Verde
-  //Objetos Complejos: 
-  var ordenesDePizzas = [
-  {
-    "tipo": "margarita",
-    "tamaño": "individual",
-    "precio": "5.67",
-      "toppings": [
-        "extra queso",
-        "chanpiñones",
-        "piña"
-    ],
-    "paraLlevar": true  
-  },
-  {
-  "tipo": "cuatro quesos",
-    "tamaño": "familiar",
-    "precio": "18.34",
-      "toppings": [
-        "extra queso",
-        "pimenton",
-    ],
-    "paraLlevar": false
-  },
-  {
-    "tipo": "napolitana",
-    "tamaño": "individual",
-    "precio": "6.78",
-    "toppings": [],
-    "paraLlevar": true      
-  }
-  ];
-  console.log(ordenesDePizzas[0]);//se  accede al primer obj y se muestra por consola
-  console.log(ordenesDePizzas[1]); //se  accede al segundo obj y se muestra por consola
-  console.log(ordenesDePizzas[0].tipo);//se accede a la primer propidad→tipo del primer obj y se muestra por consola el valor margarita
-  console.log(ordenesDePizzas[1].toppings)// veremos el array del segundo obj[“extra queso”, “pimentón”]
+    console.log(curso.duracion);//vista antes de borrar 30
+    delete curso.duracion;// nombre del obj un punto y la propiedad a eliminar 
+    console.log(curso.duracion);//despues de borrar→ undefined
+    /*Si cambiamos la línea de código anterior por una que nos muestre el obj completo
+    console.log(curso); este es el obj que se nos presenta: 
+    {"titulo": "Aprende  JavaScript desde cero",  "idioma": "Español"} 
+    */
   
-  //Objetos Anidados:
-  var miReceta = {
-    "descripcion": "mi postre favorito",
-    "costo": 15.6,
-    "ingredientes": { //obj ingrediente
-      "masa": { //sub_obj de ingrediente masa
-        "harina": "100 grs",
-        "sal": "2 cucharadita",
-        "agua": "1 taza"
-      },//cierre de sub_obj masa
-      "cobertura": { //obj cobertura
-        "azucar": "120 grs",
-        "chocolate": "4 cucharadas",
-        "mantequilla": "200 grs"
-      } //cierre obj cobertura
-    } //cierre obj ingredientes
-  } //cierre obj principal miReceta
-  Var = "harina";
-  console.log(miReceta.descripcion);//con notación de punto
-  console.log(miReceta.costo);//con notación de punto
-  console.log(miReceta.ingredientes);//con notación de punto
-  console.log(miReceta.ingredientes["masa"]);//con notación de corchetes  siguiendo el paht
-  console.log(miReceta.ingredientes.masa["harina"]);//con notación de corchetes siguiendo el paht
-  console.log(miReceta.ingredientes.masa["sal"]);//con notación de corchetes, array con espacios  
-  //Array Anidados:
-  var misPlantas = [
+  //Objetos para Búsquedas:
+    function buscarElementoQimico(simbolo)
     {
-      tipo: "flores",
-      lista:[
-      "rosas",
-      "tulipanes",
-      "diente de leon"
-      ]  
+    var simbolosQuimicos = {
+    "Al": "Aluminio",
+    "S": "Azufre",
+    "Cl": "Cloro",
+    "Hd": "Helio",
+    "B": "Boro",
+    "Li": "Litio"   
+    };
+    return simbolosQuimicos[simbolo];//esto retorna el nombre completo del elemento símbolo
+    }
+    console.log(buscarElementoQimico("Al"));
+    console.log(buscarElementoQimico("S"));
+    console.log(buscarElementoQimico("Cl"));
+    console.log(buscarElementoQimico("Hd"));
+    console.log(buscarElementoQimico("B"));
+    console.log(buscarElementoQimico("Li"));
+  //Verificar Propiedades:  
+    var miCofre = {
+    "oculto": "cajon",
+    "color": "verde",
+    "guardo":"recuerdos"
+    };
+    console.log(miCofre.hasOwnProperty("oculto"));//pegunta si la propiedad existe→si  
+    //Utilizar condiconal:
+    function verificarPropiedad(obj, propiedad)//propiedad del obj
+    {
+    if(obj.hasOwnProperty(propiedad))// es true por que el obj tiene esa propiedad 
+    {
+      return "Propiedad: " + obj[propiedad]; //propiedad es el parámetro “color”
+    }
+    else
+    {
+      return "El objeto no tiene esta propiedad"//la propieda que pasamos no existe false
+    }
+    }  
+    console.log(verificarPropiedad(miCofre, "color"));//resultado Verde
+  //Objetos Complejos: 
+    var ordenesDePizzas = [
+    {
+      "tipo": "margarita",
+      "tamaño": "individual",
+      "precio": "5.67",
+        "toppings": [
+          "extra queso",
+          "chanpiñones",
+          "piña"
+      ],
+      "paraLlevar": true  
     },
     {
-      tipo: "arboles",
-      lista:[
-      "abeto",
-      "pino",
-      "abedul"
-    ] 
+    "tipo": "cuatro quesos",
+      "tamaño": "familiar",
+      "precio": "18.34",
+        "toppings": [
+          "extra queso",
+          "pimenton",
+      ],
+      "paraLlevar": false
+    },
+    {
+      "tipo": "napolitana",
+      "tamaño": "individual",
+      "precio": "6.78",
+      "toppings": [],
+      "paraLlevar": true      
     }
-  ];
-  var primeraFlor = misPlantas[0].lista[0];
-  console.log(primeraFlor);//vemos el valor rosas
-  var segundoArbol = misPlantas[1].lista[1];
-  console.log(segundoArbol);//vemos el valor pino
+    ];
+    console.log(ordenesDePizzas[0]);//se  accede al primer obj y se muestra por consola
+    console.log(ordenesDePizzas[1]); //se  accede al segundo obj y se muestra por consola
+    console.log(ordenesDePizzas[0].tipo);//se accede a la primer propidad→tipo del primer obj y se muestra por consola el valor margarita
+    console.log(ordenesDePizzas[1].toppings)// veremos el array del segundo obj[“extra queso”, “pimentón”]
+    
+  //Objetos Anidados:
+    var miReceta = {
+      "descripcion": "mi postre favorito",
+      "costo": 15.6,
+      "ingredientes": { //obj ingrediente
+        "masa": { //sub_obj de ingrediente masa
+          "harina": "100 grs",
+          "sal": "2 cucharadita",
+          "agua": "1 taza"
+        },//cierre de sub_obj masa
+        "cobertura": { //obj cobertura
+          "azucar": "120 grs",
+          "chocolate": "4 cucharadas",
+          "mantequilla": "200 grs"
+        } //cierre obj cobertura
+      } //cierre obj ingredientes
+    } //cierre obj principal miReceta
+    Var = "harina";
+    console.log(miReceta.descripcion);//con notación de punto
+    console.log(miReceta.costo);//con notación de punto
+    console.log(miReceta.ingredientes);//con notación de punto
+    console.log(miReceta.ingredientes["masa"]);//con notación de corchetes  siguiendo el paht
+    console.log(miReceta.ingredientes.masa["harina"]);//con notación de corchetes siguiendo el paht
+    console.log(miReceta.ingredientes.masa["sal"]);//con notación de corchetes, array con espacios  
+    //Array Anidados:
+    var misPlantas = [
+      {
+        tipo: "flores",
+        lista:[
+        "rosas",
+        "tulipanes",
+        "diente de leon"
+        ]  
+      },
+      {
+        tipo: "arboles",
+        lista:[
+        "abeto",
+        "pino",
+        "abedul"
+      ] 
+      }
+    ];
+    var primeraFlor = misPlantas[0].lista[0];
+    console.log(primeraFlor);//vemos el valor rosas
+    var segundoArbol = misPlantas[1].lista[1];
+    console.log(segundoArbol);//vemos el valor pino
 
   //Colección de Discos:
-  var coleccionDeDiscos  =  {
-    7853: {
+    var coleccionDeDiscos  = 
+    {
+      7853: 
+      {
           tituloDelAlbum: "Bee Gees Greatest",
           artista: "Bee Gees",
           canciones: ["Stayin Alove"]
-        },
-        5430: {
+      },
+      5430: 
+      {
           tituloDelAlbum: "ABBA Gold",
           //artista: "ABBA",
           //canciones: ["mamma mia"]
-        }
-  }      
+      }
+    }      
+  //Actualizar discos
+    function actualizarDiscos(disco, id, propiedad, valor) 
+    {
+      if("valor" === "" )//si disco es exactamente igual a una cadena vacia entonces
+      {
+        delete disco[id][propiedad];//borramos la prpiedad del albun corespondiente
+      }
+      else if(propiedad === "canciones")
+      {
+        disco[id][propiedad] = disco[id][propiedad] || [];//accedemos al obj correspondiente, luego
+        //accedemos a la propiedad canciones y le acignamos un array vacio.
+        //Pero que pasa si la propiedad no existe... En ese caso usaremos el operador logico→or que nos 
+        //permite escojer entre dos obciones: Primero se va a acceder, y si este valor no esta definido  
+        // el operador or nos permite como espesificar un valor de respaldo que en este caso va a ser un
+        // array vasio[] y de forma segura podemos llamar al metodo push()    
+        disco[id][propiedad].push(valor);//agregamos el valor a ese array vacio llamando al metodo push y
+        //agregamos el valor que pasamos como argumento
+      }
+      else
+          { //↓cubrimos la cuarta regla
+            disco[id][propiedad] = valor;
+          }
+    }
+    //Trabajando con el primer obj↓  
+    console.log(coleccionDeDiscos[7853].tituloDelAlbum);// antes de hacer el cambio
+    actualizarDiscos(coleccionDeDiscos, 7853, "tituloDelAlbum", "");//pasamos como argumento la
+    //coleccionDeDiscos en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+    //propiedad y el valor en una cadena vacia"" por que vamos a probar la primera condicion: if(...)
+    console.log(coleccionDeDiscos.tituloDelAlbum);//despues de hacer el cambio es undefined
+    console.log(coleccionDeDiscos[7853].canciones);//pasamos como argumento la coleccionDeDiscos 
+    //en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+    //propiedad y el valor por que vamos a probar la tercra condicion: else{...}
 
-  function actualizarDiscos(disco, id, propiedad, valor) 
-  {
-    if("valor" === "" )//si disco es exactamente igual a una cadena vacia entonces
-    {
-       delete disco[id][propiedad];//borramos la prpiedad del albun corespondiente
-    }
-    else if(propiedad === "canciones")
-    {
-      disco[id][propiedad] = disco[id][propiedad] || [];//accedemos al obj correspondiente, luego
-      //accedemos a la propiedad canciones y le acignamos un array vacio.
-      //Pero que pasa si la propiedad no existe... En ese caso usaremos el operador logico→or que nos 
-      //permite escojer entre dos obciones: Primero se va a acceder, y si este valor no esta definido  
-      // el operador or nos permite como espesificar un valor de respaldo que en este caso va a ser un
-      // array vasio[] y de forma segura podemos llamar al metodo push()    
-      disco[id][propiedad].push(valor);//agregamos el valor a ese array vacio llamando al metodo push y
-      //agregamos el valor que pasamos como argumento
-    }
-    else
-        { //↓cubrimos la cuarta regla
-          disco[id][propiedad] = valor;
-        }
-  }
-  //Trabajando con el primer obj↓  
-  console.log(coleccionDeDiscos[7853].tituloDelAlbum);// antes de hacer el cambio
-  actualizarDiscos(coleccionDeDiscos, 7853, "tituloDelAlbum", "");//pasamos como argumento la
-  //coleccionDeDiscos en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
-  //propiedad y el valor en una cadena vacia"" por que vamos a probar la primera condicion: if(...)
-  console.log(coleccionDeDiscos.tituloDelAlbum);//despues de hacer el cambio es undefined
-  console.log(coleccionDeDiscos[7853].canciones);//pasamos como argumento la coleccionDeDiscos 
-  //en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
-  //propiedad y el valor por que vamos a probar la tercra condicion: else{...}
- 
   //Trabajando con el segundo obj↓
-  console.log(coleccionDeDiscos[5430].canciones);// antes de hacer el cambio undefined
-  actualizarDiscos(coleccionDeDiscos, 5430, "canciones", "mamma mia");//pasamos como argumento la
-  //coleccionDeDiscos en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
-  //propiedad y el valor que NO existen en el obj y probamos la segunda condicion→else if(...)
-  console.log(coleccionDeDiscos[5430].canciones);//despues de hacer el cambio ["mamma mia"] 
-  console.log(coleccionDeDiscos[5430].artista);// antes de hacer el cambio undefined
-  actualizarDiscos(coleccionDeDiscos, 5430, "artista", "ABBA");
-  console.log(coleccionDeDiscos[5430].artista);//despues de hacer el cambio ["ABBA"]
-  console.log(coleccionDeDiscos[5430].canciones);//pasamos como argumento la coleccionDeDiscos 
-  //en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
-  //propiedad y el valor por que vamos a probar la tercra condicion: else{...} 
-  
-  //Ciclo "WHILE"
-  var cont = 0
-  while(cont <= 3) 
-  {
-    console.log("Aprendiendo bucles con white");
-    cont++;
-  }
-  console.log([cont]);
-  console.log("salio del bucle");
-  //Veamos otros dos ejemplo de un bucle White:
-  //Llamamos al operador push()
-  var miArreglo = [];
-  var cont = 0;
+    console.log(coleccionDeDiscos[5430].canciones);// antes de hacer el cambio undefined
+    actualizarDiscos(coleccionDeDiscos, 5430, "canciones", "mamma mia");//pasamos como argumento la
+    //coleccionDeDiscos en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+    //propiedad y el valor que NO existen en el obj y probamos la segunda condicion→else if(...)
+    console.log(coleccionDeDiscos[5430].canciones);//despues de hacer el cambio ["mamma mia"] 
+    console.log(coleccionDeDiscos[5430].artista);// antes de hacer el cambio undefined
+    actualizarDiscos(coleccionDeDiscos, 5430, "artista", "ABBA");
+    console.log(coleccionDeDiscos[5430].artista);//despues de hacer el cambio ["ABBA"]
+    console.log(coleccionDeDiscos[5430].canciones);//pasamos como argumento la coleccionDeDiscos 
+    //en este caso NO la usamos como variable, pasamos el id, pasamos el nombre de la
+    //propiedad y el valor por que vamos a probar la tercra condicion: else{...} 
+    
+    //Ciclo "WHILE"
+    var cont = 0
+    while(cont <= 3) 
+    {
+      console.log("Aprendiendo bucles con white");
+      cont++;
+    }
+    console.log([cont]);
+    console.log("salio del bucle");
+    //Veamos otros dos ejemplo de un bucle White:
+    //Llamamos al operador push()
+    var miArreglo = [];
+    var cont = 0;
   //Si si la variable cont; no esta definida vemos los array vacios [[]] 
-  console.log([miArreglo]);
-  while(cont <= 10)//hacer mientras se cumpla la condición
+    console.log([miArreglo]);
+    while(cont <= 10)//hacer mientras se cumpla la condición
     {
       miArreglo.push(cont);//Con cada loop del bucle, push() agrega un numero
       cont++;//incrementa en uno hasta que cont sea mayor que 10
     }
-  console.log(miArreglo);//resultado [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+    console.log(miArreglo);//resultado [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
   //Llamamos al operador pop() 
-  var numeros = [1,2,3,4,5,8,9,6,7];
-  while(numeros.length > 5)//se usa length por que nos da el largo de la cadena
-  {
-    numeros.pop();//Con cada loop del bucle, pop() quita un numero hasta que la condicion sea false
-  }
-  console.log(numeros);//resultado [ 1, 2, 3, 4, 5 ]
-  
-  //Ciclo “for”
-  var miArreglo = [];
-  var cont = 0;
-  for(cont = 0; cont < 10; cont++)
-  {
-    miArreglo.push(cont);
-  }
-  console.log(miArreglo);//[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-  
-  var miArreglo = [];
-  var conta = 0
-  for(conta = 1; conta < 20; conta += 2)
-  {
-    miArreglo.push(conta);
-  }
-  console.log(miArreglo);//resultado→[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+    var numeros = [1,2,3,4,5,8,9,6,7];
+    while(numeros.length > 5)//se usa length por que nos da el largo de la cadena
+    {
+      numeros.pop();//Con cada loop del bucle, pop() quita un numero hasta que la condicion sea false
+    }
+    console.log(numeros);//resultado [ 1, 2, 3, 4, 5 ]
+    
+    //Ciclo “for”
+    var miArreglo = [];
+    var cont = 0;
+    for(cont = 0; cont < 10; cont++)
+    {
+      miArreglo.push(cont);
+    }
+    console.log(miArreglo);//[ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+    
+    var miArreglo = [];
+    var conta = 0
+    for(conta = 1; conta < 20; conta += 2)
+    {
+      miArreglo.push(conta);
+    }
+    console.log(miArreglo);//resultado→[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
   //Bucles for “Contar hacia atrás” 
-      var miArreglo = [];
-      var decremento = 0
-      for(var decremento = 15; decremento >= 10; decremento--)
-      {
-        console.log(decremento);//resultado→15, 14,13, 12, 11, 10 
-      } 
-      
-      var miArreglo = [];
-      var decremento = 0
-      for(var decremento = 15; decremento >= 10; decremento -=2)
-      {
-        console.log(decremento);//resultado→15, 13, 11 
-      }
+    var miArreglo = [];
+    var decremento = 0
+    for(var decremento = 15; decremento >= 10; decremento--)
+    {
+      console.log(decremento);//resultado→15, 14,13, 12, 11, 10 
+    } 
+    
+    var miArreglo = [];
+    var decremento = 0
+    for(var decremento = 15; decremento >= 10; decremento -=2)
+    {
+      console.log(decremento);//resultado→15, 13, 11 
+    }
 
-    //Iterar Sobre un array con un bucle “for” 
-      var miArreglo = [4, 6, 8, 2];
+  //Iterar Sobre un array con un bucle “for” 
+    var miArreglo = [4, 6, 8, 2];
+    var total = 0;
+    for(var puntero = 0; puntero < miArreglo.length; puntero++)
+    {
+      total += miArreglo[puntero];
+      console.log("Interacin " + puntero);
+      console.log(miArreglo[puntero]);
+    }
+    console.log(total);//resultado 20
+  //Ej. con cadena de caracteres:
+    var lenguajes = ["JavaScript", "Piytjon", "Java", "C++"];
+    for(var i = 0; i < lenguajes.length; i++)
+    {
+      console.log(lenguajes[i].toUpperCase());
+    }
+
+  //Bucle for dentro de una función:
+    function contarNumerosPares(arreglo)
+    {
       var total = 0;
-      for(var puntero = 0; puntero < miArreglo.length; puntero++)
+      for(var y = 0; y < arreglo.length; y++)
       {
-        total += miArreglo[puntero];
+       if(arreglo[y] % 2 == 0)
+        {
+          total++
+        } 
       }
-      console.log(total);//resultado 20
+      return total;
+    }
+    console.log(contarNumerosPares([1, 3, 5]));//sin numeros pares el if es false el valor es cero
+    console.log(contarNumerosPares([1, 8, 3, 6, 5, 4, 2]));//resultado 4
+  //Bucles for anidados:
+    var nidosObj = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    for(var indiceI = 0; indiceI < nidosObj.length; indiceI++)
+    {
+      console.log(">> Nueva iteracion");
+      var arregloAnidado = nidosObj[indiceI];//Array
+      console.log("Arreglo " + arregloAnidado);
+      
+      for( var nidoUno = 0; nidoUno < arregloAnidado.length; nidoUno++)
+      {
+        console.log(">>> Bucle anidado");
+        console.log("Elemento:");
+        console.log(arregloAnidado[nidoUno]);//Elemento
+      }
+    } 
+  //Ciclos o Bucles “Do…While”    
+    
+  //Ej. bucle while
+    var mientra;
+    mientra = 5;
+    while(mientra < 10)
+    {
+      console.log(mientra);
+      mientra++; 
+    }
+  //Ej. bucle do while
+    var hacerMientra;
+    hacerMientra = 5;
+    do
+    {
+      console.log(hacerMientra);
+      hacerMientra++;
+    } while(hacerMientra < 10);
+  
+  //Busqueda de perfil
+    var contactos = [
+      {
+      "nombre": "Nora", 
+      "apellido": "Nav", 
+      "numero": "0543236543", 
+      "gustos": "" ["Pizza", "Programacion"] 
+      },
+      {
+      "nombre": "Harry", 
+      "apellido": "Potter", 
+      "numero": "0994372684", 
+      "gustos": "" ["Hogwarts", "Magia"] 
+      },
+      {
+      "nombre": "Sherlock", 
+      "apellido": "Holmes", 
+      "numero": "0487345643", 
+      "gustos": "" ["Casos interesantes", "Violin"] 
+      }
+    ];
+    
+    function buscarPerfil(nombreP, propiedad)
+    {
+      for(var i = 0; i < contactos.length; i++)
+      {
+        if(contactos[i].nombre === nombreP)//propiedad === parametro
+        {
+          return contactos[i][propiedad] || "La propiedad no existe";
+        }
+      }
+        return "El contacto no esta en la lista";
+    }  
+    console.log(buscarPerfil("Nora", "nombre"));//indice cero
+    console.log(buscarPerfil("Harry", "apellido"));//indice uno
+    console.log(buscarPerfil("Sherlock", "numero"));//indice dos
+    console.log(buscarPerfil("Manuel", "apellido"));
+  
+  //Números Aleatoreos: 
+   
 </script>
  
