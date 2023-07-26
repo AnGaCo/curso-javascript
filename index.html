@@ -1668,7 +1668,107 @@
       console.log(buscarPerfil("Sherlock", "numero"));//indice dos
       console.log(buscarPerfil("Manuel", "apellido"));//no existe 
       
-    # Números Aleatoreos: 
+    #Números Aleatoreos:
+      Como generamos un número aleatorio en JS, simple mente tenemos que usar la palabra MATH vamos a 
+      generar una función no va a tomar argumentos o sea sin parámetro si no que va a retornar un valor 
+      aleatorio. Ese valor lo vamos a generar con Math con la M mayúscula representa un obj que nos da 
+      funciones matemáticas básicas y constantes, una de esas funciones matemáticas que podemos usar es la 
+      función random() que significa aleatorio esta función no toma ningún parámetro para retornar un valor 
+      aleatorio. El método retorna un valor aleatorio entre cero y uno, pero el uno no está incluido en los 
+      posibles resultados. En notación matemática seria→[0, 1) asique para generar un rango tendremos que 
+      hacer algo específico. Con console.log() llamamos a la función y el resultado es un numero con muchos 
+      decimales→0.7174485152982049 ese número aleatorio va a ser muy útil para generar números aleatorio en 
+      un rango especifico, por ejemplo si necesitamos un numero ente 3 y 5 entre 10 y 15 vamos a poder 
+      hacerlo en base a los valores decimales que habrá que transformar, como ya dijimos nunca el resultado 
+      del número entero del decimal va a ser uno. No necesariamente tenemos que llamar a Math.random dentro 
+      de una función. Podemos usar la siguiente código, lo asignamos a una variable var numeroAleatorio 
+      =  Math.random(); esto va a generar el valor. Y si mostramos console.log(numeroAleatoreo) dará como
+      resultado 0.7174485152982049
+      
+      function generarFuncionAleatoreo()//no nesesariamente se usa una funcion
+      {
+        return Math.random();
+      }
+      console.log(generarFuncionAleatoreo());
+      
+      var numeroAleatorio =  Math.random();//Directamente usamos una variable
+      console.log(numeroAleatorio);    
+    
+    #Números Enteros Aleatorios:  
+          
+      Así como puedes generar números decimales aleatorios también podemos escribir una expresión que nos 
+      permita convertir esos números decimales a números enteros dentro de un rango específico. Para 
+      obtener un número aleatorio entre 0 y 19 escribimos el siguiente código→
+      var numeroAleatoreoEntero0y19 = Math.floor(); Math vimos que es un obj que nos permite usar funciones 
+      y constantes matemáticas esenciales. Una de esas funciones representada como un método es floor() que 
+      retorna el mayor número entero que es menor o igual a su argumento numérico al número que pasamos 
+      entre paréntesis. Lo que hace floor() técnicamente truca la parte decimal o sea básicamente toma la 
+      parte entera de lo que está entre paréntesis. Es ahí donde tenemos que generar ese número aleatorio 
+      Math.random()*20); recuerda que ese número aleatorio va a estar entre 0 y 1 cero va a ser uno de esos 
+      valores pero 1 nunca va a ser esos valores como podemos transformar ese valor en un entero? 
+      Así tener el rango que queremos. Hay que multiplicarlo por un entero. Veamos la lógica: 
+      Este valor→ Math.random va a ser un decimal ente 0 y 1 sin incluir 1 como no puede ser uno este 
+      producto nunca va a ser 20→Math.random()*20); va a ser 19 punto y algo y como estamos aplicando la 
+      función floor() ese número va a ser procesado a 19 lo que se va asignar a esta variable→
+      numeroAleatoreoEntero0y19, ahí ya tenemos un límite superior para el rango de valores que podemos 
+      obtener y el valor de Math.random puede ser 0 es el mínimo valor que puede tener. Asi que 0x20=0 y 
+      cuando le aplicamos floor el resultado seria 0 y el valor en la variable seri 0 assi que estamos 
+      obteniendo un rango de valores que va de 0 a 19 inclusive y es exactamente lo que se necesita. 
+      Sintaxis de código→var numeroAleatoreoEntero0y19 = Math.floor(Math.random()*20);
+      Si mostramos este número en la consola podemos verlo: Resultado→aleatorio ente 0 y 19
+      
+      var numeroAleatoreoEntero0y19 = Math.floor(Math.random()*20); 
+      console.log(numeroAleatoreoEntero0y19);//resultado aleatorio ente 0 y 19  
+    
+    #Algo interesante para tener en cuenta:
+      Vamos a definir una función que genere un número entero aleatorio, esa función va a tener un solo parámetro, el límite 
+      superior del rango de número que queremos generar. Vas a escribir la expresión que tenemos antes de forma general pero esta 
+      vez en lugar de multiplicar por 20 que era un número fijo, vamos a multiplicarlo por el valor del parámetro que es el límite 
+      superior→return Math.floor(Math.random() * limiteSuperior); Entonces eso ya nos está permitiendo generar valore enteros 
+      entre cero y el valor que le asignemos al parámetro→limiteSuperior (sin incluirlo)
+      function generarEnteroAleatorio(limiteSuperior)
+      {
+      //Generar un valor entero entre 0 y el limite superior (sin incluirlo)  
+        return Math.floor(Math.random() * limiteSuperior);      
+      }
+      //Si queremos intentar generar muchos números aleatorios. Para esto podemos agregar un bucle for() digamos que queremos 
+      //repetirla 5 veces
+      for(var nv = 0; nv < 5; nv++)
+      {
+        console.log(generarEnteroAleatorio(1225));//5 resultados aleatorios entre 0 y 1224    
+      }
+    #Números Enteros Aleatorios en un Rango
+      Anterior mente estábamos en parte limitados a generar un numero entre cero y un límite superior pero 
+      también podemos generar números enteros aleatorios en un rango especifico con un límite inferior y un 
+      límite superior, digamos ente 5 y 15, o cualquier otro rango de números enteros. Para eso definimos 
+      una función que va a tener dos parámetros. Para obtener un número entero en ese rango aleatorio vamos 
+      a tener que escribir una expresión parecida a la anterior pero con ciertos cambios. Primero tenemos 
+      otra vez Math.floor() ese si lo vamos a volver a usar, también tenemos que generar un numero aleatorio 
+      entre 0 y 1 pero en este caso en lugar de solo multiplicar por el límite superior vamos a tener que 
+      multiplicar x una expresión un poco más compleja. Esa expresión es el limiteSuperior menos el 
+      limiteInferior + 1 y luego a ese resultado luego de haber redondeado ese resultado
+      →Math.floor(Math.random() * (limiteSuperior - limiteInferior + 1) se le suma el limiteInferior y 
+      esta es la expresión que nos permite genera un entero en ese rango. Seguimos usando el método 
+      floor() y el método random()  pero lo multiplicamos por los valores de la resta de los parámetros
+      →(limiteInferior, limiteSuperor+1) eso nos da como el tamaño, el intervalo más 1 porque queremos 
+      incluir el límite inferior y luego a ese valor que se genera le vamos a sumar el límite inferior, eso 
+      nos va a retornar un entero en ese rango. Eso lo vamos a comprobar con algunas pruebas, como en el 
+      ejerció anterior usaremos un bucle for() En este caso vamos a ver que el límite superior si es 
+      posible que se incluya en los resultado. 
+      function rangoAleatorio(limiteInferior, limiteSuperior)
+      {
+        return Math.floor(Math.random() * (limiteSuperior - limiteInferior + 1)) + limiteInferior;  
+      } 
+      for(var rango = 0; rango < 5; rango++)
+      {
+        console.log(rangoAleatorio(3, 8));
+      }
+    
+    #Función parselnt()  
+
+
+
+            
  
   */  
     
@@ -2676,6 +2776,36 @@
     console.log(buscarPerfil("Manuel", "apellido"));//no existe
   
   //Números Aleatoreos: 
-   
+    function generarFuncionAleatoreo()//no nesesariamente se usa una funcion
+    {
+      return Math.random();
+    }
+    console.log(generarFuncionAleatoreo());
+    var numeroAleatorio =  Math.random();//Directamente usamos una variable
+    console.log(numeroAleatorio); 
+  //Números Enteros Aleatorios
+    var numeroAleatoreoEntero0y19 = Math.floor(Math.random()*20); 
+    console.log(numeroAleatoreoEntero0y19);//resultado aleatorio ente 0 y 19 
+  //Algo interesante para tener en cuenta:
+    function generarEnteroAleatorio(limiteSuperior)
+    {
+    //Generar un valor entero entre 0 y el limite superior (sin incluirlo)  
+      return Math.floor(Math.random() * limiteSuperior);      
+    }
+    for(var nv = 0; nv < 5; nv++)
+    {
+      console.log(generarEnteroAleatorio(1225));//5 resultados aleatorios entre 0 y 1224    
+    }
+  //Números Enteros Aleatorios en un Rango:
+  function rangoAleatorio(limiteInferior, limiteSuperior)
+    {
+      return Math.floor(Math.random() * (limiteSuperior - limiteInferior + 1)) + limiteInferior;  
+    } 
+    for(var rango = 0; rango < 5; rango++)
+    {
+      console.log(rangoAleatorio(3, 8));
+    }
+  //Función parselnt()  
 </script>
  
+
