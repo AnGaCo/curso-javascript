@@ -1764,12 +1764,125 @@
         console.log(rangoAleatorio(3, 8));
       }
     
-    #Función parselnt()  
+    #Función parselnt()
+      En JS podemos usar una función específica para convertir una cadena de caracteres que representa un 
+      número e un número entero usando→console.log(parseint(“5”)); La nostramo en  consola y vemos 5. 
+      De igual forma es equivalente para números negativos, el cero y decimales, pero un detalles con el 
+      numero decimal es que  elimina la parte decimal y nos devuelve un entero. Veamos en la práctica las 
+      ventajas de usar esta función. Tenemos dos variable que están asignadas con cadenas de caracteres 
+      var a = “5”; var b = “7”; Pero en realidad queremos trabajar con enteros. Si necesitamos sumar los 
+      valores tal cual están asignados optendriamos una concatenación de dos cadenas a+b resultado 57. 
+      En ese caso lo que tenemos que hacer es convertir las cadenas de caracteres. 
+      var a = parseint(“5”); var b = parseint(“7”); llamando a esa función el valor retornado va a ser un 
+      entero con todas sus propiedades y el resultado seria 12
+    #Funcion parseint() con una Base 
+      En JS podemos usar una función específica para convertir una cadena de caracteres que 
+      representa un número e un número entero usando→console.log(parseint(“5”)); La nostramo en 
+      consola y vemos 5. De igual forma es equivalente para números negativos, el cero y decimales 
+      pero un detalles con el numero decimal es que  elimina la parte decimal y nos devuelve un 
+      entero. Veamos en la práctica las ventajas de usar esta función. Tenemos dos variable que 
+      están asignadas con cadenas de caracteres var  a = “5”; var b = “7”; Pero en realidad queremos 
+      trabajar con enteros. Si necesitamos sumar los valores tal cual están asignados optendriamos 
+      una concatenación de dos cadenas a+b resultado 57. En ese caso lo que tenemos que hacer es 
+      convertir las cadenas de caracteres. var  a = parseint(“5”); var b = parseint(“7”); llamando 
+      a esa función el valor retornado va a ser un entero con todas sus propiedades seria 12. 
+    #Funcion parseint() con una Base  
+      Tambien se puede usar la función parseint() de una forma más potente porque puedes convertir 
+      una cadena de caracteres en otro sistema numérico, al sistema decimal como un entero. 
+      Veamos un ejemplo: Vamos a mostrar el resultado con console.log y vamos a llamr a la función 
+      parseint() pero en este caso vamos a pasar una cadena de caracteres con ceros y unos o sea 
+      un sistema vinario. Para espesificar que el sistemas es vinario tenemos que pasar un segundo 
+      argumento con un valor 2 que es la base console.log(parseint(110111, 2)); el resultado de la 
+      cadena vinaria del sistema decimal es el número entero 55 Si en vez de colocar en números 
+      vinarios colocamaos el stingt “55” el resultado seria 55. 
+      Veamos un ejemplo con el sistema hexadecimal cuya base es 16 console.log(parseint(3E0A, 16)); 
+      En el sistema hexadecimal podemos usar números y letras y base 16 aquí como tenemos letras 
+      necesitamos representarlo como una cadena de caracteres “ ” El resultado en este caso 
+      es el numero entero 15882.
+    #Operador Condicional (Ternario):
+      El operador condicional también llamado ternario nos permite compactar lo que sería un 
+      condicional en una sola línea. En el ejemplo definimos una función llamada retornar mínimo 
+      esta función va a tomar dos parámetros y va a retornar el mínimo de los valores que 
+      contengan los parámetros usando un condicional If()
+      function retornarMinimo(x, y)
+      {
+        If(x < y)
+          {
+          return x; 
+          }	
+      }
+      Else
+      {
+        Return y;
+      }
+      El condicional if va a funcionar correctamente, pero hay una forma más concisa de escribir 
+      esta secuencias de instrucciones y es el operador condicional no tan larga o en una sola 
+      línea. Veamos
+      function retornarMinimo(x, y)
+      {
+        Return x < y ? x : y;//(? seria entonses) (): seria si no)
+      }
+      Si la condición es true se remplaza por el valor de (x ) y si es false se remplaza por el 
+      valor de (y). Si en vez de return vemos esto con consle.log (x < y ? x : y); lo que 
+      sucedería seria mostrar cualquiera de los valores de las  variables dependiendo de la 
+      condición.
+      function retornarMinimo(x, y)
+      {
+        //return x < y ? x : y;→(?→seria entonces) (:→seria si no)
+        console.log(x < y ? x : y);
+      }
+      retornarMinimo(9, 11); resultado 9
+      retornarMinimo(8, 2); resultado 2
+      retornarMinimo(5, 5); resultado 5
+      //En otro ejemplo 
+      var v_A = 7;
+      var v_B = 9;
+      console.log(v_A > v_B ? v_A + 2 : v_B * 3);// el resultado es el valor de v_B 27
+    #Múltiples Operadores Condiciónale o Ternarios:
 
-
-
-            
- 
+      Se pueden combinar los operadores condicionales o ternarios escribiendo múltiples operadores 
+      escribiendo uno dentro del otro, similar al concepto de anidar. Para esto vamos a escribir una 
+      función que va a comparar dos número mediante los parámetros p_A y p_B si estos valores son 
+      iguales es que tenemos garantizado que son del mismo tipo de datos. Eso lo especificamos en 
+      la documentación de la función. En ese caso retornamos que "p_A y p_B son iguale", si ese no 
+      es el caso y p_A > p_B retornamos una cadena que diga "Que p_A es > que p_B" y por ultimo si 
+      p_A es < p_B retornamos una cadena indicando que "p_A  es < p_B". Escribimos la función en 
+      cuyo cuerpo contiene el condicional if() para saber que queremos lograr. 
+      function compararNumeros(p_A, p_B)
+        {
+            if(p_A == p_B)
+            return "p_A y p_B son iguales";
+          
+          else if(p_A > p_B)
+          {
+            return "p_A es mayor p_B";
+          }
+          else
+          {
+            return "p_A es menor p_B";
+          }
+      } 
+      Bien ya tenemos nuestra función con el condicional if() ¿Cómo podemos remplazarlo con un 
+      operador ternario? Lo primero es en el cuerpo de la función escribir la sentencia return 
+      porque vamos a devolver el valor del operador condicional. Después de return lo primero es 
+      escribir la condición p_A == p_B seguido de→? si es true escribimos la cadena de caracteres 
+      "p_A es  iguales p_B" esto vendría a ser la condición del if. Seguidamente con un salto de 
+      linea colocamos los dos puntos→: nuevamente la condición que vendría a ser la del 
+      elfe If→(p_A > p_B) seguido de→? y la cadena de carecteres "p_A es mayor p_B" y por ultimo 
+      con un nuevo salto de línea nuevamente los dos punto→: seguido de la cadena de caracteres
+      "p_A es menor que p_B"; cerrando ahí con un→; esto es lo que vendría a ser el else. Al final
+      mostramos por consola las distintas cadenas segun los valores asignados 
+      function compararNumeros(p_A, p_B)
+          {
+            return p_A == p_B ? "p_A y p_B son iguales"
+                              : p_A > p_B ? "p_A es mayor que p_B" 
+                              : "p_A es menor que p_B"; 
+          }
+        console.log(compararNumeros(7, 7));
+        console.log(compararNumeros(12, 8));
+        console.log(compararNumeros(5, 9)); 
+    
+    #Tipo de variables: var vs. let
   */  
     
   //↓Todo codigo↓
@@ -2805,7 +2918,50 @@
     {
       console.log(rangoAleatorio(3, 8));
     }
-  //Función parselnt()  
+  //Función parselnt() 
+  
+  //Operador Condicional (Ternario)
+  /*Si la condición es true se remplaza por el valor de (x ) y si es false 
+  se remplaza por el valor de (y)*/
+  function retornarMinimo(x, y)
+    {
+      //return x < y ? x : y;→(?→seria entonses) (:→seria si no)
+      console.log(x < y ? x : y);
+    }
+    retornarMinimo(9, 11);//resultado 2
+    retornarMinimo(8, 2);//resultado 2
+    retornarMinimo(5, 5);//resultado 5
+  //En otro ejemplo 
+    var v_A = 7;
+    var v_B = 9;
+    console.log(v_A > v_B ? v_A + 2 : v_B * 3);// el resultado es el valor de v_B 27
+  //Múltiples Operadores Condiciónale o Ternarios:
+    function compararNumeros(p_A, p_B)
+    {
+        if(p_A == p_B)
+        return "p_A y p_B son iguales";
+      
+      else if(p_A > p_B)
+      {
+        return "p_A es mayor p_B";
+      }
+      else
+      {
+        return "p_A es menor p_B";
+      }
+    }
+  //remplazar lo anterio con un operador ternario?  
+    function compararNumeros(p_A, p_B)
+    {
+      return p_A == p_B ? "p_A y p_B son iguales"
+                        : p_A > p_B ? "p_A es mayor que p_B" 
+                        : "p_A es menor que p_B"; 
+    }
+    console.log(compararNumeros(7, 7));
+    console.log(compararNumeros(12, 8));
+    console.log(compararNumeros(5, 9));
+
+  //Tipo de variables: var vs. let 
 </script>
  
 

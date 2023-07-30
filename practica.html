@@ -1,5 +1,30 @@
 <script>
-  var lenguajeDeProgramacion;
+  //Funciones de contacto con el usuario: 
+  //prompt("Introduce tu nombre de usuario:?");
+  //console.log(prompt("Introduce tu nombre de usuario:?"));
+  //alert(prompt("Introduce tu nombre de usuario:?")); 
+  var usuario = prompt("Introduce tu nombre de usuario:?");
+  if(usuario && usuario.trim()) 
+  { 
+    var confirmar = confirm("Es " + usuario +" correcto?"); 
+    if (confirmar)
+    {
+        alert("Usuario correcto");
+    } 
+    else 
+    {
+        alert("Usuario Incorrecto");
+    }
+  }  
+  else
+  {
+      console.log("NO se introdujo Usuario... "); 
+  }
+    
+ // console.log(usuario);
+ // console.log(Boolean()); 
+ 
+  /*
   lenguajeDeProgramacion  = "Javascript";
   console.log(lenguajeDeProgramacion[0]); //se muestra la letra J
   console.log([lenguajeDeProgramacion.length -1]);//se muestra la letra t
@@ -46,5 +71,5 @@
         "gustos": "" ["Casos interesantes", "Violin"] 
         },
       ]
-      
+  */    
 </script>
