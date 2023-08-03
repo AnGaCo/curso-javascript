@@ -2012,7 +2012,79 @@
         return p_M + p_N + num;
         };
         console.log(sumar(1, 1));//resultado es 8
-      #Valores por defectos para Párametros:
+      #Valores por defectos para Parámetros: 
+        También puedes asignar un valor por defecto a los parámetros de una función flex, esto es útil 
+        cuando el usuario omita algún parámetro para usar el valor por defecto. En el ejemplo definimos 
+        una función flex.  
+        const incrementar = (num, valor = 1) => num + valor;
+        console.log(incrementar(5));//resultado es 6
+        Esta función cuenta con dos parámetro y vamos a retornar el num + el valor del incremento. Para 
+        asignar un valor por defecto al parámetro valor, simplemente mediante el signo de asignación = 
+        colocamos el valor, así si omitimos ese parámetro se va asignar por defecto en este caso 1. 
+        Este principio también aplica a las funciones normales y a las funciones anónimas.
+      #Operador rest:
+        Este operador te va a permitir escribir funciones muy versátiles. Este operador te permite pasar 
+        cualquier número de argumento a una función y que esos argumentos se agrupen como un array. 
+        Ese número de argumentos no va a ser fijo asique la técnica que hemos estado usando de escribir 
+        parámetros en la lista no nos va a funcionar porque al momento de llamar a la función cada uno de 
+        esos parámetros debe tener un valor y no podemos pasar más valores o menos valores de lo que 
+        explícitamente tenemos declarados en la lista. Pero para solucionar esto para crear funciones más 
+        versátiles usamos el operador rest() que consiste en escribir tres puntos … que representa al 
+        operador rest() seguido de una palabra cualquiera ya que estamos creando una variable. Se usa 
+        args porque representa argumentos. 
+        Como args es una variable va a ser un array podemos usar también su propiedad length para trabajar 
+        con ese array en la función y también esta propiedad es muy útil si queremos procesar un bucle que 
+        es lo que normalmente haríamos para procesar c/u de esos argumentos.     
+        function miFuncion(...args)
+        {
+          console.log(args); 
+          console.log(args.length);
+        } 
+        miFuncion(1, 2, 3, 4, 5);//resultado [ 1, 2, 3, 4, 5 ] tamaño 5
+        miFuncion([ 1, 2, 3 ], [ 4, 5, 6 ]);//resultado [ [1, 2, 3], [4, 5, 6] ] tamaño 2 
+        /*
+        [ 1, 2, 3, 4, 5 ]
+        5
+        [ [ 1, 2, 3 ], [ 4, 5, 6 ] ]
+        2
+      #Operador rest para tomar cualquier número de argumentos
+        const sumar = (x, y ,z←) => {
+        const args = [x,y,z];←
+        return args.reduce((a, b) => a + b, 0;  
+        };
+        .reduce()→ con estos argumentos suma los elementos del array y retorna los resultados
+        Pasamos una función→ flecha como argumento 
+        Para adaptar esta función tenemos que modificar la lista de parámetro que contiene la variable 
+        sumar que son tres, y lo remplazamos por el operador→rest... para tomar cualquier número de 
+        parámetros→const sumar = (…args) ya como este valor va a ser un array no es necesario tener otro 
+        array separado, y por ultimo conservamos la línea de retorno tal cual está en el ejemplo. 
+        const sumar = (…args) => {
+        return return args.reduce((a, b) => a + b, 0;  
+        }
+      #Operador Spread
+        Este operador hace exactamente lo contrario que el operador rest. El operador spread() toma 
+        un array lo descompone en sus elementos individuales para que la función pueda recibirlos y 
+        asignarlos a sus parámetros correspondientes.
+        Vamos a declarar un array con tres números  y vamos a definir una función con tres parámetros 
+        que toma tres números y retorna la suma. En este caso vamos a usar el operador spread() porque 
+        no se puede pasar directamente ese argumento de la variable números porque contiene un array  a la 
+        función su_mar que tiene tres parámetro. si llamamos a la función en lugar de escribir (numero[0], 
+        numero[1], numero[2] ) tenemos un operador que nos permite hacer exactamente esto su_mar(…) como 
+        vemos en vez de pasarlo en la lista de parámetros lo pasamos en la llamada a la función
+        →su_mar(…números)←escribimos el nombre de la variable  y …←esto básicamente lo que va hacer es 
+        descomponer el arreglo en sus elementos individuales y asignarlo en ese mismo orden a los parámetros.       
+        function su_mar(p_X, p_Y, p_Z)
+          {
+            console.log(p_X);
+            console.log(p_Y);
+            console.log(p_Z);
+            return p_X + p_Y + p_Z;
+          }
+          console.log(su_mar(...num_eros));//resultado de la suma 6
+      #Sintaxis de Desestructuración 
+
+    
+
 
     */  
       
@@ -3151,6 +3223,38 @@
       };
       console.log(chota(1, 1));//resultado es 8  
     //Valores por defectos para Párametros:
+      const incrementar = (num, valor = 1) => num + valor;
+      console.log(incrementar(5));//resultado 6
+    //Operador rest:
+      function miFuncion(...args)
+      {
+        console.log(args); 
+        console.log(args.length);
+      } 
+      miFuncion(1, 2, 3, 4, 5);//resultado [ 1, 2, 3, 4, 5 ] tamaño 5
+      miFuncion([ 1, 2, 3 ], [ 4, 5, 6 ]);//resultado [ [1, 2, 3], [4, 5, 6] ] tamaño 2 
+      /*
+      [ 1, 2, 3, 4, 5 ]
+      5
+      [ [ 1, 2, 3 ], [ 4, 5, 6 ] ]
+      2
+      */
+    //Operador rest para tomar cualquier número de argumentos
+      const su_ma = (...args) => {
+      return args.reduce((a, b) => a + b, 0);  
+      };
+      console.log(su_ma(1, 1, 5, 3, 15));
+      //Operador Spread
+      const num_eros = [1, 2, 3];
+      function su_mar(p_X, p_Y, p_Z)
+      {
+        console.log(p_X);
+        console.log(p_Y);
+        console.log(p_Z);
+        return p_X + p_Y + p_Z;
+      }
+      console.log(su_mar(...num_eros));//resultado de la suma 6
+    //Sintaxis de Desestructuración  
     
   </script>  
 </html> 
