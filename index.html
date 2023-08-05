@@ -2082,10 +2082,93 @@
           }
           console.log(su_mar(...num_eros));//resultado de la suma 6
       #Sintaxis de Desestructuración 
+        Esta sintaxis nos permite asignar las propiedades de un objeto a una variable que podemos usar en el programa.
+        Ej. tenemos un obj que representa un usuario con sus propiedades y elementos. Anteriormente si queríamos asignar las propiedades nombre y edad sus valores en la variables, lo que se hacía es tomar el obj usuario  
+        const vNombre = usuario.pNombre;    
+        const vEdad = usuario.pEdad;. Pero en el nuevo estándar podemos hacer eso mismo en una sola línea para cualquier número de propiedades que quisiéramos asignar. Lo primero que hacemos es escribir const seguido de un par de llaves y dentro escribimos los nombres de las variables que queremos crear y continuamos escribiendo precedido de un = el nombre del obj usuario. Esto lo que va hacer es buscar dentro del obj usuario y verifica si existe una propiedad nombre asique asigna el valor a la variable y también existe una propiedad edad de igual manera le asigna su valor. const 
+        Esto es básicamente la sintaxis de desestructuración más simple que podemos usar pero hay varias opciones.
+        {nombre, edadad} = usuario;          
+        const  usuario = {
+                nombre: "Manuel Orozco",
+                edad: 66  
+              };   
+        const nombre = usuario.nombre;    
+        const edad = usuario.edad;    
 
-    
-
-
+        const {nombre, edadad} = usuario;    
+      #Vamos a ver otro ejemplo
+        Digamos que tenemos un objeto que representa unas coordenadas. Anterior mente cuando estaba 
+        ES5 con el viejo estándar tendríamos que hacer  lo siguiente  debajo de la llave de cierre 
+        del obj. coordenadas.
+        var eje1 = coordenadas.eje1;
+        var eje2 = coordenadas.eje2;
+        var eje3 = coordenadas.eje3;
+        Nota: Las variables llevan el mismo nombre de la propiedad del obj  
+        var coordenadas = {
+          x: 6,
+          y: 8,
+          z: 12   
+        };  
+        var {eje1, eje2, eje3} = coordenadas;
+        Pero ahora con la sintaxis de desestructuración podemos hacer lo siguiente: 
+        var {eje1, eje2, eje3} = coordenadas; 
+        Declaramos la variables entre las llaves que deberán tener el mismo nombre que las 
+        propiedades del obj, a continuación el signo de asignación→= y por último el nombre 
+        de obj→coordenadas cerrando con un→; y verificamos por consola
+      #Sintaxis de desestructuración: Objetos Anidados   
+        Vamos a crear un objeto que representa a un abonado ese obj va a contener una propiedad 
+        que representa el nombre del abonado→marioCruz que a su vez el nombre está asociado a un 
+        obj anidado con dos propiedades. edad cuyo valor es 35 y email cuyo valor es su dirección de 
+        correo. Digamos que queremos asignar la edad y el email a variables individuales en el 
+        programa para trabajar con ellas. A continuación veremos la ventaja de usar la sintaxis de 
+        desestructuración por que imagínate como seria acceder a los obj anidados de estructuras más 
+        complejas varias veces. 
+        Con la sintaxis de desestructuración podemos asignar esas propiedades a variables y trabajar 
+        con ellas donde las necesitemos en el programa.  
+        const abonado = {
+          marioCruz:{
+          edad: 35,
+          email: "marioC@gmail.com"
+          }     
+        };
+        console.log(edad);
+        console.log(email);
+        const {marioCruz: {edad, email}} = abonado;
+        Lo que queremos especificar dentro de las llaves es que propiedades vamos a extraer de ese 
+        obj. de abonado, de la propiedad marioCruz queremos extraer y asignar a sus variables 
+        correspondiente las propiedades edad y correo. Luego de esta linea.
+        const {marioCruz: {edad, email}} = abonado; Y por último verificamos con console.log() 
+        Siguiendo con el mismo tema de desestructuración: Objetos Anidados Digamos que tenemos 
+        una constante que va a representar el pronóstico local del clima.
+        const PRONOSTICO_LOCAL = {
+        "ayer": {
+            minima: 32,
+            maxima: 40
+        },
+        "hoy": {
+            minima: 28,
+            maxima: 36  
+        },
+        "mañana": {
+          minima: 29,
+          maxima: 38
+        }
+        };
+        Usando codigo tradicional en Objetos Anidados pero no tan conciso
+        const minimaHoy = PRONOSTICO_LOCAL .hoy.minima; 
+        const maximaHoy = PRONOSTICO_LOCAL .hoy.maxima;
+        Usando Sintaxis de desestructuración en Objetos Anidados en una misma linea
+        const  {hoy: {minima: minimaHoy, maxima: maximaHoy}} = PRONOSTICO_LOCAL;
+        console.log(minimaHoy, maximaHoy);
+        var mostrar = "Temperatura minma hoy " + minimaHoy + " Temperatura maxima hoy " + maximaHoy;
+        console.log(mostrar); //Usando una variable para concatenar la muestra       
+        Veamos como con la sintaxis de desestructuración podemos acceder a la temperatura mínima y máxima de “hoy”. Vamos a declarar una constante para ver como accederíamos a los valores que necesitemos y asignarlos a una variable. Nótese que las propiedades de los obj. anidado no están entre comillas pero JS por defecto las usara porque son propiedades de una sola palabra. Sintaxis: const variable = nombre del obj principal con notación de punto nombre de la propiedad que contiene el obj. anidado seguido de un punto el valor. Mostramos por console.log(variable); Un truco interesante de console.log es que si separas por una con una coma las variables van aparecer en una misma línea. Bien ya sabemos cómo asignaríamos esos valores a variables. Pero vamos a ver cómo podemos hacer lo mismo con la sintaxis de desestructuración. Nuevamente usamos una constante seguidas de un par de llaves ahí escribimos la propiedad hoy: luego como tenemos un obj anidado nuevamente un par de llaves, queremos acceder a la propiedad mínima: que tenemos aquí pero queremos asignarle otro nombre para nuestra variable→minimaHoy  cerramos la llave seguido del signo de asignación = escribimos el nombre de la constante del obj. principal→PRONOSTICO_LOCAL cerrando con→ ; 
+        Cuando le asignas un nombre nuevo a la variable eso es lo único que puedes usar, el 
+        nombre de la propiedad no es una variable. 
+        const  {hoy: {minima: minimaHoy} } = PRONOSTICO_LOCAL; También puedes hacer ambas 
+        operaciones en la misma línea. 
+        const  {hoy: {minima: minimaHoy, máxima: maximaHoy} } = PRONOSTICO_LOCAL;  
+      #Sintaxis de desestructuración: ARRAY
     */  
       
     //↓Todo codigo↓
@@ -3254,8 +3337,63 @@
         return p_X + p_Y + p_Z;
       }
       console.log(su_mar(...num_eros));//resultado de la suma 6
-    //Sintaxis de Desestructuración  
-    
+    //Sintaxis de Desestructuración
+      const  usuario = {
+        nombre: "Manuel Orozco",
+        edad: 66  
+      };   
+      const {nombre, edadad} = usuario;//lo de arriba pero mas conciso en una sola linea
+    //Vamos a ver otro ejemplo:
+      var coordenadas = {
+       eje1: 4,
+       eje2: 8,
+       eje3: 12    
+      };
+      /*la variable lleva el mismo nombre de la propiedad del obj
+      var eje1 = coordenadas.eje1;
+      var eje2 = coordenadas.eje2;
+      var eje3 = coordenadas.eje3;
+      */
+      var {eje1, eje2, eje3} = coordenadas;//lo de arriba pero mas conciso en una sola linea
+      console.log(eje1);
+      console.log(eje2);
+      console.log(eje3);
+    //Sintaxis de desestructuración: Objetos Anidados 
+      const abonado = {
+        marioCruz:{
+        edad: 35,
+        email: "marioC@gmail.com"
+        }     
+      }; 
+      const {marioCruz:{edad: edadaDelUsuario, email: correoDelUsuario}} = abonado;
+      console.log(edadaDelUsuario);
+      console.log(correoDelUsuario);
+    //pronóstico local del clima 
+      const PRONOSTICO_LOCAL = {
+       "ayer": {
+          minima: 32,
+          maxima: 40
+       },
+       "hoy": {
+          minima: 28,
+          maxima: 36  
+       },
+       "mañana": {
+        minima: 29,
+        maxima: 38
+       }
+      };
+      /*
+      Usando codigo tradicional en Objetos Anidados pero no tan conciso
+      const minimaHoy = PRONOSTICO_LOCAL .hoy.minima; 
+      const maximaHoy = PRONOSTICO_LOCAL .hoy.maxima;
+      */
+      //Usando Sintaxis de desestructuración en Objetos Anidados en una misma linea
+      const  {hoy: {minima: minimaHoy, maxima: maximaHoy}} = PRONOSTICO_LOCAL;
+      console.log(minimaHoy, maximaHoy);
+      var mostrar = "Temperatura minma hoy " + minimaHoy + " Temperatura maxima hoy " + maximaHoy;
+      console.log(mostrar);//Usando una variable para concatenar la muestra 
+    //Sintaxis de desestructuración: ARRAY   
   </script>  
 </html> 
 
