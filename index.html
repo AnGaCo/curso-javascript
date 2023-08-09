@@ -2169,6 +2169,259 @@
         operaciones en la misma línea. 
         const  {hoy: {minima: minimaHoy, máxima: maximaHoy} } = PRONOSTICO_LOCAL;  
       #Sintaxis de desestructuración: ARRAY
+        La mencionada sintaxis también funciona con arrays y nos permite asignar valores usando 
+        array. Por ejemplo si tenemos dos array que el primero contiene dos variable [a,b] y el 
+        segundo [1,2] dos valores  como asignamos esos valores a las variables. primero declaramos 
+        las variables vacias var a; var b; y y el array que contiene las variables se le asignan los 
+        valores del segundo array→[a,b]=[1,2]; Los valores se asignan en el mismo orden que aparecen 
+        en el arreglo y si tuviéremos una tercera variable se asignaría el tercer valor en el orden. 
+        var c; [a,b,c]=[1,2,3]; si nosotros tenemos un array con 5 valores pero un array con dos 
+        valores podemos asignar solo dos valores con la sintaxis de desestructuración. 
+        [a,b]=[1,2,3,4,5] sin ningún inconveniente a vale 1 y b vale 2 pero que pasa si tenemos una 
+        tercera variable c y queremos asignarle el valor 5. De manera muy simple esto se logra 
+        agregando tantas comas para saltar los valores y llegar al valor deseado.
+        →[a,b,,, c]=[1,2,3,4,5] la primera coma corresponde a b la segunda y tercera lo que vendría
+        a ser 3 y 4 y el resultado es que c se asigna con 5. La sintaxis de desestructuración también 
+        puede usarse para cambiar o intercambiar los valores de dos variables. Si tenemos dos 
+        variables a = 8 y b = 6 podemos usar la sintaxis de desestructuración para intercambiar su
+        valor. queremos que a tenga el valor 6 y b tenga el valor 8. Veamos cómo podemos hacerlo, 
+        simplemente escribimos un array con las variables a las cuales queremos asignar los valores
+        [b, a] como notaras el orden está invertido por que en un próximo array [a, b] se asignaran 
+        los valores en el orden establecido por JS [b, a]=[a,b] de derecha a izquierda.     
+      #Sintaxis de Desestructuración
+          con el Operador rest
+        Recuerda que el operador rest formaba y agrupaba un array cuando lo usábamos con 
+        funciones agrupaba los argumentos. En este caso vamos a usar ese operador para resignar 
+        un array en varias variables. Primero declaramos las  variables a y b y luego vamos a usar 
+        la sintaxis de desestructuración [a, b,  ]=[1, 2] vemos que en el array uno después de b 
+        tenemos una coma seguido de un espacio porque después de esas dos variables vamos asignar 
+        el resto de todos los números que vengan después a un array nuevo que vamos a crear con el 
+        operador rest …arr→con una variable también la tenemos que declarar en nuestro código en la 
+        cual se van a asignar segundo array [1,2,3,4,5,6,7]
+        var varA;
+        var varB;
+        var arr;
+        [varA, varB,...arr] = [1, 2, 3, 4, 5, 6, 7];
+        console.log(varA);//1
+        console.log(varB);//2
+        console.log(arr);// [ 3, 4, 5, 6, 7 ]
+        const con_sola = [varA, varB,...arr] = [1, 2, 3, 4, 5, 6, 7];  
+        console.log(con_sola);// [ 1, 2, 3, 4, 5, 6, 7 ]
+        Veamos otro ejemplo: en el que vamos a usar este principio para remover los tres primeros 
+        elementos de un array inicialmente tenemos un array del 1 hasta el 8 y vamos a definir una 
+        función con un parámetro  que va a remover los tres primeros elementos. En el cuerpo primero 
+        declaramos una variable que va a tener el nuevo arreglo que vamos a generar sin los tres 
+        primeros elementos. Vamos a usar la sintaxis de desestructuración para array con la sintaxis 
+        de las comas que usamos para saltar lugares y luego si vamos asignar esos valores con los 
+        tres puntos→… a nuevoArreglo. En este caso como ya estamos declarando la variable
+        →var nuevoArreglo; no necesitamos escribir const, pero si queremos una sola línea si 
+        escibimos const y luego la estructura, por eso vemos esa línea entre parentesis y con un 
+        comentario. Y que vamos asignar a esta estructura? El parámetro→arreglo que tomamos como 
+        argumento. Finalmente retornamos ese valor nuevoArreglo, vamos a llamar a la función pasando 
+        el array inicial y mostraremos por consola el arregloFinal ya sin los tres primeros elementos 
+        const  arregloInicial = [1, 2, 3, 4, 5, 6, 7, 8]
+        function removerTresPrimerosElementos(arreglo)
+        {
+          (var nuevoArreglo;) se elimina para usar const y la estructura va en una sola línea
+          const [ , , ,...nuevoArreglo] = arreglo;
+          return nuevoArreglo;
+        }
+        const arregloFinal = removerTresPrimerosElementos(arrgeloInicial);  
+        console.log(arregloFinal)//muestra el array sin los tres primeros elementos
+      #Sintaxis de Desestructuración
+      #Pasar obj. Como argumentos: Esta sintaxis también se puede usar para pasar un obj como argumento 
+        que representa el nuevo perfil de un cliente. 
+        Primero que todo necesitamos un objeto. 
+        var nuevoPerfilCliente = {
+          nombre: "Sergei Lavrov", 
+          edad: 74, 
+          nacionalidad: "Rusia", 
+          ubicacion: "Moscu"
+        };
+        Ahora como vamos a actualizar ese perfil? Vamos hacerlo con una función flecha→actualizarPerfil.
+        const actualizarPerfil = (informacionDePerfil) => {
+          const {nombre, edad, nacionalidad, ubicacion} = informacionDePerfil; aquí se aplica la sintaxis de desestructuración 
+          console.log(nombre);
+          console.log(edad);
+          console.log(nacionalidad);
+          console.log(ubicacion);
+          var queRepresenta = informacionDePerfil;
+          console.log(queRepresenta);//respuesta: Un objeto
+        };
+        actualizarPerfil(nuevoPerfilCliente);  
+        Esa función flecha va a tomar la información del perfil del cliente y va actualizar el perfil. 
+        Pero en realidad no vamos a implementar la actualización del perfil, lo que vamos hacer es ver cómo 
+        podemos tomar este por ahora parametro→informacionDePerfil y descomponerlo cuando lo pasamos como 
+        un argumento. Si no lo descomponemos y simplemente escribimos este parámetro→informacionDePerfil 
+        que va a pasar ser un obj. podemos descomponerlo ya dentro de la funcion. Escribimos la sintaxis de 
+        desestructuración que ya aprendimos: const segido de las llaves  y dentro las propiedades del 
+        obj→nuevoPerfilCliente precedido por un signo de asignación = escribimos el nombre del ahora objeto 
+        →informacionDePerfil y por ultimo con console.log podemos mostramos c/u de los valores de las 
+        propiedades del obj. pero falta algo muy importante.→A continuación fuera de las llaves vamos a 
+        llamar a la función flecha y le vamos a pasar como argumento el obj→nuevoPerfilCliente→este 
+        objeto se va asignar a al parámetro de la función flecha→(informacionDePerfil) y luego si vamos a 
+        desglosar o descomponer sus propiedades que ahora son variables que podemos utilizar en la función 
+        por ser variables locales. Pero en este caso estamos tomando el obj completo, si nosotros mostramos 
+        con console.log que representa informaciónDePerfil, obtenemos un objeto
+        console.log(nombre);
+        console.log(edad);
+        console.log(nacionalidad);
+        console.log(ubicacion);
+        var queRepresenta = informacionDePerfil;
+        console.log(queRepresenta);//respuesta: Un objeto
+      #Hay otra forma con la sintaxis de desestructuración de descomponer un objeto directamente en la 
+        lista de parámetros para asignarlos a variables individuales. 
+        Es muy práctico, const actualizarPerfil = ({propiedades}) => {} en lugar del parámetro 
+        actual escribiremos ahí un par de llaves ({}) y vamos a escribir el nombre de las propiedad que 
+        queremos extraer, en este caso tenemos 4 propiedades ({nombre, edad,nacionalidad,ubicacion}) asi 
+        podemos de una vez directamente asignar los valores a actividades independientes a variables que 
+        podemos usar en nuestra función y así el cuerpo de la función es más conciso. No necesariamente 
+        tenemos que tomar todos los valore como argumentos. Por ejemplo simplemente tomar el nombre 
+        y la edad, esto también nos sirve para seleccionar propiedades específica para la función del 
+        obj que vamos a tomar como argumento. 
+        const actualizarPerfil = ({nombre, edad, nacionalidad, ubicacion}) => {
+        console.log(nombre);
+        console.log(edad);
+        console.log(nacionalidad);
+        console.log(ubicacion);
+        };  
+        actualizarPerfil(nuevoPerfilCliente);
+      #Ahora vamos a ver otro ejercicio: Como pasar un obj con la sintaxis de desestructuración:
+        Ese obj. lo podemos pasar a una función flecha, digamos que inicialmente tenemos esta función 
+        =>flecha que calcula el punto medio del intervalo entre el máximo y el mínimo tomaría un parámetro 
+        que se llama p_E →Y que vamos hacer con esas estadisticas? Vamos a tomar el max y el min y 
+        lo vamos a sumar para luego dividirlo en 2.0. Eso es lo que va hacer la función =>flecha.
+        const mitad = (p_E) => (p_E.max + p_E.min) / 2.0;  
+        Pero como podemos reescribir esta función usando la sintaxis de desestructuración. 
+        Lo primero que tenemos que analizar es que propiedades de ese obj vamos a necesitar en la 
+        función, max y min en este caso. Asique simplemente escribimos esas propiedades en la lista de 
+        parámetros rodeadas por llaves ({max, min}) y como ya son variables con la que podemos trabajar 
+        en nuestra función, remplazamos esto => (max + min) / 2.0; Y ahora la sintaxis es la siguiente:
+        →const mitad = (max, min) => (max + min) / 2.0;← Esto va asignar los parámetros a sus variables 
+        correspondiente. Nota: el paréntesis a la izquierda de => son variables y a la derecha son 
+        parámetros. Llamamos a la función mitad pasando el objeto estadística. 
+        console.log(mitad(estadistica));     
+      #Codigo de la explicación    
+        const estadisticas = {
+        max: 56.78,
+        desviacionEstandar: 4.34,
+        mediana: 34.54,
+        moda: 23.87,
+        min: -0.75,
+        promedio: 35.85 
+        }; 
+        //const mitad = (p_E) => (p_E.max + p_E.min) / 2.0; 
+        const mitad = ({max, min}) => (max + min) / 2.0;//Esto remplaza el comentario de lo de arriba  
+        console.log(mitad(estadisticas));//llamamos a la funcion=> mitad pasando el obj estadistica y
+        // el resultado promedio es 28.015
+      #Plantillas Literales:
+        Ahora vamos hablar de un tipo especial de cadena de caracteres que nos permite crear cadenas 
+        con varias líneas y remplazar los valores de las variables que necesitemos fácilmente en una 
+        cadena.
+        Plantillas literales o plantillas de cadenas
+        Características:
+        - Se usa el acento invertido →backtick este símbolo  ‘  en lugar de comillas.
+        - Pueden contener comillas simples y dobles.
+        - Las líneas se preservan como se escriben en el código.
+        - Para remplazar una variable se escribe ${variable}.
+        - Dentro de ${} también puedes escribir expresiones. * variables  x 2  o sumar un valor el resulta se va a remplazar en la c 
+        Veamos algunos ejemplos: Si definimos una variable con un valor inicial 6 var a = 6 y mostramos 
+        una plantilla de cadena nótese que lo primero que usamos es backtick. 
+        console.log(‘El sobrino cumple ${a} ’) normalmente hubiésemos concatenado la cadena con la 
+        variable→console.log(“El sobrino cumple  ” + a); pero con las plantillas de cadenas o plantillas 
+        literales ya es mucho más fácil remplazar una variable.
+        Veamos otro ejemplo con una cadena de caracteres:
+        //Ej1
+        var pL = 6;
+        console.log(`El sobrino cumple ${pL}`);//backtick cadena y remplazo de variable 
+        //Ej2
+        var _nombre = "Nora";
+        var _edad = 15;
+        console.log(`Mi nombre es ${_nombre} y cumplo ${_edad} años`);
+        También podemos remplazar otros tipos de datos, por ejemplos array . 
+        //EJ3
+        var otroArray = [1,2,3,4,5];
+        console.log(`El array es ${JSON.stringify(otroArray)}`); 
+        Si queremos mostrar el array de una forma más presentable podemos usar este método 
+        JSON.stringify cuyo resultado se mostra envuelto en []. 
+        También podemos remplazar el valor de las propiedades de un obj. 
+        //Ej4
+        var persona = {
+         alumno:"Daniel Muños",
+         edad: 12
+        };
+        Ahora tenemos un obj en lugar de variables individuales o variables separadas. Con un obj también 
+        podemos cambiar una plantilla literal. Vamos a ver otra variación, en lugar de escribir la plantilla 
+        literal directamente en consol.log podemos asígnale a una variable const SALUDO =`` seguido 
+        del = y backtick, en este caso actúa como una constante por eso la escribimos en mayúscula, bien 
+        ya creamos nuestra plantilla que va a ser asignada a nuestra variable. Como lo hacemos? Con notación 
+        
+        de punto `Hola mi nombre es ${persona.alumno}` el nombre de la variable que contiene el obj seguido 
+        de la propiedad de igual forma acedemos a edad ${persona.edad} 
+        var pL = 6
+        console.log(`El sobrino cumple ${pL}`);//backtick cadena y remplazo de variable  
+      
+      #Crear Objeto de Forma Concisa:  
+        Declaramos una constante que se le va a signar una función => que se llama crearPersona que contiene tres parámetros esa función va a retornar un obj. Esto es una forma de crear objeto en nuestro programa. Cuando llames a la función nos va a retornar un obj. con los valores de los parámetros, esta va a ser la estructura del objeto
+        const crearPersona = (p_Nombre, p_Edad, p_Idioma) =>{
+          return {
+            p_Nombre: p_Nombre, 
+            p_Edad: p_Edad, 
+            p_Idioma: p_Idioma
+          };        
+        };
+        console.log(crearPersona("Leonel Messi", 36, "Español"));
+        El resultado veremos  el obj. { p_Nombre: 'Leonel Messi', p_Edad: 36, p_Idioma: 'Español' }
+      #Pero veremos una forma más concisa de escribir esta función flecha en una sola línea. 
+        Lo que podemos hacer es simplemente luego de la flecha escribir el obj. rodeado por paréntesis 
+        ({}) dentro escribimos llaves que le van a decir a JS que queremos retornar un obj. y cuál va a 
+        ser la estructura del obj? va a contener los valores de los parámetros de crearPersona 
+        (p_Nombre, p_Edad, p_Idioma). Esto es básicamente lo que le estamos diciendo a JS crea un obj con 
+        esta estructura, las propiedades van a tener los mismos nombres que los parámetros y sus valores 
+        se van a remplazar cuando se cree el objeto. El resultados es exactamente el mismo   
+        //Esto remplaza al ejercicio anterior de arriba, crear Objeto de Forma Concisa obteniendo el mismo 
+        resultado
+        const crearPersona = (p_Nombre, p_Edad, p_Idioma) =>({ p_Nombre, p_Edad, p_Idioma});  
+        console.log(crearPersona("Leonel Messi", 36, "Español"));
+        { p_Nombre: 'Leonel Messi', p_Edad: 36, p_Idioma: 'Español' }
+      #Métodos:
+        También puedes declarar dentro de los obj. funciones que crees en tus programas de una forma más 
+        concisa. Declaramos una constante que va a contener un obj. Este obj. va a tener una función 
+        asociada esa es parte de la versatilidad de los objetos. Podemos definir propiedades con sus 
+        correspondientes valores y propiedades que sean funciones. Digamos que queremos que Isabel pueda 
+        presentarse→ese parámetro va ser una función que vamos a poder llamar a esta función a través del 
+        obj. escribimos paréntesis vacíos porque en este caso no va a tomar ningún parámetro y luego llaves 
+        donde escribimos el cuerpo de la función. Digamos que queremos retornar una plantilla literal con 
+        una cadena de caracteres remplazando el nombre_ de la propiedad con su valor “Isabel” pero 
+        anteponiendo mediante un . la palabra→this esta palabra cumple una función muy especial en JS 
+        porque se refiere al objeto con el cual estamos trabajando. En este caso this. se refiere al 
+        obj_persona. En resumen: En este caso this se refiere al obj persona a la propieda→nombre_  que 
+        su valor es “Isabel” por ultimo llamamos a la función de la siguiente forma. Curiosamente vamos a 
+        poder usar el nombre de lapropiedad→presentarse como si fuera el nombre de la función con paréntesis 
+        vacíos ya que la función en si no se le asigno parámetro, pero como estamo retornando usamos 
+        console.log como se muestra en el ejercicio. 
+        Nota: Si el valor de una propiedad es una función se la denomina método
+        const _Persona = {
+            nombre_: "Isabel",
+            //presentarse: function () {esto se remplaza por el código de abajo
+            presentarse () {
+              return `Hola mi nombres ${this.nombre_}`; 
+            }  
+          };
+        console.log(persona.presentarse());
+        Esta es la sintaxis que hubiésemos usado anteriormente pero con el estándar nuevo ES6 podemos 
+        simplificar nuestro código aún más para definir esta función. Simplemente quitamos los dos puntos 
+        y la palabra clave function que visualmente parecería que la propiedad sería una función.
+      #Definir una Clase
+        class TransbordadorEspacial {
+          constructor(planeta) {
+           this.planeta = planeta;
+         }
+        }
+        var zeus = new TransbordadorEspacial("jupiter");
+        console.log(zeus.planeta);//Resultado Jupiter
+        var apolo = new TransbordadorEspacial("Marte");
+        console.log(apolo.planeta);//Resultado Marte
     */  
       
     //↓Todo codigo↓
@@ -3393,7 +3646,117 @@
       console.log(minimaHoy, maximaHoy);
       var mostrar = "Temperatura minma hoy " + minimaHoy + " Temperatura maxima hoy " + maximaHoy;
       console.log(mostrar);//Usando una variable para concatenar la muestra 
-    //Sintaxis de desestructuración: ARRAY   
+    //Sintaxis de desestructuración: ARRAY
+      var varA;
+      var varB;
+      var arr;
+      [varA, varB,...arr] = [1,2,3,4,5,6,7];
+      console.log(varA);//1
+      console.log(varB);//2
+      console.log(arr);//[ 3,4, 5, 6, 7 ]
+      const con_sola = [varA, varB,...arr] = [1,2,3,4,5,6,7];  
+      console.log(con_sola);//[ 1,2,3,4,5,6,7 ]
+      const arrgeloInicial = [1,2,3,4,5,6,7, 8]; 
+    //Sintaxis de Desestructuración
+    //    con el Operador rest
+      function removerTresPrimerosElementos(arreglo)
+      {
+        //var nuevoArreglo;se elimina para usar const y la estructura va en una sola linea
+        const [ , , ,...nuevoArreglo] = arreglo;
+        return nuevoArreglo;
+      }
+      const arregloFinal = removerTresPrimerosElementos(arrgeloInicial);  
+      console.log(arregloFinal)//muestra el array sin los tres primeros elementos
+    // Sintaxis de Desestructuración
+    //  Pasar obj. Como argumentos
+      var nuevoPerfilCliente = {
+        nombre: "Sergei Lavrov", 
+        edad: 74, 
+        nacionalidad: "Rusia", 
+        ubicacion: "Moscu"
+      };
+        /* metodologia no tan concisa que remplazaremos debajo del comentario     
+        const actualizarPerfil = (informacionDePerfil) => {
+        const {nombre, edad, nacionalidad, ubicacion} = informacionDePerfil;  
+        console.log(nombre);
+        console.log(edad);
+        console.log(nacionalidad);
+        console.log(ubicacion);
+        var queRepresenta = informacionDePerfil;
+        console.log(queRepresenta);//respuesta: Un objeto
+      };*/
+      const actualizarPerfil = ({nombre, edad, nacionalidad, ubicacion}) => {
+        console.log(nombre);
+        console.log(edad);
+        console.log(nacionalidad);
+        console.log(ubicacion);
+      };  
+      actualizarPerfil(nuevoPerfilCliente);
+    //Ejercicio. Como pasar un obj con la sintaxis de desestructuración:
+      const estadisticas = {
+        max: 56.78,
+        desviacionEstandar: 4.34,
+        mediana: 34.54,
+        moda: 23.87,
+        min: -0.75,
+        promedio: 35.85 
+      }; 
+      //const mitad =  (p_E) => (p_E.max + p_E.min) / 2.0; 
+      const mitad = ({max, min}) => (max + min) / 2.0;//Esto remplaza el comentario de lo de arriba  
+      console.log(mitad(estadisticas));//llamamos a la funcion=> mitad pasando el obj estadistica y
+      // el resultado promedio es 28.015
+    //Plantillas Literales: 
+      //Ej1
+      var pL = 6;
+      console.log(`El sobrino cumple ${pL}`);//backtick cadena y remplazo de variable 
+      //Ej2
+      var _nombre = "Nora";
+      var _edad = 15;
+      console.log(`Mi nombre es ${_nombre} y cumplo ${_edad} años`);
+      //EJ3
+      var otroArray = [1,2,3,4,5];
+      console.log(`El array es ${JSON.stringify(otroArray)}`);
+      //Ej4
+      var persona = {
+        alumno:"Daniel Muños",
+        edad: 12
+      };
+      const  SALUDO  = `Hola mi nombre es ${persona.alumno} y tengo ${persona.edad} años.`; 
+      console.log(SALUDO);
+    //Crear Objeto de Forma Concisa:
+      /*
+      const crearPersona = (p_Nombre, p_Edad, p_Idioma) =>{
+        return {
+          p_Nombre: p_Nombre, 
+          p_Edad: p_Edad, 
+          p_Idioma: p_Idioma
+        };
+      };
+      */
+    //Esto remplaza al comentario de arriba, crear Objeto de Forma Concisa 
+      const crearPersona = (p_Nombre, p_Edad, p_Idioma) =>({ p_Nombre, p_Edad, p_Idioma});  
+      console.log(crearPersona("Leonel Messi", 36, "Español")); 
+    //Resultado: { p_Nombre: 'Leonel Messi', p_Edad: 36, p_Idioma: 'Español' }
+    
+    //Métodos:
+    const _Persona = {
+      nombre_: "Isabel",
+     //presentarse: function (){ esto se remplaza por el código de abajo mas conciso con = resultado 
+     presentarse () {      
+      return `Hola mi nombres ${this.nombre_}`; 
+     }  
+    };
+    console.log(_Persona.presentarse());
+  //Definir una Clase
+  class TransbordadorEspacial {
+    constructor(planeta) {
+     this.planeta = planeta;
+   }
+  }
+  var zeus = new TransbordadorEspacial("Jupiter");
+  console.log(zeus.planeta);//Resultado Jupiter
+  var apolo = new TransbordadorEspacial("Marte");
+  console.log(apolo.planeta);//Resultado Marte
   </script>  
 </html> 
 
