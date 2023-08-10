@@ -2412,16 +2412,117 @@
         Esta es la sintaxis que hubiésemos usado anteriormente pero con el estándar nuevo ES6 podemos 
         simplificar nuestro código aún más para definir esta función. Simplemente quitamos los dos puntos 
         y la palabra clave function que visualmente parecería que la propiedad sería una función.
-      #Definir una Clase
+      #Definir una Clase:
+        Ahora vamos a ver cómo puedes definir una clase en JS . Una clase en JS es algo parecido a un 
+        plano de un edificio o de un objeto. Que nos permite crear muchos obj con la misma estructura, la 
+        misma propiedad y la misma funcionalidad, es un plano general que nos permite usar código una sola 
+        vez y reusarlo para crear tantos obj como necesitemos en nuestro programa. Veamos un ejemplo:
+        Luego de la palabra clave class por convención escribimos el nombre comenzando con mayúscula el 
+        nombre del tipo de obj que vamos a crear. Digamos que queremos representar un TrasbordadorEspacial 
+        en nuestro código que va a tener ciertas propiedades. Va a tener un estado inicial que lo podemos 
+        inicializar con una función→constructor() asociada al obj que vamos a definir {} Es la función que 
+        va a llamar al obj creado con class→TrasbordadorEspacial {}. En la función asosiada→constructor() 
+        que no es ni más ni menos que una propiedad le agregamos un parámetro(planeta) que va a llamar 
+        automáticamente a → TrasbordadorEspacial y va a tomar el parámetro que nosotros definimos→(planeta) 
+        De modo que de esta forma sabremos el nombre de ese planeta que definimos. 
+        A modo de ejemplo júpiter con trasbordador espacial y lo vamos asignar como una propiedad ese 
+        planeta, va a ser una propiedad del obj planeta. Recordemos que this cumple una función muy especial 
+        en JS porque se refiere al objeto con el cual estamos trabajando. 
+        Con esa sintaxis→this.planeta = planeta o sea que el objeto trasbordadorEspacial va a tener una 
+        propiedad llamada planeta. En resumen cuando escribimos this nos estamos refiriendo al objeto que 
+        estamos creando con class. Básicamente estamos diciendo que vamos asignar el valor del parametro a 
+        la propiedad planeta. Para que se entienda planeta1 pasa a ser planeta2 y asigna a planeta3   
+        Algo que debes saber que en realidad cuando usamos la palabra clave class aquí debes tener en 
+        cuenta que JS en realidad no está creando una clase completamente funciona como lo haría 
+        JAVA o PYTHON u otros lenguajes, sino que simplemente estamos escribiendo en forma más concisa una 
+        forma distinta de crear un obj. No tiene todas las capacidades de una clase como en otros lenguajes 
+        pero si nos permite crear obj en nuestro programa.
+        //Ejercicio
         class TransbordadorEspacial {
           constructor(planeta) {
            this.planeta = planeta;
          }
         }
-        var zeus = new TransbordadorEspacial("jupiter");
+        Asique estamos creando un obj que va a tener una propiedad planeta, esa propiedad va a tener 
+        como valor jupiter. de bajo podemos ver como accedemos a la propiedad planeta del obj Zeus y 
+        en otro ejemplo apolo destino Marte
+        var zeus = new TransbordadorEspacial("Jupiter");
         console.log(zeus.planeta);//Resultado Jupiter
         var apolo = new TransbordadorEspacial("Marte");
         console.log(apolo.planeta);//Resultado Marte
+        En otro ejemplo definimos una class que represente a mi mascota puedo hacerlo con la función 
+        constructor() que le asignamos dos parámetros, nombre y edad. Vamos asignar una propiedad llamada 
+        nombre para el obj y lo mismo hacemos con la edad. Así cuando creemos una mascota por ejemplo 
+        var miMascota = new  va a ser un nuevo obj que va a tener por nombre “Lala” su edad es 5 
+        var miMascota = new  Mascota(nombre, edad); y ya después de esta línea podemos trabajar con el obj 
+        que va a tener una propiedad llamada nombre y otra edad a las cuales podemos acceder, actualizar,  
+        eliminar y con las cuales trabajar en general con todas las operaciones que aprendiste durante el 
+        curso. Podemos reutilizar este código de la class cuantas veces necesitemos
+        class Mascota{
+          constructor(nombre, edad){
+          this.nombre = nombre;
+          this.edad = edad;
+        }
+       }
+      var miMascota = new  Mascota(“Lala”, 17);
+      console.log(miMascota.nombre);
+      console.log(miMascota.edad); 
+      //reutilizamos el código para otra mascota
+      var otraMascota = new Mascota(Camilo ,4);
+    #Getters y Setters 
+      Ahora expandamos nuestro concepto de un obj, ya sabes que los obj pueden tener funciones asociadas 
+      a esos obj, también podemos definir funciones en una class para que cuando creemos un obj ese obj 
+      tenga todas esas funciones asociadas. Pero hay dos funciones específicas que se llaman Getters 
+      y Setters que nos van a permitir proteger la data de ese obj. Vanos a declarar una class llamada 
+      libro, esa class va a tener un constructor el libro va a tener un autor y vamos a crear una propiedad 
+      llamada autor. Pero asi como la estamos definiendo en este momento podemos cambiar el valor del 
+      autor en cualquier momento y a cualquier valor. Eso podría ser una fuente de errores si lo cambiamos 
+      a un valor que no es válido por ejemplo que el autor sea un número o a un autor que no corresponde 
+      a ese libro, por eso en JS podemos proteger esa data asiendo que nuestras variables sean privadas 
+      por convención agregando un guion bajo _variable, esto le dice a otros desarrolladores que no 
+      deberían modificar ese valor. Solo se debe usar dentro de la class, en la práctica no hace que 
+      técnicamente que la propiedad sea privada. Pero podemos dar acceso a esa propiedad, con un Getters 
+      y Setters. Los getters son métodos que nos permiten en obtener un valor de una propiedad privada, 
+      una propiedad que tiene un guion bajo antes de su nombre. Nos permite acceder a ese valor en forma 
+      indirecta asi protejemos el valor; no lo estamos cambiando directamente. Como definimos un getters? 
+      get→significa obtener ese método su propósito es retornar ese valor para que podamos usarlo en 
+      nuestro programa en forma indirecta. escribimos  get el nombre de la propiedad y paréntesis vacíos 
+      seguido de llaves luego retornamos ese valor→ _autor. Como se ve en el ejercicio solamente estamos 
+      retornando ese valor de la propiedad del obj. cuando accedamos a la propiedad vamos acceder a ese 
+      valor pero está protegido por que tiene un intermediario durante el proceso, este nos permite obtener 
+      un valor. Pero también podemos definir un setters→set que es una función que nos permite actualizar 
+      el valor de una propiedad y son muy útiles porque podemos verificar el valor nuevo antes de asignarlo. 
+      Si no usáramos un setters entonces podríamos cambiar ese valor→_autor a cualquier valor aunque no 
+      sea valido. pero con un settes podemos usar condicionale para verificar si es válido. En este 
+      ejemplo simplemente vamos asignar un nuevo autor. Tomamos el valor del parámetro→nuevoAutor y lo 
+      asignamos a la propiedad→_autor y así tenemos nuestro getters y nuestro setters. Vamos a probarlo 
+      creando un obj nuevo de tipo libro→const libro = new Libro("Anónimo"); y en la consola 
+      vemos→Anónimo exactamente lo que especificamos aquí→new Libro("Anónimo"); Puedes ver que aunque 
+      en realidad no tenemos una propiedad llamada autor si no que la propiedad se llama _autor con un 
+      guion bajo adelante aun asi podemos acceder a la propiedad simplemente escribiendo autor. Eso es 
+      gracias a que definimos un getters y le asignamos ese nombre autor y ese valor se obtiene 
+      indirectamente de _autor a través del getters. Podemos confirmarlos si en el get agregamos 
+      console.log(Getters); primero vemos el mensaje “Getters” antes de ratonar el valor Anónimo. 
+      Ahora vamos a probar cómo funciona el Setters, si queremos actualizar el valor de la propiedad 
+      autor podemos hacerlo también directamente y gracias al Setters se va actualizar como puedes ver 
+      actúan como intermediarios. Nuevamente luego de la actualización vamos a mostrar el valor del autor.        
+      //Ejercicio    
+      class Libro {
+        constructor(autor){
+        this.autor = autor;
+        }
+        get autor() {
+          console.log("Getters");
+          return  this._autor;
+        }
+        set autor(nuevoAutor){
+        console.log("Setters");
+        this._autor = nuevoAutor;  
+        }
+      }
+      const libro = new Libro("Anónimo");
+      console.log(libro.autor);
+    #                                       FIN del CURSO 
     */  
       
     //↓Todo codigo↓
@@ -3739,24 +3840,57 @@
     //Resultado: { p_Nombre: 'Leonel Messi', p_Edad: 36, p_Idioma: 'Español' }
     
     //Métodos:
-    const _Persona = {
+      const _Persona = {
       nombre_: "Isabel",
-     //presentarse: function (){ esto se remplaza por el código de abajo mas conciso con = resultado 
-     presentarse () {      
+    //presentarse: function (){ esto se remplaza por el código de abajo mas conciso con = resultado 
+      presentarse () {      
       return `Hola mi nombres ${this.nombre_}`; 
-     }  
-    };
-    console.log(_Persona.presentarse());
-  //Definir una Clase
-  class TransbordadorEspacial {
-    constructor(planeta) {
-     this.planeta = planeta;
-   }
-  }
-  var zeus = new TransbordadorEspacial("Jupiter");
-  console.log(zeus.planeta);//Resultado Jupiter
-  var apolo = new TransbordadorEspacial("Marte");
-  console.log(apolo.planeta);//Resultado Marte
+      }  
+     };
+     console.log(_Persona.presentarse());
+    //Definir una Clase
+      class TransbordadorEspacial {
+         constructor(planeta) {
+         this.planeta = planeta;
+       }
+      }
+      var zeus = new TransbordadorEspacial("Jupiter");
+      console.log(zeus.planeta);//Resultado Jupiter
+      var apolo = new TransbordadorEspacial("Marte");
+      console.log(apolo.planeta);//Resultado Marte
+    //Otro ejemplo
+      class Mascota{
+      constructor(nom_bre, ed_ad){
+      this.nom_bre = nom_bre;
+      this.ed_ad = ed_ad;
+      }
+     }
+      var miMascota = new Mascota("Lala", 17);
+      console.log(miMascota.nom_bre);
+      console.log(miMascota.ed_ad); 
+    //reutilizamos el código para otra mascota
+      var otraMascota = new Mascota("Camilo" ,4);
+      console.log(otraMascota.nom_bre);
+      console.log(otraMascota.ed_ad);
+    //Getters y Setters
+    class Libro {
+      constructor(autor){
+      this.autor = autor;
+      }
+      get autor() {
+        console.log("Getters");      
+         return  this._autor;
+      }
+      set autor(nuevoAutor){
+       console.log("Setters"); 
+       this._autor = nuevoAutor;  
+     }
+    }
+    const libro = new Libro("Anónimo");
+    console.log(libro.autor); 
+    libro.autor = "Gino Smith";
+    console.log(libro.autor);
+  //                               FIN del CURSO 
   </script>  
 </html> 
 
